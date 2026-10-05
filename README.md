@@ -8,66 +8,84 @@
   <img src="https://img.shields.io/badge/Python-3.12-3776AB" alt="Python 3.12">
 </p>
 <p align="center">
-  <a href="#try-it"><b>Try it</b></a> · <a href="#demo"><b>Watch the demo</b></a> · <a href="#how-it-works"><b>How it works</b></a> · <a href="docs/PROOFREAD_RESULTS.md"><b>Benchmarks</b></a>
+  <a href="#try-it-in-jupyter"><b>Try it in Jupyter</b></a> · <a href="#demo"><b>Notebook demo</b></a> · <a href="#how-it-works"><b>How it works</b></a> · <a href="docs/PROOFREAD_RESULTS.md"><b>Benchmarks</b></a>
 </p>
 
 TabLint finds values that look ordinary in a column but suspicious **for their row**. It uses TabPFN-3.5 to check numerical cells, categorical values and labels, explains each flag, and helps you review a suggested correction.
 
-A Honda Civic with four cylinders and 53 horsepower is recorded at **4,354 lb**. The saved demo report expects about **1,877 lb**, with an 80% interval of **1,720–2,034 lb**. TabLint brings that evidence into your editor.
+A Honda Civic with four cylinders and 53 horsepower is recorded at **4,354 lb**. The saved demo report expects about **1,877 lb**, with an 80% interval of **1,720–2,034 lb**. TabLint brings that evidence into your Jupyter notebook.
 
 ## Demo
 
-[![Watch the TabLint product showcase](demo/showcase/preview.gif)](https://github.com/James-Begin/TabLint/blob/main/demo/showcase/TabLint-demo.mp4)
+![TabLint reviewing a saved report in JupyterLab](docs/figures/tablint_jupyter.png)
 
-**[Watch / download the full 1:28 showcase](https://github.com/James-Begin/TabLint/raw/refs/heads/main/demo/showcase/TabLint-demo.mp4)** · [Editable animation](showcase/) · [Demo data](demo/video/)
+**[Browse the demo notebook](examples/tablint_demo.ipynb)** · [Sample data and saved predictions](demo/video/) · [Notebook guide](docs/GETTING_STARTED.md#jupyter-notebooks)
 
-The animation recreates the VS Code workflow. Numerical examples use saved inference results; the specific USA → Japan suggestion is illustrative. [Provenance and review](demo/showcase/README.md).
+## Try it in Jupyter
 
-## Try it
-
-### One command to open the VS Code demo
-
-Install **[Node.js 22+](https://nodejs.org/)** and **[VS Code](https://code.visualstudio.com/)** with `code` on your PATH, then run:
+Install **[uv](https://docs.astral.sh/uv/getting-started/installation/)**, then run:
 
 ```sh
-git clone https://github.com/James-Begin/TabLint.git && cd TabLint && npm run demo
+git clone https://github.com/James-Begin/TabLint.git && cd TabLint && uv run --extra notebook tablint demo
 ```
 
-This builds and installs the extension, creates working copies of the demo CSV and its saved report, and opens VS Code at the Civic row. **No Python, GPU, API key or model download is needed for this replay.**
+One command prepares Python 3.12, JupyterLab and the widget, then opens an editable demo notebook. Choose **Run → Run All Cells**. **No model download, GPU or API key is needed for the saved replay.** No Node.js or editor extension is required.
 
-1. Hover the underline on `4354.0` to see the expectation and explanation.
-2. Inspect the Rabbit's `0.0` horsepower value. Use **Quick Fix** (`Ctrl+.` / `Cmd+.`) to replace it with `70`, flag it for review, or dismiss it.
-3. Run **TabLint: Open decision ledger** from the Command Palette to inspect the reason and undo a decision.
+1. Click a highlighted cell to inspect the expected value, plausible range and reason.
+2. **Accept**, **dismiss** or **undo** a suggestion inside the table.
+3. Get `review.cleaned` and `review.decisions` back as pandas DataFrames; export them when ready.
 
-**Prefer no build tools?** [Download the demo kit](https://github.com/James-Begin/TabLint/raw/refs/heads/main/demo/showcase/TabLint-demo-kit.zip), extract it, install the included VSIX, and open its CSV in VS Code.
+The notebook runs on saved Auto MPG numerical and origin-label predictions. Live analysis also handles low-cardinality categorical columns. The launcher preserves your working notebook in `demo/notebook-workspace/`. [Setup and troubleshooting →](docs/GETTING_STARTED.md)
 
-Your original demo files stay intact; edits live in `demo/.workspace/`. Use `npm run doctor` if setup fails. [Manual installation and troubleshooting →](docs/GETTING_STARTED.md)
+### Your own DataFrame
 
-### Check your own CSV
+In a notebook using the same environment:
 
-With **[uv](https://docs.astral.sh/uv/getting-started/installation/)** installed, from the repository:
+```python
+import pandas as pd
+import proofread  # registers df.tablint; original imports stay compatible
 
-```sh
-uv run tablint check data.csv --out reports/data
-uv run tablint view reports/data.json
+df = pd.read_csv("data.csv")
+review = df.tablint.view(categorical=True)
+review
 ```
 
-`uv` prepares the Python 3.12 environment automatically. Live checks need TabPFN weights and first-use model-license acceptance; inference uses a GPU when available or falls back to CPU. Saved reports replay without weights. The `proofread` command and Python package remain compatible aliases.
+After reviewing, run another cell:
 
-For a browser demo: `uv run --extra demo tablint app`. For notebooks: [Python and notebook guide](docs/GETTING_STARTED.md#python-and-notebooks).
+```python
+cleaned = review.cleaned
+changes = review.decisions
+```
+
+Live checks need TabPFN weights and first-use model-license acceptance. A GPU is optional; CPU inference can take several minutes. For existing Jupyter environments, install the notebook extra and select that Python kernel: [notebook setup](docs/GETTING_STARTED.md#your-existing-notebook-environment).
+
+### Other integrations
+
+**VS Code:** `npm run demo:vscode` opens the saved CSV demo (Node.js 22+ and VS Code required). It includes CSV squiggles, Quick Fix actions and a persistent decision ledger. The [editor demo kit](demo/showcase/TabLint-demo-kit.zip) includes a ready-built VSIX. [Editor setup →](docs/GETTING_STARTED.md#vs-code)
+
+**Terminal:** `uv run tablint check data.csv --out reports/data`, then `uv run tablint view reports/data.json`.
+
+**Browser viewer:** `uv run --extra demo tablint app`.
+
+### Editor video showcase
+
+[![Watch the TabLint editor showcase](demo/showcase/preview.gif)](https://github.com/James-Begin/TabLint/blob/main/demo/showcase/TabLint-demo.mp4)
+
+**[Watch / download the full 1:28 showcase](https://github.com/James-Begin/TabLint/raw/refs/heads/main/demo/showcase/TabLint-demo.mp4)** · [Editable animation](showcase/)
+
+This animation shows the VS Code integration. Numerical examples use saved inference results; the specific USA → Japan suggestion is illustrative. [Provenance and review](demo/showcase/README.md).
 
 ## Features
 
 | Feature | What you get |
 | --- | --- |
+| **Jupyter + pandas** | Interactive cell review, accept/dismiss/undo, a cleaned DataFrame and a decision snapshot in Python. |
 | **Numerical checks** | Row-specific expectations, 80% plausible ranges, and hints for decimal slips, swapped digits, sign flips and missing-value zeros. |
 | **Categorical checks** | Low-cardinality categories scored against the rest of the row, with likely alternatives and possible typo hints. |
-| **Review in VS Code** | CSV squiggles, hover explanations, Quick Fix actions and a Problems list. |
-| **Decision ledger** | Before/after values, reasons, timestamps and review notes; undo protects newer manual edits. |
-| **More ways to work** | Terminal viewer, pandas/Jupyter widget, browser viewer, CLI, Python API and MCP tools. |
+| **Optional VS Code integration** | CSV squiggles, hover explanations, Quick Fix actions and a Problems list. |
+| **Editor decision ledger** | The VS Code integration stores before/after values, reasons, timestamps and review notes; undo protects newer manual edits. |
+| **More ways to work** | Terminal viewer, browser viewer, CLI, Python API and MCP tools. |
 | **Replayable reports** | JSON, highlighted HTML, Markdown and an issues CSV, with saved demos for a quick first run. |
-
-![TabLint numerical explanation](docs/figures/tabl-int-numeric.png)
 
 ## How it works
 
@@ -75,7 +93,7 @@ For each column, TabLint asks TabPFN to predict a cell from the other columns. I
 
 - **Numbers:** score the recorded value against TabPFN's predictive distribution; show the median and 10th–90th percentiles. Test common slips for a possible explanation.
 - **Categories and labels:** use the classifier's probability for the recorded class, then suggest a more likely class for review.
-- **Decisions:** a person accepts, flags or dismisses the suggestion. The VS Code ledger records the action and model reason beside the CSV.
+- **Decisions:** review in the notebook, then retrieve the cleaned table and current decisions in Python. The optional VS Code integration also offers flag-for-review actions and a persistent ledger.
 
 A flag means **check the source record**, not a confirmed error. Surprise scores rank anomalies; they are not calibrated probabilities that a value is wrong. [Implementation](proofread/core.py) · [Technical and research overview](docs/RESEARCH_OVERVIEW.md)
 
@@ -92,7 +110,8 @@ Independent columns provide little context for this approach; high-cardinality i
 | Start here | Contents |
 | --- | --- |
 | [Getting started](docs/GETTING_STARTED.md) | Setup, saved replay, live checks and troubleshooting |
-| [VS Code extension](vscode-proofread/) | Editor workflow and persistent ledger |
+| [Jupyter demo](examples/tablint_demo.ipynb) | Interactive review and cleaned pandas DataFrames |
+| [VS Code extension](vscode-proofread/) | Optional editor workflow and persistent ledger |
 | [Python engine](proofread/) | Inference, reports, terminal and notebook interfaces |
 | [Demo](demo/video/) / [showcase](showcase/) | Attributed data, approved video and animation source |
 | [Benchmarks](benchmarks/) / [results](results/) | Reproduction scripts and measured artifacts |

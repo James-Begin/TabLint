@@ -26,7 +26,7 @@ packages = ["proofread", "chainofcustody", "auditkit", "fz", "experiments", "ben
 demo = ["streamlit>=1.40,<2"]
 agent = ["mcp>=1.12,<2"]
 baselines = ["tabpfn-extensions[unsupervised]==0.6.3"]
-notebook = ["anywidget>=0.11,<0.12", "ipykernel>=6.29"]
+notebook = ["anywidget>=0.11,<0.12", "ipykernel>=6.29", "jupyterlab>=4.4,<5"]
 
 [dependency-groups]
 dev = ["pytest>=8,<10"]

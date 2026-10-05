@@ -38,7 +38,7 @@ function render({ model, el }) {
 
     const head = document.createElement("div"); head.className = "pr-head";
     const counts = ["open", "accepted", "dismissed"].map((s) => `${status.filter((x) => x === s).length} ${s}`).join(" · ");
-    head.innerHTML = `<b>Proofread</b> · ${meta.n ?? "?"} rows · ${issues.length} issues · ${counts} <span class="pr-model">${meta.model ?? "TabPFN-3.5"}</span>`;
+    head.innerHTML = `<b>TabLint</b> · ${meta.n ?? "?"} rows · ${issues.length} issues · ${counts} <span class="pr-model">${meta.model ?? "TabPFN-3.5"}</span>`;
     const toggle = document.createElement("label"); toggle.className = "pr-toggle";
     const cb = document.createElement("input"); cb.type = "checkbox"; cb.checked = model.get("only_flagged");
     cb.onchange = () => { model.set("only_flagged", cb.checked); model.save_changes(); };

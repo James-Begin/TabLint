@@ -14,6 +14,7 @@ jobs:
       - uses: astral-sh/setup-uv@v6
       - run: uv sync --locked --extra notebook --extra demo
       - run: uv run pytest -q tests
+      - run: uv run --extra notebook tablint demo --prepare-only
   extension:
     runs-on: ubuntu-latest
     timeout-minutes: 15
@@ -24,7 +25,7 @@ jobs:
           node-version: '22'
           cache: npm
           cache-dependency-path: vscode-proofread/package-lock.json
-      - run: npm run demo -- --prepare-only
+      - run: npm run demo:vscode -- --prepare-only
       - run: npm test
         working-directory: vscode-proofread
       - run: xvfb-run -a npm run test:integration

@@ -24,4 +24,7 @@ handoff/
 node_modules/
 dist/
 demo/.workspace/
+demo/.notebook/
+demo/notebook-workspace/
+.ipynb_checkpoints/
 *.proofread.ledger.json

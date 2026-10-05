@@ -7,10 +7,10 @@
 <text x="48" y="165" font-size="83" font-weight="750" letter-spacing="-3" fill="#172832">TabLint</text>
 <text x="52" y="213" font-size="30" fill="#526672">Spellcheck for tables.</text>
 <text x="52" y="249" font-size="18" fill="#147d76">Powered by TabPFN-3.5</text>
-<text x="52" y="310" font-size="16" fill="#526672">Numerical · Categorical · Explain · Fix · Undo</text>
+<text x="52" y="310" font-size="16" fill="#526672">Jupyter · pandas · Numerical · Categorical · Undo</text>
 <rect x="688" y="55" width="538" height="252" rx="16" fill="white" stroke="#d7e5e1"/>
 <circle cx="711" cy="77" r="4" fill="#ed9b9b"/><circle cx="726" cy="77" r="4" fill="#eacb88"/><circle cx="741" cy="77" r="4" fill="#99c9b7"/>
-<text x="765" y="83" font-size="12" fill="#6c7b83">auto_mpg_dirty.csv</text><path d="M688 99H1226" stroke="#e7eeec"/>
+<text x="765" y="83" font-size="12" fill="#6c7b83">JUPYTER · review = report.widget()</text><path d="M688 99H1226" stroke="#e7eeec"/>
 <text x="715" y="133" font-size="14" font-weight="700" fill="#6c7b83">HONDA CIVIC · WEIGHT</text>
 <text x="715" y="192" font-size="43" font-weight="700" fill="#ad5964">4,354 lb</text>
 <path d="M715 206q5 -5 10 0t10 0t10 0t10 0t10 0t10 0t10 0t10 0t10 0t10 0t10 0t10 0t10 0t10 0t10 0t10 0" fill="none" stroke="#cf7784" stroke-width="2"/>

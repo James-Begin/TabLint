@@ -24,6 +24,7 @@ def test_static_html_highlights_flagged_cells():
 def test_accessor_is_registered():
     import proofread  # noqa: F401
     assert hasattr(pd.DataFrame({"a": [1]}), "proofread")
+    assert hasattr(pd.DataFrame({"a": [1]}), "tablint")
 
 
 def test_widget_state_cleaned_and_decisions():
@@ -49,10 +50,13 @@ def test_magic_registers_and_runs(monkeypatch):
 
     class FakeIPython:
         user_ns = {"df": rep.data}
+        magics = {}
         def register_magic_function(self, fn, magic_kind, magic_name):
             self.fn, self.name = fn, magic_name
+            self.magics[magic_name] = fn
     ip = FakeIPython(); load_ipython_extension(ip)
     assert ip.name == "proofread"
+    assert ip.magics["tablint"] is ip.magics["proofread"]
     w = ip.fn("df --label y --threshold 3")
     assert shown and len(w.issues) == 3
 
@@ -65,3 +69,16 @@ def test_cleaned_handles_integer_columns():
     w = Report(df, iss, pd.DataFrame(), None, {"patterns": []}).widget()
     w.status = ["accepted"]
     assert w.cleaned.at[2, "year"] == 1972 and pd.api.types.is_integer_dtype(w.cleaned["year"])
+
+
+def test_notebook_categorical_accept_and_undo():
+    pytest.importorskip("anywidget")
+    report = make_report()
+    report.issues.loc[2, "kind"] = "category"
+    w = report.widget()
+    w.status = ["open", "open", "accepted"]
+    assert w.cleaned.at[3, "y"] == "y"
+    assert w.decisions.iloc[2].cause == "model gives 1%"
+    w.status = ["open"] * 3
+    assert w.cleaned.at[3, "y"] == "x"
+    assert report.data.at[3, "y"] == "x"

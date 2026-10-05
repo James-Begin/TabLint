@@ -5,10 +5,10 @@
     w.cleaned, w.decisions                                        # results back in Python
 
     import proofread                                              # registers df.proofread
-    w = df.proofread.view(label="outcome")                       # runs TabPFN-3.5, then shows the widget
+    w = df.tablint.view(label="outcome")                         # runs TabPFN-3.5, then shows the widget
 
     %load_ext proofread
-    %proofread df --label outcome
+    %tablint df --label outcome
 """
 from __future__ import annotations
 
@@ -128,7 +128,7 @@ def report_html(report, top: int = 12, max_rows: int = 8) -> str:
     n_cell = int((report.issues.kind == "cell").sum()); n_lab = int((report.issues.kind == "label").sum())
     n_cat = int((report.issues.kind == "category").sum())
     return (f"<div style='font-family:ui-monospace,Menlo,monospace;font-size:12px'>"
-            f"<div><b>Proofread</b> · {len(report.data)} rows · {n_cell} suspicious numeric cells · {n_cat} suspicious categories · {n_lab} suspicious labels · "
+            f"<div><b>TabLint</b> · {len(report.data)} rows · {n_cell} suspicious numeric cells · {n_cat} suspicious categories · {n_lab} suspicious labels · "
             f"{H.escape(str(report.meta.get('model', 'TabPFN-3.5')))}</div>{pats}"
             f"<table style='border-collapse:collapse;margin:6px 0'><tr>{th}</tr>{''.join(trs)}</table>"
             f"<ol style='margin:4px 0 0 18px;padding:0'>{''.join(li)}</ol>"
@@ -136,9 +136,10 @@ def report_html(report, top: int = 12, max_rows: int = 8) -> str:
             f"A flag is a prompt to check the source, not proof of an error.</div></div>")
 
 
+@pd.api.extensions.register_dataframe_accessor("tablint")
 @pd.api.extensions.register_dataframe_accessor("proofread")
 class ProofreadAccessor:
-    """`df.proofread.check(...)` → Report; `df.proofread.view(...)` → interactive widget."""
+    """`df.tablint.check(...)` → Report; `df.tablint.view(...)` → widget. `df.proofread` stays compatible."""
 
     def __init__(self, df: pd.DataFrame):
         self._df = df
@@ -168,4 +169,5 @@ def load_ipython_extension(ipython):
         display(w)
         return w
 
+    ipython.register_magic_function(proofread_magic, magic_kind="line", magic_name="tablint")
     ipython.register_magic_function(proofread_magic, magic_kind="line", magic_name="proofread")
