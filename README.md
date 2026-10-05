@@ -8,7 +8,7 @@
   <img src="https://img.shields.io/badge/Python-3.12-3776AB" alt="Python 3.12">
 </p>
 <p align="center">
-  <a href="#set-up-in-jupyter"><b>Set up in Jupyter</b></a> · <a href="#demo"><b>Watch the demo</b></a> · <a href="#how-it-works"><b>How it works</b></a> · <a href="docs/PROOFREAD_RESULTS.md"><b>Benchmarks</b></a>
+  <a href="#set-up-in-jupyter"><b>Set up in Jupyter</b></a> · <a href="#set-up-in-vs-code"><b>Set up in VS Code</b></a> · <a href="#demo"><b>Watch the demo</b></a> · <a href="#how-it-works"><b>How it works</b></a> · <a href="docs/PROOFREAD_RESULTS.md"><b>Benchmarks</b></a>
 </p>
 
 TabLint finds values that look ordinary in a column but suspicious **for their row**. It uses TabPFN-3.5 to check numerical cells, categorical values and labels, explains each flag, and helps you review a suggested correction.
@@ -44,12 +44,25 @@ review = df.tablint.view(categorical=True)
 review
 ```
 
+![TabLint running in JupyterLab: flagged Auto MPG cells and the Honda Civic weight explanation](docs/figures/tablint_jupyter.png)
+
+*Actual JupyterLab capture using Auto MPG data and saved TabPFN results: the Civic’s recorded weight is 4,354 lb, while the model expects about 1,877 lb.*
+
 Click a highlighted cell to inspect its expected value, plausible range and reason. **Accept**, **dismiss** or **undo** a suggestion. After reviewing, run another cell to get your results:
 
 ```python
 cleaned = review.cleaned
 changes = review.decisions
 ```
+
+<details>
+<summary><b>See a reviewed fix returned to pandas</b></summary>
+
+![JupyterLab returning the accepted 0.0 to 70 horsepower fix and its decision snapshot to pandas](docs/figures/tablint_jupyter_results.png)
+
+The Rabbit’s accepted horsepower suggestion appears in `review.cleaned`; its original value, suggestion, reason and review state appear in `review.decisions`.
+
+</details>
 
 The original DataFrame stays intact. First analysis downloads TabPFN weights and requires first-use model-license acceptance. A GPU is optional; CPU inference can take several minutes. [Setup, export and troubleshooting →](docs/GETTING_STARTED.md)
 
@@ -63,9 +76,40 @@ git clone https://github.com/James-Begin/TabLint.git && cd TabLint && uv run --e
 
 This prepares Python 3.12 and the notebook dependencies, then opens JupyterLab. Create a Python notebook and use the code above with your CSV.
 
-### Other integrations
+## Set up in VS Code
 
-**VS Code:** install the extension, open your CSV and run **TabLint: Check this CSV with TabPFN-3.5**. Includes CSV squiggles, Quick Fix actions and a persistent decision ledger. [Editor setup →](docs/GETTING_STARTED.md#vs-code)
+Install **[uv](https://docs.astral.sh/uv/getting-started/installation/)** and **[VS Code](https://code.visualstudio.com/)**. Prepare the Python engine from a terminal (skip cloning if you already have the checkout):
+
+```sh
+git clone https://github.com/James-Begin/TabLint.git && cd TabLint && uv sync
+```
+
+1. **Install the extension:** download [TabLint’s VSIX](demo/showcase/tablint.vsix). In VS Code, open the Command Palette (`Ctrl+Shift+P` / `Cmd+Shift+P`), run **Extensions: Install from VSIX…**, and select the downloaded file.
+2. **Connect the engine:** open your data folder and set **Proofread: Command** in Settings to the command below, replacing the path with your TabLint checkout. If you open the TabLint repository itself as the workspace, the default command works.
+3. **Check your CSV:** open your own CSV, then run **TabLint: Check this CSV with TabPFN-3.5** from the Command Palette. Choose **(no label column)** unless you also want to check a known target column. First inference uses the same model setup described above.
+
+```json
+{
+  "proofread.command": "uv run --project /absolute/path/to/TabLint tablint"
+}
+```
+
+![TabLint running in VS Code: a squiggle on 4354.0 and its row-specific TabPFN explanation](docs/figures/tablint_vscode_hover.png)
+
+*Actual VS Code capture using the same saved Auto MPG results. Hover a squiggle to see the expected value, plausible range and related columns. Quick Fix (`Ctrl+.` / `Cmd+.`) lets you replace, flag for review or dismiss.*
+
+<details>
+<summary><b>See the decision ledger after a fix</b></summary>
+
+![VS Code decision ledger recording a real 0.0 to 70 horsepower fix, its reason and an Undo action](docs/figures/tablint_vscode_ledger.png)
+
+Run **TabLint: Open decision ledger** to view changes, reasons and review notes, or undo a decision. The ledger persists beside your CSV.
+
+</details>
+
+[Build the extension from source, configure paths and troubleshoot →](docs/GETTING_STARTED.md#vs-code)
+
+### More integrations
 
 **Terminal:** `uv run tablint check data.csv --out reports/data`, then `uv run tablint view reports/data.json`.
 
