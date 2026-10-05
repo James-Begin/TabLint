@@ -8,7 +8,7 @@
   <img src="https://img.shields.io/badge/Python-3.12-3776AB" alt="Python 3.12">
 </p>
 <p align="center">
-  <a href="#set-up-in-jupyter"><b>Set up in Jupyter</b></a> · <a href="#set-up-in-vs-code"><b>Set up in VS Code</b></a> · <a href="#demo"><b>Watch the demo</b></a> · <a href="#how-it-works"><b>How it works</b></a> · <a href="docs/PROOFREAD_RESULTS.md"><b>Benchmarks</b></a>
+  <a href="#set-up-in-jupyter"><b>Set up in Jupyter</b></a> · <a href="#set-up-in-vs-code"><b>Set up in VS Code</b></a> · <a href="#demo"><b>Watch the demo</b></a> · <a href="#how-it-works"><b>How it works</b></a> · <a href="docs/BENCHMARKS.md"><b>Benchmarks</b></a>
 </p>
 
 TabLint finds values that look ordinary in a column but suspicious **for their row**. It uses TabPFN-3.5 to check numerical cells, categorical values and labels, explains each flag, and helps you review a suggested correction.
@@ -17,9 +17,9 @@ Review suspicious values in your own pandas DataFrame, inspect TabPFN’s reason
 
 ## Demo
 
-[![Watch the TabLint product showcase](demo/showcase/preview.gif)](https://github.com/James-Begin/TabLint/blob/main/demo/showcase/TabLint-demo.mp4)
+[![Open the TabLint MP4 showcase: 1080p, 30 fps](demo/showcase/poster.png)](https://github.com/James-Begin/TabLint/raw/refs/heads/main/demo/showcase/TabLint-demo.mp4)
 
-**[Watch the full 1:28 showcase](https://github.com/James-Begin/TabLint/raw/refs/heads/main/demo/showcase/TabLint-demo.mp4)**
+**[Open or download the full MP4 showcase](https://github.com/James-Begin/TabLint/raw/refs/heads/main/demo/showcase/TabLint-demo.mp4)** · 1:28 · 1080p · 30 fps with audio
 
 The video illustrates the editor integration. Numerical examples use saved inference results; the specific USA → Japan suggestion is illustrative. [Video provenance](demo/showcase/README.md).
 
@@ -150,9 +150,13 @@ A flag means **check the source record**, not a confirmed error. Surprise scores
 
 ## Evidence
 
-In the pre-registered injected-error benchmarks, TabLint beat the best baseline selected separately for each dataset on **13/14 numerical datasets** and **10/10 categorical datasets**. The tests use synthetic corruptions on public tables; these results do not guarantee performance on a new dataset.
+In pre-registered injected-error tests, TabLint beat each dataset's strongest tested alternative on **13/14 numerical datasets**, averaging **+19.0 percentage points** in precision@k. It also won on **10/10 categorical datasets**, averaging **+6.2 points**.
 
-[Numeric results](docs/PROOFREAD_RESULTS.md) · [Categorical results](docs/CATEGORICAL_RESULTS.md) · [Pre-registrations](docs/PREREGISTRATIONS.md) · [Model comparison](docs/VERSION_COMPARISON.md)
+![TabLint numerical benchmark: all fourteen datasets, thirteen wins and a 19.0 percentage-point mean precision gain versus the strongest tested alternative](docs/figures/tablint_benchmark_numerical.png)
+
+Precision@k is the share of the top k flagged cells that are injected errors, with k equal to the number of injected errors. These tests use synthetic corruptions on public tables; they do not guarantee performance on a new dataset.
+
+[Benchmark graphs and methodology](docs/BENCHMARKS.md) · [Numeric results](docs/PROOFREAD_RESULTS.md) · [Categorical results](docs/CATEGORICAL_RESULTS.md) · [Pre-registrations](docs/PREREGISTRATIONS.md) · [Model comparison](docs/VERSION_COMPARISON.md)
 
 Independent columns provide little context for this approach; high-cardinality identifiers and free text are not treated as categories. Live inference cost grows with the columns and folds. The extension supports comma-separated CSVs with one record per line. [Limitations and reproducibility](docs/RESEARCH_OVERVIEW.md#limitations).
 

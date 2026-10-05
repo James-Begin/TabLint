@@ -16,7 +16,7 @@ Use the full benchmark as the main claim, then use a selected dataset to make th
 
 This example combines a large detection improvement with high absolute precision and better correction estimates. The mean absolute correction error is **0.155 column standard deviations for TabPFN**, versus **0.426 for random forest**, **0.543 for ridge**, and **0.744 for the column median**. Correction error is measured on injected errors against their original clean values; lower is better. This does not measure exact-match correction success.
 
-Selection is editorial and made after reviewing results. It is not a separately pre-registered winning example. Blood-transfusion has the largest detection gain (+31.3 points, 78.2% versus 46.9%); steel-plates has the highest numerical precision (86.9% versus 60.7%, +26.2 points). Breast-cancer offers a useful balance of a large gain, high precision, and a clear correction comparison. These are tests of corrupted table cells, not diagnostic or clinical performance.
+Selection is editorial and made after reviewing results. It is not a separately pre-registered winning example. Blood-transfusion has the largest detection gain (+31.3 points, 78.2% versus 46.9%); kc1 has the highest numerical precision (87.0% versus 63.1%, +23.9 points). Breast-cancer offers a useful balance of a large gain, high precision, and a clear correction comparison. These are tests of corrupted table cells, not diagnostic or clinical performance.
 
 **Suggested caption:** “On the breast-cancer table, 84.7% of the top-ranked cells were injected errors, compared with 57.0% for the strongest tested alternative. Means over five independently corrupted 400-row samples.”
 
@@ -37,7 +37,7 @@ Display all tested alternatives in the detailed graph. The Isolation Forest scor
 
 ## Categorical example: mushroom
 
-**Categorical headline:** “Categorical values need row context too.” TabPFN wins on **10 of 10 categorical datasets**, with a **6.2 percentage-point mean gain** over each dataset's best tested alternative; 95% bootstrap interval **4.2–8.8 points**. This separate pre-registered experiment has 50 tables, five seeds per dataset, 400 rows per sample, and 3% categorical cells replaced with another category from the same column.
+**Categorical headline:** “Categorical values need row context too.” TabPFN wins on **10 of 10 categorical datasets**, with a **6.2 percentage-point mean gain** over each dataset's best tested alternative; 95% bootstrap interval **4.2–8.8 points**. This separate pre-registered experiment has 50 tables, five seeds per dataset, up to 400 rows per sample (penguins: 344; tips: 244), and 3% categorical cells replaced with another category from the same column.
 
 **Select mushroom:** precision@k is **77.0% versus 61.0% for k-nearest neighbours**, the strongest tested alternative: **+16.0 percentage points**, the largest categorical gain. This is a selected example; pair it with the complete ten-dataset comparison. Category-frequency scoring reaches only **7.6%** on this dataset, but it should not be the main comparison because stronger alternatives exist.
 
@@ -103,4 +103,8 @@ Use about 4–5 seconds for each simple two-bar view, measured after its text is
 
 Recompute spotlight means from the five raw runs, without rerunning inference or changing benchmark configurations. Use the full-precision raw numbers for calculations and one decimal place for displayed percentages. For all-dataset charts, the existing numerical summary stores means rounded to three decimals; raw runs are preferred when exact plotted values are required.
 
-A future renderer should live in `benchmarks/make_showcase_figures.py`, write `docs/figures/tablint_benchmark_*.png` and `.svg`, and export a CSV of plotted values beside the figures. Verify that all 14/10 datasets and 70/50 runs are present, each selected baseline is truly the strongest on the relevant metric, axis directions match the metric, labels do not overlap, and the SVG/PNG versions agree. Inspect each exported graph at README width and at full presentation resolution before publishing.
+The implemented renderer lives in `benchmarks/make_showcase_figures.py`, write `docs/figures/tablint_benchmark_*.png` and `.svg`, and export a CSV of plotted values beside the figures. Verify that all 14/10 datasets and 70/50 runs are present, each selected baseline is truly the strongest on the relevant metric, axis directions match the metric, labels do not overlap, and the SVG/PNG versions agree. Inspect each exported graph at README width and at full presentation resolution before publishing.
+
+## Implemented showcase
+
+The six graphs, exported values and reproduction command are now published in [Benchmark graphs and methodology](BENCHMARKS.md). The categorical spotlight is a separate full-size graph so all alternatives remain legible. The README includes the complete numerical comparison.
