@@ -2,6 +2,8 @@
 
 ## tabpfn-extensions outlier detection crashes on GPU with tabpfn 9.x
 
+[Full bug report: reproduction, expected behavior, environment and proposed fix](bugs/TABPFN_EXTENSIONS_CUDA_DTYPE.md). Prepared for upstream reporting; not submitted upstream.
+
 **Symptom.** `TabPFNUnsupervisedModel.outliers(...)` from `tabpfn-extensions` raises
 `RuntimeError: Index put requires the source and destination dtypes match, got Float for the destination and Double for the source`
 whenever the TabPFN regressor runs on a CUDA GPU. The same code runs fine on CPU.
@@ -31,8 +33,8 @@ PyTorch behaviour, not something specific to our setup.
 **Workaround used here** (`benchmarks/proofread_addendum.py`, `ext_regressor`): the baseline regressor's `predict(...,
 output_type="full")` returns logits upcast to float64. The extension then casts targets to float64 too, and the
 assignment succeeds. This only changes the floating-point precision of the baseline's density computation (float64
-instead of float32); the method and its settings are unchanged. It matches what already happens implicitly on CPU,
-where the value is silently cast.
+instead of float32); the method and its settings are unchanged. This differs from the CPU control, which casts the
+boundary scalar to the destination dtype during assignment.
 
 **Possible upstream fix** (either package): cast `self.borders[0]` to `y.dtype` in `ignore_init`, e.g.
 `y[mask] = self.borders[0].to(y.dtype)`, or have the extension cast logits and targets to the borders' dtype except on MPS.
@@ -41,7 +43,8 @@ where the value is silently cast.
 - The amendment in `docs/PROOFREAD_ADDENDUM_PREREG.md` says the failure happens "with tabpfn 9.1.0". It happens only on
   CUDA.
 - It also says "no values are changed". More precisely, the baseline is computed at float64 rather than float32
-  precision, which can only change its scores at about the 7th significant digit.
+  precision. The represented logits are preserved, but downstream density arithmetic can change; no universal bound
+  on score differences has been established.
 - That file is frozen (hash in `docs/PREREGISTRATIONS.md`), so these corrections are recorded here instead.
 
 

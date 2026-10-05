@@ -158,6 +158,8 @@ Precision@k is the share of the top k flagged cells that are injected errors, wi
 
 [Benchmark graphs and methodology](docs/BENCHMARKS.md) · [Numeric results](docs/PROOFREAD_RESULTS.md) · [Categorical results](docs/CATEGORICAL_RESULTS.md) · [Pre-registrations](docs/PREREGISTRATIONS.md) · [Model comparison](docs/VERSION_COMPARISON.md)
 
+During baseline benchmarking, we documented a CUDA float32/float64 crash in `tabpfn-extensions`. The [bug report](docs/bugs/TABPFN_EXTENSIONS_CUDA_DTYPE.md) includes reproduction steps, affected versions, the benchmark workaround and a proposed upstream fix. It affects the optional extension baseline; TabLint's normal inference uses a different scoring path.
+
 Independent columns provide little context for this approach; high-cardinality identifiers and free text are not treated as categories. Live inference cost grows with the columns and folds. The extension supports comma-separated CSVs with one record per line. [Limitations and reproducibility](docs/RESEARCH_OVERVIEW.md#limitations).
 
 ## Project guide
