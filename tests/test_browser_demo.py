@@ -19,7 +19,43 @@ def test_saved_browser_suggestion(tmp_path, monkeypatch, kind, value, suggested)
                     None, {"title": "Saved fixture", "columns_checked": 1})
     report.save(tmp_path / "fixture.json")
     monkeypatch.setenv("PROOFREAD_DEMO_DIR", str(tmp_path))
-    app = AppTest.from_file(str(Path(__file__).resolve().parents[1] / "demo/proofread_app.py")).run(timeout=30)
+    app = AppTest.from_file(str(Path(__file__).resolve().parents[1] / "proofread/browser.py")).run(timeout=30)
     assert not app.exception
     assert app.title[0].value == "TabLint"
     assert any(str(suggested if kind == "category" else "70") in item.value for item in app.markdown)
+
+
+def test_browser_without_repository_fixtures(tmp_path, monkeypatch):
+    """An installed wheel must expose upload even when no demo directory exists."""
+    monkeypatch.setenv("PROOFREAD_DEMO_DIR", str(tmp_path / "missing"))
+    app = AppTest.from_file(str(Path(__file__).resolve().parents[1] / "proofread/browser.py")).run(timeout=30)
+    assert not app.exception
+    assert any(element.type == "file_uploader" for element in app.sidebar)
+    assert any("Upload a CSV" in element.value for element in app.info)
+    assert len(app.tabs) == 3
+
+
+def test_browser_with_no_flagged_cells(tmp_path, monkeypatch):
+    """A valid report with no issues should render without indexing its first row."""
+    data = pd.DataFrame({"value": [1.0], "context": [4.0]})
+    issues = pd.DataFrame(columns=["kind", "row", "column", "value", "suggested",
+                                   "low", "high", "surprise", "cause", "evidence"])
+    report = Report(data, issues, pd.DataFrame(np.zeros(data.shape), columns=data.columns),
+                    None, {"title": "No flags", "columns_checked": 1})
+    report.save(tmp_path / "fixture.json")
+    monkeypatch.setenv("PROOFREAD_DEMO_DIR", str(tmp_path))
+    app = AppTest.from_file(str(Path(__file__).resolve().parents[1] / "proofread/browser.py")).run(timeout=30)
+    assert not app.exception
+    assert any("No issues meet" in element.value for element in app.info)
+
+
+def test_cli_app_uses_installed_browser(monkeypatch):
+    from proofread import cli
+    commands = []
+    monkeypatch.setattr(cli.subprocess, "call", lambda command: commands.append(command) or 0)
+    with pytest.raises(SystemExit) as result:
+        cli.main(["app"])
+    assert result.value.code == 0
+    target = Path(commands[0][-1])
+    assert target == Path(cli.__file__).with_name("browser.py")
+    assert target.is_file()

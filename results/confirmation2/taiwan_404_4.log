@@ -1,7 +1,0 @@
-results/confirmation2/taiwan_404_4.json elapsed 48.5
-exact_duplicates valid False flipped False p 0.9963 queries 1
-random_real valid False flipped False p 0.1266 queries 1
-near_rows valid True flipped False p 0.1424 queries 1
-gradient valid True flipped False p 0.1753 queries 80
-random_search valid True flipped False p 0.1591 queries 80
-coordinate_search valid True flipped False p 0.1491 queries 80

@@ -29,7 +29,7 @@ REAL = [(13, "weight", "1970 Buick Estate Wagon listed at 3,086 lb; published cu
 clean = load_auto_mpg()
 clean.to_csv(OUT / "auto_mpg.csv", index=False)
 pr = Proofreader(device="cuda:0")
-rep_clean = pr.check(clean, label="origin", threshold=2.0, max_issues=40, categorical=False)   # numbers in docs/DEMO_SCRIPT.md
+rep_clean = pr.check(clean, label="origin", threshold=2.0, max_issues=40, categorical=False)   # numbers in demo/video/README.md
 rep_clean.meta.update(title="Auto MPG (real, untouched)", source_file="auto_mpg.csv"); rep_clean.save(OUT / "auto_mpg.proofread.json")
 
 dirty = clean.copy()

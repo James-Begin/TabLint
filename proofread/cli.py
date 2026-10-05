@@ -6,7 +6,6 @@
   proofread mcp            # tools for an LLM agent (stdio)
 """
 import argparse
-import os
 import subprocess
 import sys
 from pathlib import Path
@@ -54,7 +53,7 @@ def main(argv=None):
         a.path, label=a.label, fast=a.fast, threshold=a.threshold, max_issues=a.max_issues, device=a.device))
     s = sub.add_parser("app", help="open the browser viewer (Streamlit)")
     s.set_defaults(fn=lambda a: sys.exit(subprocess.call([sys.executable, "-m", "streamlit", "run",
-                   str(Path(__file__).resolve().parents[1] / "demo" / "proofread_app.py")])))
+                   str(Path(__file__).with_name("browser.py"))])))
     m = sub.add_parser("mcp", help="serve Proofread tools to an LLM agent (stdio)")
     m.set_defaults(fn=lambda a: __import__("proofread.mcp_server", fromlist=["main"]).main())
     a = p.parse_args(argv); a.fn(a)

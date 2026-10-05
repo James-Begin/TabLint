@@ -1,13 +1,13 @@
-# Proofread vs tabpfn-extensions
+# TabLint vs tabpfn-extensions
 
 `tabpfn-extensions` (Prior Labs) is a collection of add-ons for TabPFN: interpretability (SHAP), many-class, embeddings,
 p-value tests (CRT), Bayesian optimisation, survival, hurdle regression, conformal prediction with missing data,
 TabEBM augmentation, images, and an **unsupervised** module (outlier detection, imputation, synthetic data).
-Only the unsupervised module overlaps with Proofread.
+Only the unsupervised module overlaps with TabLint.
 
 ## Feature comparison
 
-| | tabpfn-extensions `TabPFNUnsupervisedModel` | Proofread |
+| | tabpfn-extensions `TabPFNUnsupervisedModel` | TabLint |
 |---|---|---|
 | Question answered | "How unusual is this row?" (joint density) | "Which cell in this row is wrong, what should it be, and why?" |
 | Unit flagged | Row | Cell (and label) |
@@ -21,7 +21,7 @@ Only the unsupervised module overlaps with Proofread.
 
 ## Measured head-to-head (pre-registered addendum; 14 datasets × 5 seeds; `docs/PROOFREAD_RESULTS.md`)
 
-| | Proofread | `outliers` (10 permutations) |
+| | TabLint | `outliers` (10 permutations) |
 |---|---|---|
 | Find rows that contain an injected error (row AUROC, its home turf) | **better on 14/14 datasets**, mean +0.26, p = 0.00006 | |
 | Find the erroneous cells (precision@k) | 0.34–0.87 | 0.03–0.25 |
@@ -29,10 +29,10 @@ Only the unsupervised module overlaps with Proofread.
 
 Caveats: the extension needed a float64 shim to run on GPU, and it was used as documented (in-sample). Its row AUROC
 falls below 0.5 on three tables, consistent with corrupted rows partly explaining themselves. It is a general anomaly
-detector, not built for localising data-entry errors, so this compares fitness for Proofread's task, not overall quality.
+detector, not built for localising data-entry errors, so this compares fitness for TabLint's task, not overall quality.
 
 ## Complementary, not competing
 
-- Proofread could be contributed as a cell-level mode of the unsupervised extension, or use its density for row triage.
+- TabLint could be contributed as a cell-level mode of the unsupervised extension, or use its density for row triage.
 - Its `impute` could serve as an alternative correction suggester. We have not evaluated that.
 - Both packages build on the same capability: TabPFN-3.5's calibrated conditional distributions with no training step.

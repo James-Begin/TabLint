@@ -3,24 +3,24 @@ name = "tabpfn-proofread"
 version = "0.3.0"
 description = "Spellcheck for tables: find and fix suspicious cells and labels with TabPFN-3.5"
 readme = "README.md"
-license = { file = "LICENSE" }
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
 requires-python = ">=3.12,<3.13"
 dependencies = ["tabpfn==9.1.0", "scikit-learn==1.9.1", "pandas==3.0.6", "numpy==2.5.3", "openml==0.15.1", "scipy==1.18.1", "textual>=8.2,<9"]
 
 [project.scripts]
 tablint = "proofread.cli:main"
-custody = "chainofcustody.cli:main"
 proofread = "proofread.cli:main"
 
 [build-system]
-requires = ["setuptools>=68"]
+requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools.package-data]
 proofread = ["static/*.js", "static/*.css"]
 
 [tool.setuptools]
-packages = ["proofread", "chainofcustody", "auditkit", "fz", "experiments", "benchmarks"]
+packages = ["proofread", "benchmarks"]
 
 [project.optional-dependencies]
 demo = ["streamlit>=1.40,<2"]

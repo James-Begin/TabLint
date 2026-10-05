@@ -1,25 +1,25 @@
-# TabLint — In the flow
+# TabLint motion study
 
-Revision 07: 72-second light-mode motion storyboard, 14 shots, 42 keyframes.
+This is the authored 72-second, 14-shot storyboard retained as editable input to the final animation. The approved film is [87.77 seconds with sound](../../demo/showcase/README.md); its revised timing and camera transitions are in the [Remotion project](../README.md).
 
-Frame 02 labels sit immediately above/below the Impala fields, with short stems. Frame 05 has no extra analysis badge or decorative scan rail. Frame 10 places each category label beside its own row, joined by a short horizontal line.
+The study uses a light desktop, cell-anchored diagnostics, typed text and rotating button highlights. There is no mouse pointer. Numeric values come from the saved Auto MPG report; the specific categorical suggestion is illustrative. [Provenance](provenance.json).
 
-Numeric and category connectors resolve to exact CSV fields. Focus boxes and diagnostic squiggles use the target glyph bounds after camera transforms. Scene 09 corrects 0.0 to 70 directly in the CSV; detached correction and undo cards are removed. The category view includes actual USA, Japan, and Europe rows.
+## View the source
 
-Text streams left to right in fixed positions. Selected controls have a clockwise perimeter highlight. Most transitions last 350–450ms; the control highlight makes one pass in 650ms. No mouse or cursor appears.
-
-Serve the viewer from the workspace:
+From the repository root:
 
 ```sh
-python3 -m http.server 7080 --bind 127.0.0.1 --directory outputs/proofread-storyboard-v2
+python3 -m http.server 7080 --bind 127.0.0.1 --directory showcase/storyboard
 ```
 
-Open http://127.0.0.1:7080/index.html. Space toggles playback; the timeline scrubs globally. Choose a shot and Entry / Action / Exit / Press; Loop shot repeats its timing. Every film text node has a clip mask and editable typing timing in shots.json.
+Open `http://127.0.0.1:7080/index.html`. Space toggles playback; the timeline scrubs the study. Choose a shot and Entry, Action, Exit or Press to inspect it. The viewer computes frames from layered SVGs, so exported duplicate entry/exit files are unnecessary.
 
-See STORYBOARD.md for all frames, PRODUCTION.md for the animation specification, RESEARCH.md for reference evidence, and VERIFICATION.md for checks. The contact sheet and per-shot SVGs/PNGs provide shareable visuals. Inter is bundled under the included font license.
+## Edit and regenerate
 
-The specific categorical suggestion remains a planning example pending measured inference. Numeric examples use the existing saved report. This is the storyboard and motion study, not the final film render.
+- `shots.json`: source timings, typing, interactions and semantic anchors.
+- `assets/*-layers.svg`: editable source art consumed by the video generator.
+- `assets/*-action.svg`: shot-picker thumbnails.
+- `viewer.js` and `style.css`: interactive study viewer.
+- `demo-data/`: attributed categorical example table and answer key.
 
-Regenerate SVGs and JSON with `python3 work/build_storyboard_v2.py`. The viewer and prose remain separately editable.
-
-Scene 13 replaces the bottom green message with a white callout pointing to the ledger: view changes and their reasons, revert a fix, or flag for review.
+To regenerate the final animation after edits, follow [the showcase instructions](../README.md). The bundled Inter font retains its [license](assets/FONT-LICENSE.txt).

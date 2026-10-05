@@ -174,7 +174,7 @@ Independent columns provide little context for this approach; high-cardinality i
 | [Benchmarks](benchmarks/) / [results](results/) | Reproduction scripts and measured artifacts |
 | [Contributing](CONTRIBUTING.md) | Development and verification commands |
 
-Built for the TabPFN hackathon. The original research modules remain in `chainofcustody/` and `auditkit/`; they are documented separately in [the research overview](docs/RESEARCH_OVERVIEW.md).
+Built for the TabPFN hackathon. The repository contains the product, its tests, reproducible benchmark evidence and the editable showcase source.
 
 ## License
 

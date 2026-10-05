@@ -8,4 +8,4 @@ The data, stored predictions and rehearsal notebooks here support the product vi
 
 For video production, `uv run --extra notebook python scripts/rehearse_notebook.py` opens the saved notebook rehearsal. `npm run rehearse:vscode` opens the editor rehearsal. These commands are for preparing footage, rather than setting up the product for a user's own data.
 
-The browser integration lives in `proofread_app.py`. The separate `app.py` is the original Chain of Custody research viewer; see [its documentation](RESEARCH_VIEWER.md).
+The browser integration is part of the Python package: [proofread/browser.py](../proofread/browser.py). Run `uv run --extra demo tablint app` to check your own CSV.

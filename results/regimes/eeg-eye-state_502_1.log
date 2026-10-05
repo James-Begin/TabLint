@@ -1,7 +1,0 @@
-results/regimes/eeg-eye-state_502_1.json elapsed 30.2
-exact_duplicates valid False flipped False p 0.9907 queries 1
-random_real valid True flipped False p 0.1131 queries 1
-near_rows valid True flipped False p 0.2556 queries 1
-gradient valid True flipped True p 0.9591 queries 24
-random_search valid True flipped False p 0.3229 queries 24
-coordinate_search valid True flipped True p 0.5185 queries 24

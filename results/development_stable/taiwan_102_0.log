@@ -1,7 +1,0 @@
-results/development_stable/taiwan_102_0.json elapsed 35.2
-exact_duplicates valid False flipped False p 0.9824 queries 1
-random_real valid True flipped False p 0.2094 queries 1
-near_rows valid True flipped False p 0.2291 queries 1
-gradient valid True flipped False p 0.3986 queries 24
-random_search valid True flipped False p 0.2562 queries 24
-coordinate_search valid True flipped False p 0.2315 queries 24

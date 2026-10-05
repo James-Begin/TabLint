@@ -13,8 +13,7 @@ from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import roc_auc_score
 from sklearn.model_selection import KFold, StratifiedKFold
-from experiments.verify import factory
-from benchmarks.common import load_any
+from benchmarks.common import factory, load_any
 
 DATASETS = ['eeg-eye-state', 'MagicTelescope', 'breast-cancer', 'phoneme', 'wilt', 'electricity', 'diabetes', 'banknote',
             'spambase', 'climate-crashes', 'kc1', 'steel-plates', 'ilpd', 'blood-transfusion']

@@ -1,12 +1,21 @@
-Proofread (tabpfn-proofread)
+TabLint (tabpfn-proofread)
 Copyright 2026 Proofread contributors
 
-Original project code is licensed under Apache-2.0. Third-party Python packages, public datasets and TabPFN model
-weights keep their own licenses; no model weights or datasets are redistributed. TabPFN-3.5 weights are downloaded by
-the tabpfn package after you accept Prior Labs' model license.
+Original project code is licensed under Apache-2.0. Third-party Python packages,
+public datasets, fonts and TabPFN model weights retain their own licenses.
+No model weights are redistributed. TabPFN-3.5 weights are downloaded by the
+TabPFN package through Prior Labs' model-license acceptance flow.
 
-Exploratory pilots (research/pilots, results/pilots) are not confirmatory evidence. Machine-specific absolute paths in
-stored run artifacts were redacted to relative form by experiments/redact_paths.py; measured values were verified unchanged.
+Included production data: Auto MPG (R. Quinlan), UCI Machine Learning Repository,
+https://doi.org/10.24432/C5859H, CC BY 4.0. Derived tables in demo/video/ and
+showcase/storyboard/demo-data/ include deliberately planted errors; answer keys
+and attribution are preserved beside them. Other benchmark tables are fetched
+by the reproduction scripts; their source pages specify their licenses.
 
-Demo data: Auto MPG (R. Quinlan), UCI Machine Learning Repository, https://doi.org/10.24432/C5859H, CC BY 4.0;
-derived tables in demo/video/ include deliberately planted errors (see demo/video/answer_key.json).
+Original measured benchmark artifacts are preserved for reproducibility.
+Earlier machine-specific paths in stored artifacts were changed to relative
+paths without changing measurements; historical provenance remains in Git.
+
+Bundled fonts retain their licenses in showcase/public/fonts/ and
+showcase/storyboard/assets/. The product soundtrack is original generated music
+with no sampled recordings. See demo/showcase/README.md for video provenance.

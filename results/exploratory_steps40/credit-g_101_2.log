@@ -1,7 +1,0 @@
-results/exploratory_steps40/credit-g_101_2.json elapsed 50.2
-exact_duplicates valid False flipped False p 0.9754 queries 1
-random_real valid True flipped False p 0.3507 queries 1
-near_rows valid True flipped False p 0.4992 queries 1
-gradient valid True flipped True p 0.5238 queries 80
-random_search valid True flipped True p 0.5121 queries 80
-coordinate_search valid True flipped True p 0.5145 queries 80

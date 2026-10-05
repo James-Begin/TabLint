@@ -14,6 +14,6 @@ This is a stylized animation of the real VS Code CSV workflow, not a live screen
 
 The soundtrack was generated for the showcase; it contains no sampled recordings. Font licenses are preserved in the animation source.
 
-## Production rehearsal files
+## Editor installation
 
-`TabLint-demo-kit.zip` contains the editor rehearsal used to prepare video footage. It is a production asset. For user installation and analysis of your own data, see [Getting started](../../docs/GETTING_STARTED.md).
+[Download the VS Code extension](tablint.vsix). For installation and analysis of your own data, see [Getting started](../../docs/GETTING_STARTED.md#vs-code). Production rehearsal commands are documented in [demo/](../README.md).

@@ -1,7 +1,0 @@
-results/confirmation/taiwan_302_0.json elapsed 35.5
-exact_duplicates valid False flipped False p 0.9885 queries 1
-random_real valid True flipped False p 0.3129 queries 1
-near_rows valid True flipped False p 0.414 queries 1
-gradient valid True flipped False p 0.4669 queries 24
-random_search valid True flipped False p 0.4596 queries 24
-coordinate_search valid True flipped False p 0.414 queries 24

@@ -1,5 +1,6 @@
 """Real-data check: raw Pima diabetes (OpenML 37) has known impossible zeros (plas, pres, skin, insu, mass)."""
 import json
+from pathlib import Path
 import openml
 import numpy as np
 from proofread import Proofreader
@@ -19,4 +20,6 @@ for k in (10, 25, 50):
     print(f'top-{k} flagged cells that are known impossible zeros: {sum(is_known(r) for r in top.itertuples())}/{len(top)}')
 print('known impossible zeros in table:', n_imp, {c: len(v) for c, v in impossible.items()})
 print(rep.to_markdown(15))
-json.dump({'n_known': n_imp, 'top': [dict(r._asdict()) for r in cells.head(50).itertuples()]}, open('results/pilots/pima_real.json', 'w'), default=str, indent=1)
+out = Path('results/famous/pima_zero_checks.json')
+out.parent.mkdir(parents=True, exist_ok=True)
+out.write_text(json.dumps({'n_known': n_imp, 'top': [dict(r._asdict()) for r in cells.head(50).itertuples()]}, default=str, indent=2) + '\n')

@@ -1,7 +1,0 @@
-results/confirmation2/credit-g_402_0.json elapsed 50.3
-exact_duplicates valid False flipped False p 0.008 queries 1
-random_real valid True flipped False p 0.5991 queries 1
-near_rows valid True flipped False p 0.57 queries 1
-gradient valid True flipped False p 0.5291 queries 80
-random_search valid True flipped False p 0.5238 queries 80
-coordinate_search valid True flipped False p 0.5577 queries 80

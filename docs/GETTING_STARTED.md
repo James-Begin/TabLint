@@ -157,7 +157,7 @@ The check writes JSON, Markdown, highlighted HTML and an issues CSV. The termina
 uv run --extra demo tablint app
 ```
 
-Upload your CSV and press **Check with TabLint**. This performs a live check and needs the model weights. The command opens `demo/proofread_app.py`; `demo/app.py` is a separate research audit viewer.
+Upload your CSV and press **Check with TabLint**. This performs a live check and needs the model weights. The browser integration runs from `proofread/browser.py`, which is included in the installed Python package.
 
 ## Troubleshooting
 

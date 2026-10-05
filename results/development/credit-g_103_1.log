@@ -1,7 +1,0 @@
-results/development/credit-g_103_1.json elapsed 33.5
-exact_duplicates valid False flipped False p 0.9992 queries 1
-random_real valid True flipped False p 0.4497 queries 1
-near_rows valid True flipped False p 0.4973 queries 1
-gradient valid True flipped False p 0.4973 queries 1
-random_search valid True flipped False p 0.4973 queries 1
-coordinate_search valid True flipped False p 0.4973 queries 1

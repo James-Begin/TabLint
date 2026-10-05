@@ -1,7 +1,0 @@
-results/exploratory_steps40/taiwan_101_1.json elapsed 47.7
-exact_duplicates valid False flipped False p 0.9465 queries 1
-random_real valid True flipped False p 0.088 queries 1
-near_rows valid True flipped False p 0.2215 queries 1
-gradient valid True flipped False p 0.3739 queries 80
-random_search valid True flipped False p 0.3343 queries 80
-coordinate_search valid True flipped False p 0.2266 queries 80
