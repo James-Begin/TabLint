@@ -94,9 +94,20 @@ git clone https://github.com/James-Begin/TabLint.git && cd TabLint && uv sync
 }
 ```
 
-![TabLint running in VS Code: a squiggle on 4354.0 and its row-specific TabPFN explanation](docs/figures/tablint_vscode_hover.png)
+<table>
+  <tr>
+    <th align="center">VS Code</th>
+    <th align="center">Browser UI</th>
+  </tr>
+  <tr>
+    <td align="center"><a href="docs/figures/tablint_vscode_compact.png"><img src="docs/figures/tablint_vscode_compact.png" width="360" alt="Cropped VS Code explanation for the Civic’s 4354 lb weight, including the Quick Fix action"></a></td>
+    <td align="center"><a href="docs/figures/tablint_browser_compact.png"><img src="docs/figures/tablint_browser_compact.png" width="360" alt="Cropped browser UI comparing the recorded 4354 lb weight with TabPFN’s 1877 lb expectation and plausible range"></a></td>
+  </tr>
+</table>
 
-*Actual VS Code capture using the same saved Auto MPG results. Hover a squiggle to see the expected value, plausible range and related columns. Quick Fix (`Ctrl+.` / `Cmd+.`) lets you replace, flag for review or dismiss.*
+*Actual UI captures using saved Auto MPG results. Click either screenshot to enlarge.*
+
+In **VS Code**, hover a squiggle for the explanation and use Quick Fix (`Ctrl+.` / `Cmd+.`) to replace, flag for review or dismiss. The **browser UI** shows the recorded value, expected range and row context.
 
 <details>
 <summary><b>See the decision ledger after a fix</b></summary>
