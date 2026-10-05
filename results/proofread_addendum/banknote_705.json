@@ -1,0 +1,30 @@
+{
+  "dataset": "banknote",
+  "seed": 705,
+  "errors": 45,
+  "rows_with_error": 41,
+  "n": 400,
+  "d": 4,
+  "proofread_precision_at_k": 0.7555555555555555,
+  "ext_precision_at_k": 0.26666666666666666,
+  "proofread_cell_auroc": 0.9711897106109324,
+  "ext_cell_auroc": 0.7598356555912824,
+  "proofread_row_auroc": 0.9686119980976968,
+  "ext_row_auroc": 0.7806236836741628,
+  "ext_seconds": 17.545889854431152,
+  "threshold": {
+    "2.0": {
+      "flagged": 32,
+      "true_flagged": 27,
+      "precision": 0.84375,
+      "recall": 0.6
+    },
+    "3.0": {
+      "flagged": 6,
+      "true_flagged": 6,
+      "precision": 1.0,
+      "recall": 0.13333333333333333
+    }
+  },
+  "seconds": 25.240655660629272
+}

@@ -1,0 +1,30 @@
+{
+  "dataset": "electricity",
+  "seed": 703,
+  "errors": 78,
+  "rows_with_error": 73,
+  "n": 400,
+  "d": 7,
+  "proofread_precision_at_k": 0.6794871794871795,
+  "ext_precision_at_k": 0.08974358974358974,
+  "proofread_cell_auroc": 0.9521797697771246,
+  "ext_cell_auroc": 0.6041843290190093,
+  "proofread_row_auroc": 0.928281177998408,
+  "ext_row_auroc": 0.6176951112228226,
+  "ext_seconds": 30.033706665039062,
+  "threshold": {
+    "2.0": {
+      "flagged": 45,
+      "true_flagged": 40,
+      "precision": 0.8888888888888888,
+      "recall": 0.5128205128205128
+    },
+    "3.0": {
+      "flagged": 19,
+      "true_flagged": 17,
+      "precision": 0.8947368421052632,
+      "recall": 0.21794871794871795
+    }
+  },
+  "seconds": 43.67764687538147
+}

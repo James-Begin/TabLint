@@ -1,0 +1,25 @@
+{
+  "dataset": "spambase",
+  "seed": 102,
+  "n": 300,
+  "noise": 0.1,
+  "auroc": {
+    "logistic": 0.8932098765432099,
+    "hgb": 0.941604938271605,
+    "rf": 0.96,
+    "tabpfn_standard": 0.9714814814814814,
+    "grad_tabpfn": 0.48098765432098767,
+    "tabpfn_oof+grad": 0.7841975308641975
+  },
+  "acc_after_removal": {
+    "logistic": 0.916,
+    "hgb": 0.905,
+    "rf": 0.909,
+    "tabpfn_standard": 0.926,
+    "grad_tabpfn": 0.922,
+    "tabpfn_oof+grad": 0.911
+  },
+  "acc_noisy": 0.923,
+  "acc_oracle": 0.929,
+  "seconds": 7.0786778926849365
+}

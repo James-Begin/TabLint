@@ -1,0 +1,8 @@
+
+== credit-g: 30 targets, seeds [401, 402, 403, 404, 405, 406], gradient aborts 0
+receiver                        gradient     random_search coordinate_search         near_rows       random_real   grad - best search [97.5% CI]
+tabpfn_standard                     0.13              0.10              0.03              0.07              0.03   +0.03 [+0.00,+0.17] vs random_search
+
+== taiwan: 30 targets, seeds [401, 402, 403, 404, 405, 406], gradient aborts 0
+receiver                        gradient     random_search coordinate_search         near_rows       random_real   grad - best search [97.5% CI]
+tabpfn_standard                     0.27              0.20              0.17              0.17              0.00   +0.07 [+0.00,+0.23] vs random_search

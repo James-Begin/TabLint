@@ -1,0 +1,42 @@
+{
+  "file": "TabLint-demo.mp4",
+  "sha256": "09937a5a1e2023e78b5ba43d4532238a7b5ea1745959a88f37c5f148fc04fbdc",
+  "runtime_seconds": 87.76666666666667,
+  "frames": 2633,
+  "width": 1920,
+  "height": 1080,
+  "fps": 30,
+  "revision": 15,
+  "checks": {
+    "all_frames_decoded": 2633,
+    "all_frames_layout_audited": 2633,
+    "layout_issues": 0,
+    "reading_pause_seconds": 1.8,
+    "category_highlights_wait_for_glyphs": true,
+    "scale_value_and_position_monotonic": true,
+    "scale_tilts_only_toward_heavier_side": true,
+    "weight_closeup_held_through_diagnosis": true,
+    "missing_value_connector_removed": true,
+    "closing_workspace_removed": true,
+    "loading_scene_seconds": 3.033333333333333,
+    "loading_has_no_reading_holds": true,
+    "findings_follow_full_loading_bar": true,
+    "opening_data_scenes_seconds": 7.266666666666667,
+    "categorical_technical_card_exits_with_suggestion": true,
+    "source_time_cuts_skip_no_visible_motion": true
+  },
+  "categorical_example": "Illustrative suggestion; this specific USA to Japan suggestion is not a captured model run.",
+  "music": {
+    "style": "Original electronic groove with warm keys, bass, light drums and stereo synths",
+    "bpm": 112,
+    "sampled_recordings": false
+  },
+  "visual_review": {
+    "encoded_frames_inspected": 2633,
+    "consecutive_contact_sheets": 88,
+    "scene_transitions_inspected": 13,
+    "full_size_stills_inspected": 9,
+    "notes": "../../showcase/review/VISUAL-REVIEW.md",
+    "additional_confirmed_visual_issues": 0
+  }
+}

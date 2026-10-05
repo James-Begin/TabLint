@@ -1,0 +1,19 @@
+runs 70 datasets 14; reproduces confirmation P@k: max |diff| = 0.0
+A1 row-level: Proofread higher AUROC on 14/14; mean diff +0.264; p = 6.103515625e-05
+A1 cell-level: Proofread higher precision@k on 14/14
+A2 threshold 2.0: pooled precision 0.879, recall 0.533 (7110 flagged, 11722 errors)
+A2 threshold 3.0: pooled precision 0.948, recall 0.190 (2344 flagged, 11722 errors)
+  MagicTelescope     P@k 0.73 vs 0.04 | row AUROC 0.925 vs 0.569 | th3 P 1.00 R 0.24 | th2 P 0.93 R 0.55
+  banknote           P@k 0.74 vs 0.25 | row AUROC 0.966 vs 0.803 | th3 P 0.95 R 0.25 | th2 P 0.87 R 0.63
+  blood-transfusion  P@k 0.78 vs 0.10 | row AUROC 0.972 vs 0.473 | th3 P 0.98 R 0.25 | th2 P 0.92 R 0.58
+  breast-cancer      P@k 0.85 vs 0.03 | row AUROC 0.968 vs 0.379 | th3 P 1.00 R 0.28 | th2 P 0.94 R 0.70
+  climate-crashes    P@k 0.34 vs 0.03 | row AUROC 0.693 vs 0.436 | th3 P 0.98 R 0.09 | th2 P 0.86 R 0.17
+  diabetes           P@k 0.61 vs 0.06 | row AUROC 0.859 vs 0.609 | th3 P 0.95 R 0.12 | th2 P 0.83 R 0.39
+  eeg-eye-state      P@k 0.83 vs 0.12 | row AUROC 0.966 vs 0.920 | th3 P 1.00 R 0.16 | th2 P 0.97 R 0.59
+  electricity        P@k 0.71 vs 0.12 | row AUROC 0.936 vs 0.649 | th3 P 0.98 R 0.21 | th2 P 0.90 R 0.52
+  ilpd               P@k 0.70 vs 0.05 | row AUROC 0.948 vs 0.724 | th3 P 0.92 R 0.15 | th2 P 0.77 R 0.59
+  kc1                P@k 0.87 vs 0.03 | row AUROC 0.983 vs 0.727 | th3 P 0.99 R 0.29 | th2 P 0.96 R 0.64
+  phoneme            P@k 0.59 vs 0.20 | row AUROC 0.874 vs 0.746 | th3 P 0.97 R 0.19 | th2 P 0.81 R 0.48
+  spambase           P@k 0.68 vs 0.03 | row AUROC 0.831 vs 0.547 | th3 P 0.76 R 0.10 | th2 P 0.75 R 0.43
+  steel-plates       P@k 0.87 vs 0.06 | row AUROC 0.987 vs 0.711 | th3 P 0.98 R 0.30 | th2 P 0.95 R 0.72
+  wilt               P@k 0.74 vs 0.13 | row AUROC 0.951 vs 0.863 | th3 P 0.98 R 0.13 | th2 P 0.90 R 0.58

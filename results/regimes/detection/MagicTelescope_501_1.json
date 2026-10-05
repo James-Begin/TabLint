@@ -1,0 +1,19 @@
+{
+  "report": "MagicTelescope_501_1.json",
+  "dataset": "MagicTelescope",
+  "seed": 501,
+  "target_id": 1070,
+  "method": "gradient",
+  "attack_valid": true,
+  "standard_flip": true,
+  "p_target_with_rows": 0.06232830882072449,
+  "k": 3,
+  "n_rows": 203,
+  "seconds": 81.24361801147461,
+  "loo_influence_auroc": 0.9966666666666667,
+  "loo_influence_hits_in_topk": 2,
+  "label_suspicion_auroc": 0.6733333333333333,
+  "label_suspicion_hits_in_topk": 0,
+  "outlier_auroc": 0.6375,
+  "outlier_hits_in_topk": 0
+}

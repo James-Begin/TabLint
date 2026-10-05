@@ -1,0 +1,29 @@
+{
+  "dataset": "ilpd",
+  "seed": 804,
+  "errors": 100,
+  "n": 400,
+  "d": 9,
+  "versions": {
+    "V2": {
+      "precision_at_k": 0.68,
+      "auroc": 0.9640771428571429,
+      "seconds": 16.731470346450806
+    },
+    "V3": {
+      "precision_at_k": 0.7,
+      "auroc": 0.9515657142857142,
+      "seconds": 15.313460350036621
+    },
+    "V3_5": {
+      "precision_at_k": 0.68,
+      "auroc": 0.9543514285714285,
+      "seconds": 28.07374334335327
+    },
+    "V3_5_FAST": {
+      "precision_at_k": 0.72,
+      "auroc": 0.95766,
+      "seconds": 10.978760242462158
+    }
+  }
+}

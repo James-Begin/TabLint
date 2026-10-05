@@ -1,0 +1,7 @@
+results/regimes/phoneme_506_0.json elapsed 26.1
+exact_duplicates valid False flipped False p 0.004 queries 1
+random_real valid True flipped False p 0.5844 queries 1
+near_rows valid True flipped False p 0.6065 queries 1
+gradient valid True flipped True p 0.2212 queries 24
+random_search valid True flipped True p 0.3792 queries 24
+coordinate_search valid True flipped True p 0.4679 queries 24

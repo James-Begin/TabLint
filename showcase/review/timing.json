@@ -1,0 +1,494 @@
+{
+  "fps": 30,
+  "totalFrames": 2633,
+  "runtime": 87.76666666666667,
+  "readingPauseSeconds": 1.8,
+  "transitionFrames": 18,
+  "loadingStartSeconds": 1,
+  "loadingDurationSeconds": 1.1,
+  "scenes": [
+    {
+      "index": 0,
+      "startFrame": 0,
+      "contentFrames": 152,
+      "durationFrames": 170,
+      "segments": [
+        {
+          "frame": 0,
+          "frames": 22,
+          "sourceFrom": 0,
+          "sourceTo": 0.75,
+          "readingPause": false
+        },
+        {
+          "frame": 22,
+          "frames": 18,
+          "sourceFrom": 0.75,
+          "sourceTo": 0.75,
+          "readingPause": false
+        },
+        {
+          "frame": 40,
+          "frames": 87,
+          "sourceFrom": 0.75,
+          "sourceTo": 3.66,
+          "readingPause": false
+        },
+        {
+          "frame": 127,
+          "frames": 15,
+          "sourceFrom": 3.66,
+          "sourceTo": 3.66,
+          "readingPause": false
+        },
+        {
+          "frame": 142,
+          "frames": 10,
+          "sourceFrom": 3.66,
+          "sourceTo": 4,
+          "readingPause": false
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "startFrame": 152,
+      "contentFrames": 66,
+      "durationFrames": 84,
+      "segments": [
+        {
+          "frame": 18,
+          "frames": 20,
+          "sourceFrom": 0,
+          "sourceTo": 0.65,
+          "readingPause": false
+        },
+        {
+          "frame": 38,
+          "frames": 16,
+          "sourceFrom": 0.65,
+          "sourceTo": 0.65,
+          "readingPause": false
+        },
+        {
+          "frame": 54,
+          "frames": 12,
+          "sourceFrom": 2.6,
+          "sourceTo": 3,
+          "readingPause": false
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startFrame": 218,
+      "contentFrames": 145,
+      "durationFrames": 163,
+      "segments": [
+        {
+          "frame": 18,
+          "frames": 61,
+          "sourceFrom": 0,
+          "sourceTo": 2.02,
+          "readingPause": false
+        },
+        {
+          "frame": 79,
+          "frames": 54,
+          "sourceFrom": 2.02,
+          "sourceTo": 2.02,
+          "readingPause": true
+        },
+        {
+          "frame": 133,
+          "frames": 12,
+          "sourceFrom": 3.6,
+          "sourceTo": 4,
+          "readingPause": false
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startFrame": 363,
+      "contentFrames": 153,
+      "durationFrames": 171,
+      "segments": [
+        {
+          "frame": 18,
+          "frames": 34,
+          "sourceFrom": 0,
+          "sourceTo": 1.15,
+          "readingPause": false
+        },
+        {
+          "frame": 52,
+          "frames": 54,
+          "sourceFrom": 1.15,
+          "sourceTo": 1.15,
+          "readingPause": true
+        },
+        {
+          "frame": 106,
+          "frames": 47,
+          "sourceFrom": 1.15,
+          "sourceTo": 2.72,
+          "readingPause": false
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startFrame": 516,
+      "contentFrames": 91,
+      "durationFrames": 109,
+      "segments": [
+        {
+          "frame": 18,
+          "frames": 61,
+          "sourceFrom": 0,
+          "sourceTo": 2.02,
+          "readingPause": false
+        },
+        {
+          "frame": 79,
+          "frames": 12,
+          "sourceFrom": 2.6,
+          "sourceTo": 3,
+          "readingPause": false
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startFrame": 607,
+      "contentFrames": 115,
+      "durationFrames": 133,
+      "segments": [
+        {
+          "frame": 18,
+          "frames": 28,
+          "sourceFrom": 0,
+          "sourceTo": 0.93,
+          "readingPause": false
+        },
+        {
+          "frame": 46,
+          "frames": 54,
+          "sourceFrom": 0.93,
+          "sourceTo": 0.93,
+          "readingPause": true
+        },
+        {
+          "frame": 100,
+          "frames": 15,
+          "sourceFrom": 5.5,
+          "sourceTo": 6,
+          "readingPause": false
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startFrame": 722,
+      "contentFrames": 293,
+      "durationFrames": 311,
+      "segments": [
+        {
+          "frame": 18,
+          "frames": 200,
+          "sourceFrom": 0,
+          "sourceTo": 6.68,
+          "readingPause": false
+        },
+        {
+          "frame": 218,
+          "frames": 54,
+          "sourceFrom": 6.68,
+          "sourceTo": 6.68,
+          "readingPause": true
+        },
+        {
+          "frame": 272,
+          "frames": 21,
+          "sourceFrom": 8.7,
+          "sourceTo": 9.4,
+          "readingPause": false
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startFrame": 1015,
+      "contentFrames": 154,
+      "durationFrames": 172,
+      "segments": [
+        {
+          "frame": 18,
+          "frames": 67,
+          "sourceFrom": 0,
+          "sourceTo": 2.2333333333333334,
+          "readingPause": false
+        },
+        {
+          "frame": 85,
+          "frames": 54,
+          "sourceFrom": 2.2333333333333334,
+          "sourceTo": 2.2333333333333334,
+          "readingPause": true
+        },
+        {
+          "frame": 139,
+          "frames": 15,
+          "sourceFrom": 5.5,
+          "sourceTo": 6,
+          "readingPause": false
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startFrame": 1169,
+      "contentFrames": 218,
+      "durationFrames": 236,
+      "segments": [
+        {
+          "frame": 18,
+          "frames": 30,
+          "sourceFrom": 0,
+          "sourceTo": 1.0,
+          "readingPause": false
+        },
+        {
+          "frame": 48,
+          "frames": 54,
+          "sourceFrom": 1.0,
+          "sourceTo": 1.0,
+          "readingPause": true
+        },
+        {
+          "frame": 102,
+          "frames": 56,
+          "sourceFrom": 2.38,
+          "sourceTo": 4.26,
+          "readingPause": false
+        },
+        {
+          "frame": 158,
+          "frames": 54,
+          "sourceFrom": 4.26,
+          "sourceTo": 4.26,
+          "readingPause": true
+        },
+        {
+          "frame": 212,
+          "frames": 6,
+          "sourceFrom": 4.8,
+          "sourceTo": 5,
+          "readingPause": false
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startFrame": 1387,
+      "contentFrames": 142,
+      "durationFrames": 160,
+      "segments": [
+        {
+          "frame": 18,
+          "frames": 70,
+          "sourceFrom": 0,
+          "sourceTo": 2.35,
+          "readingPause": false
+        },
+        {
+          "frame": 88,
+          "frames": 54,
+          "sourceFrom": 2.35,
+          "sourceTo": 2.35,
+          "readingPause": true
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startFrame": 1529,
+      "contentFrames": 348,
+      "durationFrames": 366,
+      "segments": [
+        {
+          "frame": 18,
+          "frames": 64,
+          "sourceFrom": 0,
+          "sourceTo": 2.1333333333333333,
+          "readingPause": false
+        },
+        {
+          "frame": 82,
+          "frames": 54,
+          "sourceFrom": 2.1333333333333333,
+          "sourceTo": 2.1333333333333333,
+          "readingPause": true
+        },
+        {
+          "frame": 136,
+          "frames": 30,
+          "sourceFrom": 3.5,
+          "sourceTo": 4.5,
+          "readingPause": false
+        },
+        {
+          "frame": 166,
+          "frames": 54,
+          "sourceFrom": 4.5,
+          "sourceTo": 4.5,
+          "readingPause": true
+        },
+        {
+          "frame": 220,
+          "frames": 62,
+          "sourceFrom": 4.5,
+          "sourceTo": 6.57,
+          "readingPause": false
+        },
+        {
+          "frame": 282,
+          "frames": 54,
+          "sourceFrom": 6.57,
+          "sourceTo": 6.57,
+          "readingPause": true
+        },
+        {
+          "frame": 336,
+          "frames": 12,
+          "sourceFrom": 7.6,
+          "sourceTo": 8,
+          "readingPause": false
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startFrame": 1877,
+      "contentFrames": 250,
+      "durationFrames": 268,
+      "segments": [
+        {
+          "frame": 18,
+          "frames": 28,
+          "sourceFrom": 0,
+          "sourceTo": 0.95,
+          "readingPause": false
+        },
+        {
+          "frame": 46,
+          "frames": 54,
+          "sourceFrom": 0.95,
+          "sourceTo": 0.95,
+          "readingPause": true
+        },
+        {
+          "frame": 100,
+          "frames": 96,
+          "sourceFrom": 0.95,
+          "sourceTo": 4.15,
+          "readingPause": false
+        },
+        {
+          "frame": 196,
+          "frames": 54,
+          "sourceFrom": 4.15,
+          "sourceTo": 4.15,
+          "readingPause": true
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "startFrame": 2127,
+      "contentFrames": 386,
+      "durationFrames": 404,
+      "segments": [
+        {
+          "frame": 18,
+          "frames": 47,
+          "sourceFrom": 0,
+          "sourceTo": 1.56,
+          "readingPause": false
+        },
+        {
+          "frame": 65,
+          "frames": 54,
+          "sourceFrom": 1.56,
+          "sourceTo": 1.56,
+          "readingPause": true
+        },
+        {
+          "frame": 119,
+          "frames": 79,
+          "sourceFrom": 2.88,
+          "sourceTo": 5.5,
+          "readingPause": false
+        },
+        {
+          "frame": 198,
+          "frames": 54,
+          "sourceFrom": 5.5,
+          "sourceTo": 5.5,
+          "readingPause": true
+        },
+        {
+          "frame": 252,
+          "frames": 68,
+          "sourceFrom": 5.5,
+          "sourceTo": 7.75,
+          "readingPause": false
+        },
+        {
+          "frame": 320,
+          "frames": 54,
+          "sourceFrom": 7.75,
+          "sourceTo": 7.75,
+          "readingPause": true
+        },
+        {
+          "frame": 374,
+          "frames": 12,
+          "sourceFrom": 9.2,
+          "sourceTo": 9.6,
+          "readingPause": false
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "startFrame": 2513,
+      "contentFrames": 120,
+      "durationFrames": 120,
+      "segments": [
+        {
+          "frame": 18,
+          "frames": 36,
+          "sourceFrom": 0,
+          "sourceTo": 1.2,
+          "readingPause": false
+        },
+        {
+          "frame": 54,
+          "frames": 54,
+          "sourceFrom": 1.2,
+          "sourceTo": 1.2,
+          "readingPause": true
+        },
+        {
+          "frame": 108,
+          "frames": 12,
+          "sourceFrom": 4.6,
+          "sourceTo": 5,
+          "readingPause": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "dataset": "nursery",
+  "seed": 904,
+  "n": 400,
+  "categorical_columns": [
+    "parents",
+    "has_nurs",
+    "form",
+    "children",
+    "housing",
+    "finance",
+    "social",
+    "health",
+    "target"
+  ],
+  "errors": 108,
+  "precision_at_k": {
+    "tabpfn": 0.21296296296296297,
+    "frequency": 0.018518518518518517,
+    "logistic": 0.1574074074074074,
+    "rf": 0.1574074074074074,
+    "knn": 0.10185185185185185,
+    "hgb": 0.18518518518518517
+  },
+  "auroc": {
+    "tabpfn": 0.6828319227016248,
+    "frequency": 0.5225409401383055,
+    "logistic": 0.6580782529379322,
+    "rf": 0.6539895422341012,
+    "knn": 0.6121982520894319,
+    "hgb": 0.6587835687921598
+  },
+  "seconds": 46.72480845451355
+}

@@ -1,0 +1,49 @@
+{
+  "dataset": "MagicTelescope",
+  "seed": 102,
+  "n": 400,
+  "d": 10,
+  "errors": 73,
+  "auroc": {
+    "zscore": 0.7805079690655838,
+    "iforest": 0.7426300532666366,
+    "rf_resid": 0.87058335164701,
+    "tabpfn_resid": 0.875620484806625,
+    "tabpfn_pit": 0.8756135081678997
+  },
+  "precision_at_k": {
+    "zscore": 0.273972602739726,
+    "iforest": 0.0684931506849315,
+    "rf_resid": 0.2876712328767123,
+    "tabpfn_resid": 0.3150684931506849,
+    "tabpfn_pit": 0.6164383561643836
+  },
+  "by_type": {
+    "decimal": {
+      "zscore": 0.7984313725490196,
+      "iforest": 0.7682302011713776,
+      "rf_resid": 0.8813139801375095,
+      "tabpfn_resid": 0.8640692640692641,
+      "tabpfn_pit": 0.895676088617265
+    },
+    "swap": {
+      "zscore": 0.5620957473898651,
+      "iforest": 0.6242997198879552,
+      "rf_resid": 0.7248663101604278,
+      "tabpfn_resid": 0.7552330022918258,
+      "tabpfn_pit": 0.7752100840336135
+    },
+    "offset": {
+      "zscore": 0.9205136600094583,
+      "iforest": 0.8042944450507477,
+      "rf_resid": 0.9650860344137655,
+      "tabpfn_resid": 0.9719251336898396,
+      "tabpfn_pit": 0.9294172214340282
+    }
+  },
+  "correction": {
+    "tabpfn_median_abs_err_sd": 0.5054825087149438,
+    "column_median_abs_err_sd": 0.9223353589668529
+  },
+  "seconds": 37.71147966384888
+}

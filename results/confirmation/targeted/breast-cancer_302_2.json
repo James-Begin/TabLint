@@ -1,0 +1,72 @@
+{
+  "report": "breast-cancer_302_2.json",
+  "dataset": "breast-cancer",
+  "seed": 302,
+  "budget": 24,
+  "receivers": {
+    "tabpfn_standard": {
+      "clean_p": 0.00013339173165149987,
+      "clean_agrees_with_surrogate": true,
+      "random_search": {
+        "flipped": false,
+        "p_after": 0.051634810864925385,
+        "valid": true
+      },
+      "coordinate_search": {
+        "flipped": false,
+        "p_after": 0.17270317673683167,
+        "valid": true
+      },
+      "transfer_gradient_flipped": false,
+      "seconds": 32.22311544418335
+    },
+    "hgb": {
+      "clean_p": 2.935576215970748e-05,
+      "clean_agrees_with_surrogate": true,
+      "random_search": {
+        "flipped": false,
+        "p_after": 0.06481499740687668,
+        "valid": true
+      },
+      "coordinate_search": {
+        "flipped": true,
+        "p_after": 0.930715120223781,
+        "valid": true
+      },
+      "transfer_gradient_flipped": false,
+      "seconds": 3.848780870437622
+    },
+    "rf": {
+      "clean_p": 0.0,
+      "clean_agrees_with_surrogate": true,
+      "random_search": {
+        "flipped": false,
+        "p_after": 0.16,
+        "valid": true
+      },
+      "coordinate_search": {
+        "flipped": false,
+        "p_after": 0.29,
+        "valid": true
+      },
+      "transfer_gradient_flipped": false,
+      "seconds": 5.925771474838257
+    },
+    "logistic": {
+      "clean_p": 0.00011393819295335561,
+      "clean_agrees_with_surrogate": true,
+      "random_search": {
+        "flipped": false,
+        "p_after": 0.012405597604811192,
+        "valid": true
+      },
+      "coordinate_search": {
+        "flipped": false,
+        "p_after": 0.013525313697755337,
+        "valid": true
+      },
+      "transfer_gradient_flipped": false,
+      "seconds": 0.20475363731384277
+    }
+  }
+}

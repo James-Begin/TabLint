@@ -1,0 +1,50 @@
+{
+  "dataset": "breast-cancer",
+  "seed": 102,
+  "n": 100,
+  "alpha": 0.1,
+  "methods": {
+    "split_logistic": {
+      "coverage": 0.9466666666666667,
+      "size": 1.04,
+      "singleton_correct": 0.9066666666666666,
+      "empty": 0.0,
+      "seconds": 0.004839658737182617
+    },
+    "split_rf": {
+      "coverage": 0.96,
+      "size": 1.06,
+      "singleton_correct": 0.9,
+      "empty": 0.0,
+      "seconds": 0.10955691337585449
+    },
+    "split_hgb": {
+      "coverage": 0.98,
+      "size": 1.2,
+      "singleton_correct": 0.78,
+      "empty": 0.0,
+      "seconds": 0.040128469467163086
+    },
+    "split_tabpfn_standard": {
+      "coverage": 0.94,
+      "size": 1.0266666666666666,
+      "singleton_correct": 0.9133333333333333,
+      "empty": 0.0,
+      "seconds": 0.5782566070556641
+    },
+    "full_logistic": {
+      "coverage": 0.82,
+      "size": 0.8266666666666667,
+      "singleton_correct": 0.82,
+      "empty": 0.17333333333333334,
+      "seconds": 1.0021929740905762
+    },
+    "full_tabpfn_standard": {
+      "coverage": 0.8333333333333334,
+      "size": 0.84,
+      "singleton_correct": 0.8333333333333334,
+      "empty": 0.16,
+      "seconds": 112.9396607875824
+    }
+  }
+}

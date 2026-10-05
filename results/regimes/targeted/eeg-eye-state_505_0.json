@@ -1,0 +1,72 @@
+{
+  "report": "eeg-eye-state_505_0.json",
+  "dataset": "eeg-eye-state",
+  "seed": 505,
+  "budget": 24,
+  "receivers": {
+    "tabpfn_standard": {
+      "clean_p": 0.36251306533813477,
+      "clean_agrees_with_surrogate": true,
+      "random_search": {
+        "flipped": true,
+        "p_after": 0.8675273656845093,
+        "valid": true
+      },
+      "coordinate_search": {
+        "flipped": true,
+        "p_after": 0.7703587412834167,
+        "valid": true
+      },
+      "transfer_gradient_flipped": true,
+      "seconds": 16.31653070449829
+    },
+    "hgb": {
+      "clean_p": 0.187125483559149,
+      "clean_agrees_with_surrogate": true,
+      "random_search": {
+        "flipped": true,
+        "p_after": 0.5291787792087189,
+        "valid": true
+      },
+      "coordinate_search": {
+        "flipped": true,
+        "p_after": 0.5679576316682923,
+        "valid": true
+      },
+      "transfer_gradient_flipped": true,
+      "seconds": 3.9750068187713623
+    },
+    "rf": {
+      "clean_p": 0.53,
+      "clean_agrees_with_surrogate": false,
+      "random_search": {
+        "flipped": true,
+        "p_after": 0.48,
+        "valid": true
+      },
+      "coordinate_search": {
+        "flipped": true,
+        "p_after": 0.49,
+        "valid": true
+      },
+      "transfer_gradient_flipped": false,
+      "seconds": 5.920286655426025
+    },
+    "logistic": {
+      "clean_p": 0.24878835678100586,
+      "clean_agrees_with_surrogate": true,
+      "random_search": {
+        "flipped": false,
+        "p_after": 0.32461220026016235,
+        "valid": true
+      },
+      "coordinate_search": {
+        "flipped": false,
+        "p_after": 0.31309205293655396,
+        "valid": true
+      },
+      "transfer_gradient_flipped": false,
+      "seconds": 0.21500563621520996
+    }
+  }
+}

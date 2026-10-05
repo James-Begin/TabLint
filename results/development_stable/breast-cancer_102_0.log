@@ -1,0 +1,7 @@
+results/development_stable/breast-cancer_102_0.json elapsed 29.4
+exact_duplicates valid False flipped False p 0.003 queries 1
+random_real valid True flipped False p 0.9977 queries 1
+near_rows valid True flipped False p 0.7709 queries 1
+gradient valid True flipped True p 0.0774 queries 24
+random_search valid True flipped False p 0.7185 queries 24
+coordinate_search valid True flipped False p 0.6629 queries 24

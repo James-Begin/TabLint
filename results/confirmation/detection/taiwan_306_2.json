@@ -1,0 +1,19 @@
+{
+  "report": "taiwan_306_2.json",
+  "dataset": "taiwan",
+  "seed": 306,
+  "target_id": 2604,
+  "method": "gradient",
+  "attack_valid": true,
+  "standard_flip": false,
+  "p_target_with_rows": 0.3310546875,
+  "k": 3,
+  "n_rows": 203,
+  "seconds": 84.06511187553406,
+  "loo_influence_auroc": 0.9916666666666666,
+  "loo_influence_hits_in_topk": 1,
+  "label_suspicion_auroc": 0.9299999999999999,
+  "label_suspicion_hits_in_topk": 0,
+  "outlier_auroc": 0.19083333333333333,
+  "outlier_hits_in_topk": 0
+}

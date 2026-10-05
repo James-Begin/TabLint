@@ -1,0 +1,43 @@
+{
+  "dataset": "credit-g",
+  "seed": 904,
+  "n": 400,
+  "categorical_columns": [
+    "checking_status",
+    "credit_history",
+    "purpose",
+    "savings_status",
+    "employment",
+    "installment_commitment",
+    "personal_status",
+    "other_parties",
+    "residence_since",
+    "property_magnitude",
+    "other_payment_plans",
+    "housing",
+    "existing_credits",
+    "job",
+    "num_dependents",
+    "own_telephone",
+    "foreign_worker",
+    "target"
+  ],
+  "errors": 216,
+  "precision_at_k": {
+    "tabpfn": 0.125,
+    "frequency": 0.06944444444444445,
+    "logistic": 0.13425925925925927,
+    "rf": 0.125,
+    "knn": 0.05092592592592592,
+    "hgb": 0.1574074074074074
+  },
+  "auroc": {
+    "tabpfn": 0.7960722391922278,
+    "frequency": 0.7123395141275296,
+    "logistic": 0.7764970726740487,
+    "rf": 0.7834779761147173,
+    "knn": 0.7525925660769589,
+    "hgb": 0.775106990581647
+  },
+  "seconds": 104.40068006515503
+}

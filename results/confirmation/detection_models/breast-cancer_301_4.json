@@ -1,0 +1,19 @@
+{
+  "report": "breast-cancer_301_4.json",
+  "dataset": "breast-cancer",
+  "seed": 301,
+  "k": 3,
+  "attack_valid": true,
+  "hgb_auroc": 0.9666666666666667,
+  "hgb_hits_in_topk": 1,
+  "hgb_frac_zero_scores": 0.0,
+  "hgb_seconds": 13.44345998764038,
+  "rf_auroc": 0.795,
+  "rf_hits_in_topk": 0,
+  "rf_frac_zero_scores": 0.009852216748768473,
+  "rf_seconds": 23.1255145072937,
+  "logistic_auroc": 1.0,
+  "logistic_hits_in_topk": 3,
+  "logistic_frac_zero_scores": 0.0,
+  "logistic_seconds": 0.8922877311706543
+}

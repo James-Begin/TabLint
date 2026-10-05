@@ -1,0 +1,19 @@
+{
+  "report": "taiwan_306_0.json",
+  "dataset": "taiwan",
+  "seed": 306,
+  "k": 3,
+  "attack_valid": true,
+  "hgb_auroc": 0.3933333333333333,
+  "hgb_hits_in_topk": 0,
+  "hgb_frac_zero_scores": 0.0,
+  "hgb_seconds": 16.73736000061035,
+  "rf_auroc": 0.7891666666666667,
+  "rf_hits_in_topk": 1,
+  "rf_frac_zero_scores": 0.12315270935960591,
+  "rf_seconds": 22.552257299423218,
+  "logistic_auroc": 0.9516666666666667,
+  "logistic_hits_in_topk": 0,
+  "logistic_frac_zero_scores": 0.0,
+  "logistic_seconds": 1.0704562664031982
+}

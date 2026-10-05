@@ -1,0 +1,41 @@
+Cells (H6): TabPFN-3.5 beats the best of 7 baselines (chosen per dataset, after the fact) on 13/14 datasets; mean precision@k gain +0.190 [+0.132, +0.240], one-sided Wilcoxon p = 0.00018 — supported.
+Labels (H7): TabPFN-3.5 beats the best of 4 baselines on 13/14; mean AUROC gain +0.022 [+0.008, +0.041], p = 0.00085 — supported.
+
+per dataset (cells):
+  MagicTelescope     TabPFN 0.73 vs hgb          0.45  fix err 0.40 vs RF 0.53 / median 0.76
+  banknote           TabPFN 0.74 vs hgb          0.65  fix err 0.23 vs RF 0.35 / median 0.85
+  blood-transfusion  TabPFN 0.78 vs ridge        0.47  fix err 0.26 vs RF 0.43 / median 0.73
+  breast-cancer      TabPFN 0.85 vs hgb          0.57  fix err 0.16 vs RF 0.43 / median 0.74
+  climate-crashes    TabPFN 0.34 vs zscore       0.42  fix err 1.05 vs RF 0.89 / median 0.87
+  diabetes           TabPFN 0.61 vs ridge        0.42  fix err 0.62 vs RF 0.70 / median 0.77
+  eeg-eye-state      TabPFN 0.83 vs zscore       0.76  fix err 0.22 vs RF 6.80 / median 0.47
+  electricity        TabPFN 0.71 vs hgb          0.48  fix err 0.36 vs RF 0.56 / median 0.76
+  ilpd               TabPFN 0.70 vs hgb          0.42  fix err 0.26 vs RF 0.47 / median 0.60
+  kc1                TabPFN 0.87 vs ridge        0.63  fix err 0.07 vs RF 0.22 / median 0.54
+  phoneme            TabPFN 0.59 vs rf           0.48  fix err 0.45 vs RF 0.53 / median 0.78
+  spambase           TabPFN 0.68 vs hgb          0.49  fix err 0.21 vs RF 0.38 / median 0.30
+  steel-plates       TabPFN 0.87 vs hgb          0.61  fix err 0.07 vs RF 0.30 / median 0.71
+  wilt               TabPFN 0.74 vs hgb_quantile 0.54  fix err 0.42 vs RF 0.62 / median 0.65
+
+per dataset (labels):
+  MagicTelescope     TabPFN 0.918 vs rf       0.872
+  banknote           TabPFN 1.000 vs knn      0.998
+  blood-transfusion  TabPFN 0.855 vs logistic 0.851
+  breast-cancer      TabPFN 0.994 vs logistic 0.990
+  climate-crashes    TabPFN 0.970 vs logistic 0.962
+  diabetes           TabPFN 0.843 vs logistic 0.848
+  eeg-eye-state      TabPFN 0.919 vs rf       0.790
+  electricity        TabPFN 0.856 vs rf       0.816
+  ilpd               TabPFN 0.804 vs logistic 0.785
+  kc1                TabPFN 0.919 vs logistic 0.901
+  phoneme            TabPFN 0.906 vs rf       0.885
+  spambase           TabPFN 0.970 vs rf       0.953
+  steel-plates       TabPFN 1.000 vs logistic 0.999
+  wilt               TabPFN 0.994 vs rf       0.993
+
+AUROC by error type:
+  {'error type': 'decimal', 'zscore': 0.883, 'iforest': 0.793, 'ridge': 0.923, 'knn': 0.927, 'rf': 0.932, 'hgb': 0.943, 'hgb_quantile': 0.936, 'tabpfn_pit': 0.963}
+  {'error type': 'swap', 'zscore': 0.562, 'iforest': 0.573, 'ridge': 0.71, 'knn': 0.747, 'rf': 0.785, 'hgb': 0.768, 'hgb_quantile': 0.783, 'tabpfn_pit': 0.852}
+  {'error type': 'offset', 'zscore': 0.951, 'iforest': 0.784, 'ridge': 0.953, 'knn': 0.959, 'rf': 0.953, 'hgb': 0.95, 'hgb_quantile': 0.952, 'tabpfn_pit': 0.977}
+  {'error type': 'zero', 'zscore': 0.75, 'iforest': 0.682, 'ridge': 0.854, 'knn': 0.867, 'rf': 0.887, 'hgb': 0.894, 'hgb_quantile': 0.874, 'tabpfn_pit': 0.937}
+  {'error type': 'transposition', 'zscore': 0.782, 'iforest': 0.677, 'ridge': 0.827, 'knn': 0.843, 'rf': 0.863, 'hgb': 0.865, 'hgb_quantile': 0.873, 'tabpfn_pit': 0.911}

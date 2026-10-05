@@ -1,0 +1,82 @@
+{
+  "name": "proofread-tables",
+  "displayName": "TabLint \u2014 spellcheck for tables (TabPFN-3.5)",
+  "description": "Red squiggles on implausible CSV cells and labels, with TabPFN-3.5 suggestions and one-click fixes.",
+  "version": "0.1.0",
+  "publisher": "proofread",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/James-Begin/TabLint"
+  },
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Linters",
+    "Data Science"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/src/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "proofread.check",
+        "title": "TabLint: Check this CSV with TabPFN-3.5"
+      },
+      {
+        "command": "proofread.reload",
+        "title": "TabLint: Reload saved report"
+      },
+      {
+        "command": "proofread.clear",
+        "title": "TabLint: Clear squiggles"
+      },
+      {
+        "command": "proofread.ledger",
+        "title": "TabLint: Open decision ledger"
+      }
+    ],
+    "configuration": {
+      "title": "TabLint",
+      "properties": {
+        "proofread.command": {
+          "type": "string",
+          "default": "uv run proofread",
+          "description": "Command used to run the TabLint CLI (run from the workspace folder)."
+        },
+        "proofread.threshold": {
+          "type": "number",
+          "default": 2,
+          "description": "Minimum surprise (\u2212log10 tail probability) to flag a cell. 2 \u2248 88% precision / 53% recall; 3 \u2248 95% / 19% (benchmark)."
+        },
+        "proofread.labelColumn": {
+          "type": "string",
+          "default": "",
+          "description": "Optional label column to check for label errors (leave empty to be asked)."
+        },
+        "proofread.categorical": {
+          "type": "boolean",
+          "default": true,
+          "description": "Check low-cardinality categorical cells as well as numeric cells and labels. Turn off to reproduce the saved numeric-only Auto MPG demo report."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p .",
+    "test": "tsc -p . && node --test out/test/*.test.js",
+    "test:integration": "tsc -p . && node out/test/integration/runTest.js",
+    "vscode:prepublish": "npm run compile",
+    "package": "vsce package --out ../dist/tablint.vsix"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/vscode": "^1.90.0",
+    "typescript": "^5.6.0",
+    "@vscode/test-electron": "^2.4.0",
+    "@vscode/vsce": "4.0.0"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "dataset": "eeg-eye-state",
+  "seed": 102,
+  "n": 400,
+  "d": 14,
+  "errors": 102,
+  "auroc": {
+    "zscore": 0.8863695532778408,
+    "iforest": 0.7836717808258262,
+    "rf_resid": 0.9267630296935071,
+    "tabpfn_resid": 0.8434921076469876,
+    "tabpfn_pit": 0.969655632351158
+  },
+  "precision_at_k": {
+    "zscore": 0.4411764705882353,
+    "iforest": 0.058823529411764705,
+    "rf_resid": 0.24509803921568626,
+    "tabpfn_resid": 0.4019607843137255,
+    "tabpfn_pit": 0.7352941176470589
+  },
+  "by_type": {
+    "decimal": {
+      "zscore": 1.0,
+      "iforest": 0.9287659627424326,
+      "rf_resid": 0.9909009974919109,
+      "tabpfn_resid": 0.9989182669296012,
+      "tabpfn_pit": 0.9998994849801841
+    },
+    "swap": {
+      "zscore": 0.6139033722700511,
+      "iforest": 0.6493169233256537,
+      "rf_resid": 0.8473249531816283,
+      "tabpfn_resid": 0.6684855098823814,
+      "tabpfn_pit": 0.8963326731606106
+    },
+    "offset": {
+      "zscore": 0.9684946860283347,
+      "iforest": 0.7326988683845723,
+      "rf_resid": 0.9188599294092201,
+      "tabpfn_resid": 0.811572758644421,
+      "tabpfn_pit": 0.9921003214928278
+    }
+  },
+  "correction": {
+    "tabpfn_median_abs_err_sd": 0.3205784517387846,
+    "column_median_abs_err_sd": 0.6840658404236638
+  },
+  "seconds": 41.87379574775696
+}

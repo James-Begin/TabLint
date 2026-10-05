@@ -1,0 +1,19 @@
+{
+  "report": "eeg-eye-state_505_0.json",
+  "dataset": "eeg-eye-state",
+  "seed": 505,
+  "target_id": 751,
+  "method": "gradient",
+  "attack_valid": true,
+  "standard_flip": true,
+  "p_target_with_rows": 0.9748324751853943,
+  "k": 3,
+  "n_rows": 203,
+  "seconds": 118.39768409729004,
+  "loo_influence_auroc": 0.9125,
+  "loo_influence_hits_in_topk": 1,
+  "label_suspicion_auroc": 0.8066666666666666,
+  "label_suspicion_hits_in_topk": 0,
+  "outlier_auroc": 0.1225,
+  "outlier_hits_in_topk": 0
+}

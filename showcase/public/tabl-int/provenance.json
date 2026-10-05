@@ -1,0 +1,14 @@
+{
+  "numeric_report": "/Users/james/Documents/Codex/2026-10-03/clo/TabLint/demo/video/auto_mpg_dirty.proofread.json",
+  "numeric_answer_key": "/Users/james/Documents/Codex/2026-10-03/clo/TabLint/demo/video/answer_key.json",
+  "categorical": {
+    "status": "planned inference; not measured",
+    "input": "demo-data/auto_mpg_categories.csv",
+    "column": "origin",
+    "label": null,
+    "planted_row": 14,
+    "recorded": "USA",
+    "original": "Japan",
+    "production_gate": "Generate a real categorical report; bind UI wording and suggestion to the output. If this planted row is not flagged, select a measured finding and update the board."
+  }
+}

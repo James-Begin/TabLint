@@ -1,0 +1,30 @@
+{
+  "dataset": "climate-crashes",
+  "seed": 701,
+  "errors": 222,
+  "rows_with_error": 173,
+  "n": 400,
+  "d": 19,
+  "proofread_precision_at_k": 0.31981981981981983,
+  "ext_precision_at_k": 0.02702702702702703,
+  "proofread_cell_auroc": 0.7198891762459125,
+  "ext_cell_auroc": 0.44467909221229895,
+  "proofread_row_auroc": 0.6806294721295612,
+  "ext_row_auroc": 0.4228310967380509,
+  "ext_seconds": 97.61972618103027,
+  "threshold": {
+    "2.0": {
+      "flagged": 40,
+      "true_flagged": 34,
+      "precision": 0.85,
+      "recall": 0.15315315315315314
+    },
+    "3.0": {
+      "flagged": 21,
+      "true_flagged": 19,
+      "precision": 0.9047619047619048,
+      "recall": 0.08558558558558559
+    }
+  },
+  "seconds": 142.25134778022766
+}

@@ -1,0 +1,50 @@
+{
+  "dataset": "MagicTelescope",
+  "seed": 101,
+  "n": 100,
+  "alpha": 0.1,
+  "methods": {
+    "split_logistic": {
+      "coverage": 0.92,
+      "size": 1.4266666666666667,
+      "singleton_correct": 0.49333333333333335,
+      "empty": 0.0,
+      "seconds": 0.005140542984008789
+    },
+    "split_rf": {
+      "coverage": 0.94,
+      "size": 1.3266666666666667,
+      "singleton_correct": 0.6133333333333333,
+      "empty": 0.0,
+      "seconds": 0.11490178108215332
+    },
+    "split_hgb": {
+      "coverage": 0.9533333333333334,
+      "size": 1.7266666666666666,
+      "singleton_correct": 0.22666666666666666,
+      "empty": 0.0,
+      "seconds": 0.03774261474609375
+    },
+    "split_tabpfn_standard": {
+      "coverage": 0.9333333333333333,
+      "size": 1.2866666666666666,
+      "singleton_correct": 0.6466666666666666,
+      "empty": 0.0,
+      "seconds": 0.6516828536987305
+    },
+    "full_logistic": {
+      "coverage": 0.9066666666666666,
+      "size": 1.4333333333333333,
+      "singleton_correct": 0.47333333333333333,
+      "empty": 0.0,
+      "seconds": 0.982863187789917
+    },
+    "full_tabpfn_standard": {
+      "coverage": 0.9,
+      "size": 1.2866666666666666,
+      "singleton_correct": 0.6133333333333333,
+      "empty": 0.0,
+      "seconds": 207.38564276695251
+    }
+  }
+}

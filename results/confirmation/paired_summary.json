@@ -1,0 +1,438 @@
+{
+  "directory": "results/confirmation",
+  "n_reports": 90,
+  "by_dataset": {
+    "breast-cancer": {
+      "targets": 30,
+      "context_seeds": [
+        301,
+        302,
+        303,
+        304,
+        305,
+        306
+      ],
+      "gradient_aborted": 0,
+      "rates": {
+        "tabpfn_standard": {
+          "gradient": 0.6,
+          "random_search": 0.1,
+          "coordinate_search": 0.13333333333333333,
+          "near_rows": 0.06666666666666667,
+          "random_real": 0.0
+        },
+        "surrogate": {
+          "gradient": 0.6666666666666666,
+          "random_search": 0.13333333333333333,
+          "coordinate_search": 0.13333333333333333,
+          "near_rows": 0.06666666666666667,
+          "random_real": 0.0
+        },
+        "tabpfn_nofingerprint": {
+          "gradient": 0.6,
+          "random_search": 0.1,
+          "coordinate_search": 0.13333333333333333,
+          "near_rows": 0.06666666666666667,
+          "random_real": 0.0
+        },
+        "hgb": {
+          "gradient": 0.2,
+          "random_search": 0.06666666666666667,
+          "coordinate_search": 0.06666666666666667,
+          "near_rows": 0.03333333333333333,
+          "random_real": 0.0
+        },
+        "hgb_regularized": {
+          "gradient": 0.03333333333333333,
+          "random_search": 0.03333333333333333,
+          "coordinate_search": 0.03333333333333333,
+          "near_rows": 0.03333333333333333,
+          "random_real": 0.0
+        },
+        "rf": {
+          "gradient": 0.13333333333333333,
+          "random_search": 0.03333333333333333,
+          "coordinate_search": 0.1,
+          "near_rows": 0.03333333333333333,
+          "random_real": 0.0
+        },
+        "rf_regularized": {
+          "gradient": 0.06666666666666667,
+          "random_search": 0.06666666666666667,
+          "coordinate_search": 0.06666666666666667,
+          "near_rows": 0.06666666666666667,
+          "random_real": 0.0
+        },
+        "logistic": {
+          "gradient": 0.16666666666666666,
+          "random_search": 0.03333333333333333,
+          "coordinate_search": 0.03333333333333333,
+          "near_rows": 0.03333333333333333,
+          "random_real": 0.0
+        }
+      },
+      "paired_gradient_minus_best_search": {
+        "tabpfn_standard": {
+          "baseline": "coordinate_search",
+          "diff": 0.4666666666666667,
+          "ci95": [
+            0.2333333333333333,
+            0.7333333333333333
+          ],
+          "ci_level": 98.33
+        },
+        "surrogate": {
+          "baseline": "random_search",
+          "diff": 0.5333333333333333,
+          "ci95": [
+            0.3,
+            0.8
+          ],
+          "ci_level": 98.33
+        },
+        "tabpfn_nofingerprint": {
+          "baseline": "coordinate_search",
+          "diff": 0.4666666666666667,
+          "ci95": [
+            0.2333333333333333,
+            0.7333333333333333
+          ],
+          "ci_level": 98.33
+        },
+        "hgb": {
+          "baseline": "random_search",
+          "diff": 0.13333333333333336,
+          "ci95": [
+            0.0,
+            0.3333333333333333
+          ],
+          "ci_level": 98.33
+        },
+        "hgb_regularized": {
+          "baseline": "random_search",
+          "diff": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "ci_level": 98.33
+        },
+        "rf": {
+          "baseline": "coordinate_search",
+          "diff": 0.033333333333333326,
+          "ci95": [
+            -0.1,
+            0.2
+          ],
+          "ci_level": 98.33
+        },
+        "rf_regularized": {
+          "baseline": "random_search",
+          "diff": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "ci_level": 98.33
+        },
+        "logistic": {
+          "baseline": "random_search",
+          "diff": 0.13333333333333333,
+          "ci95": [
+            0.0,
+            0.36666666666666664
+          ],
+          "ci_level": 98.33
+        }
+      }
+    },
+    "credit-g": {
+      "targets": 30,
+      "context_seeds": [
+        301,
+        302,
+        303,
+        304,
+        305,
+        306
+      ],
+      "gradient_aborted": 0,
+      "rates": {
+        "tabpfn_standard": {
+          "gradient": 0.23333333333333334,
+          "random_search": 0.23333333333333334,
+          "coordinate_search": 0.2,
+          "near_rows": 0.2,
+          "random_real": 0.03333333333333333
+        },
+        "surrogate": {
+          "gradient": 0.23333333333333334,
+          "random_search": 0.26666666666666666,
+          "coordinate_search": 0.23333333333333334,
+          "near_rows": 0.23333333333333334,
+          "random_real": 0.03333333333333333
+        },
+        "tabpfn_nofingerprint": {
+          "gradient": 0.26666666666666666,
+          "random_search": 0.26666666666666666,
+          "coordinate_search": 0.2,
+          "near_rows": 0.2,
+          "random_real": 0.03333333333333333
+        },
+        "hgb": {
+          "gradient": 0.13333333333333333,
+          "random_search": 0.23333333333333334,
+          "coordinate_search": 0.1,
+          "near_rows": 0.03333333333333333,
+          "random_real": 0.03333333333333333
+        },
+        "hgb_regularized": {
+          "gradient": 0.23333333333333334,
+          "random_search": 0.2,
+          "coordinate_search": 0.16666666666666666,
+          "near_rows": 0.2,
+          "random_real": 0.0
+        },
+        "rf": {
+          "gradient": 0.26666666666666666,
+          "random_search": 0.26666666666666666,
+          "coordinate_search": 0.23333333333333334,
+          "near_rows": 0.23333333333333334,
+          "random_real": 0.16666666666666666
+        },
+        "rf_regularized": {
+          "gradient": 0.0,
+          "random_search": 0.0,
+          "coordinate_search": 0.0,
+          "near_rows": 0.0,
+          "random_real": 0.0
+        },
+        "logistic": {
+          "gradient": 0.26666666666666666,
+          "random_search": 0.3,
+          "coordinate_search": 0.26666666666666666,
+          "near_rows": 0.26666666666666666,
+          "random_real": 0.06666666666666667
+        }
+      },
+      "paired_gradient_minus_best_search": {
+        "tabpfn_standard": {
+          "baseline": "random_search",
+          "diff": 0.0,
+          "ci95": [
+            -0.16666666666666666,
+            0.16666666666666669
+          ],
+          "ci_level": 98.33
+        },
+        "surrogate": {
+          "baseline": "random_search",
+          "diff": -0.033333333333333326,
+          "ci95": [
+            -0.16666666666666669,
+            0.0
+          ],
+          "ci_level": 98.33
+        },
+        "tabpfn_nofingerprint": {
+          "baseline": "random_search",
+          "diff": 0.0,
+          "ci95": [
+            -0.16666666666666669,
+            0.16666666666666669
+          ],
+          "ci_level": 98.33
+        },
+        "hgb": {
+          "baseline": "random_search",
+          "diff": -0.1,
+          "ci95": [
+            -0.3,
+            0.0
+          ],
+          "ci_level": 98.33
+        },
+        "hgb_regularized": {
+          "baseline": "random_search",
+          "diff": 0.033333333333333326,
+          "ci95": [
+            0.0,
+            0.16666666666666669
+          ],
+          "ci_level": 98.33
+        },
+        "rf": {
+          "baseline": "random_search",
+          "diff": 0.0,
+          "ci95": [
+            -0.16666666666666669,
+            0.16666666666666666
+          ],
+          "ci_level": 98.33
+        },
+        "rf_regularized": {
+          "baseline": "random_search",
+          "diff": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "ci_level": 98.33
+        },
+        "logistic": {
+          "baseline": "random_search",
+          "diff": -0.033333333333333326,
+          "ci95": [
+            -0.16666666666666669,
+            0.0
+          ],
+          "ci_level": 98.33
+        }
+      }
+    },
+    "taiwan": {
+      "targets": 30,
+      "context_seeds": [
+        301,
+        302,
+        303,
+        304,
+        305,
+        306
+      ],
+      "gradient_aborted": 0,
+      "rates": {
+        "tabpfn_standard": {
+          "gradient": 0.3333333333333333,
+          "random_search": 0.3,
+          "coordinate_search": 0.2,
+          "near_rows": 0.2,
+          "random_real": 0.0
+        },
+        "surrogate": {
+          "gradient": 0.3,
+          "random_search": 0.26666666666666666,
+          "coordinate_search": 0.16666666666666666,
+          "near_rows": 0.16666666666666666,
+          "random_real": 0.0
+        },
+        "tabpfn_nofingerprint": {
+          "gradient": 0.3333333333333333,
+          "random_search": 0.3,
+          "coordinate_search": 0.2,
+          "near_rows": 0.2,
+          "random_real": 0.0
+        },
+        "hgb": {
+          "gradient": 0.3333333333333333,
+          "random_search": 0.23333333333333334,
+          "coordinate_search": 0.13333333333333333,
+          "near_rows": 0.1,
+          "random_real": 0.06666666666666667
+        },
+        "hgb_regularized": {
+          "gradient": 0.16666666666666666,
+          "random_search": 0.1,
+          "coordinate_search": 0.03333333333333333,
+          "near_rows": 0.03333333333333333,
+          "random_real": 0.03333333333333333
+        },
+        "rf": {
+          "gradient": 0.2,
+          "random_search": 0.1,
+          "coordinate_search": 0.16666666666666666,
+          "near_rows": 0.1,
+          "random_real": 0.03333333333333333
+        },
+        "rf_regularized": {
+          "gradient": 0.0,
+          "random_search": 0.0,
+          "coordinate_search": 0.0,
+          "near_rows": 0.0,
+          "random_real": 0.0
+        },
+        "logistic": {
+          "gradient": 0.26666666666666666,
+          "random_search": 0.26666666666666666,
+          "coordinate_search": 0.26666666666666666,
+          "near_rows": 0.26666666666666666,
+          "random_real": 0.03333333333333333
+        }
+      },
+      "paired_gradient_minus_best_search": {
+        "tabpfn_standard": {
+          "baseline": "random_search",
+          "diff": 0.033333333333333326,
+          "ci95": [
+            0.0,
+            0.16666666666666669
+          ],
+          "ci_level": 98.33
+        },
+        "surrogate": {
+          "baseline": "random_search",
+          "diff": 0.033333333333333326,
+          "ci95": [
+            -0.2,
+            0.26666666666666666
+          ],
+          "ci_level": 98.33
+        },
+        "tabpfn_nofingerprint": {
+          "baseline": "random_search",
+          "diff": 0.033333333333333326,
+          "ci95": [
+            0.0,
+            0.16666666666666669
+          ],
+          "ci_level": 98.33
+        },
+        "hgb": {
+          "baseline": "random_search",
+          "diff": 0.09999999999999998,
+          "ci95": [
+            -0.13333333333333333,
+            0.36666666666666664
+          ],
+          "ci_level": 98.33
+        },
+        "hgb_regularized": {
+          "baseline": "random_search",
+          "diff": 0.06666666666666665,
+          "ci95": [
+            -0.1,
+            0.2666666666666667
+          ],
+          "ci_level": 98.33
+        },
+        "rf": {
+          "baseline": "coordinate_search",
+          "diff": 0.033333333333333354,
+          "ci95": [
+            -0.2333333333333333,
+            0.3
+          ],
+          "ci_level": 98.33
+        },
+        "rf_regularized": {
+          "baseline": "random_search",
+          "diff": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "ci_level": 98.33
+        },
+        "logistic": {
+          "baseline": "random_search",
+          "diff": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "ci_level": 98.33
+        }
+      }
+    }
+  }
+}

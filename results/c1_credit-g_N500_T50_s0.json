@@ -1,0 +1,64 @@
+{
+ "dataset": "credit-g",
+ "N": 500,
+ "T": 50,
+ "seed": 0,
+ "t_loo_s": 36.5052285194397,
+ "t_flip_s": 36.35640263557434,
+ "t_grad_s": 10.241620540618896,
+ "loo_abs_mean": 0.003708933905349113,
+ "loo_abs_max": 0.2571616359055042,
+ "flip_abs_mean": 0.009270408376376145,
+ "spearman(flip,loo)": [
+  0.820343300575227,
+  0.486
+ ],
+ "LOO signed | soft_label_grad(flip-linearised)": [
+  0.3960317672958292,
+  0.298
+ ],
+ "LOO signed | decoder_attention": [
+  0.20169880034960844,
+  0.43399999999999994
+ ],
+ "LOO signed | x_grad_dot(move-to-target)": [
+  -0.13604878284325625,
+  0.342
+ ],
+ "LOO signed | knn_similarity": [
+  0.18643931477108278,
+  0.27
+ ],
+ "LOO signed | soft_label_grad*0.5 as LOO": [
+  0.3960317672958292,
+  0.298
+ ],
+ "FLIP signed | soft_label_grad": [
+  0.5027390218512235,
+  0.53
+ ],
+ "FLIP signed | decoder_attention": [
+  0.3003418497967317,
+  0.498
+ ],
+ "FLIP signed | knn": [
+  0.25735200134887065,
+  0.392
+ ],
+ "LOO |mag| | x_grad_norm": [
+  0.24238921734499677,
+  0.188
+ ],
+ "LOO |mag| | decoder_attention": [
+  0.19957444809626168,
+  0.316
+ ],
+ "LOO |mag| | knn_similarity": [
+  0.10610985490142717,
+  0.28
+ ],
+ "LOO |mag| | abs_soft_label_grad": [
+  0.19776794485658847,
+  0.298
+ ]
+}

@@ -1,0 +1,109 @@
+{
+  "revision": 7,
+  "previous": {
+    "revision": 6,
+    "changedViews": [
+      {
+        "shot": 2,
+        "phase": "Entry",
+        "checked": 0,
+        "extraBadge": false,
+        "failures": [],
+        "title": "Travel through the data"
+      },
+      {
+        "shot": 2,
+        "phase": "Action",
+        "checked": 9,
+        "extraBadge": false,
+        "failures": [],
+        "title": "Travel through the data"
+      },
+      {
+        "shot": 2,
+        "phase": "Exit",
+        "checked": 3,
+        "extraBadge": false,
+        "failures": [],
+        "title": "Travel through the data"
+      },
+      {
+        "shot": 5,
+        "phase": "Entry",
+        "checked": 0,
+        "extraBadge": false,
+        "failures": [],
+        "title": "A check becomes visible"
+      },
+      {
+        "shot": 5,
+        "phase": "Action",
+        "checked": 2,
+        "extraBadge": false,
+        "failures": [],
+        "title": "A check becomes visible"
+      },
+      {
+        "shot": 5,
+        "phase": "Exit",
+        "checked": 2,
+        "extraBadge": false,
+        "failures": [],
+        "title": "A check becomes visible"
+      },
+      {
+        "shot": 10,
+        "phase": "Entry",
+        "checked": 4,
+        "extraBadge": false,
+        "failures": [],
+        "title": "Categorical columns, too"
+      },
+      {
+        "shot": 10,
+        "phase": "Action",
+        "checked": 10,
+        "extraBadge": false,
+        "failures": [],
+        "title": "Categorical columns, too"
+      },
+      {
+        "shot": 10,
+        "phase": "Exit",
+        "checked": 10,
+        "extraBadge": false,
+        "failures": [],
+        "title": "Categorical columns, too"
+      }
+    ]
+  },
+  "ledgerCallout": [
+    {
+      "phase": "Action",
+      "clearOfLedger": true,
+      "clearOfTable": true,
+      "lineReachesLedger": true,
+      "oldMessageAbsent": true,
+      "text": "Your decision ledgerView all changes and their reasons.Revert a fix or flag for review.",
+      "textContained": true
+    },
+    {
+      "phase": "Press",
+      "clearOfLedger": true,
+      "clearOfTable": true,
+      "lineReachesLedger": true,
+      "oldMessageAbsent": true,
+      "text": "Your decision ledgerView all changes and their reasons.Revert a fix or flag for review.",
+      "textContained": true
+    },
+    {
+      "phase": "Exit",
+      "clearOfLedger": true,
+      "clearOfTable": true,
+      "lineReachesLedger": true,
+      "oldMessageAbsent": true,
+      "text": "Your decision ledgerView all changes and their reasons.Revert a fix or flag for review.",
+      "textContained": true
+    }
+  ]
+}

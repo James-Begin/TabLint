@@ -1,0 +1,19 @@
+{
+  "report": "breast-cancer_301_3.json",
+  "dataset": "breast-cancer",
+  "seed": 301,
+  "target_id": 368,
+  "method": "gradient",
+  "attack_valid": true,
+  "standard_flip": true,
+  "p_target_with_rows": 0.0424804650247097,
+  "k": 3,
+  "n_rows": 203,
+  "seconds": 116.84083127975464,
+  "loo_influence_auroc": 1.0,
+  "loo_influence_hits_in_topk": 3,
+  "label_suspicion_auroc": 0.995,
+  "label_suspicion_hits_in_topk": 2,
+  "outlier_auroc": 0.2341666666666667,
+  "outlier_hits_in_topk": 0
+}

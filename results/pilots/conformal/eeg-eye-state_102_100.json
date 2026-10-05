@@ -1,0 +1,50 @@
+{
+  "dataset": "eeg-eye-state",
+  "seed": 102,
+  "n": 100,
+  "alpha": 0.1,
+  "methods": {
+    "split_logistic": {
+      "coverage": 0.9933333333333333,
+      "size": 1.9133333333333333,
+      "singleton_correct": 0.08,
+      "empty": 0.0,
+      "seconds": 0.108642578125
+    },
+    "split_rf": {
+      "coverage": 0.9066666666666666,
+      "size": 1.6,
+      "singleton_correct": 0.30666666666666664,
+      "empty": 0.0,
+      "seconds": 0.2189640998840332
+    },
+    "split_hgb": {
+      "coverage": 0.96,
+      "size": 1.8,
+      "singleton_correct": 0.16,
+      "empty": 0.0,
+      "seconds": 0.15805745124816895
+    },
+    "split_tabpfn_standard": {
+      "coverage": 0.8933333333333333,
+      "size": 1.6133333333333333,
+      "singleton_correct": 0.28,
+      "empty": 0.0,
+      "seconds": 8.607211112976074
+    },
+    "full_logistic": {
+      "coverage": 0.9733333333333334,
+      "size": 1.84,
+      "singleton_correct": 0.13333333333333333,
+      "empty": 0.0,
+      "seconds": 2.5470399856567383
+    },
+    "full_tabpfn_standard": {
+      "coverage": 0.8666666666666667,
+      "size": 1.3933333333333333,
+      "singleton_correct": 0.44,
+      "empty": 0.03333333333333333,
+      "seconds": 220.80207586288452
+    }
+  }
+}

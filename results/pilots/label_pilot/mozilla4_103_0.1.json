@@ -1,0 +1,25 @@
+{
+  "dataset": "mozilla4",
+  "seed": 103,
+  "n": 300,
+  "noise": 0.1,
+  "auroc": {
+    "logistic": 0.8680246913580247,
+    "hgb": 0.9520987654320988,
+    "rf": 0.9499382716049383,
+    "tabpfn_standard": 0.9522222222222222,
+    "grad_tabpfn": 0.4161728395061728,
+    "tabpfn_oof+grad": 0.7465432098765432
+  },
+  "acc_after_removal": {
+    "logistic": 0.905,
+    "hgb": 0.909,
+    "rf": 0.91,
+    "tabpfn_standard": 0.91,
+    "grad_tabpfn": 0.917,
+    "tabpfn_oof+grad": 0.915
+  },
+  "acc_noisy": 0.913,
+  "acc_oracle": 0.919,
+  "seconds": 6.152757167816162
+}

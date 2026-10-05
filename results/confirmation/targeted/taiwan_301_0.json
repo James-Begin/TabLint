@@ -1,0 +1,72 @@
+{
+  "report": "taiwan_301_0.json",
+  "dataset": "taiwan",
+  "seed": 301,
+  "budget": 24,
+  "receivers": {
+    "tabpfn_standard": {
+      "clean_p": 0.15836945176124573,
+      "clean_agrees_with_surrogate": true,
+      "random_search": {
+        "flipped": false,
+        "p_after": 0.2297389805316925,
+        "valid": true
+      },
+      "coordinate_search": {
+        "flipped": false,
+        "p_after": 0.22373463213443756,
+        "valid": true
+      },
+      "transfer_gradient_flipped": false,
+      "seconds": 25.121634244918823
+    },
+    "hgb": {
+      "clean_p": 0.08845248557131835,
+      "clean_agrees_with_surrogate": true,
+      "random_search": {
+        "flipped": false,
+        "p_after": 0.3635988790664615,
+        "valid": true
+      },
+      "coordinate_search": {
+        "flipped": false,
+        "p_after": 0.12979901830376123,
+        "valid": true
+      },
+      "transfer_gradient_flipped": false,
+      "seconds": 5.075489282608032
+    },
+    "rf": {
+      "clean_p": 0.16,
+      "clean_agrees_with_surrogate": true,
+      "random_search": {
+        "flipped": false,
+        "p_after": 0.25,
+        "valid": true
+      },
+      "coordinate_search": {
+        "flipped": false,
+        "p_after": 0.27,
+        "valid": true
+      },
+      "transfer_gradient_flipped": false,
+      "seconds": 5.923550128936768
+    },
+    "logistic": {
+      "clean_p": 0.11371643096208572,
+      "clean_agrees_with_surrogate": true,
+      "random_search": {
+        "flipped": false,
+        "p_after": 0.20447196066379547,
+        "valid": true
+      },
+      "coordinate_search": {
+        "flipped": false,
+        "p_after": 0.20560406148433685,
+        "valid": true
+      },
+      "transfer_gradient_flipped": false,
+      "seconds": 0.3435816764831543
+    }
+  }
+}

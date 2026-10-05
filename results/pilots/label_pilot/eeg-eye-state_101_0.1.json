@@ -1,0 +1,25 @@
+{
+  "dataset": "eeg-eye-state",
+  "seed": 101,
+  "n": 300,
+  "noise": 0.1,
+  "auroc": {
+    "logistic": 0.518395061728395,
+    "hgb": 0.6960493827160493,
+    "rf": 0.6988271604938272,
+    "tabpfn_standard": 0.8837037037037038,
+    "grad_tabpfn": 0.6872839506172839,
+    "tabpfn_oof+grad": 0.8287037037037037
+  },
+  "acc_after_removal": {
+    "logistic": 0.749,
+    "hgb": 0.768,
+    "rf": 0.783,
+    "tabpfn_standard": 0.822,
+    "grad_tabpfn": 0.809,
+    "tabpfn_oof+grad": 0.817
+  },
+  "acc_noisy": 0.837,
+  "acc_oracle": 0.87,
+  "seconds": 9.190638542175293
+}

@@ -1,0 +1,44 @@
+{
+  "records": [
+    {
+      "column": 0,
+      "autograd": -0.3730641377060244,
+      "finite_difference": -0.37148594856262207,
+      "abs_error": 0.0015781891434023532
+    },
+    {
+      "column": 3,
+      "autograd": 0.1610065459820828,
+      "finite_difference": 0.1598149538040161,
+      "abs_error": 0.0011915921780666916
+    },
+    {
+      "column": 6,
+      "autograd": -0.15667960044534382,
+      "finite_difference": -0.43272972106933594,
+      "abs_error": 0.27605012062399215
+    },
+    {
+      "column": 12,
+      "autograd": 0.18680590705950348,
+      "finite_difference": 0.18864870071411133,
+      "abs_error": 0.0018427936546078494
+    },
+    {
+      "column": 18,
+      "autograd": -0.004651117945854085,
+      "finite_difference": -0.002682209014892578,
+      "abs_error": 0.001968908930961507
+    },
+    {
+      "column": 24,
+      "autograd": 0.10640937053098999,
+      "finite_difference": 0.11056661605834961,
+      "abs_error": 0.004157245527359618
+    }
+  ],
+  "epsilon_standardized": 0.0002,
+  "parameter_elements_frozen": 218982648,
+  "all_gradients_finite": true,
+  "max_abs_error": 0.27605012062399215
+}

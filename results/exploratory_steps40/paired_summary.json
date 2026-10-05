@@ -1,0 +1,96 @@
+{
+  "directory": "results/exploratory_steps40",
+  "n_reports": 18,
+  "by_dataset": {
+    "credit-g": {
+      "targets": 9,
+      "context_seeds": [
+        101,
+        102,
+        103
+      ],
+      "gradient_aborted": 0,
+      "rates": {
+        "tabpfn_standard": {
+          "gradient": 0.5555555555555556,
+          "random_search": 0.4444444444444444,
+          "coordinate_search": 0.2222222222222222,
+          "near_rows": 0.2222222222222222,
+          "random_real": 0.0
+        },
+        "surrogate": {
+          "gradient": 0.5555555555555556,
+          "random_search": 0.4444444444444444,
+          "coordinate_search": 0.4444444444444444,
+          "near_rows": 0.2222222222222222,
+          "random_real": 0.0
+        }
+      },
+      "paired_gradient_minus_best_search": {
+        "tabpfn_standard": {
+          "baseline": "random_search",
+          "diff": 0.11111111111111116,
+          "ci95": [
+            0.0,
+            0.4444444444444444
+          ],
+          "ci_level": 95.0
+        },
+        "surrogate": {
+          "baseline": "random_search",
+          "diff": 0.11111111111111116,
+          "ci95": [
+            0.0,
+            0.4444444444444444
+          ],
+          "ci_level": 95.0
+        }
+      }
+    },
+    "taiwan": {
+      "targets": 9,
+      "context_seeds": [
+        101,
+        102,
+        103
+      ],
+      "gradient_aborted": 0,
+      "rates": {
+        "tabpfn_standard": {
+          "gradient": 0.3333333333333333,
+          "random_search": 0.1111111111111111,
+          "coordinate_search": 0.1111111111111111,
+          "near_rows": 0.1111111111111111,
+          "random_real": 0.0
+        },
+        "surrogate": {
+          "gradient": 0.2222222222222222,
+          "random_search": 0.0,
+          "coordinate_search": 0.0,
+          "near_rows": 0.0,
+          "random_real": 0.0
+        }
+      },
+      "paired_gradient_minus_best_search": {
+        "tabpfn_standard": {
+          "baseline": "random_search",
+          "diff": 0.2222222222222222,
+          "ci95": [
+            0.0,
+            0.5555555555555556
+          ],
+          "ci_level": 95.0
+        },
+        "surrogate": {
+          "baseline": "random_search",
+          "diff": 0.2222222222222222,
+          "ci95": [
+            0.0,
+            0.5555555555555556
+          ],
+          "ci_level": 95.0
+        }
+      }
+    }
+  }
+}

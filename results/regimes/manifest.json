@@ -1,0 +1,962 @@
+[
+  {
+    "dataset": "eeg-eye-state",
+    "seed": 501,
+    "target": 0,
+    "gpu": 0,
+    "exit": 0,
+    "artifact": "results/regimes/eeg-eye-state_501_0.json"
+  },
+  {
+    "dataset": "eeg-eye-state",
+    "seed": 502,
+    "target": 3,
+    "gpu": 0,
+    "exit": 0,
+    "artifact": "results/regimes/eeg-eye-state_502_3.json"
+  },
+  {
+    "dataset": "eeg-eye-state",
+    "seed": 504,
+    "target": 1,
+    "gpu": 0,
+    "exit": 0,
+    "artifact": "results/regimes/eeg-eye-state_504_1.json"
+  },
+  {
+    "dataset": "eeg-eye-state",
+    "seed": 505,
+    "target": 4,
+    "gpu": 0,
+    "exit": 0,
+    "artifact": "results/regimes/eeg-eye-state_505_4.json"
+  },
+  {
+    "dataset": "mozilla4",
+    "seed": 501,
+    "target": 2,
+    "gpu": 0,
+    "exit": 0,
+    "artifact": "results/regimes/mozilla4_501_2.json"
+  },
+  {
+    "dataset": "mozilla4",
+    "seed": 503,
+    "target": 0,
+    "gpu": 0,
+    "exit": 0,
+    "artifact": "results/regimes/mozilla4_503_0.json"
+  },
+  {
+    "dataset": "mozilla4",
+    "seed": 504,
+    "target": 3,
+    "gpu": 0,
+    "exit": 0,
+    "artifact": "results/regimes/mozilla4_504_3.json"
+  },
+  {
+    "dataset": "mozilla4",
+    "seed": 506,
+    "target": 1,
+    "gpu": 0,
+    "exit": 0,
+    "artifact": "results/regimes/mozilla4_506_1.json"
+  },
+  {
+    "dataset": "phoneme",
+    "seed": 501,
+    "target": 4,
+    "gpu": 0,
+    "exit": 0,
+    "artifact": "results/regimes/phoneme_501_4.json"
+  },
+  {
+    "dataset": "phoneme",
+    "seed": 503,
+    "target": 2,
+    "gpu": 0,
+    "exit": 0,
+    "artifact": "results/regimes/phoneme_503_2.json"
+  },
+  {
+    "dataset": "phoneme",
+    "seed": 505,
+    "target": 0,
+    "gpu": 0,
+    "exit": 0,
+    "artifact": "results/regimes/phoneme_505_0.json"
+  },
+  {
+    "dataset": "phoneme",
+    "seed": 506,
+    "target": 3,
+    "gpu": 0,
+    "exit": 0,
+    "artifact": "results/regimes/phoneme_506_3.json"
+  },
+  {
+    "dataset": "MagicTelescope",
+    "seed": 502,
+    "target": 1,
+    "gpu": 0,
+    "exit": 0,
+    "artifact": "results/regimes/MagicTelescope_502_1.json"
+  },
+  {
+    "dataset": "MagicTelescope",
+    "seed": 503,
+    "target": 4,
+    "gpu": 0,
+    "exit": 0,
+    "artifact": "results/regimes/MagicTelescope_503_4.json"
+  },
+  {
+    "dataset": "MagicTelescope",
+    "seed": 505,
+    "target": 2,
+    "gpu": 0,
+    "exit": 0,
+    "artifact": "results/regimes/MagicTelescope_505_2.json"
+  },
+  {
+    "dataset": "eeg-eye-state",
+    "seed": 501,
+    "target": 1,
+    "gpu": 1,
+    "exit": 0,
+    "artifact": "results/regimes/eeg-eye-state_501_1.json"
+  },
+  {
+    "dataset": "eeg-eye-state",
+    "seed": 502,
+    "target": 4,
+    "gpu": 1,
+    "exit": 0,
+    "artifact": "results/regimes/eeg-eye-state_502_4.json"
+  },
+  {
+    "dataset": "eeg-eye-state",
+    "seed": 504,
+    "target": 2,
+    "gpu": 1,
+    "exit": 0,
+    "artifact": "results/regimes/eeg-eye-state_504_2.json"
+  },
+  {
+    "dataset": "eeg-eye-state",
+    "seed": 506,
+    "target": 0,
+    "gpu": 1,
+    "exit": 0,
+    "artifact": "results/regimes/eeg-eye-state_506_0.json"
+  },
+  {
+    "dataset": "mozilla4",
+    "seed": 501,
+    "target": 3,
+    "gpu": 1,
+    "exit": 0,
+    "artifact": "results/regimes/mozilla4_501_3.json"
+  },
+  {
+    "dataset": "mozilla4",
+    "seed": 503,
+    "target": 1,
+    "gpu": 1,
+    "exit": 0,
+    "artifact": "results/regimes/mozilla4_503_1.json"
+  },
+  {
+    "dataset": "mozilla4",
+    "seed": 504,
+    "target": 4,
+    "gpu": 1,
+    "exit": 0,
+    "artifact": "results/regimes/mozilla4_504_4.json"
+  },
+  {
+    "dataset": "mozilla4",
+    "seed": 506,
+    "target": 2,
+    "gpu": 1,
+    "exit": 0,
+    "artifact": "results/regimes/mozilla4_506_2.json"
+  },
+  {
+    "dataset": "phoneme",
+    "seed": 502,
+    "target": 0,
+    "gpu": 1,
+    "exit": 0,
+    "artifact": "results/regimes/phoneme_502_0.json"
+  },
+  {
+    "dataset": "phoneme",
+    "seed": 503,
+    "target": 3,
+    "gpu": 1,
+    "exit": 0,
+    "artifact": "results/regimes/phoneme_503_3.json"
+  },
+  {
+    "dataset": "phoneme",
+    "seed": 505,
+    "target": 1,
+    "gpu": 1,
+    "exit": 0,
+    "artifact": "results/regimes/phoneme_505_1.json"
+  },
+  {
+    "dataset": "phoneme",
+    "seed": 506,
+    "target": 4,
+    "gpu": 1,
+    "exit": 0,
+    "artifact": "results/regimes/phoneme_506_4.json"
+  },
+  {
+    "dataset": "MagicTelescope",
+    "seed": 502,
+    "target": 2,
+    "gpu": 1,
+    "exit": 0,
+    "artifact": "results/regimes/MagicTelescope_502_2.json"
+  },
+  {
+    "dataset": "MagicTelescope",
+    "seed": 504,
+    "target": 0,
+    "gpu": 1,
+    "exit": 0,
+    "artifact": "results/regimes/MagicTelescope_504_0.json"
+  },
+  {
+    "dataset": "MagicTelescope",
+    "seed": 505,
+    "target": 3,
+    "gpu": 1,
+    "exit": 0,
+    "artifact": "results/regimes/MagicTelescope_505_3.json"
+  },
+  {
+    "dataset": "eeg-eye-state",
+    "seed": 501,
+    "target": 2,
+    "gpu": 2,
+    "exit": 0,
+    "artifact": "results/regimes/eeg-eye-state_501_2.json"
+  },
+  {
+    "dataset": "eeg-eye-state",
+    "seed": 503,
+    "target": 0,
+    "gpu": 2,
+    "exit": 0,
+    "artifact": "results/regimes/eeg-eye-state_503_0.json"
+  },
+  {
+    "dataset": "eeg-eye-state",
+    "seed": 504,
+    "target": 3,
+    "gpu": 2,
+    "exit": 0,
+    "artifact": "results/regimes/eeg-eye-state_504_3.json"
+  },
+  {
+    "dataset": "eeg-eye-state",
+    "seed": 506,
+    "target": 1,
+    "gpu": 2,
+    "exit": 0,
+    "artifact": "results/regimes/eeg-eye-state_506_1.json"
+  },
+  {
+    "dataset": "mozilla4",
+    "seed": 501,
+    "target": 4,
+    "gpu": 2,
+    "exit": 0,
+    "artifact": "results/regimes/mozilla4_501_4.json"
+  },
+  {
+    "dataset": "mozilla4",
+    "seed": 503,
+    "target": 2,
+    "gpu": 2,
+    "exit": 0,
+    "artifact": "results/regimes/mozilla4_503_2.json"
+  },
+  {
+    "dataset": "mozilla4",
+    "seed": 505,
+    "target": 0,
+    "gpu": 2,
+    "exit": 0,
+    "artifact": "results/regimes/mozilla4_505_0.json"
+  },
+  {
+    "dataset": "mozilla4",
+    "seed": 506,
+    "target": 3,
+    "gpu": 2,
+    "exit": 0,
+    "artifact": "results/regimes/mozilla4_506_3.json"
+  },
+  {
+    "dataset": "phoneme",
+    "seed": 502,
+    "target": 1,
+    "gpu": 2,
+    "exit": 0,
+    "artifact": "results/regimes/phoneme_502_1.json"
+  },
+  {
+    "dataset": "phoneme",
+    "seed": 503,
+    "target": 4,
+    "gpu": 2,
+    "exit": 0,
+    "artifact": "results/regimes/phoneme_503_4.json"
+  },
+  {
+    "dataset": "phoneme",
+    "seed": 505,
+    "target": 2,
+    "gpu": 2,
+    "exit": 0,
+    "artifact": "results/regimes/phoneme_505_2.json"
+  },
+  {
+    "dataset": "MagicTelescope",
+    "seed": 501,
+    "target": 0,
+    "gpu": 2,
+    "exit": 0,
+    "artifact": "results/regimes/MagicTelescope_501_0.json"
+  },
+  {
+    "dataset": "MagicTelescope",
+    "seed": 502,
+    "target": 3,
+    "gpu": 2,
+    "exit": 0,
+    "artifact": "results/regimes/MagicTelescope_502_3.json"
+  },
+  {
+    "dataset": "MagicTelescope",
+    "seed": 504,
+    "target": 1,
+    "gpu": 2,
+    "exit": 0,
+    "artifact": "results/regimes/MagicTelescope_504_1.json"
+  },
+  {
+    "dataset": "MagicTelescope",
+    "seed": 505,
+    "target": 4,
+    "gpu": 2,
+    "exit": 0,
+    "artifact": "results/regimes/MagicTelescope_505_4.json"
+  },
+  {
+    "dataset": "eeg-eye-state",
+    "seed": 501,
+    "target": 3,
+    "gpu": 3,
+    "exit": 0,
+    "artifact": "results/regimes/eeg-eye-state_501_3.json"
+  },
+  {
+    "dataset": "eeg-eye-state",
+    "seed": 503,
+    "target": 1,
+    "gpu": 3,
+    "exit": 0,
+    "artifact": "results/regimes/eeg-eye-state_503_1.json"
+  },
+  {
+    "dataset": "eeg-eye-state",
+    "seed": 504,
+    "target": 4,
+    "gpu": 3,
+    "exit": 0,
+    "artifact": "results/regimes/eeg-eye-state_504_4.json"
+  },
+  {
+    "dataset": "eeg-eye-state",
+    "seed": 506,
+    "target": 2,
+    "gpu": 3,
+    "exit": 0,
+    "artifact": "results/regimes/eeg-eye-state_506_2.json"
+  },
+  {
+    "dataset": "mozilla4",
+    "seed": 502,
+    "target": 0,
+    "gpu": 3,
+    "exit": 0,
+    "artifact": "results/regimes/mozilla4_502_0.json"
+  },
+  {
+    "dataset": "mozilla4",
+    "seed": 503,
+    "target": 3,
+    "gpu": 3,
+    "exit": 0,
+    "artifact": "results/regimes/mozilla4_503_3.json"
+  },
+  {
+    "dataset": "mozilla4",
+    "seed": 505,
+    "target": 1,
+    "gpu": 3,
+    "exit": 0,
+    "artifact": "results/regimes/mozilla4_505_1.json"
+  },
+  {
+    "dataset": "mozilla4",
+    "seed": 506,
+    "target": 4,
+    "gpu": 3,
+    "exit": 0,
+    "artifact": "results/regimes/mozilla4_506_4.json"
+  },
+  {
+    "dataset": "phoneme",
+    "seed": 502,
+    "target": 2,
+    "gpu": 3,
+    "exit": 0,
+    "artifact": "results/regimes/phoneme_502_2.json"
+  },
+  {
+    "dataset": "phoneme",
+    "seed": 504,
+    "target": 0,
+    "gpu": 3,
+    "exit": 0,
+    "artifact": "results/regimes/phoneme_504_0.json"
+  },
+  {
+    "dataset": "phoneme",
+    "seed": 505,
+    "target": 3,
+    "gpu": 3,
+    "exit": 0,
+    "artifact": "results/regimes/phoneme_505_3.json"
+  },
+  {
+    "dataset": "MagicTelescope",
+    "seed": 501,
+    "target": 1,
+    "gpu": 3,
+    "exit": 0,
+    "artifact": "results/regimes/MagicTelescope_501_1.json"
+  },
+  {
+    "dataset": "MagicTelescope",
+    "seed": 502,
+    "target": 4,
+    "gpu": 3,
+    "exit": 0,
+    "artifact": "results/regimes/MagicTelescope_502_4.json"
+  },
+  {
+    "dataset": "MagicTelescope",
+    "seed": 504,
+    "target": 2,
+    "gpu": 3,
+    "exit": 0,
+    "artifact": "results/regimes/MagicTelescope_504_2.json"
+  },
+  {
+    "dataset": "MagicTelescope",
+    "seed": 506,
+    "target": 0,
+    "gpu": 3,
+    "exit": 0,
+    "artifact": "results/regimes/MagicTelescope_506_0.json"
+  },
+  {
+    "dataset": "eeg-eye-state",
+    "seed": 501,
+    "target": 4,
+    "gpu": 4,
+    "exit": 0,
+    "artifact": "results/regimes/eeg-eye-state_501_4.json"
+  },
+  {
+    "dataset": "eeg-eye-state",
+    "seed": 503,
+    "target": 2,
+    "gpu": 4,
+    "exit": 0,
+    "artifact": "results/regimes/eeg-eye-state_503_2.json"
+  },
+  {
+    "dataset": "eeg-eye-state",
+    "seed": 505,
+    "target": 0,
+    "gpu": 4,
+    "exit": 0,
+    "artifact": "results/regimes/eeg-eye-state_505_0.json"
+  },
+  {
+    "dataset": "eeg-eye-state",
+    "seed": 506,
+    "target": 3,
+    "gpu": 4,
+    "exit": 0,
+    "artifact": "results/regimes/eeg-eye-state_506_3.json"
+  },
+  {
+    "dataset": "mozilla4",
+    "seed": 502,
+    "target": 1,
+    "gpu": 4,
+    "exit": 0,
+    "artifact": "results/regimes/mozilla4_502_1.json"
+  },
+  {
+    "dataset": "mozilla4",
+    "seed": 503,
+    "target": 4,
+    "gpu": 4,
+    "exit": 0,
+    "artifact": "results/regimes/mozilla4_503_4.json"
+  },
+  {
+    "dataset": "mozilla4",
+    "seed": 505,
+    "target": 2,
+    "gpu": 4,
+    "exit": 0,
+    "artifact": "results/regimes/mozilla4_505_2.json"
+  },
+  {
+    "dataset": "phoneme",
+    "seed": 501,
+    "target": 0,
+    "gpu": 4,
+    "exit": 0,
+    "artifact": "results/regimes/phoneme_501_0.json"
+  },
+  {
+    "dataset": "phoneme",
+    "seed": 502,
+    "target": 3,
+    "gpu": 4,
+    "exit": 0,
+    "artifact": "results/regimes/phoneme_502_3.json"
+  },
+  {
+    "dataset": "phoneme",
+    "seed": 504,
+    "target": 1,
+    "gpu": 4,
+    "exit": 0,
+    "artifact": "results/regimes/phoneme_504_1.json"
+  },
+  {
+    "dataset": "phoneme",
+    "seed": 505,
+    "target": 4,
+    "gpu": 4,
+    "exit": 0,
+    "artifact": "results/regimes/phoneme_505_4.json"
+  },
+  {
+    "dataset": "MagicTelescope",
+    "seed": 501,
+    "target": 2,
+    "gpu": 4,
+    "exit": 0,
+    "artifact": "results/regimes/MagicTelescope_501_2.json"
+  },
+  {
+    "dataset": "MagicTelescope",
+    "seed": 503,
+    "target": 0,
+    "gpu": 4,
+    "exit": 0,
+    "artifact": "results/regimes/MagicTelescope_503_0.json"
+  },
+  {
+    "dataset": "MagicTelescope",
+    "seed": 504,
+    "target": 3,
+    "gpu": 4,
+    "exit": 0,
+    "artifact": "results/regimes/MagicTelescope_504_3.json"
+  },
+  {
+    "dataset": "MagicTelescope",
+    "seed": 506,
+    "target": 1,
+    "gpu": 4,
+    "exit": 0,
+    "artifact": "results/regimes/MagicTelescope_506_1.json"
+  },
+  {
+    "dataset": "eeg-eye-state",
+    "seed": 502,
+    "target": 0,
+    "gpu": 5,
+    "exit": 0,
+    "artifact": "results/regimes/eeg-eye-state_502_0.json"
+  },
+  {
+    "dataset": "eeg-eye-state",
+    "seed": 503,
+    "target": 3,
+    "gpu": 5,
+    "exit": 0,
+    "artifact": "results/regimes/eeg-eye-state_503_3.json"
+  },
+  {
+    "dataset": "eeg-eye-state",
+    "seed": 505,
+    "target": 1,
+    "gpu": 5,
+    "exit": 0,
+    "artifact": "results/regimes/eeg-eye-state_505_1.json"
+  },
+  {
+    "dataset": "eeg-eye-state",
+    "seed": 506,
+    "target": 4,
+    "gpu": 5,
+    "exit": 0,
+    "artifact": "results/regimes/eeg-eye-state_506_4.json"
+  },
+  {
+    "dataset": "mozilla4",
+    "seed": 502,
+    "target": 2,
+    "gpu": 5,
+    "exit": 0,
+    "artifact": "results/regimes/mozilla4_502_2.json"
+  },
+  {
+    "dataset": "mozilla4",
+    "seed": 504,
+    "target": 0,
+    "gpu": 5,
+    "exit": 0,
+    "artifact": "results/regimes/mozilla4_504_0.json"
+  },
+  {
+    "dataset": "mozilla4",
+    "seed": 505,
+    "target": 3,
+    "gpu": 5,
+    "exit": 0,
+    "artifact": "results/regimes/mozilla4_505_3.json"
+  },
+  {
+    "dataset": "phoneme",
+    "seed": 501,
+    "target": 1,
+    "gpu": 5,
+    "exit": 0,
+    "artifact": "results/regimes/phoneme_501_1.json"
+  },
+  {
+    "dataset": "phoneme",
+    "seed": 502,
+    "target": 4,
+    "gpu": 5,
+    "exit": 0,
+    "artifact": "results/regimes/phoneme_502_4.json"
+  },
+  {
+    "dataset": "phoneme",
+    "seed": 504,
+    "target": 2,
+    "gpu": 5,
+    "exit": 0,
+    "artifact": "results/regimes/phoneme_504_2.json"
+  },
+  {
+    "dataset": "phoneme",
+    "seed": 506,
+    "target": 0,
+    "gpu": 5,
+    "exit": 0,
+    "artifact": "results/regimes/phoneme_506_0.json"
+  },
+  {
+    "dataset": "MagicTelescope",
+    "seed": 501,
+    "target": 3,
+    "gpu": 5,
+    "exit": 0,
+    "artifact": "results/regimes/MagicTelescope_501_3.json"
+  },
+  {
+    "dataset": "MagicTelescope",
+    "seed": 503,
+    "target": 1,
+    "gpu": 5,
+    "exit": 0,
+    "artifact": "results/regimes/MagicTelescope_503_1.json"
+  },
+  {
+    "dataset": "MagicTelescope",
+    "seed": 504,
+    "target": 4,
+    "gpu": 5,
+    "exit": 0,
+    "artifact": "results/regimes/MagicTelescope_504_4.json"
+  },
+  {
+    "dataset": "MagicTelescope",
+    "seed": 506,
+    "target": 2,
+    "gpu": 5,
+    "exit": 0,
+    "artifact": "results/regimes/MagicTelescope_506_2.json"
+  },
+  {
+    "dataset": "eeg-eye-state",
+    "seed": 502,
+    "target": 1,
+    "gpu": 6,
+    "exit": 0,
+    "artifact": "results/regimes/eeg-eye-state_502_1.json"
+  },
+  {
+    "dataset": "eeg-eye-state",
+    "seed": 503,
+    "target": 4,
+    "gpu": 6,
+    "exit": 0,
+    "artifact": "results/regimes/eeg-eye-state_503_4.json"
+  },
+  {
+    "dataset": "eeg-eye-state",
+    "seed": 505,
+    "target": 2,
+    "gpu": 6,
+    "exit": 0,
+    "artifact": "results/regimes/eeg-eye-state_505_2.json"
+  },
+  {
+    "dataset": "mozilla4",
+    "seed": 501,
+    "target": 0,
+    "gpu": 6,
+    "exit": 0,
+    "artifact": "results/regimes/mozilla4_501_0.json"
+  },
+  {
+    "dataset": "mozilla4",
+    "seed": 502,
+    "target": 3,
+    "gpu": 6,
+    "exit": 0,
+    "artifact": "results/regimes/mozilla4_502_3.json"
+  },
+  {
+    "dataset": "mozilla4",
+    "seed": 504,
+    "target": 1,
+    "gpu": 6,
+    "exit": 0,
+    "artifact": "results/regimes/mozilla4_504_1.json"
+  },
+  {
+    "dataset": "mozilla4",
+    "seed": 505,
+    "target": 4,
+    "gpu": 6,
+    "exit": 0,
+    "artifact": "results/regimes/mozilla4_505_4.json"
+  },
+  {
+    "dataset": "phoneme",
+    "seed": 501,
+    "target": 2,
+    "gpu": 6,
+    "exit": 0,
+    "artifact": "results/regimes/phoneme_501_2.json"
+  },
+  {
+    "dataset": "phoneme",
+    "seed": 503,
+    "target": 0,
+    "gpu": 6,
+    "exit": 0,
+    "artifact": "results/regimes/phoneme_503_0.json"
+  },
+  {
+    "dataset": "phoneme",
+    "seed": 504,
+    "target": 3,
+    "gpu": 6,
+    "exit": 0,
+    "artifact": "results/regimes/phoneme_504_3.json"
+  },
+  {
+    "dataset": "phoneme",
+    "seed": 506,
+    "target": 1,
+    "gpu": 6,
+    "exit": 0,
+    "artifact": "results/regimes/phoneme_506_1.json"
+  },
+  {
+    "dataset": "MagicTelescope",
+    "seed": 501,
+    "target": 4,
+    "gpu": 6,
+    "exit": 0,
+    "artifact": "results/regimes/MagicTelescope_501_4.json"
+  },
+  {
+    "dataset": "MagicTelescope",
+    "seed": 503,
+    "target": 2,
+    "gpu": 6,
+    "exit": 0,
+    "artifact": "results/regimes/MagicTelescope_503_2.json"
+  },
+  {
+    "dataset": "MagicTelescope",
+    "seed": 505,
+    "target": 0,
+    "gpu": 6,
+    "exit": 0,
+    "artifact": "results/regimes/MagicTelescope_505_0.json"
+  },
+  {
+    "dataset": "MagicTelescope",
+    "seed": 506,
+    "target": 3,
+    "gpu": 6,
+    "exit": 0,
+    "artifact": "results/regimes/MagicTelescope_506_3.json"
+  },
+  {
+    "dataset": "eeg-eye-state",
+    "seed": 502,
+    "target": 2,
+    "gpu": 7,
+    "exit": 0,
+    "artifact": "results/regimes/eeg-eye-state_502_2.json"
+  },
+  {
+    "dataset": "eeg-eye-state",
+    "seed": 504,
+    "target": 0,
+    "gpu": 7,
+    "exit": 0,
+    "artifact": "results/regimes/eeg-eye-state_504_0.json"
+  },
+  {
+    "dataset": "eeg-eye-state",
+    "seed": 505,
+    "target": 3,
+    "gpu": 7,
+    "exit": 0,
+    "artifact": "results/regimes/eeg-eye-state_505_3.json"
+  },
+  {
+    "dataset": "mozilla4",
+    "seed": 501,
+    "target": 1,
+    "gpu": 7,
+    "exit": 0,
+    "artifact": "results/regimes/mozilla4_501_1.json"
+  },
+  {
+    "dataset": "mozilla4",
+    "seed": 502,
+    "target": 4,
+    "gpu": 7,
+    "exit": 0,
+    "artifact": "results/regimes/mozilla4_502_4.json"
+  },
+  {
+    "dataset": "mozilla4",
+    "seed": 504,
+    "target": 2,
+    "gpu": 7,
+    "exit": 0,
+    "artifact": "results/regimes/mozilla4_504_2.json"
+  },
+  {
+    "dataset": "mozilla4",
+    "seed": 506,
+    "target": 0,
+    "gpu": 7,
+    "exit": 0,
+    "artifact": "results/regimes/mozilla4_506_0.json"
+  },
+  {
+    "dataset": "phoneme",
+    "seed": 501,
+    "target": 3,
+    "gpu": 7,
+    "exit": 0,
+    "artifact": "results/regimes/phoneme_501_3.json"
+  },
+  {
+    "dataset": "phoneme",
+    "seed": 503,
+    "target": 1,
+    "gpu": 7,
+    "exit": 0,
+    "artifact": "results/regimes/phoneme_503_1.json"
+  },
+  {
+    "dataset": "phoneme",
+    "seed": 504,
+    "target": 4,
+    "gpu": 7,
+    "exit": 0,
+    "artifact": "results/regimes/phoneme_504_4.json"
+  },
+  {
+    "dataset": "phoneme",
+    "seed": 506,
+    "target": 2,
+    "gpu": 7,
+    "exit": 0,
+    "artifact": "results/regimes/phoneme_506_2.json"
+  },
+  {
+    "dataset": "MagicTelescope",
+    "seed": 502,
+    "target": 0,
+    "gpu": 7,
+    "exit": 0,
+    "artifact": "results/regimes/MagicTelescope_502_0.json"
+  },
+  {
+    "dataset": "MagicTelescope",
+    "seed": 503,
+    "target": 3,
+    "gpu": 7,
+    "exit": 0,
+    "artifact": "results/regimes/MagicTelescope_503_3.json"
+  },
+  {
+    "dataset": "MagicTelescope",
+    "seed": 505,
+    "target": 1,
+    "gpu": 7,
+    "exit": 0,
+    "artifact": "results/regimes/MagicTelescope_505_1.json"
+  },
+  {
+    "dataset": "MagicTelescope",
+    "seed": 506,
+    "target": 4,
+    "gpu": 7,
+    "exit": 0,
+    "artifact": "results/regimes/MagicTelescope_506_4.json"
+  }
+]

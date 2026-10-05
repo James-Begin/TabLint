@@ -1,0 +1,482 @@
+[
+  {
+    "dataset": "credit-g",
+    "seed": 401,
+    "target": 0,
+    "gpu": 0,
+    "exit": 0,
+    "artifact": "results/confirmation2/credit-g_401_0.json"
+  },
+  {
+    "dataset": "credit-g",
+    "seed": 402,
+    "target": 3,
+    "gpu": 0,
+    "exit": 0,
+    "artifact": "results/confirmation2/credit-g_402_3.json"
+  },
+  {
+    "dataset": "credit-g",
+    "seed": 404,
+    "target": 1,
+    "gpu": 0,
+    "exit": 0,
+    "artifact": "results/confirmation2/credit-g_404_1.json"
+  },
+  {
+    "dataset": "credit-g",
+    "seed": 405,
+    "target": 4,
+    "gpu": 0,
+    "exit": 0,
+    "artifact": "results/confirmation2/credit-g_405_4.json"
+  },
+  {
+    "dataset": "taiwan",
+    "seed": 401,
+    "target": 2,
+    "gpu": 0,
+    "exit": 0,
+    "artifact": "results/confirmation2/taiwan_401_2.json"
+  },
+  {
+    "dataset": "taiwan",
+    "seed": 403,
+    "target": 0,
+    "gpu": 0,
+    "exit": 0,
+    "artifact": "results/confirmation2/taiwan_403_0.json"
+  },
+  {
+    "dataset": "taiwan",
+    "seed": 404,
+    "target": 3,
+    "gpu": 0,
+    "exit": 0,
+    "artifact": "results/confirmation2/taiwan_404_3.json"
+  },
+  {
+    "dataset": "taiwan",
+    "seed": 406,
+    "target": 1,
+    "gpu": 0,
+    "exit": 0,
+    "artifact": "results/confirmation2/taiwan_406_1.json"
+  },
+  {
+    "dataset": "credit-g",
+    "seed": 401,
+    "target": 1,
+    "gpu": 1,
+    "exit": 0,
+    "artifact": "results/confirmation2/credit-g_401_1.json"
+  },
+  {
+    "dataset": "credit-g",
+    "seed": 402,
+    "target": 4,
+    "gpu": 1,
+    "exit": 0,
+    "artifact": "results/confirmation2/credit-g_402_4.json"
+  },
+  {
+    "dataset": "credit-g",
+    "seed": 404,
+    "target": 2,
+    "gpu": 1,
+    "exit": 0,
+    "artifact": "results/confirmation2/credit-g_404_2.json"
+  },
+  {
+    "dataset": "credit-g",
+    "seed": 406,
+    "target": 0,
+    "gpu": 1,
+    "exit": 0,
+    "artifact": "results/confirmation2/credit-g_406_0.json"
+  },
+  {
+    "dataset": "taiwan",
+    "seed": 401,
+    "target": 3,
+    "gpu": 1,
+    "exit": 0,
+    "artifact": "results/confirmation2/taiwan_401_3.json"
+  },
+  {
+    "dataset": "taiwan",
+    "seed": 403,
+    "target": 1,
+    "gpu": 1,
+    "exit": 0,
+    "artifact": "results/confirmation2/taiwan_403_1.json"
+  },
+  {
+    "dataset": "taiwan",
+    "seed": 404,
+    "target": 4,
+    "gpu": 1,
+    "exit": 0,
+    "artifact": "results/confirmation2/taiwan_404_4.json"
+  },
+  {
+    "dataset": "taiwan",
+    "seed": 406,
+    "target": 2,
+    "gpu": 1,
+    "exit": 0,
+    "artifact": "results/confirmation2/taiwan_406_2.json"
+  },
+  {
+    "dataset": "credit-g",
+    "seed": 401,
+    "target": 2,
+    "gpu": 2,
+    "exit": 0,
+    "artifact": "results/confirmation2/credit-g_401_2.json"
+  },
+  {
+    "dataset": "credit-g",
+    "seed": 403,
+    "target": 0,
+    "gpu": 2,
+    "exit": 0,
+    "artifact": "results/confirmation2/credit-g_403_0.json"
+  },
+  {
+    "dataset": "credit-g",
+    "seed": 404,
+    "target": 3,
+    "gpu": 2,
+    "exit": 0,
+    "artifact": "results/confirmation2/credit-g_404_3.json"
+  },
+  {
+    "dataset": "credit-g",
+    "seed": 406,
+    "target": 1,
+    "gpu": 2,
+    "exit": 0,
+    "artifact": "results/confirmation2/credit-g_406_1.json"
+  },
+  {
+    "dataset": "taiwan",
+    "seed": 401,
+    "target": 4,
+    "gpu": 2,
+    "exit": 0,
+    "artifact": "results/confirmation2/taiwan_401_4.json"
+  },
+  {
+    "dataset": "taiwan",
+    "seed": 403,
+    "target": 2,
+    "gpu": 2,
+    "exit": 0,
+    "artifact": "results/confirmation2/taiwan_403_2.json"
+  },
+  {
+    "dataset": "taiwan",
+    "seed": 405,
+    "target": 0,
+    "gpu": 2,
+    "exit": 0,
+    "artifact": "results/confirmation2/taiwan_405_0.json"
+  },
+  {
+    "dataset": "taiwan",
+    "seed": 406,
+    "target": 3,
+    "gpu": 2,
+    "exit": 0,
+    "artifact": "results/confirmation2/taiwan_406_3.json"
+  },
+  {
+    "dataset": "credit-g",
+    "seed": 401,
+    "target": 3,
+    "gpu": 3,
+    "exit": 0,
+    "artifact": "results/confirmation2/credit-g_401_3.json"
+  },
+  {
+    "dataset": "credit-g",
+    "seed": 403,
+    "target": 1,
+    "gpu": 3,
+    "exit": 0,
+    "artifact": "results/confirmation2/credit-g_403_1.json"
+  },
+  {
+    "dataset": "credit-g",
+    "seed": 404,
+    "target": 4,
+    "gpu": 3,
+    "exit": 0,
+    "artifact": "results/confirmation2/credit-g_404_4.json"
+  },
+  {
+    "dataset": "credit-g",
+    "seed": 406,
+    "target": 2,
+    "gpu": 3,
+    "exit": 0,
+    "artifact": "results/confirmation2/credit-g_406_2.json"
+  },
+  {
+    "dataset": "taiwan",
+    "seed": 402,
+    "target": 0,
+    "gpu": 3,
+    "exit": 0,
+    "artifact": "results/confirmation2/taiwan_402_0.json"
+  },
+  {
+    "dataset": "taiwan",
+    "seed": 403,
+    "target": 3,
+    "gpu": 3,
+    "exit": 0,
+    "artifact": "results/confirmation2/taiwan_403_3.json"
+  },
+  {
+    "dataset": "taiwan",
+    "seed": 405,
+    "target": 1,
+    "gpu": 3,
+    "exit": 0,
+    "artifact": "results/confirmation2/taiwan_405_1.json"
+  },
+  {
+    "dataset": "taiwan",
+    "seed": 406,
+    "target": 4,
+    "gpu": 3,
+    "exit": 0,
+    "artifact": "results/confirmation2/taiwan_406_4.json"
+  },
+  {
+    "dataset": "credit-g",
+    "seed": 401,
+    "target": 4,
+    "gpu": 4,
+    "exit": 0,
+    "artifact": "results/confirmation2/credit-g_401_4.json"
+  },
+  {
+    "dataset": "credit-g",
+    "seed": 403,
+    "target": 2,
+    "gpu": 4,
+    "exit": 0,
+    "artifact": "results/confirmation2/credit-g_403_2.json"
+  },
+  {
+    "dataset": "credit-g",
+    "seed": 405,
+    "target": 0,
+    "gpu": 4,
+    "exit": 0,
+    "artifact": "results/confirmation2/credit-g_405_0.json"
+  },
+  {
+    "dataset": "credit-g",
+    "seed": 406,
+    "target": 3,
+    "gpu": 4,
+    "exit": 0,
+    "artifact": "results/confirmation2/credit-g_406_3.json"
+  },
+  {
+    "dataset": "taiwan",
+    "seed": 402,
+    "target": 1,
+    "gpu": 4,
+    "exit": 0,
+    "artifact": "results/confirmation2/taiwan_402_1.json"
+  },
+  {
+    "dataset": "taiwan",
+    "seed": 403,
+    "target": 4,
+    "gpu": 4,
+    "exit": 0,
+    "artifact": "results/confirmation2/taiwan_403_4.json"
+  },
+  {
+    "dataset": "taiwan",
+    "seed": 405,
+    "target": 2,
+    "gpu": 4,
+    "exit": 0,
+    "artifact": "results/confirmation2/taiwan_405_2.json"
+  },
+  {
+    "dataset": "credit-g",
+    "seed": 402,
+    "target": 0,
+    "gpu": 5,
+    "exit": 0,
+    "artifact": "results/confirmation2/credit-g_402_0.json"
+  },
+  {
+    "dataset": "credit-g",
+    "seed": 403,
+    "target": 3,
+    "gpu": 5,
+    "exit": 0,
+    "artifact": "results/confirmation2/credit-g_403_3.json"
+  },
+  {
+    "dataset": "credit-g",
+    "seed": 405,
+    "target": 1,
+    "gpu": 5,
+    "exit": 0,
+    "artifact": "results/confirmation2/credit-g_405_1.json"
+  },
+  {
+    "dataset": "credit-g",
+    "seed": 406,
+    "target": 4,
+    "gpu": 5,
+    "exit": 0,
+    "artifact": "results/confirmation2/credit-g_406_4.json"
+  },
+  {
+    "dataset": "taiwan",
+    "seed": 402,
+    "target": 2,
+    "gpu": 5,
+    "exit": 0,
+    "artifact": "results/confirmation2/taiwan_402_2.json"
+  },
+  {
+    "dataset": "taiwan",
+    "seed": 404,
+    "target": 0,
+    "gpu": 5,
+    "exit": 0,
+    "artifact": "results/confirmation2/taiwan_404_0.json"
+  },
+  {
+    "dataset": "taiwan",
+    "seed": 405,
+    "target": 3,
+    "gpu": 5,
+    "exit": 0,
+    "artifact": "results/confirmation2/taiwan_405_3.json"
+  },
+  {
+    "dataset": "credit-g",
+    "seed": 402,
+    "target": 1,
+    "gpu": 6,
+    "exit": 0,
+    "artifact": "results/confirmation2/credit-g_402_1.json"
+  },
+  {
+    "dataset": "credit-g",
+    "seed": 403,
+    "target": 4,
+    "gpu": 6,
+    "exit": 0,
+    "artifact": "results/confirmation2/credit-g_403_4.json"
+  },
+  {
+    "dataset": "credit-g",
+    "seed": 405,
+    "target": 2,
+    "gpu": 6,
+    "exit": 0,
+    "artifact": "results/confirmation2/credit-g_405_2.json"
+  },
+  {
+    "dataset": "taiwan",
+    "seed": 401,
+    "target": 0,
+    "gpu": 6,
+    "exit": 0,
+    "artifact": "results/confirmation2/taiwan_401_0.json"
+  },
+  {
+    "dataset": "taiwan",
+    "seed": 402,
+    "target": 3,
+    "gpu": 6,
+    "exit": 0,
+    "artifact": "results/confirmation2/taiwan_402_3.json"
+  },
+  {
+    "dataset": "taiwan",
+    "seed": 404,
+    "target": 1,
+    "gpu": 6,
+    "exit": 0,
+    "artifact": "results/confirmation2/taiwan_404_1.json"
+  },
+  {
+    "dataset": "taiwan",
+    "seed": 405,
+    "target": 4,
+    "gpu": 6,
+    "exit": 0,
+    "artifact": "results/confirmation2/taiwan_405_4.json"
+  },
+  {
+    "dataset": "credit-g",
+    "seed": 402,
+    "target": 2,
+    "gpu": 7,
+    "exit": 0,
+    "artifact": "results/confirmation2/credit-g_402_2.json"
+  },
+  {
+    "dataset": "credit-g",
+    "seed": 404,
+    "target": 0,
+    "gpu": 7,
+    "exit": 0,
+    "artifact": "results/confirmation2/credit-g_404_0.json"
+  },
+  {
+    "dataset": "credit-g",
+    "seed": 405,
+    "target": 3,
+    "gpu": 7,
+    "exit": 0,
+    "artifact": "results/confirmation2/credit-g_405_3.json"
+  },
+  {
+    "dataset": "taiwan",
+    "seed": 401,
+    "target": 1,
+    "gpu": 7,
+    "exit": 0,
+    "artifact": "results/confirmation2/taiwan_401_1.json"
+  },
+  {
+    "dataset": "taiwan",
+    "seed": 402,
+    "target": 4,
+    "gpu": 7,
+    "exit": 0,
+    "artifact": "results/confirmation2/taiwan_402_4.json"
+  },
+  {
+    "dataset": "taiwan",
+    "seed": 404,
+    "target": 2,
+    "gpu": 7,
+    "exit": 0,
+    "artifact": "results/confirmation2/taiwan_404_2.json"
+  },
+  {
+    "dataset": "taiwan",
+    "seed": 406,
+    "target": 0,
+    "gpu": 7,
+    "exit": 0,
+    "artifact": "results/confirmation2/taiwan_406_0.json"
+  }
+]

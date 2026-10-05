@@ -1,0 +1,27 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+logs/
+results/stale/
+*.ckpt
+*.pth
+*.safetensors
+.env
+.envrc
+vscode-proofread/node_modules/
+vscode-proofread/out/
+vscode-proofread/.vscode-test/
+vscode-proofread/*.vsix
+tests/js/node_modules/
+tests/js/package-lock.json
+data_cache/
+handoff/
+
+# Build products and disposable demo copies
+*.egg-info/
+.DS_Store
+node_modules/
+dist/
+demo/.workspace/
+*.proofread.ledger.json

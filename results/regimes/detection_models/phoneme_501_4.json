@@ -1,0 +1,19 @@
+{
+  "report": "phoneme_501_4.json",
+  "dataset": "phoneme",
+  "seed": 501,
+  "k": 3,
+  "attack_valid": true,
+  "hgb_auroc": 0.6175,
+  "hgb_hits_in_topk": 0,
+  "hgb_frac_zero_scores": 0.0,
+  "hgb_seconds": 8.470183849334717,
+  "rf_auroc": 0.37416666666666665,
+  "rf_hits_in_topk": 0,
+  "rf_frac_zero_scores": 0.0,
+  "rf_seconds": 21.751206159591675,
+  "logistic_auroc": 0.9875,
+  "logistic_hits_in_topk": 1,
+  "logistic_frac_zero_scores": 0.0,
+  "logistic_seconds": 0.49133825302124023
+}

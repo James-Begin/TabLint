@@ -1,0 +1,1839 @@
+{
+ "penguins": {
+  "n_full": 344,
+  "n_scanned": 344,
+  "issues": 13,
+  "seconds": 12,
+  "patterns": [],
+  "top10": [
+   {
+    "rank": 1,
+    "orig_row": 169,
+    "kind": "cell",
+    "column": "bill_length_mm",
+    "value": 58.0,
+    "suggested": 45.63688237249288,
+    "low": 42.647979962086346,
+    "high": 48.45717515272312,
+    "surprise": 3.83,
+    "cause": "implausible given the rest of the row",
+    "auto_checks": [],
+    "row": {
+     "species": "Chinstrap",
+     "island": "Dream",
+     "bill_length_mm": 58.0,
+     "bill_depth_mm": 17.8,
+     "flipper_length_mm": 181.0,
+     "body_mass_g": 3700.0,
+     "sex": "FEMALE"
+    }
+   },
+   {
+    "rank": 2,
+    "orig_row": 257,
+    "kind": "cell",
+    "column": "bill_depth_mm",
+    "value": 17.3,
+    "suggested": 14.745176271385311,
+    "low": 13.927040434357872,
+    "high": 15.603333550429902,
+    "surprise": 3.05,
+    "cause": "implausible given the rest of the row",
+    "auto_checks": [],
+    "row": {
+     "species": "Gentoo",
+     "island": "Biscoe",
+     "bill_length_mm": 44.4,
+     "bill_depth_mm": 17.3,
+     "flipper_length_mm": 219.0,
+     "body_mass_g": 5250.0,
+     "sex": "MALE"
+    }
+   },
+   {
+    "rank": 3,
+    "orig_row": 237,
+    "kind": "cell",
+    "column": "body_mass_g",
+    "value": 6300.0,
+    "suggested": 5261.0,
+    "low": 4890.741115556978,
+    "high": 5667.427469971761,
+    "surprise": 2.59,
+    "cause": "implausible given the rest of the row",
+    "auto_checks": [],
+    "row": {
+     "species": "Gentoo",
+     "island": "Biscoe",
+     "bill_length_mm": 49.2,
+     "bill_depth_mm": 15.2,
+     "flipper_length_mm": 221.0,
+     "body_mass_g": 6300.0,
+     "sex": "MALE"
+    }
+   },
+   {
+    "rank": 4,
+    "orig_row": 190,
+    "kind": "cell",
+    "column": "body_mass_g",
+    "value": 2700.0,
+    "suggested": 3445.0,
+    "low": 3129.692418532656,
+    "high": 3769.740484999564,
+    "surprise": 2.45,
+    "cause": "implausible given the rest of the row",
+    "auto_checks": [],
+    "row": {
+     "species": "Chinstrap",
+     "island": "Dream",
+     "bill_length_mm": 46.9,
+     "bill_depth_mm": 16.6,
+     "flipper_length_mm": 192.0,
+     "body_mass_g": 2700.0,
+     "sex": "FEMALE"
+    }
+   },
+   {
+    "rank": 5,
+    "orig_row": 14,
+    "kind": "cell",
+    "column": "bill_length_mm",
+    "value": 34.6,
+    "suggested": 41.77445561801515,
+    "low": 38.86270141905146,
+    "high": 44.52237353639694,
+    "surprise": 2.35,
+    "cause": "possible swapped leading digits: 34.6 \u2192 43.6 would be typical",
+    "auto_checks": [],
+    "row": {
+     "species": "Adelie",
+     "island": "Torgersen",
+     "bill_length_mm": 34.6,
+     "bill_depth_mm": 21.1,
+     "flipper_length_mm": 198.0,
+     "body_mass_g": 4400.0,
+     "sex": "MALE"
+    }
+   },
+   {
+    "rank": 6,
+    "orig_row": 169,
+    "kind": "cell",
+    "column": "flipper_length_mm",
+    "value": 181.0,
+    "suggested": 201.0,
+    "low": 194.91969974397261,
+    "high": 209.02851255607288,
+    "surprise": 2.3,
+    "cause": "implausible given the rest of the row",
+    "auto_checks": [],
+    "row": {
+     "species": "Chinstrap",
+     "island": "Dream",
+     "bill_length_mm": 58.0,
+     "bill_depth_mm": 17.8,
+     "flipper_length_mm": 181.0,
+     "body_mass_g": 3700.0,
+     "sex": "FEMALE"
+    }
+   },
+   {
+    "rank": 7,
+    "orig_row": 299,
+    "kind": "cell",
+    "column": "bill_length_mm",
+    "value": 45.2,
+    "suggested": 50.60244750041326,
+    "low": 48.52212527277994,
+    "high": 53.298760735441554,
+    "surprise": 2.29,
+    "cause": "implausible given the rest of the row",
+    "auto_checks": [],
+    "row": {
+     "species": "Gentoo",
+     "island": "Biscoe",
+     "bill_length_mm": 45.2,
+     "bill_depth_mm": 16.4,
+     "flipper_length_mm": 223.0,
+     "body_mass_g": 5950.0,
+     "sex": "MALE"
+    }
+   },
+   {
+    "rank": 8,
+    "orig_row": 104,
+    "kind": "cell",
+    "column": "body_mass_g",
+    "value": 2925.0,
+    "suggested": 3727.0,
+    "low": 3335.650063039059,
+    "high": 4216.791579147038,
+    "surprise": 2.29,
+    "cause": "implausible given the rest of the row",
+    "auto_checks": [],
+    "row": {
+     "species": "Adelie",
+     "island": "Biscoe",
+     "bill_length_mm": 37.9,
+     "bill_depth_mm": 18.6,
+     "flipper_length_mm": 193.0,
+     "body_mass_g": 2925.0,
+     "sex": "FEMALE"
+    }
+   },
+   {
+    "rank": 9,
+    "orig_row": 318,
+    "kind": "cell",
+    "column": "flipper_length_mm",
+    "value": 203.0,
+    "suggested": 214.0,
+    "low": 209.13352680135216,
+    "high": 219.3800711955234,
+    "surprise": 2.21,
+    "cause": "implausible given the rest of the row",
+    "auto_checks": [],
+    "row": {
+     "species": "Gentoo",
+     "island": "Biscoe",
+     "bill_length_mm": 48.4,
+     "bill_depth_mm": 14.4,
+     "flipper_length_mm": 203.0,
+     "body_mass_g": 4625.0,
+     "sex": "FEMALE"
+    }
+   },
+   {
+    "rank": 10,
+    "orig_row": 233,
+    "kind": "cell",
+    "column": "body_mass_g",
+    "value": 5850.0,
+    "suggested": 4956.0,
+    "low": 4563.304536651977,
+    "high": 5366.804555816219,
+    "surprise": 2.17,
+    "cause": "implausible given the rest of the row",
+    "auto_checks": [],
+    "row": {
+     "species": "Gentoo",
+     "island": "Biscoe",
+     "bill_length_mm": 48.4,
+     "bill_depth_mm": 14.6,
+     "flipper_length_mm": 213.0,
+     "body_mass_g": 5850.0,
+     "sex": "MALE"
+    }
+   }
+  ],
+  "known_answer": {}
+ },
+ "tips": {
+  "n_full": 244,
+  "n_scanned": 244,
+  "issues": 7,
+  "seconds": 4,
+  "patterns": [],
+  "top10": [
+   {
+    "rank": 1,
+    "orig_row": 172,
+    "kind": "cell",
+    "column": "tip",
+    "value": 5.15,
+    "suggested": 1.43552098503328,
+    "low": 1.0016784445955564,
+    "high": 2.002752573305145,
+    "surprise": 2.98,
+    "cause": "possible swapped leading digits: 5.15 \u2192 1.55 would be typical",
+    "auto_checks": [],
+    "row": {
+     "total_bill": 7.25,
+     "tip": 5.15,
+     "sex": "Male",
+     "smoker": "Yes",
+     "day": "Sun",
+     "time": "Dinner",
+     "size": 2
+    }
+   },
+   {
+    "rank": 2,
+    "orig_row": 172,
+    "kind": "cell",
+    "column": "total_bill",
+    "value": 7.25,
+    "suggested": 24.666787252448195,
+    "low": 18.421945779004407,
+    "high": 35.11795464474987,
+    "surprise": 2.63,
+    "cause": "implausible given the rest of the row",
+    "auto_checks": [],
+    "row": {
+     "total_bill": 7.25,
+     "tip": 5.15,
+     "sex": "Male",
+     "smoker": "Yes",
+     "day": "Sun",
+     "time": "Dinner",
+     "size": 2
+    }
+   },
+   {
+    "rank": 3,
+    "orig_row": 0,
+    "kind": "cell",
+    "column": "tip",
+    "value": 1.01,
+    "suggested": 2.917143534649153,
+    "low": 1.9791066753249562,
+    "high": 3.7644889186375106,
+    "surprise": 2.32,
+    "cause": "implausible given the rest of the row",
+    "auto_checks": [],
+    "row": {
+     "total_bill": 16.99,
+     "tip": 1.01,
+     "sex": "Female",
+     "smoker": "No",
+     "day": "Sun",
+     "time": "Dinner",
+     "size": 2
+    }
+   },
+   {
+    "rank": 4,
+    "orig_row": 237,
+    "kind": "cell",
+    "column": "total_bill",
+    "value": 32.83,
+    "suggested": 10.03381292963492,
+    "low": 6.3058840193596755,
+    "high": 16.10001383339278,
+    "surprise": 2.19,
+    "cause": "implausible given the rest of the row",
+    "auto_checks": [],
+    "row": {
+     "total_bill": 32.83,
+     "tip": 1.17,
+     "sex": "Male",
+     "smoker": "Yes",
+     "day": "Sat",
+     "time": "Dinner",
+     "size": 2
+    }
+   },
+   {
+    "rank": 5,
+    "orig_row": 184,
+    "kind": "cell",
+    "column": "total_bill",
+    "value": 40.55,
+    "suggested": 17.309754466401973,
+    "low": 13.138700165559186,
+    "high": 24.185950691468893,
+    "surprise": 2.12,
+    "cause": "implausible given the rest of the row",
+    "auto_checks": [],
+    "row": {
+     "total_bill": 40.55,
+     "tip": 3.0,
+     "sex": "Male",
+     "smoker": "Yes",
+     "day": "Sun",
+     "time": "Dinner",
+     "size": 2
+    }
+   },
+   {
+    "rank": 6,
+    "orig_row": 102,
+    "kind": "cell",
+    "column": "total_bill",
+    "value": 44.3,
+    "suggested": 17.857500797714632,
+    "low": 14.051713816824233,
+    "high": 26.864881793769175,
+    "surprise": 2.09,
+    "cause": "implausible given the rest of the row",
+    "auto_checks": [],
+    "row": {
+     "total_bill": 44.3,
+     "tip": 2.5,
+     "sex": "Female",
+     "smoker": "Yes",
+     "day": "Sat",
+     "time": "Dinner",
+     "size": 3
+    }
+   },
+   {
+    "rank": 7,
+    "orig_row": 237,
+    "kind": "cell",
+    "column": "tip",
+    "value": 1.17,
+    "suggested": 3.6984963399331376,
+    "low": 2.052175430537433,
+    "high": 5.987161300017241,
+    "surprise": 2.03,
+    "cause": "implausible given the rest of the row",
+    "auto_checks": [],
+    "row": {
+     "total_bill": 32.83,
+     "tip": 1.17,
+     "sex": "Male",
+     "smoker": "Yes",
+     "day": "Sat",
+     "time": "Dinner",
+     "size": 2
+    }
+   }
+  ],
+  "known_answer": {}
+ },
+ "titanic": {
+  "n_full": 891,
+  "n_scanned": 891,
+  "issues": 22,
+  "seconds": 7,
+  "patterns": [
+   {
+    "column": "pclass",
+    "value": 3.0,
+    "share": 0.5510662177328844,
+    "message": "pclass: the value 3 appears in 55% of rows and lies outside the range of the other values \u2014 likely a placeholder / missing-value code. Proofread treats it as data, so those cells are not flagged individually."
+   },
+   {
+    "column": "sibsp",
+    "value": 0.0,
+    "share": 0.6823793490460157,
+    "message": "sibsp: the value 0 appears in 68% of rows and lies outside the range of the other values \u2014 likely a placeholder / missing-value code. Proofread treats it as data, so those cells are not flagged individually."
+   },
+   {
+    "column": "parch",
+    "value": 0.0,
+    "share": 0.7609427609427609,
+    "message": "parch: the value 0 appears in 76% of rows and lies outside the range of the other values \u2014 likely a placeholder / missing-value code. Proofread treats it as data, so those cells are not flagged individually."
+   }
+  ],
+  "top10": [
+   {
+    "rank": 1,
+    "orig_row": 851,
+    "kind": "cell",
+    "column": "age",
+    "value": 74.0,
+    "suggested": 26.957052150357185,
+    "low": 18.33839413623565,
+    "high": 41.90197517244931,
+    "surprise": 2.86,
+    "cause": "implausible given the rest of the row",
+    "auto_checks": [],
+    "row": {
+     "survived": 0,
+     "pclass": 3,
+     "sex": "male",
+     "age": 74.0,
+     "sibsp": 0,
+     "parch": 0,
+     "fare": 7.775,
+     "embarked": "S"
+    }
+   },
+   {
+    "rank": 2,
+    "orig_row": 630,
+    "kind": "cell",
+    "column": "age",
+    "value": 80.0,
+    "suggested": 32.120964621696885,
+    "low": 20.297362701816468,
+    "high": 53.03221634615157,
+    "surprise": 2.81,
+    "cause": "implausible given the rest of the row",
+    "auto_checks": [],
+    "row": {
+     "survived": 1,
+     "pclass": 1,
+     "sex": "male",
+     "age": 80.0,
+     "sibsp": 0,
+     "parch": 0,
+     "fare": 30.0,
+     "embarked": "S"
+    }
+   },
+   {
+    "rank": 3,
+    "orig_row": 169,
+    "kind": "cell",
+    "column": "fare",
+    "value": 56.4958,
+    "suggested": 7.911741801627109,
+    "low": 7.104081503876422,
+    "high": 9.651685072822513,
+    "surprise": 2.74,
+    "cause": "implausible given the rest of the row",
+    "auto_checks": [],
+    "row": {
+     "survived": 0,
+     "pclass": 3,
+     "sex": "male",
+     "age": 28.0,
+     "sibsp": 0,
+     "parch": 0,
+     "fare": 56.4958,
+     "embarked": "S"
+    }
+   },
+   {
+    "rank": 4,
+    "orig_row": 826,
+    "kind": "cell",
+    "column": "fare",
+    "value": 56.4958,
+    "suggested": 7.871742980409625,
+    "low": 7.091277644286574,
+    "high": 11.010227535308509,
+    "surprise": 2.58,
+    "cause": "implausible given the rest of the row",
+    "auto_checks": [],
+    "row": {
+     "survived": 0,
+     "pclass": 3,
+     "sex": "male",
+     "age": NaN,
+     "sibsp": 0,
+     "parch": 0,
+     "fare": 56.4958,
+     "embarked": "S"
+    }
+   },
+   {
+    "rank": 5,
+    "orig_row": 483,
+    "kind": "cell",
+    "column": "age",
+    "value": 63.0,
+    "suggested": 24.185202914693882,
+    "low": 14.87092754673919,
+    "high": 37.30085531457473,
+    "surprise": 2.56,
+    "cause": "possible swapped leading digits: 63 \u2192 36 would be typical",
+    "auto_checks": [],
+    "row": {
+     "survived": 1,
+     "pclass": 3,
+     "sex": "female",
+     "age": 63.0,
+     "sibsp": 0,
+     "parch": 0,
+     "fare": 9.5875,
+     "embarked": "S"
+    }
+   },
+   {
+    "rank": 6,
+    "orig_row": 116,
+    "kind": "cell",
+    "column": "age",
+    "value": 70.5,
+    "suggested": 28.179882845267024,
+    "low": 18.926680924714525,
+    "high": 44.999062725060455,
+    "surprise": 2.53,
+    "cause": "implausible given the rest of the row",
+    "auto_checks": [],
+    "row": {
+     "survived": 0,
+     "pclass": 3,
+     "sex": "male",
+     "age": 70.5,
+     "sibsp": 0,
+     "parch": 0,
+     "fare": 7.75,
+     "embarked": "Q"
+    }
+   },
+   {
+    "rank": 7,
+    "orig_row": 68,
+    "kind": "cell",
+    "column": "fare",
+    "value": 7.925,
+    "suggested": 31.356379008584476,
+    "low": 31.080760908569815,
+    "high": 41.783845722908,
+    "surprise": 2.51,
+    "cause": "implausible given the rest of the row",
+    "auto_checks": [],
+    "row": {
+     "survived": 1,
+     "pclass": 3,
+     "sex": "female",
+     "age": 17.0,
+     "sibsp": 4,
+     "parch": 2,
+     "fare": 7.925,
+     "embarked": "S"
+    }
+   },
+   {
+    "rank": 8,
+    "orig_row": 302,
+    "kind": "cell",
+    "column": "fare",
+    "value": 0.0,
+    "suggested": 7.873071935908907,
+    "low": 7.059311053663507,
+    "high": 9.860407608402465,
+    "surprise": 2.33,
+    "cause": "possible missing value recorded as 0",
+    "auto_checks": [],
+    "row": {
+     "survived": 0,
+     "pclass": 3,
+     "sex": "male",
+     "age": 19.0,
+     "sibsp": 0,
+     "parch": 0,
+     "fare": 0.0,
+     "embarked": "S"
+    }
+   },
+   {
+    "rank": 9,
+    "orig_row": 557,
+    "kind": "cell",
+    "column": "fare",
+    "value": 227.525,
+    "suggested": 29.153649038093572,
+    "low": 0.3517647647504347,
+    "high": 51.668193904683484,
+    "surprise": 2.31,
+    "cause": "possible decimal slip (\u00d710): 227.525 \u2192 22.7525 would be typical",
+    "auto_checks": [],
+    "row": {
+     "survived": 0,
+     "pclass": 1,
+     "sex": "male",
+     "age": NaN,
+     "sibsp": 0,
+     "parch": 0,
+     "fare": 227.525,
+     "embarked": "C"
+    }
+   },
+   {
+    "rank": 10,
+    "orig_row": 527,
+    "kind": "cell",
+    "column": "fare",
+    "value": 221.7792,
+    "suggested": 29.153649038093572,
+    "low": 0.3517647647504347,
+    "high": 51.668193904683484,
+    "surprise": 2.28,
+    "cause": "possible decimal slip (\u00d710): 221.779 \u2192 22.1779 would be typical",
+    "auto_checks": [],
+    "row": {
+     "survived": 0,
+     "pclass": 1,
+     "sex": "male",
+     "age": NaN,
+     "sibsp": 0,
+     "parch": 0,
+     "fare": 221.7792,
+     "embarked": "S"
+    }
+   }
+  ],
+  "known_answer": {}
+ },
+ "taxis": {
+  "n_full": 6433,
+  "n_scanned": 6433,
+  "issues": 60,
+  "seconds": 51,
+  "patterns": [
+   {
+    "column": "tip",
+    "value": 0.0,
+    "share": 0.359241411472097,
+    "message": "tip: the value 0 appears in 36% of rows and lies outside the range of the other values \u2014 likely a placeholder / missing-value code. Proofread treats it as data, so those cells are not flagged individually."
+   },
+   {
+    "column": "tolls",
+    "value": 0.0,
+    "share": 0.9455930359085963,
+    "message": "tolls: the value 0 appears in 95% of rows and lies outside the range of the other values \u2014 likely a placeholder / missing-value code. Proofread treats it as data, so those cells are not flagged individually."
+   }
+  ],
+  "top10": [
+   {
+    "rank": 1,
+    "orig_row": 4582,
+    "kind": "cell",
+    "column": "tip",
+    "value": 0.75,
+    "suggested": 1.749216916843212,
+    "low": 1.7431193466552575,
+    "high": 1.755794508514048,
+    "surprise": 4.29,
+    "cause": "implausible given the rest of the row (this column uses a placeholder code, so check the source)",
+    "auto_checks": [],
+    "row": {
+     "pickup": "2019-03-08 18:38:14",
+     "dropoff": "2019-03-08 18:42:48",
+     "passengers": 1,
+     "distance": 1.05,
+     "fare": 5.5,
+     "tip": 0.75,
+     "tolls": 0.0,
+     "total": 10.55,
+     "color": "yellow",
+     "payment": "credit card",
+     "pickup_zone": "Sutton Place/Turtle Bay North",
+     "dropoff_zone": "Kips Bay",
+     "pickup_borough": "Manhattan",
+     "dropoff_borough": "Manhattan"
+    }
+   },
+   {
+    "rank": 2,
+    "orig_row": 4280,
+    "kind": "cell",
+    "column": "tolls",
+    "value": 2.64,
+    "suggested": 0.0003736854564863612,
+    "low": -0.0038931533545047414,
+    "high": 0.0027058605757099286,
+    "surprise": 4.27,
+    "cause": "implausible given the rest of the row (this column uses a placeholder code, so check the source)",
+    "auto_checks": [],
+    "row": {
+     "pickup": "2019-03-14 22:08:17",
+     "dropoff": "2019-03-14 22:15:57",
+     "passengers": 3,
+     "distance": 4.4,
+     "fare": 25.0,
+     "tip": 6.95,
+     "tolls": 2.64,
+     "total": 34.89,
+     "color": "yellow",
+     "payment": "credit card",
+     "pickup_zone": "Washington Heights South",
+     "dropoff_zone": "Riverdale/North Riverdale/Fieldston",
+     "pickup_borough": "Manhattan",
+     "dropoff_borough": "Bronx"
+    }
+   },
+   {
+    "rank": 3,
+    "orig_row": 227,
+    "kind": "cell",
+    "column": "total",
+    "value": 29.31,
+    "suggested": 27.35751824931095,
+    "low": 27.27826808629279,
+    "high": 27.426555895389576,
+    "surprise": 4.26,
+    "cause": "implausible given the rest of the row",
+    "auto_checks": [
+     "total 29.31 vs fare+tip+tolls = 24.06 (surcharges are a few dollars)"
+    ],
+    "row": {
+     "pickup": "2019-03-14 14:28:42",
+     "dropoff": "2019-03-14 14:56:54",
+     "passengers": 1,
+     "distance": 3.79,
+     "fare": 19.5,
+     "tip": 4.56,
+     "tolls": 0.0,
+     "total": 29.31,
+     "color": "yellow",
+     "payment": "credit card",
+     "pickup_zone": "Midtown Center",
+     "dropoff_zone": "Lenox Hill East",
+     "pickup_borough": "Manhattan",
+     "dropoff_borough": "Manhattan"
+    }
+   },
+   {
+    "rank": 4,
+    "orig_row": 6261,
+    "kind": "cell",
+    "column": "tip",
+    "value": 2.7,
+    "suggested": 1.199288620656593,
+    "low": 1.1909747844734704,
+    "high": 1.2054423755808634,
+    "surprise": 3.78,
+    "cause": "implausible given the rest of the row (this column uses a placeholder code, so check the source)",
+    "auto_checks": [],
+    "row": {
+     "pickup": "2019-03-22 19:00:07",
+     "dropoff": "2019-03-22 19:05:52",
+     "passengers": 1,
+     "distance": 0.81,
+     "fare": 5.5,
+     "tip": 2.7,
+     "tolls": 0.0,
+     "total": 10.0,
+     "color": "green",
+     "payment": "credit card",
+     "pickup_zone": "Astoria",
+     "dropoff_zone": "Astoria",
+     "pickup_borough": "Queens",
+     "dropoff_borough": "Queens"
+    }
+   },
+   {
+    "rank": 5,
+    "orig_row": 5270,
+    "kind": "cell",
+    "column": "total",
+    "value": 18.51,
+    "suggested": 16.55384341113118,
+    "low": 16.52430350043407,
+    "high": 16.593124482775387,
+    "surprise": 3.77,
+    "cause": "implausible given the rest of the row",
+    "auto_checks": [
+     "total 18.51 vs fare+tip+tolls = 13.26 (surcharges are a few dollars)"
+    ],
+    "row": {
+     "pickup": "2019-03-08 08:05:15",
+     "dropoff": "2019-03-08 08:19:25",
+     "passengers": 1,
+     "distance": 2.17,
+     "fare": 10.5,
+     "tip": 2.76,
+     "tolls": 0.0,
+     "total": 18.51,
+     "color": "yellow",
+     "payment": "credit card",
+     "pickup_zone": "Sutton Place/Turtle Bay North",
+     "dropoff_zone": "Yorkville West",
+     "pickup_borough": "Manhattan",
+     "dropoff_borough": "Manhattan"
+    }
+   },
+   {
+    "rank": 6,
+    "orig_row": 6071,
+    "kind": "cell",
+    "column": "tolls",
+    "value": 2.64,
+    "suggested": 0.0005409557817532273,
+    "low": -0.0034185462004887035,
+    "high": 0.002725473112345944,
+    "surprise": 3.7,
+    "cause": "implausible given the rest of the row (this column uses a placeholder code, so check the source)",
+    "auto_checks": [],
+    "row": {
+     "pickup": "2019-03-22 23:15:53",
+     "dropoff": "2019-03-22 23:35:53",
+     "passengers": 1,
+     "distance": 8.52,
+     "fare": 26.0,
+     "tip": 5.99,
+     "tolls": 2.64,
+     "total": 35.93,
+     "color": "green",
+     "payment": "credit card",
+     "pickup_zone": "East Harlem South",
+     "dropoff_zone": "Riverdale/North Riverdale/Fieldston",
+     "pickup_borough": "Manhattan",
+     "dropoff_borough": "Bronx"
+    }
+   },
+   {
+    "rank": 7,
+    "orig_row": 3875,
+    "kind": "cell",
+    "column": "tolls",
+    "value": 9.5,
+    "suggested": 1.934582342335304,
+    "low": 0.5617061913368698,
+    "high": 5.86663450441772,
+    "surprise": 3.67,
+    "cause": "implausible given the rest of the row (this column uses a placeholder code, so check the source)",
+    "auto_checks": [],
+    "row": {
+     "pickup": "2019-03-30 17:07:48",
+     "dropoff": "2019-03-30 18:10:46",
+     "passengers": 6,
+     "distance": 28.15,
+     "fare": 52.0,
+     "tip": 12.46,
+     "tolls": 9.5,
+     "total": 74.76,
+     "color": "yellow",
+     "payment": "credit card",
+     "pickup_zone": "Financial District North",
+     "dropoff_zone": "JFK Airport",
+     "pickup_borough": "Manhattan",
+     "dropoff_borough": "Queens"
+    }
+   },
+   {
+    "rank": 8,
+    "orig_row": 2398,
+    "kind": "cell",
+    "column": "distance",
+    "value": 0.0,
+    "suggested": 1.336801184230589,
+    "low": 0.9985073720443567,
+    "high": 1.6837319217594908,
+    "surprise": 3.49,
+    "cause": "possible missing value recorded as 0",
+    "auto_checks": [],
+    "row": {
+     "pickup": "2019-03-26 21:20:48",
+     "dropoff": "2019-03-26 21:29:46",
+     "passengers": 1,
+     "distance": 0.0,
+     "fare": 7.5,
+     "tip": 0.0,
+     "tolls": 0.0,
+     "total": 11.3,
+     "color": "yellow",
+     "payment": "cash",
+     "pickup_zone": "Seaport",
+     "dropoff_zone": "Battery Park City",
+     "pickup_borough": "Manhattan",
+     "dropoff_borough": "Manhattan"
+    }
+   },
+   {
+    "rank": 9,
+    "orig_row": 4562,
+    "kind": "cell",
+    "column": "distance",
+    "value": 0.1,
+    "suggested": 5.256531495588719,
+    "low": 3.8294138211837,
+    "high": 6.679780783458362,
+    "surprise": 3.49,
+    "cause": "implausible given the rest of the row",
+    "auto_checks": [],
+    "row": {
+     "pickup": "2019-03-03 23:02:48",
+     "dropoff": "2019-03-03 23:02:57",
+     "passengers": 1,
+     "distance": 0.1,
+     "fare": 20.0,
+     "tip": 0.0,
+     "tolls": 0.0,
+     "total": 20.8,
+     "color": "yellow",
+     "payment": NaN,
+     "pickup_zone": "Long Island City/Hunters Point",
+     "dropoff_zone": "Long Island City/Hunters Point",
+     "pickup_borough": "Queens",
+     "dropoff_borough": "Queens"
+    }
+   },
+   {
+    "rank": 10,
+    "orig_row": 2155,
+    "kind": "cell",
+    "column": "tolls",
+    "value": 6.12,
+    "suggested": 2.3961884604247903,
+    "low": 0.5964531597448851,
+    "high": 5.817872065047041,
+    "surprise": 3.41,
+    "cause": "implausible given the rest of the row (this column uses a placeholder code, so check the source)",
+    "auto_checks": [],
+    "row": {
+     "pickup": "2019-03-31 22:07:15",
+     "dropoff": "2019-03-31 22:36:31",
+     "passengers": 1,
+     "distance": 7.62,
+     "fare": 27.0,
+     "tip": 8.0,
+     "tolls": 6.12,
+     "total": 44.92,
+     "color": "yellow",
+     "payment": "credit card",
+     "pickup_zone": "LaGuardia Airport",
+     "dropoff_zone": "Murray Hill",
+     "pickup_borough": "Queens",
+     "dropoff_borough": "Manhattan"
+    }
+   }
+  ],
+  "known_answer": {}
+ },
+ "planets": {
+  "n_full": 1035,
+  "n_scanned": 1035,
+  "issues": 40,
+  "seconds": 12,
+  "patterns": [
+   {
+    "column": "number",
+    "value": 1.0,
+    "share": 0.5748792270531401,
+    "message": "number: the value 1 appears in 57% of rows and lies outside the range of the other values \u2014 likely a placeholder / missing-value code. Proofread treats it as data, so those cells are not flagged individually."
+   }
+  ],
+  "top10": [
+   {
+    "rank": 1,
+    "orig_row": 958,
+    "kind": "label",
+    "column": "method",
+    "value": "Pulsation Timing Variations",
+    "suggested": "Radial Velocity",
+    "low": NaN,
+    "high": NaN,
+    "surprise": 12.0,
+    "cause": "model gives the recorded label 0.0%",
+    "auto_checks": [],
+    "row": {
+     "method": "Pulsation Timing Variations",
+     "number": 1,
+     "orbital_period": 1170.0,
+     "mass": NaN,
+     "distance": NaN,
+     "year": 2007
+    }
+   },
+   {
+    "rank": 2,
+    "orig_row": 441,
+    "kind": "cell",
+    "column": "year",
+    "value": 1989.0,
+    "suggested": 2004.0,
+    "low": 1999.849837316761,
+    "high": 2010.0081731149235,
+    "surprise": 2.97,
+    "cause": "implausible given the rest of the row",
+    "auto_checks": [],
+    "row": {
+     "method": "Radial Velocity",
+     "number": 1,
+     "orbital_period": 83.888,
+     "mass": 11.68,
+     "distance": 40.57,
+     "year": 1989
+    }
+   },
+   {
+    "rank": 3,
+    "orig_row": 687,
+    "kind": "cell",
+    "column": "orbital_period",
+    "value": 289.8623,
+    "suggested": 7.880159646978655,
+    "low": -48.6645735633349,
+    "high": 46.745223707884406,
+    "surprise": 2.82,
+    "cause": "possible decimal slip (\u00d710): 289.862 \u2192 28.9862 would be typical",
+    "auto_checks": [],
+    "row": {
+     "method": "Transit",
+     "number": 1,
+     "orbital_period": 289.8623,
+     "mass": NaN,
+     "distance": 190.0,
+     "year": 2011
+    }
+   },
+   {
+    "rank": 4,
+    "orig_row": 563,
+    "kind": "cell",
+    "column": "orbital_period",
+    "value": 4885.0,
+    "suggested": 411.7653051813015,
+    "low": 64.91458153517146,
+    "high": 1047.5752760304358,
+    "surprise": 2.79,
+    "cause": "possible decimal slip (\u00d710): 4885 \u2192 488.5 would be typical",
+    "auto_checks": [],
+    "row": {
+     "method": "Radial Velocity",
+     "number": 1,
+     "orbital_period": 4885.0,
+     "mass": 3.1,
+     "distance": 189.39,
+     "year": 2009
+    }
+   },
+   {
+    "rank": 5,
+    "orig_row": 637,
+    "kind": "cell",
+    "column": "orbital_period",
+    "value": 17337.5,
+    "suggested": 903.5974765968178,
+    "low": 152.67246936455513,
+    "high": 3648.7220903091547,
+    "surprise": 2.65,
+    "cause": "possible decimal slip (\u00d710): 17337.5 \u2192 1733.75 would be typical",
+    "auto_checks": [],
+    "row": {
+     "method": "Radial Velocity",
+     "number": 1,
+     "orbital_period": 17337.5,
+     "mass": 9.0,
+     "distance": 23.98,
+     "year": 2009
+    }
+   },
+   {
+    "rank": 6,
+    "orig_row": 944,
+    "kind": "cell",
+    "column": "orbital_period",
+    "value": 36525.0,
+    "suggested": 33.262687345868244,
+    "low": -66.0435531958467,
+    "high": 667.7115065088033,
+    "surprise": 2.65,
+    "cause": "possible extra zeros (\u00d71000): 36525 \u2192 36.525 would be typical",
+    "auto_checks": [],
+    "row": {
+     "method": "Pulsar Timing",
+     "number": 1,
+     "orbital_period": 36525.0,
+     "mass": NaN,
+     "distance": NaN,
+     "year": 2003
+    }
+   },
+   {
+    "rank": 7,
+    "orig_row": 625,
+    "kind": "cell",
+    "column": "orbital_period",
+    "value": 9017.8,
+    "suggested": 459.9502978829005,
+    "low": -9.846979078989989,
+    "high": 2062.268183872675,
+    "surprise": 2.54,
+    "cause": "possible decimal slip (\u00d710): 9017.8 \u2192 901.78 would be typical",
+    "auto_checks": [],
+    "row": {
+     "method": "Radial Velocity",
+     "number": 2,
+     "orbital_period": 9017.8,
+     "mass": NaN,
+     "distance": 44.8,
+     "year": 2011
+    }
+   },
+   {
+    "rank": 8,
+    "orig_row": 945,
+    "kind": "label",
+    "column": "method",
+    "value": "Pulsar Timing",
+    "suggested": "Orbital Brightness Modulation",
+    "low": NaN,
+    "high": NaN,
+    "surprise": 2.48,
+    "cause": "model gives the recorded label 0.3%",
+    "auto_checks": [],
+    "row": {
+     "method": "Pulsar Timing",
+     "number": 1,
+     "orbital_period": 0.09070629,
+     "mass": NaN,
+     "distance": 1200.0,
+     "year": 2011
+    }
+   },
+   {
+    "rank": 9,
+    "orig_row": 563,
+    "kind": "cell",
+    "column": "distance",
+    "value": 189.39,
+    "suggested": 40.26851816442047,
+    "low": 17.062765240690652,
+    "high": 66.80842665710068,
+    "surprise": 2.46,
+    "cause": "possible decimal slip (\u00d710): 189.39 \u2192 18.939 would be typical",
+    "auto_checks": [],
+    "row": {
+     "method": "Radial Velocity",
+     "number": 1,
+     "orbital_period": 4885.0,
+     "mass": 3.1,
+     "distance": 189.39,
+     "year": 2009
+    }
+   },
+   {
+    "rank": 10,
+    "orig_row": 555,
+    "kind": "cell",
+    "column": "orbital_period",
+    "value": 3810.0,
+    "suggested": 146.2590059841059,
+    "low": -24.05055434483529,
+    "high": 868.0156896187991,
+    "surprise": 2.43,
+    "cause": "possible decimal slip (\u00d710): 3810 \u2192 381 would be typical",
+    "auto_checks": [],
+    "row": {
+     "method": "Radial Velocity",
+     "number": 2,
+     "orbital_period": 3810.0,
+     "mass": 1.99,
+     "distance": 47.92,
+     "year": 1999
+    }
+   }
+  ],
+  "known_answer": {}
+ },
+ "diamonds": {
+  "n_full": 53940,
+  "n_scanned": 10015,
+  "issues": 60,
+  "seconds": 117,
+  "patterns": [],
+  "top10": [
+   {
+    "rank": 1,
+    "orig_row": 6341,
+    "kind": "cell",
+    "column": "depth",
+    "value": 44.0,
+    "suggested": 65.68953389993528,
+    "low": 65.56944254685368,
+    "high": 65.81294409352904,
+    "surprise": 7.82,
+    "cause": "implausible given the rest of the row",
+    "auto_checks": [
+     "depth 44.0 \u2260 2z/(x+y) = 65.7 (definition of depth)"
+    ],
+    "row": {
+     "carat": 1.0,
+     "cut": "Fair",
+     "color": "G",
+     "clarity": "VS2",
+     "depth": 44.0,
+     "table": 53.0,
+     "price": 4032,
+     "x": 6.31,
+     "y": 6.24,
+     "z": 4.12
+    }
+   },
+   {
+    "rank": 2,
+    "orig_row": 5471,
+    "kind": "cell",
+    "column": "z",
+    "value": 0.0,
+    "suggested": 3.8393152272453532,
+    "low": 3.8338201485670758,
+    "high": 3.844628835012993,
+    "surprise": 5.83,
+    "cause": "possible missing value recorded as 0",
+    "auto_checks": [
+     "a physical dimension (x, y or z) is 0 mm",
+     "depth 59.2 \u2260 2z/(x+y) = 0.0 (definition of depth)"
+    ],
+    "row": {
+     "carat": 1.01,
+     "cut": "Premium",
+     "color": "F",
+     "clarity": "SI2",
+     "depth": 59.2,
+     "table": 58.0,
+     "price": 3837,
+     "x": 6.5,
+     "y": 6.47,
+     "z": 0.0
+    }
+   },
+   {
+    "rank": 3,
+    "orig_row": 48410,
+    "kind": "cell",
+    "column": "z",
+    "value": 31.8,
+    "suggested": 3.1742832466075503,
+    "low": 3.170631359458532,
+    "high": 3.178025878949531,
+    "surprise": 5.72,
+    "cause": "implausible given the rest of the row",
+    "auto_checks": [
+     "depth 61.8 \u2260 2z/(x+y) = 619.3 (definition of depth)"
+    ],
+    "row": {
+     "carat": 0.51,
+     "cut": "Very Good",
+     "color": "E",
+     "clarity": "VS1",
+     "depth": 61.8,
+     "table": 54.7,
+     "price": 1970,
+     "x": 5.12,
+     "y": 5.15,
+     "z": 31.8
+    }
+   },
+   {
+    "rank": 4,
+    "orig_row": 2207,
+    "kind": "cell",
+    "column": "z",
+    "value": 0.0,
+    "suggested": 3.84960315199824,
+    "low": 3.8431697922618313,
+    "high": 3.8559222984658303,
+    "surprise": 5.51,
+    "cause": "possible missing value recorded as 0",
+    "auto_checks": [
+     "a physical dimension (x, y or z) is 0 mm",
+     "depth 59.1 \u2260 2z/(x+y) = 0.0 (definition of depth)"
+    ],
+    "row": {
+     "carat": 1.0,
+     "cut": "Premium",
+     "color": "G",
+     "clarity": "SI2",
+     "depth": 59.1,
+     "table": 59.0,
+     "price": 3142,
+     "x": 6.55,
+     "y": 6.48,
+     "z": 0.0
+    }
+   },
+   {
+    "rank": 5,
+    "orig_row": 32598,
+    "kind": "cell",
+    "column": "depth",
+    "value": 58.0,
+    "suggested": 60.59823257092512,
+    "low": 60.57981773530881,
+    "high": 60.61820316754358,
+    "surprise": 5.28,
+    "cause": "implausible given the rest of the row",
+    "auto_checks": [],
+    "row": {
+     "carat": 0.3,
+     "cut": "Ideal",
+     "color": "F",
+     "clarity": "VVS1",
+     "depth": 58.0,
+     "table": 60.0,
+     "price": 802,
+     "x": 4.34,
+     "y": 4.37,
+     "z": 2.64
+    }
+   },
+   {
+    "rank": 6,
+    "orig_row": 39246,
+    "kind": "cell",
+    "column": "z",
+    "value": 2.06,
+    "suggested": 2.858546468331965,
+    "low": 2.854554581006197,
+    "high": 2.8621338990454372,
+    "surprise": 5.0,
+    "cause": "implausible given the rest of the row",
+    "auto_checks": [
+     "depth 60.9 \u2260 2z/(x+y) = 43.9 (definition of depth)"
+    ],
+    "row": {
+     "carat": 0.38,
+     "cut": "Ideal",
+     "color": "E",
+     "clarity": "VVS2",
+     "depth": 60.9,
+     "table": 56.0,
+     "price": 1068,
+     "x": 4.71,
+     "y": 4.68,
+     "z": 2.06
+    }
+   },
+   {
+    "rank": 7,
+    "orig_row": 11182,
+    "kind": "cell",
+    "column": "x",
+    "value": 0.0,
+    "suggested": 6.585559469194925,
+    "low": 6.492887056693633,
+    "high": 6.666047712202682,
+    "surprise": 4.94,
+    "cause": "possible missing value recorded as 0",
+    "auto_checks": [
+     "a physical dimension (x, y or z) is 0 mm"
+    ],
+    "row": {
+     "carat": 1.07,
+     "cut": "Ideal",
+     "color": "F",
+     "clarity": "SI2",
+     "depth": 61.6,
+     "table": 56.0,
+     "price": 4954,
+     "x": 0.0,
+     "y": 6.62,
+     "z": 0.0
+    }
+   },
+   {
+    "rank": 8,
+    "orig_row": 10055,
+    "kind": "cell",
+    "column": "y",
+    "value": 4.16,
+    "suggested": 4.192435446951957,
+    "low": 4.184828951247387,
+    "high": 4.20015397454606,
+    "surprise": 4.92,
+    "cause": "implausible given the rest of the row",
+    "auto_checks": [],
+    "row": {
+     "carat": 0.27,
+     "cut": "Very Good",
+     "color": "F",
+     "clarity": "VVS1",
+     "depth": 62.0,
+     "table": 55.0,
+     "price": 591,
+     "x": 4.16,
+     "y": 4.16,
+     "z": 2.59
+    }
+   },
+   {
+    "rank": 9,
+    "orig_row": 27112,
+    "kind": "cell",
+    "column": "z",
+    "value": 0.0,
+    "suggested": 5.1322353662585645,
+    "low": 5.11772654326216,
+    "high": 5.146241173804388,
+    "surprise": 4.91,
+    "cause": "possible missing value recorded as 0",
+    "auto_checks": [
+     "a physical dimension (x, y or z) is 0 mm",
+     "depth 61.2 \u2260 2z/(x+y) = 0.0 (definition of depth)"
+    ],
+    "row": {
+     "carat": 2.2,
+     "cut": "Premium",
+     "color": "H",
+     "clarity": "SI1",
+     "depth": 61.2,
+     "table": 59.0,
+     "price": 17265,
+     "x": 8.42,
+     "y": 8.37,
+     "z": 0.0
+    }
+   },
+   {
+    "rank": 10,
+    "orig_row": 14907,
+    "kind": "cell",
+    "column": "x",
+    "value": 6.51,
+    "suggested": 6.432828294975946,
+    "low": 6.421462431876067,
+    "high": 6.443475580033498,
+    "surprise": 4.88,
+    "cause": "implausible given the rest of the row",
+    "auto_checks": [],
+    "row": {
+     "carat": 1.0,
+     "cut": "Premium",
+     "color": "G",
+     "clarity": "VS1",
+     "depth": 60.9,
+     "table": 60.0,
+     "price": 6000,
+     "x": 6.51,
+     "y": 6.41,
+     "z": 3.91
+    }
+   }
+  ],
+  "known_answer": {}
+ },
+ "california_housing": {
+  "n_full": 20640,
+  "n_scanned": 10000,
+  "issues": 60,
+  "seconds": 153,
+  "patterns": [
+   {
+    "column": "HouseAge",
+    "value": 52.0,
+    "share": 0.0616,
+    "message": "HouseAge: the value 52 appears in 6% of rows and lies outside the range of the other values \u2014 likely a placeholder / missing-value code. Proofread treats it as data, so those cells are not flagged individually."
+   }
+  ],
+  "top10": [
+   {
+    "rank": 1,
+    "orig_row": 19006,
+    "kind": "cell",
+    "column": "AveOccup",
+    "value": 1243.3333333333333,
+    "suggested": 31.452546190237403,
+    "low": 3.9155148845920067,
+    "high": 164.10531797703263,
+    "surprise": 11.7,
+    "cause": "possible decimal slip (\u00d710): 1243.33 \u2192 124.333 would be typical",
+    "auto_checks": [],
+    "row": {
+     "MedInc": 10.2264,
+     "HouseAge": 45.0,
+     "AveRooms": 3.1666666666666665,
+     "AveBedrms": 0.8333333333333334,
+     "Population": 7460.0,
+     "AveOccup": 1243.3333333333333,
+     "Latitude": 38.32,
+     "Longitude": -121.98,
+     "MedHouseVal": 1.375
+    }
+   },
+   {
+    "rank": 2,
+    "orig_row": 8874,
+    "kind": "cell",
+    "column": "AveOccup",
+    "value": 41.214285714285715,
+    "suggested": 2.4443627830499617,
+    "low": 2.1667669984970668,
+    "high": 2.936372601716574,
+    "surprise": 4.3,
+    "cause": "implausible given the rest of the row",
+    "auto_checks": [],
+    "row": {
+     "MedInc": 9.337,
+     "HouseAge": 52.0,
+     "AveRooms": 7.285714285714286,
+     "AveBedrms": 1.2142857142857142,
+     "Population": 1154.0,
+     "AveOccup": 41.214285714285715,
+     "Latitude": 34.06,
+     "Longitude": -118.45,
+     "MedHouseVal": 5.00001
+    }
+   },
+   {
+    "rank": 3,
+    "orig_row": 1617,
+    "kind": "cell",
+    "column": "AveOccup",
+    "value": 12.212765957446809,
+    "suggested": 3.110734524859082,
+    "low": 2.8632418228620793,
+    "high": 3.356957237993499,
+    "surprise": 4.1,
+    "cause": "implausible given the rest of the row",
+    "auto_checks": [],
+    "row": {
+     "MedInc": 11.7064,
+     "HouseAge": 17.0,
+     "AveRooms": 9.361702127659575,
+     "AveBedrms": 1.127659574468085,
+     "Population": 1722.0,
+     "AveOccup": 12.212765957446809,
+     "Latitude": 37.84,
+     "Longitude": -122.08,
+     "MedHouseVal": 5.00001
+    }
+   },
+   {
+    "rank": 4,
+    "orig_row": 8054,
+    "kind": "cell",
+    "column": "MedInc",
+    "value": 0.7007,
+    "suggested": 2.5279382079600135,
+    "low": 2.026097324267492,
+    "high": 3.0315831493361727,
+    "surprise": 3.98,
+    "cause": "implausible given the rest of the row",
+    "auto_checks": [],
+    "row": {
+     "MedInc": 0.7007,
+     "HouseAge": 30.0,
+     "AveRooms": 3.64,
+     "AveBedrms": 1.0242857142857142,
+     "Population": 2086.0,
+     "AveOccup": 2.98,
+     "Latitude": 33.85,
+     "Longitude": -118.18,
+     "MedHouseVal": 1.344
+    }
+   },
+   {
+    "rank": 5,
+    "orig_row": 16217,
+    "kind": "cell",
+    "column": "HouseAge",
+    "value": 5.0,
+    "suggested": 47.0,
+    "low": 35.8519944010563,
+    "high": 52.24096169899868,
+    "surprise": 3.94,
+    "cause": "implausible given the rest of the row (this column uses a placeholder code, so check the source)",
+    "auto_checks": [],
+    "row": {
+     "MedInc": 2.7656,
+     "HouseAge": 5.0,
+     "AveRooms": 6.15,
+     "AveBedrms": 1.05,
+     "Population": 50.0,
+     "AveOccup": 2.5,
+     "Latitude": 37.96,
+     "Longitude": -121.32,
+     "MedHouseVal": 0.5
+    }
+   },
+   {
+    "rank": 6,
+    "orig_row": 13930,
+    "kind": "cell",
+    "column": "Longitude",
+    "value": -114.64,
+    "suggested": -117.25917513725393,
+    "low": -118.20749509024556,
+    "high": -117.01159746178246,
+    "surprise": 3.91,
+    "cause": "implausible given the rest of the row",
+    "auto_checks": [],
+    "row": {
+     "MedInc": 1.7062,
+     "HouseAge": 10.0,
+     "AveRooms": 5.201663201663202,
+     "AveBedrms": 1.1912681912681913,
+     "Population": 1152.0,
+     "AveOccup": 2.395010395010395,
+     "Latitude": 34.83,
+     "Longitude": -114.64,
+     "MedHouseVal": 0.868
+    }
+   },
+   {
+    "rank": 7,
+    "orig_row": 16809,
+    "kind": "cell",
+    "column": "AveRooms",
+    "value": 2.0330188679245285,
+    "suggested": 4.359749555158955,
+    "low": 3.7734593038038575,
+    "high": 4.923781881794125,
+    "surprise": 3.71,
+    "cause": "implausible given the rest of the row",
+    "auto_checks": [],
+    "row": {
+     "MedInc": 3.2833,
+     "HouseAge": 44.0,
+     "AveRooms": 2.0330188679245285,
+     "AveBedrms": 0.9198113207547169,
+     "Population": 682.0,
+     "AveOccup": 3.2169811320754715,
+     "Latitude": 37.66,
+     "Longitude": -122.41,
+     "MedHouseVal": 2.333
+    }
+   },
+   {
+    "rank": 8,
+    "orig_row": 11140,
+    "kind": "cell",
+    "column": "AveRooms",
+    "value": 3.075892857142857,
+    "suggested": 4.730607445356835,
+    "low": 4.27042653323752,
+    "high": 5.227609310674522,
+    "surprise": 3.67,
+    "cause": "implausible given the rest of the row",
+    "auto_checks": [],
+    "row": {
+     "MedInc": 3.4028,
+     "HouseAge": 32.0,
+     "AveRooms": 3.075892857142857,
+     "AveBedrms": 1.0982142857142858,
+     "Population": 1202.0,
+     "AveOccup": 2.6830357142857144,
+     "Latitude": 33.84,
+     "Longitude": -117.95,
+     "MedHouseVal": 1.837
+    }
+   },
+   {
+    "rank": 9,
+    "orig_row": 6651,
+    "kind": "cell",
+    "column": "MedHouseVal",
+    "value": 5.00001,
+    "suggested": 1.6814526484115855,
+    "low": 1.433525101191611,
+    "high": 2.0055114800797007,
+    "surprise": 3.65,
+    "cause": "implausible given the rest of the row",
+    "auto_checks": [],
+    "row": {
+     "MedInc": 1.9923,
+     "HouseAge": 41.0,
+     "AveRooms": 3.279373368146214,
+     "AveBedrms": 1.0626631853785902,
+     "Population": 855.0,
+     "AveOccup": 2.2323759791122715,
+     "Latitude": 34.15,
+     "Longitude": -118.14,
+     "MedHouseVal": 5.00001
+    }
+   },
+   {
+    "rank": 10,
+    "orig_row": 10198,
+    "kind": "cell",
+    "column": "HouseAge",
+    "value": 52.0,
+    "suggested": 34.0,
+    "low": 30.04528690121451,
+    "high": 36.00016199899417,
+    "surprise": 3.62,
+    "cause": "implausible given the rest of the row (this column uses a placeholder code, so check the source)",
+    "auto_checks": [],
+    "row": {
+     "MedInc": 5.1237,
+     "HouseAge": 52.0,
+     "AveRooms": 5.7828418230563,
+     "AveBedrms": 0.9705093833780161,
+     "Population": 1001.0,
+     "AveOccup": 2.683646112600536,
+     "Latitude": 33.88,
+     "Longitude": -117.93,
+     "MedHouseVal": 2.4
+    }
+   }
+  ],
+  "known_answer": {}
+ },
+ "iris_uci": {
+  "n_full": 150,
+  "n_scanned": 150,
+  "issues": 4,
+  "seconds": 9,
+  "patterns": [],
+  "top10": [
+   {
+    "rank": 1,
+    "orig_row": 41,
+    "kind": "cell",
+    "column": "sepal_width",
+    "value": 2.3,
+    "suggested": 3.2010229667325065,
+    "low": 2.998982863329752,
+    "high": 3.553754193173747,
+    "surprise": 2.74,
+    "cause": "possible swapped leading digits: 2.3 \u2192 3.2 would be typical",
+    "auto_checks": [],
+    "row": {
+     "sepal_length": 4.5,
+     "sepal_width": 2.3,
+     "petal_length": 1.3,
+     "petal_width": 0.3,
+     "species": "Iris-setosa"
+    }
+   },
+   {
+    "rank": 2,
+    "orig_row": 68,
+    "kind": "cell",
+    "column": "sepal_width",
+    "value": 2.2,
+    "suggested": 2.9988717271175083,
+    "low": 2.699053682638502,
+    "high": 3.2002083690092604,
+    "surprise": 2.38,
+    "cause": "implausible given the rest of the row",
+    "auto_checks": [],
+    "row": {
+     "sepal_length": 6.2,
+     "sepal_width": 2.2,
+     "petal_length": 4.5,
+     "petal_width": 1.5,
+     "species": "Iris-versicolor"
+    }
+   },
+   {
+    "rank": 3,
+    "orig_row": 24,
+    "kind": "cell",
+    "column": "petal_length",
+    "value": 1.9,
+    "suggested": 1.4310682884965131,
+    "low": 1.2298013662378082,
+    "high": 1.6261003860395857,
+    "surprise": 2.01,
+    "cause": "implausible given the rest of the row",
+    "auto_checks": [],
+    "row": {
+     "sepal_length": 4.8,
+     "sepal_width": 3.4,
+     "petal_length": 1.9,
+     "petal_width": 0.2,
+     "species": "Iris-setosa"
+    }
+   },
+   {
+    "rank": 4,
+    "orig_row": 83,
+    "kind": "label",
+    "column": "species",
+    "value": "Iris-versicolor",
+    "suggested": "Iris-virginica",
+    "low": NaN,
+    "high": NaN,
+    "surprise": 1.56,
+    "cause": "model gives the recorded label 2.8%",
+    "auto_checks": [],
+    "row": {
+     "sepal_length": 6.0,
+     "sepal_width": 2.7,
+     "petal_length": 5.1,
+     "petal_width": 1.6,
+     "species": "Iris-versicolor"
+    }
+   }
+  ],
+  "known_answer": {
+   "sample 35 petal_width": {
+    "rank": null,
+    "surprise": 0.52,
+    "value": 0.1
+   },
+   "sample 38 sepal_width": {
+    "rank": null,
+    "surprise": 0.17,
+    "value": 3.1
+   },
+   "sample 38 petal_length": {
+    "rank": null,
+    "surprise": 0.17,
+    "value": 1.5
+   }
+  }
+ }
+}

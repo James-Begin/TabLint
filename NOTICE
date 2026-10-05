@@ -1,0 +1,12 @@
+Proofread (tabpfn-proofread)
+Copyright 2026 Proofread contributors
+
+Original project code is licensed under Apache-2.0. Third-party Python packages, public datasets and TabPFN model
+weights keep their own licenses; no model weights or datasets are redistributed. TabPFN-3.5 weights are downloaded by
+the tabpfn package after you accept Prior Labs' model license.
+
+Exploratory pilots (research/pilots, results/pilots) are not confirmatory evidence. Machine-specific absolute paths in
+stored run artifacts were redacted to relative form by experiments/redact_paths.py; measured values were verified unchanged.
+
+Demo data: Auto MPG (R. Quinlan), UCI Machine Learning Repository, https://doi.org/10.24432/C5859H, CC BY 4.0;
+derived tables in demo/video/ include deliberately planted errors (see demo/video/answer_key.json).

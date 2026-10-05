@@ -1,0 +1,32 @@
+{
+  "dataset": "car",
+  "seed": 902,
+  "n": 400,
+  "categorical_columns": [
+    "buying",
+    "maint",
+    "doors",
+    "persons",
+    "lug_boot",
+    "safety",
+    "target"
+  ],
+  "errors": 84,
+  "precision_at_k": {
+    "tabpfn": 0.25,
+    "frequency": 0.05952380952380952,
+    "logistic": 0.19047619047619047,
+    "rf": 0.10714285714285714,
+    "knn": 0.10714285714285714,
+    "hgb": 0.14285714285714285
+  },
+  "auroc": {
+    "tabpfn": 0.695928887018725,
+    "frequency": 0.5067347815414827,
+    "logistic": 0.6587330808612104,
+    "rf": 0.5769163335437267,
+    "knn": 0.576431990321902,
+    "hgb": 0.6298872641840241
+  },
+  "seconds": 34.60077476501465
+}

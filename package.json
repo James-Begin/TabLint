@@ -1,0 +1,16 @@
+{
+  "name": "tablint",
+  "version": "0.3.0",
+  "private": true,
+  "description": "Spellcheck for tables, powered by TabPFN-3.5",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "demo": "node scripts/demo.mjs",
+    "doctor": "node scripts/demo.mjs --doctor",
+    "test:extension": "npm --prefix vscode-proofread test"
+  },
+  "type": "module"
+}

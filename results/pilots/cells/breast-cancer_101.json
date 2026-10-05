@@ -1,0 +1,49 @@
+{
+  "dataset": "breast-cancer",
+  "seed": 101,
+  "n": 400,
+  "d": 30,
+  "errors": 208,
+  "auroc": {
+    "zscore": 0.8426577503653063,
+    "iforest": 0.6288438706815571,
+    "rf_resid": 0.9447372240632501,
+    "tabpfn_resid": 0.9803011820269283,
+    "tabpfn_pit": 0.9955714760985284
+  },
+  "precision_at_k": {
+    "zscore": 0.2980769230769231,
+    "iforest": 0.03365384615384615,
+    "rf_resid": 0.36538461538461536,
+    "tabpfn_resid": 0.5576923076923077,
+    "tabpfn_pit": 0.8125
+  },
+  "by_type": {
+    "decimal": {
+      "zscore": 0.9462946630483945,
+      "iforest": 0.6999180235187699,
+      "rf_resid": 0.982242198100407,
+      "tabpfn_resid": 0.9933141112618724,
+      "tabpfn_pit": 0.9992752148349163
+    },
+    "swap": {
+      "zscore": 0.4778592831298055,
+      "iforest": 0.5268243300542741,
+      "rf_resid": 0.8523204291044777,
+      "tabpfn_resid": 0.9427101000678426,
+      "tabpfn_pit": 0.9851558966530981
+    },
+    "offset": {
+      "zscore": 0.9572172559661586,
+      "iforest": 0.6237424175911884,
+      "rf_resid": 0.9638329076542422,
+      "tabpfn_resid": 0.9900470907494613,
+      "tabpfn_pit": 0.998185210312076
+    }
+  },
+  "correction": {
+    "tabpfn_median_abs_err_sd": 0.1263707605233759,
+    "column_median_abs_err_sd": 0.7898538864075426
+  },
+  "seconds": 145.08757948875427
+}

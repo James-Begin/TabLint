@@ -1,0 +1,32 @@
+
+== MagicTelescope: 30 targets, seeds [501, 502, 503, 504, 505, 506], gradient aborts 0
+receiver                        gradient     random_search coordinate_search         near_rows       random_real   grad - best search [98.75% CI]
+tabpfn_standard                     0.67              0.13              0.27              0.07              0.07   +0.40 [+0.10,+0.70] vs coordinate_search
+surrogate                           0.70              0.23              0.37              0.10              0.03   +0.33 [+0.10,+0.60] vs coordinate_search
+hgb                                 0.70              0.20              0.33              0.17              0.00   +0.37 [+0.10,+0.67] vs coordinate_search
+rf                                  0.50              0.13              0.20              0.13              0.03   +0.30 [+0.03,+0.57] vs coordinate_search
+logistic                            0.10              0.07              0.10              0.07              0.00   +0.00 [+0.00,+0.00] vs coordinate_search
+
+== eeg-eye-state: 30 targets, seeds [501, 502, 503, 504, 505, 506], gradient aborts 0
+receiver                        gradient     random_search coordinate_search         near_rows       random_real   grad - best search [98.75% CI]
+tabpfn_standard                     0.93              0.37              0.43              0.13              0.07   +0.50 [+0.23,+0.77] vs coordinate_search
+surrogate                           1.00              0.50              0.63              0.20              0.00   +0.37 [+0.07,+0.70] vs coordinate_search
+hgb                                 0.50              0.20              0.33              0.10              0.03   +0.17 [-0.13,+0.50] vs coordinate_search
+rf                                  0.60              0.37              0.30              0.20              0.10   +0.23 [-0.10,+0.53] vs random_search
+logistic                            0.30              0.20              0.27              0.23              0.03   +0.03 [+0.00,+0.17] vs coordinate_search
+
+== mozilla4: 30 targets, seeds [501, 502, 503, 504, 505, 506], gradient aborts 0
+receiver                        gradient     random_search coordinate_search         near_rows       random_real   grad - best search [98.75% CI]
+tabpfn_standard                     0.03              0.03              0.07              0.00              0.00   -0.03 [-0.20,+0.00] vs coordinate_search
+surrogate                           0.07              0.03              0.07              0.00              0.00   +0.00 [+0.00,+0.00] vs coordinate_search
+hgb                                 0.27              0.17              0.27              0.10              0.03   +0.00 [-0.33,+0.30] vs coordinate_search
+rf                                  0.20              0.03              0.03              0.00              0.00   +0.17 [+0.00,+0.40] vs random_search
+logistic                            0.03              0.03              0.03              0.03              0.00   +0.00 [+0.00,+0.00] vs random_search
+
+== phoneme: 30 targets, seeds [501, 502, 503, 504, 505, 506], gradient aborts 0
+receiver                        gradient     random_search coordinate_search         near_rows       random_real   grad - best search [98.75% CI]
+tabpfn_standard                     0.57              0.33              0.37              0.17              0.03   +0.20 [+0.00,+0.47] vs coordinate_search
+surrogate                           0.67              0.33              0.30              0.17              0.00   +0.33 [+0.03,+0.67] vs random_search
+hgb                                 0.40              0.20              0.27              0.13              0.03   +0.13 [-0.10,+0.40] vs coordinate_search
+rf                                  0.47              0.17              0.23              0.13              0.03   +0.23 [+0.03,+0.50] vs coordinate_search
+logistic                            0.13              0.13              0.10              0.10              0.03   +0.00 [+0.00,+0.00] vs random_search

@@ -1,0 +1,33 @@
+{
+  "dataset": "cmc",
+  "seed": 902,
+  "n": 400,
+  "categorical_columns": [
+    "Wifes_education",
+    "Husbands_education",
+    "Wifes_religion",
+    "Wifes_now_working%3F",
+    "Husbands_occupation",
+    "Standard-of-living_index",
+    "Media_exposure",
+    "target"
+  ],
+  "errors": 96,
+  "precision_at_k": {
+    "tabpfn": 0.21875,
+    "frequency": 0.125,
+    "logistic": 0.19791666666666666,
+    "rf": 0.15625,
+    "knn": 0.16666666666666666,
+    "hgb": 0.14583333333333334
+  },
+  "auroc": {
+    "tabpfn": 0.7769880262027492,
+    "frequency": 0.7090447809278351,
+    "logistic": 0.7886698614690721,
+    "rf": 0.7482331266108248,
+    "knn": 0.7534414599441581,
+    "hgb": 0.7416472025343643
+  },
+  "seconds": 39.791924715042114
+}

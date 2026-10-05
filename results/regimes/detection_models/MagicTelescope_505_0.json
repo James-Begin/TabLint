@@ -1,0 +1,19 @@
+{
+  "report": "MagicTelescope_505_0.json",
+  "dataset": "MagicTelescope",
+  "seed": 505,
+  "k": 3,
+  "attack_valid": true,
+  "hgb_auroc": 0.79,
+  "hgb_hits_in_topk": 2,
+  "hgb_frac_zero_scores": 0.0,
+  "hgb_seconds": 9.4292471408844,
+  "rf_auroc": 0.7608333333333334,
+  "rf_hits_in_topk": 1,
+  "rf_frac_zero_scores": 0.06403940886699508,
+  "rf_seconds": 23.402229070663452,
+  "logistic_auroc": 0.9983333333333333,
+  "logistic_hits_in_topk": 2,
+  "logistic_frac_zero_scores": 0.0,
+  "logistic_seconds": 0.7606041431427002
+}

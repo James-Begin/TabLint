@@ -1,0 +1,10 @@
+node_modules/
+dist/
+out/
+review/frame-audit.jsonl
+review/render.log
+review/*.jpg
+review/decoded-frames/
+review/all-frames/
+review/full-size/
+build/

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 360" role="img" aria-labelledby="title desc">
+<title id="title">TabLint — Spellcheck for tables</title><desc id="desc">Powered by TabPFN-3.5. Review numerical and categorical data with explanations and reversible decisions.</desc>
+<rect width="1280" height="360" rx="24" fill="#f3f8f7"/>
+<circle cx="1230" cy="340" r="240" fill="#e7f2ef"/>
+<g font-family="Arial, Helvetica, sans-serif">
+<rect x="50" y="45" width="174" height="29" rx="14" fill="#e0eeeb"/><text x="67" y="65" font-size="13" font-weight="700" letter-spacing="1" fill="#147d76">TABPFN HACKATHON</text>
+<text x="48" y="165" font-size="83" font-weight="750" letter-spacing="-3" fill="#172832">TabLint</text>
+<text x="52" y="213" font-size="30" fill="#526672">Spellcheck for tables.</text>
+<text x="52" y="249" font-size="18" fill="#147d76">Powered by TabPFN-3.5</text>
+<text x="52" y="310" font-size="16" fill="#526672">Numerical · Categorical · Explain · Fix · Undo</text>
+<rect x="688" y="55" width="538" height="252" rx="16" fill="white" stroke="#d7e5e1"/>
+<circle cx="711" cy="77" r="4" fill="#ed9b9b"/><circle cx="726" cy="77" r="4" fill="#eacb88"/><circle cx="741" cy="77" r="4" fill="#99c9b7"/>
+<text x="765" y="83" font-size="12" fill="#6c7b83">auto_mpg_dirty.csv</text><path d="M688 99H1226" stroke="#e7eeec"/>
+<text x="715" y="133" font-size="14" font-weight="700" fill="#6c7b83">HONDA CIVIC · WEIGHT</text>
+<text x="715" y="192" font-size="43" font-weight="700" fill="#ad5964">4,354 lb</text>
+<path d="M715 206q5 -5 10 0t10 0t10 0t10 0t10 0t10 0t10 0t10 0t10 0t10 0t10 0t10 0t10 0t10 0t10 0t10 0" fill="none" stroke="#cf7784" stroke-width="2"/>
+<path d="M941 177H979m-8 -8 9 8-9 8" fill="none" stroke="#b7c9c5" stroke-width="2"/>
+<text x="1000" y="192" font-size="43" font-weight="700" fill="#147d76">1,877</text>
+<text x="715" y="250" font-size="17" fill="#526672">Given 4 cylinders, 53 hp and 33 mpg.</text>
+<text x="715" y="279" font-size="14" fill="#147d76">A row has context. A cell has a story.</text>
+</g></svg>

@@ -1,0 +1,7 @@
+results/regimes/mozilla4_505_3.json elapsed 26.2
+exact_duplicates valid False flipped False p 0.0064 queries 1
+random_real valid True flipped False p 0.8793 queries 1
+near_rows valid True flipped False p 0.7428 queries 1
+gradient valid True flipped False p 0.6394 queries 24
+random_search valid True flipped False p 0.6827 queries 24
+coordinate_search valid True flipped False p 0.7203 queries 24

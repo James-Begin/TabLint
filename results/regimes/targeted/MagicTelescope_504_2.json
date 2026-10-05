@@ -1,0 +1,72 @@
+{
+  "report": "MagicTelescope_504_2.json",
+  "dataset": "MagicTelescope",
+  "seed": 504,
+  "budget": 24,
+  "receivers": {
+    "tabpfn_standard": {
+      "clean_p": 0.8609054684638977,
+      "clean_agrees_with_surrogate": true,
+      "random_search": {
+        "flipped": false,
+        "p_after": 0.5084192752838135,
+        "valid": true
+      },
+      "coordinate_search": {
+        "flipped": true,
+        "p_after": 0.421578049659729,
+        "valid": true
+      },
+      "transfer_gradient_flipped": true,
+      "seconds": 27.69012475013733
+    },
+    "hgb": {
+      "clean_p": 0.997354740301131,
+      "clean_agrees_with_surrogate": true,
+      "random_search": {
+        "flipped": false,
+        "p_after": 0.9622818640582741,
+        "valid": true
+      },
+      "coordinate_search": {
+        "flipped": false,
+        "p_after": 0.9573699965497299,
+        "valid": true
+      },
+      "transfer_gradient_flipped": false,
+      "seconds": 3.2702386379241943
+    },
+    "rf": {
+      "clean_p": 0.78,
+      "clean_agrees_with_surrogate": true,
+      "random_search": {
+        "flipped": false,
+        "p_after": 0.66,
+        "valid": true
+      },
+      "coordinate_search": {
+        "flipped": false,
+        "p_after": 0.66,
+        "valid": true
+      },
+      "transfer_gradient_flipped": false,
+      "seconds": 5.949083566665649
+    },
+    "logistic": {
+      "clean_p": 0.6924533247947693,
+      "clean_agrees_with_surrogate": true,
+      "random_search": {
+        "flipped": false,
+        "p_after": 0.612669050693512,
+        "valid": true
+      },
+      "coordinate_search": {
+        "flipped": false,
+        "p_after": 0.6084568500518799,
+        "valid": true
+      },
+      "transfer_gradient_flipped": false,
+      "seconds": 0.19315767288208008
+    }
+  }
+}

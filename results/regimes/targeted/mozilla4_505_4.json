@@ -1,0 +1,72 @@
+{
+  "report": "mozilla4_505_4.json",
+  "dataset": "mozilla4",
+  "seed": 505,
+  "budget": 24,
+  "receivers": {
+    "tabpfn_standard": {
+      "clean_p": 0.0045636920258402824,
+      "clean_agrees_with_surrogate": true,
+      "random_search": {
+        "flipped": false,
+        "p_after": 0.26857495307922363,
+        "valid": true
+      },
+      "coordinate_search": {
+        "flipped": false,
+        "p_after": 0.20884406566619873,
+        "valid": true
+      },
+      "transfer_gradient_flipped": false,
+      "seconds": 17.190077543258667
+    },
+    "hgb": {
+      "clean_p": 0.0009012108092899946,
+      "clean_agrees_with_surrogate": true,
+      "random_search": {
+        "flipped": true,
+        "p_after": 0.6108813810314052,
+        "valid": true
+      },
+      "coordinate_search": {
+        "flipped": false,
+        "p_after": 0.04944534249520773,
+        "valid": true
+      },
+      "transfer_gradient_flipped": false,
+      "seconds": 3.3561208248138428
+    },
+    "rf": {
+      "clean_p": 0.01,
+      "clean_agrees_with_surrogate": true,
+      "random_search": {
+        "flipped": false,
+        "p_after": 0.42,
+        "valid": true
+      },
+      "coordinate_search": {
+        "flipped": false,
+        "p_after": 0.12,
+        "valid": true
+      },
+      "transfer_gradient_flipped": false,
+      "seconds": 5.496186017990112
+    },
+    "logistic": {
+      "clean_p": 0.33161661028862,
+      "clean_agrees_with_surrogate": true,
+      "random_search": {
+        "flipped": false,
+        "p_after": 0.37952467799186707,
+        "valid": true
+      },
+      "coordinate_search": {
+        "flipped": false,
+        "p_after": 0.38609886169433594,
+        "valid": true
+      },
+      "transfer_gradient_flipped": false,
+      "seconds": 0.15758490562438965
+    }
+  }
+}

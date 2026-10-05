@@ -1,0 +1,7 @@
+results/regimes/MagicTelescope_505_0.json elapsed 29.4
+exact_duplicates valid False flipped False p 0.9996 queries 1
+random_real valid True flipped False p 0.0915 queries 1
+near_rows valid True flipped False p 0.1441 queries 1
+gradient valid True flipped False p 0.2942 queries 24
+random_search valid True flipped False p 0.15 queries 24
+coordinate_search valid True flipped False p 0.1631 queries 24

@@ -1,0 +1,25 @@
+{
+  "dataset": "phoneme",
+  "seed": 101,
+  "n": 300,
+  "noise": 0.1,
+  "auroc": {
+    "logistic": 0.8279012345679012,
+    "hgb": 0.8454320987654321,
+    "rf": 0.8580246913580247,
+    "tabpfn_standard": 0.8567901234567902,
+    "grad_tabpfn": 0.47901234567901235,
+    "tabpfn_oof+grad": 0.7147530864197531
+  },
+  "acc_after_removal": {
+    "logistic": 0.809,
+    "hgb": 0.814,
+    "rf": 0.808,
+    "tabpfn_standard": 0.805,
+    "grad_tabpfn": 0.81,
+    "tabpfn_oof+grad": 0.816
+  },
+  "acc_noisy": 0.814,
+  "acc_oracle": 0.843,
+  "seconds": 6.110169172286987
+}

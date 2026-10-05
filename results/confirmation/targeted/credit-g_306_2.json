@@ -1,0 +1,72 @@
+{
+  "report": "credit-g_306_2.json",
+  "dataset": "credit-g",
+  "seed": 306,
+  "budget": 24,
+  "receivers": {
+    "tabpfn_standard": {
+      "clean_p": 0.0510408990085125,
+      "clean_agrees_with_surrogate": true,
+      "random_search": {
+        "flipped": false,
+        "p_after": 0.20461603999137878,
+        "valid": true
+      },
+      "coordinate_search": {
+        "flipped": false,
+        "p_after": 0.21579815447330475,
+        "valid": true
+      },
+      "transfer_gradient_flipped": false,
+      "seconds": 27.400864839553833
+    },
+    "hgb": {
+      "clean_p": 0.005005174572048694,
+      "clean_agrees_with_surrogate": true,
+      "random_search": {
+        "flipped": false,
+        "p_after": 0.1377619544481061,
+        "valid": true
+      },
+      "coordinate_search": {
+        "flipped": false,
+        "p_after": 0.06917004345357737,
+        "valid": true
+      },
+      "transfer_gradient_flipped": false,
+      "seconds": 4.483312129974365
+    },
+    "rf": {
+      "clean_p": 0.08,
+      "clean_agrees_with_surrogate": true,
+      "random_search": {
+        "flipped": false,
+        "p_after": 0.2173333333333333,
+        "valid": true
+      },
+      "coordinate_search": {
+        "flipped": false,
+        "p_after": 0.2173333333333333,
+        "valid": true
+      },
+      "transfer_gradient_flipped": false,
+      "seconds": 5.8083789348602295
+    },
+    "logistic": {
+      "clean_p": 0.028218934312462807,
+      "clean_agrees_with_surrogate": true,
+      "random_search": {
+        "flipped": false,
+        "p_after": 0.11867599189281464,
+        "valid": true
+      },
+      "coordinate_search": {
+        "flipped": false,
+        "p_after": 0.11159754544496536,
+        "valid": true
+      },
+      "transfer_gradient_flipped": false,
+      "seconds": 0.24457144737243652
+    }
+  }
+}

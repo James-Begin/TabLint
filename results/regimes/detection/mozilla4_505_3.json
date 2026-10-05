@@ -1,0 +1,19 @@
+{
+  "report": "mozilla4_505_3.json",
+  "dataset": "mozilla4",
+  "seed": 505,
+  "target_id": 253,
+  "method": "gradient",
+  "attack_valid": true,
+  "standard_flip": false,
+  "p_target_with_rows": 0.5574811100959778,
+  "k": 3,
+  "n_rows": 203,
+  "seconds": 59.947336196899414,
+  "loo_influence_auroc": 0.7733333333333333,
+  "loo_influence_hits_in_topk": 1,
+  "label_suspicion_auroc": 0.6766666666666666,
+  "label_suspicion_hits_in_topk": 0,
+  "outlier_auroc": 0.27666666666666667,
+  "outlier_hits_in_topk": 0
+}

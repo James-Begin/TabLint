@@ -1,0 +1,49 @@
+{
+  "dataset": "banknote",
+  "seed": 101,
+  "n": 400,
+  "d": 4,
+  "errors": 30,
+  "auroc": {
+    "zscore": 0.7728131634819533,
+    "iforest": 0.7785562632696391,
+    "rf_resid": 0.9510191082802548,
+    "tabpfn_resid": 0.9765180467091296,
+    "tabpfn_pit": 0.9792781316348196
+  },
+  "precision_at_k": {
+    "zscore": 0.2,
+    "iforest": 0.23333333333333334,
+    "rf_resid": 0.6,
+    "tabpfn_resid": 0.7,
+    "tabpfn_pit": 0.8
+  },
+  "by_type": {
+    "decimal": {
+      "zscore": 0.5010191082802548,
+      "iforest": 0.584267515923567,
+      "rf_resid": 0.9554140127388535,
+      "tabpfn_resid": 0.9792356687898089,
+      "tabpfn_pit": 0.9951592356687898
+    },
+    "swap": {
+      "zscore": 0.612137296532201,
+      "iforest": 0.5541755130927105,
+      "rf_resid": 0.8644727530077848,
+      "tabpfn_resid": 0.9345364472753007,
+      "tabpfn_pit": 0.9355272469922151
+    },
+    "offset": {
+      "zscore": 0.9481289808917197,
+      "iforest": 0.9654856687898089,
+      "rf_resid": 0.998328025477707,
+      "tabpfn_resid": 0.9992834394904458,
+      "tabpfn_pit": 0.9989251592356688
+    }
+  },
+  "correction": {
+    "tabpfn_median_abs_err_sd": 0.17810212440564369,
+    "column_median_abs_err_sd": 0.6851466485985263
+  },
+  "seconds": 23.870670557022095
+}

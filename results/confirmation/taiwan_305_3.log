@@ -1,0 +1,7 @@
+results/confirmation/taiwan_305_3.json elapsed 35.2
+exact_duplicates valid False flipped False p 0.0276 queries 1
+random_real valid True flipped False p 0.5888 queries 1
+near_rows valid True flipped True p 0.4155 queries 1
+gradient valid True flipped True p 0.3917 queries 24
+random_search valid True flipped True p 0.3672 queries 24
+coordinate_search valid True flipped True p 0.4027 queries 24

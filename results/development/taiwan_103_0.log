@@ -1,0 +1,7 @@
+results/development/taiwan_103_0.json elapsed 32.0
+exact_duplicates valid False flipped False p 0.9394 queries 1
+random_real valid True flipped False p 0.3112 queries 1
+near_rows valid True flipped False p 0.3939 queries 1
+gradient valid True flipped False p 0.3939 queries 1
+random_search valid True flipped False p 0.3939 queries 1
+coordinate_search valid True flipped False p 0.3939 queries 1

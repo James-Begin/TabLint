@@ -1,0 +1,30 @@
+{
+  "dataset": "breast-cancer",
+  "seed": 702,
+  "errors": 340,
+  "rows_with_error": 229,
+  "n": 400,
+  "d": 30,
+  "proofread_precision_at_k": 0.8441176470588235,
+  "ext_precision_at_k": 0.029411764705882353,
+  "proofread_cell_auroc": 0.9918474422358995,
+  "ext_cell_auroc": 0.4523484007668247,
+  "proofread_row_auroc": 0.9770167777522408,
+  "ext_row_auroc": 0.4035343088434332,
+  "ext_seconds": 141.77402067184448,
+  "threshold": {
+    "2.0": {
+      "flagged": 252,
+      "true_flagged": 236,
+      "precision": 0.9365079365079365,
+      "recall": 0.6941176470588235
+    },
+    "3.0": {
+      "flagged": 87,
+      "true_flagged": 87,
+      "precision": 1.0,
+      "recall": 0.25588235294117645
+    }
+  },
+  "seconds": 212.33199429512024
+}

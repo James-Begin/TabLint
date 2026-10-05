@@ -1,0 +1,19 @@
+{
+  "report": "credit-g_303_0.json",
+  "dataset": "credit-g",
+  "seed": 303,
+  "target_id": 229,
+  "method": "gradient",
+  "attack_valid": true,
+  "standard_flip": false,
+  "p_target_with_rows": 0.5475841760635376,
+  "k": 3,
+  "n_rows": 203,
+  "seconds": 88.04185104370117,
+  "loo_influence_auroc": 0.925,
+  "loo_influence_hits_in_topk": 0,
+  "label_suspicion_auroc": 0.2683333333333333,
+  "label_suspicion_hits_in_topk": 0,
+  "outlier_auroc": 0.017500000000000016,
+  "outlier_hits_in_topk": 0
+}

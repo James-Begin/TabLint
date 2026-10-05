@@ -1,0 +1,12 @@
+
+== breast-cancer: 30 targets, seeds [301, 302, 303, 304, 305, 306], gradient aborts 0
+receiver                        gradient     random_search coordinate_search         near_rows       random_real   grad - best search [98.33% CI]
+tabpfn_standard                     0.60              0.10              0.13              0.07              0.00   +0.47 [+0.23,+0.73] vs coordinate_search
+
+== credit-g: 30 targets, seeds [301, 302, 303, 304, 305, 306], gradient aborts 0
+receiver                        gradient     random_search coordinate_search         near_rows       random_real   grad - best search [98.33% CI]
+tabpfn_standard                     0.23              0.23              0.20              0.20              0.03   +0.00 [-0.17,+0.17] vs random_search
+
+== taiwan: 30 targets, seeds [301, 302, 303, 304, 305, 306], gradient aborts 0
+receiver                        gradient     random_search coordinate_search         near_rows       random_real   grad - best search [98.33% CI]
+tabpfn_standard                     0.33              0.30              0.20              0.20              0.00   +0.03 [+0.00,+0.17] vs random_search

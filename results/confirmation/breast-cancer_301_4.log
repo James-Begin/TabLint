@@ -1,0 +1,7 @@
+results/confirmation/breast-cancer_301_4.json elapsed 30.6
+exact_duplicates valid False flipped False p 0.0004 queries 1
+random_real valid True flipped False p 0.9936 queries 1
+near_rows valid True flipped False p 0.873 queries 1
+gradient valid True flipped True p 0.0937 queries 24
+random_search valid True flipped False p 0.8294 queries 24
+coordinate_search valid True flipped False p 0.8405 queries 24

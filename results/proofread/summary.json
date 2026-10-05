@@ -1,0 +1,381 @@
+{
+  "h6_cells": {
+    "datasets": 14,
+    "wins": 13,
+    "mean_diff": 0.19031552742054947,
+    "ci95": [
+      0.13227753943413362,
+      0.2398998071137677
+    ],
+    "wilcoxon_p_one_sided": 0.00018310546875,
+    "supported": true
+  },
+  "h7_labels": {
+    "datasets": 14,
+    "wins": 13,
+    "mean_diff": 0.021747519841269863,
+    "ci95": [
+      0.007851488095238092,
+      0.04122767857142862
+    ],
+    "wilcoxon_p_one_sided": 0.0008544921875,
+    "supported": true
+  },
+  "headline": "**Cells (H6):** TabPFN-3.5 beats the best of 7 baselines (chosen per dataset, after the fact) on **13/14 datasets**; mean precision@k gain +0.190 [+0.132, +0.240], one-sided Wilcoxon p = 0.00018 \u2014 supported.  \n**Labels (H7):** TabPFN-3.5 beats the best of 4 baselines on **13/14**; mean AUROC gain +0.022 [+0.008, +0.041], p = 0.00085 \u2014 supported.",
+  "cells_table": [
+    {
+      "dataset": "MagicTelescope",
+      "seeds": 5,
+      "TabPFN precision@k": 0.732,
+      "best baseline": "hgb",
+      "best baseline precision@k": 0.451,
+      "difference": 0.281,
+      "TabPFN AUROC": 0.925,
+      "best baseline AUROC": 0.91,
+      "fix error (SD) TabPFN": 0.4,
+      "fix error RF": 0.53,
+      "fix error ridge": 0.56,
+      "fix error column median": 0.76
+    },
+    {
+      "dataset": "banknote",
+      "seeds": 5,
+      "TabPFN precision@k": 0.743,
+      "best baseline": "hgb",
+      "best baseline precision@k": 0.646,
+      "difference": 0.097,
+      "TabPFN AUROC": 0.962,
+      "best baseline AUROC": 0.962,
+      "fix error (SD) TabPFN": 0.23,
+      "fix error RF": 0.35,
+      "fix error ridge": 0.53,
+      "fix error column median": 0.85
+    },
+    {
+      "dataset": "blood-transfusion",
+      "seeds": 5,
+      "TabPFN precision@k": 0.782,
+      "best baseline": "ridge",
+      "best baseline precision@k": 0.469,
+      "difference": 0.313,
+      "TabPFN AUROC": 0.984,
+      "best baseline AUROC": 0.937,
+      "fix error (SD) TabPFN": 0.26,
+      "fix error RF": 0.43,
+      "fix error ridge": 0.45,
+      "fix error column median": 0.73
+    },
+    {
+      "dataset": "breast-cancer",
+      "seeds": 5,
+      "TabPFN precision@k": 0.847,
+      "best baseline": "hgb",
+      "best baseline precision@k": 0.57,
+      "difference": 0.277,
+      "TabPFN AUROC": 0.992,
+      "best baseline AUROC": 0.954,
+      "fix error (SD) TabPFN": 0.16,
+      "fix error RF": 0.43,
+      "fix error ridge": 0.54,
+      "fix error column median": 0.74
+    },
+    {
+      "dataset": "climate-crashes",
+      "seeds": 5,
+      "TabPFN precision@k": 0.342,
+      "best baseline": "zscore",
+      "best baseline precision@k": 0.424,
+      "difference": -0.081,
+      "TabPFN AUROC": 0.757,
+      "best baseline AUROC": 0.817,
+      "fix error (SD) TabPFN": 1.05,
+      "fix error RF": 0.89,
+      "fix error ridge": 0.88,
+      "fix error column median": 0.87
+    },
+    {
+      "dataset": "diabetes",
+      "seeds": 5,
+      "TabPFN precision@k": 0.612,
+      "best baseline": "ridge",
+      "best baseline precision@k": 0.421,
+      "difference": 0.191,
+      "TabPFN AUROC": 0.91,
+      "best baseline AUROC": 0.887,
+      "fix error (SD) TabPFN": 0.62,
+      "fix error RF": 0.7,
+      "fix error ridge": 0.77,
+      "fix error column median": 0.77
+    },
+    {
+      "dataset": "eeg-eye-state",
+      "seeds": 5,
+      "TabPFN precision@k": 0.833,
+      "best baseline": "zscore",
+      "best baseline precision@k": 0.755,
+      "difference": 0.078,
+      "TabPFN AUROC": 0.989,
+      "best baseline AUROC": 0.951,
+      "fix error (SD) TabPFN": 0.22,
+      "fix error RF": 6.8,
+      "fix error ridge": 5.78,
+      "fix error column median": 0.47
+    },
+    {
+      "dataset": "electricity",
+      "seeds": 5,
+      "TabPFN precision@k": 0.714,
+      "best baseline": "hgb",
+      "best baseline precision@k": 0.481,
+      "difference": 0.233,
+      "TabPFN AUROC": 0.955,
+      "best baseline AUROC": 0.932,
+      "fix error (SD) TabPFN": 0.36,
+      "fix error RF": 0.56,
+      "fix error ridge": 0.83,
+      "fix error column median": 0.76
+    },
+    {
+      "dataset": "ilpd",
+      "seeds": 5,
+      "TabPFN precision@k": 0.698,
+      "best baseline": "hgb",
+      "best baseline precision@k": 0.416,
+      "difference": 0.282,
+      "TabPFN AUROC": 0.962,
+      "best baseline AUROC": 0.93,
+      "fix error (SD) TabPFN": 0.26,
+      "fix error RF": 0.47,
+      "fix error ridge": 0.55,
+      "fix error column median": 0.6
+    },
+    {
+      "dataset": "kc1",
+      "seeds": 5,
+      "TabPFN precision@k": 0.87,
+      "best baseline": "ridge",
+      "best baseline precision@k": 0.631,
+      "difference": 0.238,
+      "TabPFN AUROC": 0.993,
+      "best baseline AUROC": 0.972,
+      "fix error (SD) TabPFN": 0.07,
+      "fix error RF": 0.22,
+      "fix error ridge": 0.31,
+      "fix error column median": 0.54
+    },
+    {
+      "dataset": "phoneme",
+      "seeds": 5,
+      "TabPFN precision@k": 0.594,
+      "best baseline": "rf",
+      "best baseline precision@k": 0.482,
+      "difference": 0.112,
+      "TabPFN AUROC": 0.877,
+      "best baseline AUROC": 0.87,
+      "fix error (SD) TabPFN": 0.45,
+      "fix error RF": 0.53,
+      "fix error ridge": 0.74,
+      "fix error column median": 0.78
+    },
+    {
+      "dataset": "spambase",
+      "seeds": 5,
+      "TabPFN precision@k": 0.677,
+      "best baseline": "hgb",
+      "best baseline precision@k": 0.489,
+      "difference": 0.188,
+      "TabPFN AUROC": 0.975,
+      "best baseline AUROC": 0.953,
+      "fix error (SD) TabPFN": 0.21,
+      "fix error RF": 0.38,
+      "fix error ridge": 0.55,
+      "fix error column median": 0.3
+    },
+    {
+      "dataset": "steel-plates",
+      "seeds": 5,
+      "TabPFN precision@k": 0.869,
+      "best baseline": "hgb",
+      "best baseline precision@k": 0.607,
+      "difference": 0.262,
+      "TabPFN AUROC": 0.996,
+      "best baseline AUROC": 0.96,
+      "fix error (SD) TabPFN": 0.07,
+      "fix error RF": 0.3,
+      "fix error ridge": 0.51,
+      "fix error column median": 0.71
+    },
+    {
+      "dataset": "wilt",
+      "seeds": 5,
+      "TabPFN precision@k": 0.737,
+      "best baseline": "hgb_quantile",
+      "best baseline precision@k": 0.542,
+      "difference": 0.195,
+      "TabPFN AUROC": 0.957,
+      "best baseline AUROC": 0.939,
+      "fix error (SD) TabPFN": 0.42,
+      "fix error RF": 0.62,
+      "fix error ridge": 0.69,
+      "fix error column median": 0.65
+    }
+  ],
+  "labels_table": [
+    {
+      "dataset": "MagicTelescope",
+      "TabPFN AUROC": 0.918,
+      "best baseline": "rf",
+      "best baseline AUROC": 0.872,
+      "difference": 0.046
+    },
+    {
+      "dataset": "banknote",
+      "TabPFN AUROC": 1.0,
+      "best baseline": "knn",
+      "best baseline AUROC": 0.998,
+      "difference": 0.002
+    },
+    {
+      "dataset": "blood-transfusion",
+      "TabPFN AUROC": 0.855,
+      "best baseline": "logistic",
+      "best baseline AUROC": 0.851,
+      "difference": 0.004
+    },
+    {
+      "dataset": "breast-cancer",
+      "TabPFN AUROC": 0.994,
+      "best baseline": "logistic",
+      "best baseline AUROC": 0.99,
+      "difference": 0.004
+    },
+    {
+      "dataset": "climate-crashes",
+      "TabPFN AUROC": 0.97,
+      "best baseline": "logistic",
+      "best baseline AUROC": 0.962,
+      "difference": 0.008
+    },
+    {
+      "dataset": "diabetes",
+      "TabPFN AUROC": 0.843,
+      "best baseline": "logistic",
+      "best baseline AUROC": 0.848,
+      "difference": -0.005
+    },
+    {
+      "dataset": "eeg-eye-state",
+      "TabPFN AUROC": 0.919,
+      "best baseline": "rf",
+      "best baseline AUROC": 0.79,
+      "difference": 0.129
+    },
+    {
+      "dataset": "electricity",
+      "TabPFN AUROC": 0.856,
+      "best baseline": "rf",
+      "best baseline AUROC": 0.816,
+      "difference": 0.041
+    },
+    {
+      "dataset": "ilpd",
+      "TabPFN AUROC": 0.804,
+      "best baseline": "logistic",
+      "best baseline AUROC": 0.785,
+      "difference": 0.019
+    },
+    {
+      "dataset": "kc1",
+      "TabPFN AUROC": 0.919,
+      "best baseline": "logistic",
+      "best baseline AUROC": 0.901,
+      "difference": 0.017
+    },
+    {
+      "dataset": "phoneme",
+      "TabPFN AUROC": 0.906,
+      "best baseline": "rf",
+      "best baseline AUROC": 0.885,
+      "difference": 0.021
+    },
+    {
+      "dataset": "spambase",
+      "TabPFN AUROC": 0.97,
+      "best baseline": "rf",
+      "best baseline AUROC": 0.953,
+      "difference": 0.017
+    },
+    {
+      "dataset": "steel-plates",
+      "TabPFN AUROC": 1.0,
+      "best baseline": "logistic",
+      "best baseline AUROC": 0.999,
+      "difference": 0.001
+    },
+    {
+      "dataset": "wilt",
+      "TabPFN AUROC": 0.994,
+      "best baseline": "rf",
+      "best baseline AUROC": 0.993,
+      "difference": 0.001
+    }
+  ],
+  "by_error_type_auroc": [
+    {
+      "error type": "decimal",
+      "zscore": 0.883,
+      "iforest": 0.793,
+      "ridge": 0.923,
+      "knn": 0.927,
+      "rf": 0.932,
+      "hgb": 0.943,
+      "hgb_quantile": 0.936,
+      "tabpfn_pit": 0.963
+    },
+    {
+      "error type": "swap",
+      "zscore": 0.562,
+      "iforest": 0.573,
+      "ridge": 0.71,
+      "knn": 0.747,
+      "rf": 0.785,
+      "hgb": 0.768,
+      "hgb_quantile": 0.783,
+      "tabpfn_pit": 0.852
+    },
+    {
+      "error type": "offset",
+      "zscore": 0.951,
+      "iforest": 0.784,
+      "ridge": 0.953,
+      "knn": 0.959,
+      "rf": 0.953,
+      "hgb": 0.95,
+      "hgb_quantile": 0.952,
+      "tabpfn_pit": 0.977
+    },
+    {
+      "error type": "zero",
+      "zscore": 0.75,
+      "iforest": 0.682,
+      "ridge": 0.854,
+      "knn": 0.867,
+      "rf": 0.887,
+      "hgb": 0.894,
+      "hgb_quantile": 0.874,
+      "tabpfn_pit": 0.937
+    },
+    {
+      "error type": "transposition",
+      "zscore": 0.782,
+      "iforest": 0.677,
+      "ridge": 0.827,
+      "knn": 0.843,
+      "rf": 0.863,
+      "hgb": 0.865,
+      "hgb_quantile": 0.873,
+      "tabpfn_pit": 0.911
+    }
+  ],
+  "n_runs": 70
+}

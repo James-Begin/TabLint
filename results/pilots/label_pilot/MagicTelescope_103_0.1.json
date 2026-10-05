@@ -1,0 +1,25 @@
+{
+  "dataset": "MagicTelescope",
+  "seed": 103,
+  "n": 300,
+  "noise": 0.1,
+  "auroc": {
+    "logistic": 0.8191358024691358,
+    "hgb": 0.7967901234567901,
+    "rf": 0.8295061728395061,
+    "tabpfn_standard": 0.9058024691358024,
+    "grad_tabpfn": 0.6606172839506173,
+    "tabpfn_oof+grad": 0.8675308641975308
+  },
+  "acc_after_removal": {
+    "logistic": 0.835,
+    "hgb": 0.839,
+    "rf": 0.84,
+    "tabpfn_standard": 0.847,
+    "grad_tabpfn": 0.855,
+    "tabpfn_oof+grad": 0.854
+  },
+  "acc_noisy": 0.847,
+  "acc_oracle": 0.857,
+  "seconds": 5.93422532081604
+}

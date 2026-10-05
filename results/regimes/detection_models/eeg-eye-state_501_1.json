@@ -1,0 +1,19 @@
+{
+  "report": "eeg-eye-state_501_1.json",
+  "dataset": "eeg-eye-state",
+  "seed": 501,
+  "k": 3,
+  "attack_valid": true,
+  "hgb_auroc": 0.7683333333333333,
+  "hgb_hits_in_topk": 0,
+  "hgb_frac_zero_scores": 0.0,
+  "hgb_seconds": 9.454360485076904,
+  "rf_auroc": 0.6275,
+  "rf_hits_in_topk": 1,
+  "rf_frac_zero_scores": 0.029556650246305417,
+  "rf_seconds": 23.191882610321045,
+  "logistic_auroc": 0.9216666666666666,
+  "logistic_hits_in_topk": 0,
+  "logistic_frac_zero_scores": 0.0,
+  "logistic_seconds": 0.8420007228851318
+}

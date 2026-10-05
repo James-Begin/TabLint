@@ -1,0 +1,19 @@
+{
+  "report": "phoneme_502_3.json",
+  "dataset": "phoneme",
+  "seed": 502,
+  "target_id": 1075,
+  "method": "gradient",
+  "attack_valid": true,
+  "standard_flip": true,
+  "p_target_with_rows": 0.4663086235523224,
+  "k": 3,
+  "n_rows": 203,
+  "seconds": 57.084667682647705,
+  "loo_influence_auroc": 0.98,
+  "loo_influence_hits_in_topk": 2,
+  "label_suspicion_auroc": 0.9533333333333334,
+  "label_suspicion_hits_in_topk": 1,
+  "outlier_auroc": 0.007500000000000007,
+  "outlier_hits_in_topk": 0
+}

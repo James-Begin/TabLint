@@ -1,0 +1,30 @@
+{
+  "dataset": "eeg-eye-state",
+  "seed": 705,
+  "errors": 153,
+  "rows_with_error": 130,
+  "n": 400,
+  "d": 14,
+  "proofread_precision_at_k": 0.8104575163398693,
+  "ext_precision_at_k": 0.13725490196078433,
+  "proofread_cell_auroc": 0.9836667302622659,
+  "ext_cell_auroc": 0.7981541677315929,
+  "proofread_row_auroc": 0.9580911680911681,
+  "ext_row_auroc": 0.8972649572649574,
+  "ext_seconds": 65.37943816184998,
+  "threshold": {
+    "2.0": {
+      "flagged": 94,
+      "true_flagged": 91,
+      "precision": 0.9680851063829787,
+      "recall": 0.5947712418300654
+    },
+    "3.0": {
+      "flagged": 26,
+      "true_flagged": 26,
+      "precision": 1.0,
+      "recall": 0.16993464052287582
+    }
+  },
+  "seconds": 94.96086764335632
+}

@@ -1,0 +1,19 @@
+{
+  "report": "credit-g_301_0.json",
+  "dataset": "credit-g",
+  "seed": 301,
+  "k": 3,
+  "attack_valid": true,
+  "hgb_auroc": 0.505,
+  "hgb_hits_in_topk": 0,
+  "hgb_frac_zero_scores": 0.0,
+  "hgb_seconds": 13.57539176940918,
+  "rf_auroc": 0.5383333333333333,
+  "rf_hits_in_topk": 0,
+  "rf_frac_zero_scores": 0.04926108374384237,
+  "rf_seconds": 22.053767919540405,
+  "logistic_auroc": 0.825,
+  "logistic_hits_in_topk": 2,
+  "logistic_frac_zero_scores": 0.0,
+  "logistic_seconds": 0.7609364986419678
+}

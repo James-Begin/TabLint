@@ -1,0 +1,19 @@
+{
+  "report": "mozilla4_505_4.json",
+  "dataset": "mozilla4",
+  "seed": 505,
+  "k": 3,
+  "attack_valid": true,
+  "hgb_auroc": 0.34833333333333333,
+  "hgb_hits_in_topk": 0,
+  "hgb_frac_zero_scores": 0.0,
+  "hgb_seconds": 8.635390996932983,
+  "rf_auroc": 0.31583333333333335,
+  "rf_hits_in_topk": 0,
+  "rf_frac_zero_scores": 0.07389162561576355,
+  "rf_seconds": 21.265258073806763,
+  "logistic_auroc": 0.9733333333333334,
+  "logistic_hits_in_topk": 0,
+  "logistic_frac_zero_scores": 0.0,
+  "logistic_seconds": 0.5607013702392578
+}
