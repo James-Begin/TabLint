@@ -115,6 +115,8 @@ def save(fig, output, name):
                 metadata={"Software": "TabLint saved-result figure renderer"})
     fig.savefig(output / f"tablint_benchmark_{name}.svg", facecolor="white",
                 metadata={"Date": None, "Creator": "TabLint saved-result figure renderer"})
+    svg = output / f"tablint_benchmark_{name}.svg"
+    svg.write_text("\n".join(line.rstrip() for line in svg.read_text().splitlines()) + "\n")
     plt.close(fig)
 
 
@@ -276,7 +278,8 @@ def main():
         add("distribution", row["dataset"], "tabpfn_pit", row["tablint"])
         add("distribution", row["dataset"], "tabpfn_resid", row["baseline"])
     with (output / "tablint_benchmark_values.csv").open("w", newline="") as stream:
-        writer = csv.DictWriter(stream, fieldnames=["figure", "dataset", "method", "metric", "value", "seeds", "rows_per_table"])
+        writer = csv.DictWriter(stream, fieldnames=["figure", "dataset", "method", "metric", "value", "seeds", "rows_per_table"],
+                                lineterminator="\n")
         writer.writeheader()
         writer.writerows(exported)
     print(f"Validated 70 numerical + 50 categorical runs; exported six PNG/SVG pairs and {len(exported)} plotted values to {output}")
