@@ -17,7 +17,7 @@ Review suspicious values in your own pandas DataFrame, inspect TabPFN’s reason
 
 ## Demo
 
-[![Open the TabLint MP4 showcase: 1080p, 30 fps](demo/showcase/poster.png)](https://github.com/James-Begin/TabLint/raw/refs/heads/main/demo/showcase/TabLint-demo.mp4)
+https://github.com/user-attachments/assets/8a850f7f-b17a-4e3a-82a1-bee73d5cfe09
 
 **[Open or download the full MP4 showcase](https://github.com/James-Begin/TabLint/raw/refs/heads/main/demo/showcase/TabLint-demo.mp4)** · 1:28 · 1080p · 30 fps with audio
 
