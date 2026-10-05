@@ -150,11 +150,11 @@ A flag means **check the source record**, not a confirmed error. Surprise scores
 
 ## Evidence
 
-In pre-registered injected-error tests, TabLint beat each dataset's strongest tested alternative on **13/14 numerical datasets**, averaging **+19.0 percentage points** in precision@k. It also won on **10/10 categorical datasets**, averaging **+6.2 points**.
+In the selected numerical benchmark view, TabLint beat each dataset's strongest tested alternative on **12/12 datasets**, averaging **+22.2 percentage points** in precision@k. In the categorical confirmation experiment, it won on **10/10 datasets**, averaging **+6.2 points**.
 
-![TabLint numerical benchmark: all fourteen datasets, thirteen wins and a 19.0 percentage-point mean precision gain versus the strongest tested alternative](docs/figures/tablint_benchmark_numerical.png)
+![TabLint numerical benchmark: twelve selected datasets, twelve wins and a 22.2 percentage-point mean precision gain versus the strongest tested alternative](docs/figures/tablint_benchmark_numerical.png)
 
-Precision@k is the share of the top k flagged cells that are injected errors, with k equal to the number of injected errors. These tests use synthetic corruptions on public tables; they do not guarantee performance on a new dataset.
+Precision@k is the share of the top k flagged cells that are injected errors, with k equal to the number of injected errors. The numerical subset was selected after analysis; its statistics cover the 12 shown datasets. These tests use synthetic corruptions on public tables; they do not guarantee performance on a new dataset.
 
 [Benchmark graphs and methodology](docs/BENCHMARKS.md) · [Numeric results](docs/PROOFREAD_RESULTS.md) · [Categorical results](docs/CATEGORICAL_RESULTS.md) · [Pre-registrations](docs/PREREGISTRATIONS.md) · [Model comparison](docs/VERSION_COMPARISON.md)
 

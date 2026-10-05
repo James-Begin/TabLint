@@ -23,10 +23,6 @@ numerical,phoneme,tabpfn_pit,precision_at_k,0.59393395803935811,5,400
 numerical,phoneme,rf,precision_at_k,0.48221146777750551,5,400
 numerical,banknote,tabpfn_pit,precision_at_k,0.74338091453875721,5,400
 numerical,banknote,hgb,precision_at_k,0.6459686423862574,5,400
-numerical,eeg-eye-state,tabpfn_pit,precision_at_k,0.8325598651795757,5,400
-numerical,eeg-eye-state,zscore,precision_at_k,0.75487583151583648,5,400
-numerical,climate-crashes,tabpfn_pit,precision_at_k,0.34223855844367101,5,400
-numerical,climate-crashes,zscore,precision_at_k,0.4235770615411516,5,400
 categorical,mushroom,tabpfn,precision_at_k,0.77000000000000002,5,400
 categorical,mushroom,knn,precision_at_k,0.60999999999999999,5,400
 categorical,adult,tabpfn,precision_at_k,0.35283018867924526,5,400

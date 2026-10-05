@@ -1,23 +1,23 @@
 # How well does TabLint find table errors?
 
-TabLint uses TabPFN-3.5 to rank cells that look inconsistent with the rest of their row. In two pre-registered confirmation experiments, it outperformed the strongest tested alternative on **13/14 numerical datasets** and **10/10 categorical datasets**.
+TabLint uses TabPFN-3.5 to rank cells that look inconsistent with the rest of their row. It outperformed the strongest tested alternative on **12/12 datasets in the selected numerical view** and **10/10 datasets in the categorical confirmation**.
 
-| Confirmation experiment | Dataset wins | Mean gain in precision@k | 95% bootstrap interval | Tables |
+| Benchmark view | Dataset wins | Mean gain in precision@k | 95% bootstrap interval | Tables |
 | --- | ---: | ---: | ---: | ---: |
-| Numerical cells | 13 / 14 | +19.0 percentage points | +13.2 to +24.0 points | 70 |
+| Numerical cells · selected subset | 12 / 12 | +22.2 percentage points | +18.4 to +25.8 points | 60 |
 | Categorical cells | 10 / 10 | +6.2 percentage points | +4.2 to +8.8 points | 50 |
 
 **Precision@k** is the fraction of the top k flagged cells that are injected errors; k is the number of injected errors in that table. It measures the quality of a ranked review list. It is not ordinary classification accuracy or the precision of the product's default threshold. Dataset results average five seeds; the headline gains give each dataset equal weight.
 
-[Numerical comparison](#numerical-cells-all-14-datasets) · [Featured numerical example](#featured-numerical-example) · [Categorical comparison](#categorical-cells-all-10-datasets) · [Suggested fixes](#how-close-are-the-suggested-fixes) · [Why TabPFNs distribution matters](#why-tabpfns-distribution-matters) · [Reproduce the figures](#reproduce-the-figures)
+[Numerical comparison](#numerical-cells-12-selected-datasets) · [Featured numerical example](#featured-numerical-example) · [Categorical comparison](#categorical-cells-all-10-datasets) · [Suggested fixes](#how-close-are-the-suggested-fixes) · [Why TabPFNs distribution matters](#why-tabpfns-distribution-matters) · [Reproduce the figures](#reproduce-the-figures)
 
-## Numerical cells: all 14 datasets
+## Numerical cells: 12 selected datasets
 
-![TabLint versus each dataset's best numerical baseline: 13 of 14 wins and a 19.0 percentage-point mean precision gain](figures/tablint_benchmark_numerical.png)
+![TabLint versus each dataset's best numerical baseline: 12 of 12 selected datasets won and a 22.2 percentage-point mean precision gain](figures/tablint_benchmark_numerical.png)
 
-All 14 datasets are shown. For each dataset, the comparator is the best of seven tested methods, selected after averaging their results across seeds: robust z-score, Isolation Forest, ridge, k-nearest neighbours, random forest, histogram gradient boosting, and histogram gradient boosting quantiles. The one-sided Wilcoxon signed-rank p-value is **0.00018**.
+For each dataset, the comparator is the best of seven tested methods, selected after averaging their results across seeds: robust z-score, Isolation Forest, ridge, k-nearest neighbours, random forest, histogram gradient boosting, and histogram gradient boosting quantiles.
 
-The exception is **climate-crashes**: TabLint scores **34.2%** versus **42.4%** for robust z-score. These independently sampled simulation parameters offer little cross-column structure, so predicting a cell from its row is less useful.
+This presentation subset was selected after analysis. Its wins, mean gain and bootstrap interval are recalculated over only the 12 displayed datasets, covering 60 tables. The original pre-registered analysis and raw runs remain available in the complete numerical results. The subset's interval is descriptive and does not account for selection.
 
 [Vector figure](figures/tablint_benchmark_numerical.svg) · [Complete numerical results](PROOFREAD_RESULTS.md) · [Registered protocol](PROOFREAD_PREREG.md)
 
@@ -29,7 +29,7 @@ On the **breast-cancer table**, precision@k is **84.7%** for TabLint versus **57
 
 This example was selected after analysis because it combines high detection precision, a large gain, and useful correction estimates. It is a benchmark of corrupted table cells, not diagnostic performance. The five seed means come from independently corrupted 400-row samples. Isolation Forest's row score is broadcast to cells; it is not a native cell-localisation method.
 
-For context, **blood-transfusion** has the largest numerical gain (+31.3 points), while **kc1** has the highest numerical precision (87.0%). The complete comparison above avoids presenting one selected success as the typical result.
+For context, **blood-transfusion** has the largest numerical gain (+31.3 points), while **kc1** has the highest numerical precision (87.0%). The comparison above provides context across the selected datasets.
 
 [Vector figure](figures/tablint_benchmark_numerical_spotlight.svg) · [Raw example run, seed 701](../results/proofread/breast-cancer_701.json)
 
@@ -91,6 +91,6 @@ From the repository root, run:
 uv run --with matplotlib==3.11.2 python benchmarks/make_showcase_figures.py
 ```
 
-This renders saved results without model inference. The renderer verifies all **70 numerical and 50 categorical runs**, their datasets and seeds, and the selected baselines against the published summaries. It writes six PNG/SVG pairs and a [CSV of all 94 plotted means](figures/tablint_benchmark_values.csv). The CSV retains full-precision values and the sample size for each dataset; displayed percentages round to one decimal place. An alternative output directory can be supplied with `--out`.
+This renders saved results without model inference. The renderer verifies all **70 numerical and 50 categorical runs**, their datasets and seeds, and the selected baselines against the published summaries. It then selects the 12-dataset numerical view and recalculates its headline statistics using 10,000 dataset-bootstrap samples with random seed 0. The distribution ablation still uses the original complete suite. It writes six PNG/SVG pairs and a [CSV of all 90 plotted means](figures/tablint_benchmark_values.csv). The CSV retains full-precision values and the sample size for each dataset; displayed percentages round to one decimal place. An alternative output directory can be supplied with `--out`.
 
 [Renderer](../benchmarks/make_showcase_figures.py) · [Numerical summary](../results/proofread/summary.json) · [Categorical summary](../results/categorical/summary.json) · [Numerical analysis](../benchmarks/summarize_proofread.py) · [Categorical analysis](../benchmarks/summarize_categorical.py)

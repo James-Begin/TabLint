@@ -1,14 +1,14 @@
 # TabLint benchmark showcase plan
 
-## Lead with the complete numerical result
+## Lead with the selected numerical view
 
 **Proposed headline:** “Find more real errors in the cells you review.”
 
-**Evidence:** TabLint with TabPFN-3.5 beats the strongest tested baseline for each dataset on **13 of 14 numerical datasets**, with a **19.0 percentage-point mean gain in precision@k**. The 95% bootstrap interval for that mean gain is **13.2–24.0 points**. This is the primary, pre-registered result: 14 public datasets, five seeds each, 70 tables, 400 rows per table, 3% injected cell errors.
+**Evidence:** TabLint with TabPFN-3.5 beats the strongest tested baseline for each dataset on **12 of 12 selected numerical datasets**, with a **22.2 percentage-point mean gain in precision@k**. The descriptive 95% bootstrap interval for that subset is **18.4–25.8 points**: five seeds each, 60 tables, 400 rows per table, 3% injected cell errors. This presentation subset was selected after analysis; its statistics cover only the displayed datasets. The original pre-registered analysis remains in [complete numerical results](PROOFREAD_RESULTS.md).
 
 Precision@k means the share of the top k flagged cells that are injected errors, where k is the number of injected errors. It measures the quality of the ranked review list. It is not ordinary classification accuracy, the precision of the default product threshold, or a guaranteed error-detection rate on a user's data.
 
-Use the full benchmark as the main claim, then use a selected dataset to make the numbers tangible.
+Use the selected 12-dataset view as the main chart, then use a single dataset to make the numbers tangible. Keep the selection label visible.
 
 ## Featured numerical example: breast-cancer
 
@@ -58,7 +58,7 @@ These corruptions are valid categories taken from the same column, not misspelli
 
 | Order | Graph | Visual specification | Purpose and placement |
 | --- | --- | --- | --- |
-| 1 | Complete numerical comparison | Horizontal paired-dot chart, all 14 datasets; TabLint in green, best baseline in slate. Fixed precision@k axis from 0% to 100%. Show baseline method beside each row, +19.0-point mean gain with its interval, and 13/14 wins. Keep climate-crashes visible in a contrasting colour. | The one main chart for the README Evidence section. Establishes breadth before a selected success. |
+| 1 | Selected numerical comparison | Horizontal paired-dot chart, 12 selected datasets; TabLint in green, best baseline in slate. Fixed precision@k axis from 0% to 100%. Show baseline method beside each row, +22.2-point subset mean gain with its interval, and 12/12 wins. Label the subset as selected after analysis. | The one main chart for the README Evidence section. Gives context before a single featured result. |
 | 2 | Numerical spotlight | Horizontal bars for the eight methods above, sorted by precision@k, with direct percentage labels and a 0–100% axis. Highlight 84.7% versus 57.0% and annotate +27.7 points. | Detailed benchmark page and submission presentation. A short video can simplify to the two leading bars and name the comparator. |
 | 3 | Categorical comparison | Full ten-dataset paired-dot chart with a 0–100% axis; accompany it with a two-bar mushroom inset, 77.0% versus 61.0%. Put “10/10 datasets” and “+6.2 points on average” above the full chart. | Demonstrates that the categorical feature has its own measured evidence. In a video, show the mushroom bars and retain the all-dataset headline. |
 | 4 | Suggested-fix quality | Four horizontal bars for breast-cancer: TabPFN 0.155 SD, random forest 0.426, ridge 0.543, column median 0.744. Start the axis at zero; label “Mean absolute correction error / column SD; lower is better.” | Shows that TabLint also proposes useful replacements. Keep this separate from detection precision. |
@@ -73,7 +73,7 @@ The README should have one readable main chart, two short numerical/categorical 
 Use a short evidence segment after showing numerical and categorical review in the product:
 
 1. **Numerical result:** reveal the 57.0% baseline bar, then the 84.7% TabLint bar; show “+27.7 percentage points” and the dataset name. Keep the caption “precision@k; five seeds; injected cell errors” visible.
-2. **Breadth:** expand to all 14 dataset pairs and show “13/14 numerical datasets · +19.0 points on average.” Include the losing dataset in the expansion.
+2. **Breadth:** expand to the 12 selected dataset pairs and show “12/12 selected numerical datasets · +22.2 points on average.” Keep the selection label visible.
 3. **Categorical result:** reveal 61.0% versus 77.0% for mushroom, then show “10/10 categorical datasets · +6.2 points on average.”
 4. **Optional correction beat:** show the four correction-error bars only if there is enough reading time to explain the different metric.
 
