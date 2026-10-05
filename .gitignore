@@ -19,6 +19,7 @@ data_cache/
 handoff/
 
 # Build products and disposable demo copies
+build/
 *.egg-info/
 .DS_Store
 node_modules/
