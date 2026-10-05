@@ -4,7 +4,7 @@ from types import SimpleNamespace
 import sys
 
 import pytest
-from proofread import demo
+from scripts import rehearse_notebook as demo
 
 
 def test_prepare_preserves_working_notebook(tmp_path):

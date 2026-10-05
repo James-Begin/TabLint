@@ -37,11 +37,6 @@ def _check(a):
 def main(argv=None):
     p = argparse.ArgumentParser(prog="tablint" if Path(sys.argv[0]).name == "tablint" else "proofread", description="Spellcheck for tables with TabPFN-3.5")
     sub = p.add_subparsers(dest="cmd", required=True)
-    d = sub.add_parser("demo", help="open the saved interactive demo in JupyterLab")
-    d.add_argument("--prepare-only", action="store_true", help="create the working notebook without starting Jupyter")
-    d.add_argument("--no-browser", action="store_true", help="print the local Jupyter URL without opening a browser")
-    d.add_argument("--port", type=int, default=8888, help="preferred local Jupyter port (default: 8888)")
-    d.set_defaults(fn=lambda a: __import__("proofread.demo", fromlist=["launch"]).launch(a))
     c = sub.add_parser("check", help="flag suspicious cells and labels in a CSV")
     c.add_argument("csv"); c.add_argument("--label"); c.add_argument("--device", default="auto")
     c.add_argument("--fast", action="store_true", help="use TabPFN-3.5-Fast (same precision as 3.5 in docs/VERSION_COMPARISON.md, ~2.7x faster)")

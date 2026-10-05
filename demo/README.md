@@ -1,12 +1,11 @@
-# TabLint demos
+# Showcase production assets
 
-Start with `uv run --extra notebook tablint demo` from the repository root for interactive Jupyter review. Choose **Run → Run All Cells** in the notebook.
+The data, stored predictions and rehearsal notebooks here support the product video and development checks. User installation and analysis instructions are in [Getting started](../docs/GETTING_STARTED.md).
 
-The saved demo needs no model weights or GPU. VS Code (`npm run demo:vscode`) and the browser viewer (`uv run --extra demo tablint app`) are optional integrations.
-
-- [Jupyter demo notebook](../examples/tablint_demo.ipynb) — inspect cells and retrieve cleaned DataFrames and decisions.
-- [Auto MPG data and saved reports](video/README.md) — no inference needed to replay.
+- [Auto MPG data and saved reports](video/README.md) — video examples and attribution.
 - [Approved product video](showcase/README.md) — 1:28 animation and provenance.
-- [Getting started](../docs/GETTING_STARTED.md) — setup and live inference.
+- [Animation source](../showcase/) — editable production project.
 
-The separate `app.py` is the original Chain of Custody research viewer; see [its documentation](RESEARCH_VIEWER.md). The TabLint browser command opens `proofread_app.py`.
+For video production, `uv run --extra notebook python scripts/rehearse_notebook.py` opens the saved notebook rehearsal. `npm run rehearse:vscode` opens the editor rehearsal. These commands are for preparing footage, rather than setting up the product for a user's own data.
+
+The browser integration lives in `proofread_app.py`. The separate `app.py` is the original Chain of Custody research viewer; see [its documentation](RESEARCH_VIEWER.md).

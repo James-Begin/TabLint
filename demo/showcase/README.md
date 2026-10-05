@@ -12,6 +12,6 @@ This is a stylized animation of the real VS Code CSV workflow, not a live screen
 
 The soundtrack was generated for the showcase; it contains no sampled recordings. Font licenses are preserved in the animation source. The GIF is a short preview from the same encoded export.
 
-## No-build editor demo
+## Production rehearsal files
 
-[TabLint-demo-kit.zip](TabLint-demo-kit.zip) bundles the built [VSIX](tablint.vsix), original saved CSV/report, answer key and license. Extract it, install the VSIX in VS Code, then open the CSV from that folder. No Python, Node.js, weights or GPU are needed for this saved replay.
+`TabLint-demo-kit.zip` contains the editor rehearsal used to prepare video footage. It is a production asset. For user installation and analysis of your own data, see [Getting started](../../docs/GETTING_STARTED.md).

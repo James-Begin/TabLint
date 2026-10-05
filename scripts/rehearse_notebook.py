@@ -1,4 +1,4 @@
-"""Launch an editable copy of the saved notebook demo with the current Python kernel."""
+"""Video-production rehearsal; user setup opens a normal JupyterLab workspace."""
 from importlib.util import find_spec
 from pathlib import Path
 import shutil
@@ -27,7 +27,7 @@ def launch(args):
     if args.prepare_only:
         return
     if find_spec("jupyterlab") is None:
-        sys.exit("Install the notebook extra: uv run --extra notebook tablint demo")
+        sys.exit("Install the notebook extra: uv run --extra notebook python scripts/rehearse_notebook.py")
     command = [sys.executable, "-m", "jupyterlab",
                f"--LabApp.default_url=/lab/tree/{notebook.relative_to(root).as_posix()}",
                f"--ServerApp.root_dir={root}", "--ServerApp.ip=127.0.0.1", f"--ServerApp.port={args.port}"]
@@ -37,3 +37,12 @@ def launch(args):
         sys.exit(subprocess.call(command, cwd=root))
     except KeyboardInterrupt:
         sys.exit(130)
+
+
+if __name__ == "__main__":
+    import argparse
+    parser = argparse.ArgumentParser(description="Open the saved notebook rehearsal for video production")
+    parser.add_argument("--prepare-only", action="store_true")
+    parser.add_argument("--no-browser", action="store_true")
+    parser.add_argument("--port", type=int, default=8888)
+    launch(parser.parse_args())

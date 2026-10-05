@@ -8,9 +8,9 @@
     "node": ">=22"
   },
   "scripts": {
-    "demo": "uv run --extra notebook tablint demo",
-    "demo:vscode": "node scripts/demo.mjs",
     "doctor": "node scripts/demo.mjs --doctor",
-    "test:extension": "npm --prefix vscode-proofread test"
+    "test:extension": "npm --prefix vscode-proofread test",
+    "rehearse:vscode": "node scripts/demo.mjs",
+    "notebook": "uv run --extra notebook jupyter lab"
   }
 }

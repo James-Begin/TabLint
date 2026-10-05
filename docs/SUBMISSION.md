@@ -38,7 +38,7 @@ deliberately hard bar).
 - Real data: on the raw Pima diabetes table, the top flags include the known impossible zeros (BMI, glucose, blood
   pressure) and a 99 mm skin fold.
 
-**What ships.** A Jupyter-first workflow (`uv run --extra notebook tablint demo`) opens a saved interactive demo; `df.tablint.view()` checks your own DataFrame and returns reviewed results to Python. A terminal spreadsheet viewer (`proofread view data.csv`): flagged cells are highlighted, you accept or dismiss each fix, and it saves a cleaned CSV plus an audit log. A Jupyter widget and pandas accessor: `df.tablint.view()` lets you click, accept and dismiss fixes, and returns the cleaned DataFrame to Python. A VS Code extension shows squiggles on bad CSV cells with one-click fixes (integration-tested in real VS Code). Also a Python library (`Proofreader().check(df)`), a CLI (`proofread check data.csv` writes a readable
+**What ships.** A Jupyter-first workflow: install the notebook extra, then `df.tablint.view()` checks your own DataFrame and returns reviewed results to Python. A terminal spreadsheet viewer (`proofread view data.csv`): flagged cells are highlighted, you accept or dismiss each fix, and it saves a cleaned CSV plus an audit log. A Jupyter widget and pandas accessor: `df.tablint.view()` lets you click, accept and dismiss fixes, and returns the cleaned DataFrame to Python. A VS Code extension shows squiggles on bad CSV cells with one-click fixes (integration-tested in real VS Code). Also a Python library (`Proofreader().check(df)`), a CLI (`proofread check data.csv` writes a readable
 report, a highlighted HTML table and a CSV of issues), an interactive app that shows TabPFN's plausible range against
 the recorded value with live ground-truth scoring on demo tables, and an MCP server so an LLM data-cleaning agent can
 review a table, inspect each flagged row, and write a cleaning memo grounded in TabPFN's numbers. A 400 × 30 table
@@ -62,6 +62,6 @@ The full shot list, with exact commands and verified on-screen numbers, is in `d
 ## Submission assets
 
 - [Approved 1:28 product showcase](../demo/showcase/TabLint-demo.mp4)
-- [Quick start](GETTING_STARTED.md): `uv run --extra notebook tablint demo` after cloning for saved Jupyter review, with no weights or GPU.
+- [Quick start](GETTING_STARTED.md): installation in Jupyter, analysis of your own data and export.
 - [Technical summary and features](../README.md)
 - [Video provenance](../demo/showcase/README.md): measured numerical report, illustrative categorical suggestion.

@@ -7,7 +7,7 @@ Start with [Getting started](docs/GETTING_STARTED.md). Keep the product name **T
 ```sh
 uv sync --locked --extra notebook
 uv run pytest -q tests
-uv run --extra notebook tablint demo --prepare-only
+uv run --extra notebook python scripts/rehearse_notebook.py --prepare-only
 ```
 
 Weight-dependent inference tests skip when TabPFN-3.5 weights are not cached. Unit tests and saved-report checks do not require model-license acceptance. To reproduce inference tests, first obtain the weights through the upstream model-access flow. Research reproduction commands and limitations are in [the research overview](docs/RESEARCH_OVERVIEW.md).
@@ -21,7 +21,7 @@ npm test
 npm run test:integration
 ```
 
-The integration test downloads VS Code into its test cache and uses a temporary profile. It covers diagnostics, categorical fixes, ledger persistence and undo. Linux needs a display; use `xvfb-run -a npm run test:integration` in headless environments. `npm run demo:vscode -- --prepare-only` from the repository root verifies the packaging path without modifying your installed extensions.
+The integration test downloads VS Code into its test cache and uses a temporary profile. It covers diagnostics, categorical fixes, ledger persistence and undo. Linux needs a display; use `xvfb-run -a npm run test:integration` in headless environments. `npm run rehearse:vscode -- --prepare-only` from the repository root verifies the packaging path without modifying your installed extensions.
 
 ## Notebook JavaScript
 
