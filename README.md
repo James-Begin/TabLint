@@ -100,14 +100,14 @@ git clone https://github.com/James-Begin/TabLint.git && cd TabLint && uv sync
     <th align="center">Browser UI</th>
   </tr>
   <tr>
-    <td align="center"><a href="docs/figures/tablint_vscode_compact.png"><img src="docs/figures/tablint_vscode_compact.png" width="360" alt="Cropped VS Code explanation for the Civic’s 4354 lb weight, including the Quick Fix action"></a></td>
-    <td align="center"><a href="docs/figures/tablint_browser_compact.png"><img src="docs/figures/tablint_browser_compact.png" width="360" alt="Cropped browser UI comparing the recorded 4354 lb weight with TabPFN’s 1877 lb expectation and plausible range"></a></td>
+    <td align="center"><a href="docs/figures/tablint_vscode_compact.png"><img src="docs/figures/tablint_vscode_compact.png" width="360" alt="VS Code CSV data view with the flagged Civic weight, model explanation and Quick Fix action"></a></td>
+    <td align="center"><a href="docs/figures/tablint_browser_compact.png"><img src="docs/figures/tablint_browser_compact.png" width="360" alt="Browser app summary and Auto MPG table showing highlighted values, including the Civic’s 4354 lb weight"></a></td>
   </tr>
 </table>
 
 *Actual UI captures using saved Auto MPG results. Click either screenshot to enlarge.*
 
-In **VS Code**, hover a squiggle for the explanation and use Quick Fix (`Ctrl+.` / `Cmd+.`) to replace, flag for review or dismiss. The **browser UI** shows the recorded value, expected range and row context.
+In **VS Code**, hover a squiggle for the explanation and use Quick Fix (`Ctrl+.` / `Cmd+.`) to replace, flag for review or dismiss. The **browser UI** shows a spreadsheet-style table with highlighted cells and summary counts; select an issue to inspect its expected range and row context.
 
 <details>
 <summary><b>See the decision ledger after a fix</b></summary>
