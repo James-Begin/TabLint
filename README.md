@@ -101,7 +101,7 @@ git clone https://github.com/James-Begin/TabLint.git && cd TabLint && uv sync
   </tr>
   <tr>
     <td align="center"><a href="docs/figures/tablint_vscode_compact.png"><img src="docs/figures/tablint_vscode_compact.png" width="360" alt="VS Code CSV data view with the flagged Civic weight, model explanation and Quick Fix action"></a></td>
-    <td align="center"><a href="docs/figures/tablint_browser_compact.png"><img src="docs/figures/tablint_browser_compact.png" width="360" alt="Browser app summary and Auto MPG table showing highlighted values, including the Civic’s 4354 lb weight"></a></td>
+    <td align="center"><a href="docs/figures/tablint_browser_compact.png"><img src="docs/figures/tablint_browser_compact.png" width="360" alt="Browser app with highlighted Auto MPG data and TabPFN’s suggested Civic weight, plausible range and explanation"></a></td>
   </tr>
 </table>
 
