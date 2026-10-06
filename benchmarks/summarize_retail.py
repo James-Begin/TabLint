@@ -72,7 +72,7 @@ def figure(rows, output, device="cpu"):
                 ax.fill_between(x, [r[metric + '_min'] for r in group], [r[metric + '_max'] for r in group], color=COLORS[model], alpha=.12)
         ax.set_xscale('log')
         sizes = sorted(set(r['train_rows'] for r in rows))
-        ax.set_xticks(sizes, [f'{s:,}' for s in sizes])
+        ax.set_xticks(sizes, [('>100k' if s == 100001 else f'{s / 1000:g}k') for s in sizes])
         ax.set_xlabel('Training rows')
         ax.set_title(title, fontweight='bold', loc='left', pad=14)
         ax.set_ylabel(ylabel)
@@ -80,7 +80,7 @@ def figure(rows, output, device="cpu"):
         if metric == 'wall_seconds':
             ax.set_yscale('log')
     axes[0].legend(loc='upper right', frameon=False, fontsize=9)
-    fig.suptitle(f'Retail descriptions and identifiers · local {device} experiment', x=.06, ha='left', fontsize=16, fontweight='bold')
+    fig.suptitle(f'Retail descriptions and identifiers · local {device.upper()} experiment', x=.06, ha='left', fontsize=16, fontweight='bold')
     fig.text(.06, .015, 'One estimator · 1,024 future test rows · 3% synthetic price errors · shaded ranges show seeds, not confidence intervals.\nMissing points are unsupported or resource-limited attempts; see the report. Current-package text/date preprocessing is shared across checkpoints.', fontsize=8, color='#59616a')
     fig.tight_layout(rect=(.01, .12, 1, .92))
     output.parent.mkdir(parents=True, exist_ok=True)
