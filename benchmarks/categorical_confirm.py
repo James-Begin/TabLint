@@ -8,7 +8,7 @@ import numpy as np
 import pandas as pd
 from sklearn.metrics import roc_auc_score
 from sklearn.model_selection import KFold
-from proofread import Proofreader
+from benchmarks.categorical_reference import CategoricalConfirmation
 
 DATASETS = ['credit-g', 'adult', 'mushroom', 'car', 'bank-marketing', 'nursery', 'cmc', 'kr-vs-kp', 'penguins', 'tips']
 OPENML = {'credit-g': 31, 'adult': 1590, 'mushroom': 24, 'car': 40975, 'bank-marketing': 1461, 'nursery': 26, 'cmc': 23, 'kr-vs-kp': 3}
@@ -87,8 +87,8 @@ def main():
     proto = out / 'protocol.json'
     if not proto.exists():
         proto.write_text(json.dumps({'design': 'benchmarks/categorical_confirm.py', 'source_sha256': {f: hashlib.sha256(Path(f).read_bytes()).hexdigest()
-                         for f in ('proofread/core.py', 'benchmarks/categorical_confirm.py')}}, indent=2))
-    pr = Proofreader(device='cuda:0')
+                         for f in ('proofread/core.py', 'benchmarks/categorical_reference.py', 'benchmarks/categorical_confirm.py')}}, indent=2))
+    pr = CategoricalConfirmation(device='cuda:0')
     for ds in a.datasets.split(','):
         full = load(ds)
         for seed in map(int, a.seeds.split(',')):

@@ -39,6 +39,7 @@ for r in rows:
 L += ['', 'Notes: a swap to a category that is ordinary for the column and also compatible with the rest of the row is '
       'undetectable by any method, so absolute precision is lower than for numeric cells. Auto MPG was used for a development '
       'smoke test and is excluded. The typo hint ("possible typo of …") is a separate string heuristic and is not part of this test.',
+      '', 'The retained 50-run confirmation uses the [frozen original scoring policy](../benchmarks/categorical_reference.py): first-seen category codes and low-cardinality categorical context. The newer product retains high-cardinality categorical inputs with sorted codes; these stored scores do not evaluate that additional context.',
       '', 'Launch-time source fingerprints are stored in `results/categorical/protocol.json`. They identify original run files, '
       'not the current cleaned source. The original protocol draft and launch snapshot are not distributed here; '
       'fresh reproduction uses the current runner and frozen seeds.']

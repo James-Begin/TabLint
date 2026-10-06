@@ -8,7 +8,7 @@ TabLint checks whether a recorded value fits the rest of its row. The primary wo
 
 For each numerical column, the engine predicts that column from the other columns, including a designated label when supplied. Five-fold predictions hold the row being checked out of that fold’s context. TabPFN’s distribution gives a median, a 10th–90th percentile interval, and the recorded value’s cumulative probability. The score is −log₁₀ of its two-sided tail probability, clipped for numerical stability.
 
-Categorical cells and optional labels use an out-of-fold classifier. The recorded class receives a surprise score based on its predicted probability, and a more likely class can be suggested. Category selection and preprocessing are implemented in `Proofreader.categorical_columns` and `categorical_scores`; high-cardinality identifiers and free text are excluded.
+Categorical cells and optional labels use an out-of-fold classifier. The recorded class receives a surprise score based on its predicted probability, and a more likely class can be suggested. `Proofreader.categorical_columns` selects low-cardinality check targets. The separate `categorical_context_columns` retains every string/object, boolean and declared pandas category input, including high-cardinality IDs and descriptions. Observed values are encoded in sorted order, missing values remain NaN, and categorical feature indices are supplied to each model. The numeric-code categorical cap is set to at least the table row count so TabPFN does not silently reclassify declared IDs as numerical. Numerical identifiers can be declared with pandas `category` dtype. Codes represent category identities, not semantic text embeddings. Selecting `columns` limits the check targets while preserving the other input columns as context; `categorical=False` disables categorical-cell checks, not categorical context.
 
 Common numeric slips and rare text typos receive possible-cause hints. Related-column values provide row context, not causal attribution. Flags and suggested replacements require source review.
 
@@ -23,7 +23,7 @@ The [notebook widget](../proofread/notebook.py) returns a cleaned copy and curre
 | Detection of plausible categorical swaps | [Categorical results](CATEGORICAL_RESULTS.md) |
 | TabPFN-3.5, Fast, v3 and v2 comparison | [Model comparison](VERSION_COMPARISON.md) |
 
-The [benchmark showcase](BENCHMARKS.md) presents all 12 retained numerical datasets and categorical results. Two dataset executions were excluded after reported test errors; [the amendment](BENCHMARK_AMENDMENT.md) documents the scope correction. Stored measurements are in [results/](../results/README.md).
+The [benchmark showcase](BENCHMARKS.md) presents all 12 retained numerical datasets and categorical results. Two dataset executions were excluded after reported test errors; [the amendment](BENCHMARK_AMENDMENT.md) documents the scope correction. Stored measurements are in [results/](../results/README.md). The categorical confirmation runner preserves its [original context policy](../benchmarks/categorical_reference.py); those 50 stored runs are not measurements of the newly expanded product context.
 
 ## Reproduce
 
@@ -49,10 +49,10 @@ Use a separate output directory: runners skip existing run files. See [benchmark
 
 - Synthetic corruptions and known review budgets do not establish accuracy on a new table. Precision@k differs from precision at the product’s default threshold.
 - Predictive surprise is not a calibrated probability that a value is wrong. Natural exceptions can be flagged; small plausible errors can be missed.
-- Independent columns give little predictive context. Sparse categories and high-cardinality text may have too little support; identifiers and free text are not checked as categories.
+- Independent columns give little predictive context. Sparse categories and unique identifiers may provide too little support. High-cardinality strings remain categorical context, but are not checked as categorical targets; their codes do not capture semantic text similarity.
 - Runtime grows with columns and folds. CPU inference can take several minutes; the [model comparison](VERSION_COMPARISON.md) documents the tested Fast checkpoint.
 - The editor supports comma-separated CSVs with one record per line. Notebook and terminal review semantics differ from the persistent editor ledger; see [setup and export](GETTING_STARTED.md).
-- The optional `tabpfn-extensions` benchmark baseline required a float64 workaround on CUDA. The [bug report](bugs/TABPFN_EXTENSIONS_CUDA_DTYPE.md) document the effect and validation limits. TabLint’s normal scoring uses a different path.
+- The optional `tabpfn-extensions` benchmark baseline required a float64 workaround on CUDA. The [bug report](bugs/TABPFN_EXTENSIONS_CUDA_DTYPE.md) documents the effect and validation limits. TabLint’s normal scoring uses a different path.
 
 ## Data and licensing
 

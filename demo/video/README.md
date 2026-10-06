@@ -9,3 +9,5 @@
   VS Code, with no GPU.
 
 Regenerate with `CUDA_VISIBLE_DEVICES=0 PYTHONPATH=. uv run python benchmarks/make_video_demos.py`.
+
+The saved reports predate high-cardinality context retention and are kept unchanged for the approved video and UI replays. Fresh live analysis includes the expanded categorical context and can produce different predictions.

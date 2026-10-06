@@ -107,7 +107,7 @@ class Report:
 
 
 class Proofreader:
-    """Spellcheck for numeric tables (and binary/multiclass labels) with TabPFN-3.5."""
+    """Check cells and labels with TabPFN-3.5, retaining categorical row context."""
 
     def __init__(self, device: str = "auto", folds: int = 5, seed: int = 0, min_distinct: int = 11, fast: bool = False):
         """device: "auto" (CUDA if available, else CPU), "cpu", "cuda:N" or "mps".
@@ -122,38 +122,44 @@ class Proofreader:
         return ModelVersion.V3_5_FAST if self.fast else ModelVersion.V3_5
 
     # -- models ---------------------------------------------------------------
-    def _reg(self, cat_idx=None):
+    def _reg(self, cat_idx=None, *, max_categories=30):
         from tabpfn import TabPFNRegressor
         return TabPFNRegressor.create_default_for_version(self._version(), device=self.device, random_state=self.seed,
-                                                          ignore_pretraining_limits=True, categorical_features_indices=cat_idx or None)
+                                                          ignore_pretraining_limits=True, categorical_features_indices=cat_idx or None,
+                                                          inference_config={"MAX_UNIQUE_FOR_CATEGORICAL_FEATURES": max_categories})
 
-    def _clf(self, cat_idx=None):
+    def _clf(self, cat_idx=None, *, max_categories=30):
         from tabpfn import TabPFNClassifier
         # 4 estimators: the configuration measured in the pre-registered label benchmark (H7).
         return TabPFNClassifier.create_default_for_version(self._version(), device=self.device, n_estimators=4,
                                                            random_state=self.seed, ignore_pretraining_limits=True,
-                                                           categorical_features_indices=cat_idx or None)
+                                                           categorical_features_indices=cat_idx or None,
+                                                           inference_config={"MAX_UNIQUE_FOR_CATEGORICAL_FEATURES": max_categories})
 
     # -- main entry -----------------------------------------------------------
     def check(self, df: pd.DataFrame, label: str | None = None, columns=None, max_issues: int = 50,
               threshold: float = 2.0, categorical: bool = True) -> Report:
         """Return a Report. ``threshold`` = minimum surprise (−log10 two-sided tail probability) to list a cell.
+        ``columns`` selects check targets, not input features. High-cardinality string/category columns remain
+        categorical context even when ``categorical=False`` disables categorical-cell checks.
         Benchmark (docs/PROOFREAD_RESULTS.md, addendum A2): retained scope: 2 → 87% precision / 57% recall; 3 → 94% / 20%."""
         import torch
         from sklearn.model_selection import KFold, StratifiedKFold
         t0 = time.time()
         df = df.reset_index(drop=True)
-        num = [c for c in (columns or df.columns) if c != label and pd.api.types.is_numeric_dtype(df[c])]
-        cont = [c for c in num if df[c].nunique(dropna=True) >= self.min_distinct]
+        selected = list(df.columns if columns is None else columns)
+        num = [c for c in df.columns if c != label and pd.api.types.is_numeric_dtype(df[c])
+               and not pd.api.types.is_bool_dtype(df[c])]
+        cont = [c for c in num if c in selected and df[c].nunique(dropna=True) >= self.min_distinct]
         X = df[num].to_numpy(np.float64)
-        # Text/bool categorical columns (codes) are extra context for the numeric and label checks. All-numeric tables,
-        # like those in the benchmarks, are unaffected.
-        text_cats = [c for c in (self.categorical_columns(df, label, columns) if categorical else []) if c not in num]
-        C = np.column_stack([np.where(pd.factorize(df[c])[0] < 0, np.nan, pd.factorize(df[c])[0]).astype(np.float64)
-                             for c in text_cats]) if text_cats else np.zeros((len(df), 0))
+        # A category can be useful context even when it has too many levels to check as a target.
+        text_cats = self.categorical_context_columns(df, label)
+        C = np.column_stack([self._categorical_codes(df[c]) for c in text_cats]) if text_cats else np.zeros((len(df), 0))
+        numeric_cats = set(self.categorical_columns(df, label)) & set(num)
         y_codes = None
         if label is not None:
             y_codes, y_levels = pd.factorize(df[label])
+            y_context = self._categorical_codes(df[label])
         n = len(df)
         surprise = pd.DataFrame(0.0, index=df.index, columns=cont)
         stats = {}; q20 = {}; q80 = {}
@@ -163,16 +169,21 @@ class Proofreader:
             obs = X[:, j]
             ok = np.isfinite(obs)
             Z = np.c_[np.delete(X, j, axis=1), C]
-            reg_cat = list(range(Z.shape[1] - C.shape[1], Z.shape[1]))
+            remaining_num = [x for x in num if x != c]
+            reg_cat = [i for i, name in enumerate(remaining_num) if name in numeric_cats]
+            reg_cat += list(range(len(remaining_num), Z.shape[1]))
             if y_codes is not None:
-                Z = np.c_[Z, y_codes]
+                reg_cat.append(Z.shape[1])
+                Z = np.c_[Z, y_context]
             if Z.shape[1] == 0:
                 continue                                   # nothing else in the row to predict this column from
             med, lo, hi, pit = (np.full(n, np.nan) for _ in range(4))
             rows = np.where(ok)[0]
             for tr, te in kf.split(rows):
                 tr, te = rows[tr], rows[te]
-                out = self._reg(reg_cat).fit(Z[tr], obs[tr]).predict(Z[te], output_type="full")
+                # TabPFN applies a separate cap to numeric category codes, even when explicitly declared.
+                # A feature cannot have more distinct values (including missing) than this table has rows.
+                out = self._reg(reg_cat, max_categories=max(30, n)).fit(Z[tr], obs[tr]).predict(Z[te], output_type="full")
                 lg = out["logits"]
                 yy = torch.tensor(obs[te], dtype=lg.dtype, device=lg.device)
                 F = out["criterion"].cdf(lg, yy.unsqueeze(-1)).squeeze(-1).detach().double().cpu().numpy().reshape(-1)
@@ -206,9 +217,10 @@ class Proofreader:
         XL = np.c_[X, C]
         if y_codes is not None and len(set(y_codes)) > 1 and XL.shape[1] > 0:
             P = np.zeros((n, len(y_levels)))
-            lab_cat = list(range(X.shape[1], XL.shape[1]))
+            lab_cat = [i for i, name in enumerate(num) if name in numeric_cats]
+            lab_cat += list(range(X.shape[1], XL.shape[1]))
             for tr, te in StratifiedKFold(self.folds, shuffle=True, random_state=self.seed).split(XL, y_codes):
-                m = self._clf(lab_cat).fit(XL[tr], y_codes[tr])
+                m = self._clf(lab_cat, max_categories=max(30, n)).fit(XL[tr], y_codes[tr])
                 P[np.ix_(te, m.classes_)] = m.predict_proba(XL[te])
             p_given = P[np.arange(n), y_codes]
             ls = -np.log10(np.clip(p_given, 1e-12, 1))
@@ -216,7 +228,7 @@ class Proofreader:
                 recs.append(dict(kind="label", row=int(i), column=label, value=df.at[i, label],
                                  suggested=y_levels[int(P[i].argmax())], low=np.nan, high=np.nan, surprise=float(ls[i]),
                                  cause=f"model gives the recorded label {p_given[i]:.1%}", evidence=""))
-        cat_cols = self.categorical_columns(df, label, columns) if categorical else []
+        cat_cols = self.categorical_columns(df, label, selected) if categorical else []
         if cat_cols:
             for c, info in self.categorical_scores(df, cat_cols, label).items():
                 for i in np.where(info["surprise"] >= threshold)[0]:
@@ -227,16 +239,45 @@ class Proofreader:
         issues = pd.DataFrame(recs, columns=ISSUE_COLUMNS)
         issues = issues.sort_values("surprise", ascending=False).head(max_issues).reset_index(drop=True)
         meta = {"model": "TabPFN-3.5-Fast" if self.fast else "TabPFN-3.5", "device": self.device,
-                "patterns": patterns, "columns_checked": len(cont), "categorical_columns_checked": len(cat_cols), "folds": self.folds, "seconds": time.time() - t0, "n": n, "threshold": threshold}
+                "patterns": patterns, "columns_checked": len(cont), "categorical_columns_checked": len(cat_cols),
+                "categorical_context_columns": [c for c in df.columns if c in numeric_cats or c in text_cats],
+                "folds": self.folds, "seconds": time.time() - t0, "n": n, "threshold": threshold}
         return Report(df, issues, surprise, label, meta)
 
     # -- helpers ----------------------------------------------------------------
     # -- categorical cells ------------------------------------------------------
+    @staticmethod
+    def _categorical_codes(series):
+        """Sorted observed-value codes for a categorical input; preserve missing values as NaN.
+
+        The vocabulary uses feature values only, with no target statistics or frequency encoding.
+        Casting to object also makes codes independent of a pandas category dtype's declared order.
+        """
+        codes, _ = pd.factorize(series.astype(object), sort=True)
+        values = codes.astype(np.float64)
+        values[codes < 0] = np.nan
+        return values
+
+    @staticmethod
+    def categorical_context_columns(df, label=None):
+        """All string/object, bool and declared pandas categories, with no cardinality cutoff.
+
+        Numerical identifiers can be declared with ``df[col] = df[col].astype('category')``.
+        Raw strings are category identities here; this does not supply semantic text embeddings.
+        """
+        return [c for c in df.columns if c != label and (
+            isinstance(df[c].dtype, pd.CategoricalDtype) or pd.api.types.is_bool_dtype(df[c])
+            or pd.api.types.is_string_dtype(df[c]) or pd.api.types.is_object_dtype(df[c]))]
+
     def categorical_columns(self, df, label=None, columns=None, max_categories: int = 30):
-        """Columns checked as categories: text/bool/category columns with 2..30 levels (and at most half as many levels as
-        rows), plus numeric columns with 2..(min_distinct-1) distinct values, e.g. cylinders or passenger class."""
+        """Categorical *targets* to check, not the list of categorical input features.
+
+        Text/bool/category targets have 2..30 levels (and at most half as many levels as rows);
+        numeric targets have 2..(min_distinct-1) distinct values. High-cardinality columns stay
+        in the input context without being flagged merely because each ID is rare.
+        """
         out = []
-        for c in (columns or df.columns):
+        for c in (df.columns if columns is None else columns):
             if c == label:
                 continue
             s = df[c].dropna(); k = s.nunique()
@@ -251,19 +292,20 @@ class Proofreader:
 
     def categorical_scores(self, df, cat_cols, label=None):
         """Out-of-fold P(recorded category | rest of row) from the TabPFN-3.5 classifier, for each categorical column.
-        Features: all numeric columns, the other categorical columns (as TabPFN categorical features) and the label."""
+        Features include all numeric columns, all other categorical inputs regardless of cardinality, and the label."""
         from sklearn.model_selection import KFold
         n = len(df)
-        num = [c for c in df.columns if c != label and c not in cat_cols and pd.api.types.is_numeric_dtype(df[c])]
-        codes = {c: pd.factorize(df[c])[0].astype(np.float64) for c in cat_cols + ([label] if label else [])}
-        for c in codes:
-            codes[c][codes[c] < 0] = np.nan
+        context_cats = self.categorical_context_columns(df, label)
+        num = [c for c in df.columns if c != label and c not in cat_cols and c not in context_cats
+               and pd.api.types.is_numeric_dtype(df[c])]
+        all_cats = list(dict.fromkeys(list(cat_cols) + context_cats + ([label] if label is not None else [])))
+        codes = {c: self._categorical_codes(df[c]) for c in all_cats}
         out = {}
         for c in cat_cols:
             t_codes, levels = pd.factorize(df[c])
             feats = [df[x].to_numpy(np.float64) for x in num]
             cat_idx = []
-            for other in [x for x in cat_cols if x != c] + ([label] if label else []):
+            for other in [x for x in all_cats if x != c]:
                 cat_idx.append(len(feats)); feats.append(codes[other])
             Z = np.column_stack(feats) if feats else np.zeros((n, 1))
             rows = np.where(t_codes >= 0)[0]
@@ -273,9 +315,7 @@ class Proofreader:
                 ytr = t_codes[tr]
                 if len(np.unique(ytr)) < 2:
                     P_rec[te] = (t_codes[te] == ytr[0]).astype(float); top[te] = ytr[0]; continue
-                from tabpfn import TabPFNClassifier
-                m = TabPFNClassifier.create_default_for_version(self._version(), device=self.device, n_estimators=4, random_state=self.seed,
-                                                                ignore_pretraining_limits=True, categorical_features_indices=cat_idx or None)
+                m = self._clf(cat_idx, max_categories=max(30, n))
                 proba = m.fit(Z[tr], ytr).predict_proba(Z[te])
                 cls = list(m.classes_)
                 col = {k: i for i, k in enumerate(cls)}

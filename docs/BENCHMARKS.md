@@ -81,7 +81,7 @@ The figures compare the implemented benchmark configurations, including the stro
 
 Precision@k assumes a review budget equal to the known number of injected errors. At the separately analysed numerical threshold of 2 used by the product, pooled precision is **87.3%** and recall is **56.8%** on the same confirmation tables. This is a different operating point, and should not replace precision@k in the model comparison.
 
-Independent columns, high-cardinality identifiers and free text are limitations of this approach. [Full research overview](RESEARCH_OVERVIEW.md#limitations) · [Model-version comparison](VERSION_COMPARISON.md) · [Scope amendment](BENCHMARK_AMENDMENT.md)
+Independent columns and sparse identifiers may provide little predictive signal. High-cardinality strings and declared categories are now retained as context; sorted codes do not provide semantic text embeddings. The existing 50-run categorical results use the [frozen original context policy](../benchmarks/categorical_reference.py), and do not evaluate this new context-retention change. [Full research overview](RESEARCH_OVERVIEW.md#limitations) · [Model-version comparison](VERSION_COMPARISON.md) · [Scope amendment](BENCHMARK_AMENDMENT.md)
 
 ## Reproduce the figures
 

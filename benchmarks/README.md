@@ -39,7 +39,7 @@ Summary scripts also regenerate their published documents where implemented; rev
 
 ## CPU retail capability experiment
 
-The [retail experiment](../docs/RETAIL_CPU_BENCHMARK.md) compares local TabPFN checkpoints on short product descriptions, high-cardinality stock/customer identifiers and larger historical contexts. It is separate from the published small-table suite and the current TabLint context selector. No inference API is involved.
+The [retail experiment](../docs/RETAIL_CPU_BENCHMARK.md) compares local TabPFN checkpoints on short product descriptions, high-cardinality stock/customer identifiers and larger historical contexts. It uses historical training references and package text/date preprocessing, separate from the small-table suite and TabLint's sorted categorical-context codes. No inference API is involved.
 
 ```sh
 uv run --with openpyxl python -m benchmarks.retail_cpu --prepare

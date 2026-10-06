@@ -1,6 +1,6 @@
 # Retail text and identifier benchmark
 
-This is a new **CPU feasibility experiment**, separate from the completed small-table benchmark. It tests TabPFN directly; TabLint's current context selector does not yet pass free-text descriptions or high-cardinality identifiers through to the model. It must not be presented as an existing TabLint feature or a confirmed TabPFN-3.5 advantage.
+This is a new **CPU feasibility experiment**, separate from the completed small-table benchmark. It tests TabPFN directly with a historical training/test split and package text/date preprocessing. TabLint now retains high-cardinality strings and declared categorical IDs as sorted categorical input codes, which is a different preprocessing policy. This pilot must not be presented as a confirmed TabPFN-3.5 advantage or an end-to-end evaluation of TabLint.
 
 ## Dataset and task
 
@@ -46,7 +46,7 @@ The [handoff protocol](RETAIL_BENCHMARK_HANDOFF.md) includes CUDA/CPU commands, 
 
 ## Results
 
-These are measurements using **cpu** and cached local checkpoints. They are a capability pilot, not evidence that the current TabLint UI accepts these context columns. Synthetic-error metrics concern only the injected errors; naturally unusual prices can also be flagged.
+These are measurements using **cpu** and cached local checkpoints. They are a capability pilot with a separate split/preprocessing policy, not an end-to-end TabLint UI evaluation. Synthetic-error metrics concern only the injected errors; naturally unusual prices can also be flagged.
 
 | Context rows | Model | Completed / attempted | Precision@31 | AUROC | Clean log MAE ↓ | Worker seconds | Peak host RSS GiB |
 | ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: |

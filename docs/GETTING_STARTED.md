@@ -43,7 +43,7 @@ review
 
 Click highlighted cells for the expected value, uncertainty, likely cause and related columns. **Accept** applies a suggestion to a cleaned copy, **dismiss** leaves the source value unchanged, and **undo** reverses the last widget decision. Keyboard shortcuts after clicking the widget: `n` / `p` next / previous, `a` accept, `d` dismiss, `u` undo.
 
-Numeric cells use TabPFN's predictive distribution. Low-cardinality categorical cells use its classifier probabilities and show likely alternatives. High-cardinality identifiers and free text are excluded from categorical checks. Add `label="outcome"` to check a known target column.
+Numeric cells use TabPFN's predictive distribution. Low-cardinality categorical cells use its classifier probabilities and show likely alternatives. High-cardinality strings and declared categories are retained as model context, using sorted categorical codes. They are not automatically checked as category targets. These codes identify distinct strings; they are not semantic text embeddings. Declare numerical IDs before checking: `df["customer_id"] = df["customer_id"].astype("category")`. Add `label="outcome"` to check a known target column.
 
 To inspect the report before opening the widget:
 

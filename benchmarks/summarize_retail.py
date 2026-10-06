@@ -94,7 +94,7 @@ def figure(rows, output, device="cpu"):
 def report(rows, records, path, figure_path):
     device = ', '.join(sorted(set(r.get('device', 'cpu') for r in records if r['model'] != 'sku_median_mad')))
     lines = ['## Results', '',
-             f'These are measurements using **{device}** and cached local checkpoints. They are a capability pilot, not evidence that the current TabLint UI accepts these context columns. Synthetic-error metrics concern only the injected errors; naturally unusual prices can also be flagged.', '',
+             f'These are measurements using **{device}** and cached local checkpoints. They are a capability pilot with a separate split/preprocessing policy, not an end-to-end TabLint UI evaluation. Synthetic-error metrics concern only the injected errors; naturally unusual prices can also be flagged.', '',
              '| Context rows | Model | Completed / attempted | Precision@31 | AUROC | Clean log MAE ↓ | Worker seconds | Peak host RSS GiB |',
              '| ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: |']
     for r in rows:

@@ -4,7 +4,7 @@
 
 Does local TabPFN-3.5 improve price checking and corrections over V2/V3 when a table includes product descriptions, high-cardinality product/customer identifiers and more than 100,000 training rows?
 
-This compares model checkpoints directly, **not the current TabLint UI**. TabLint currently excludes descriptions and high-cardinality IDs from model context; positive results would justify a follow-up integration. V3 already supports large tables and text-related tasks, so these inputs are not exclusive to 3.5. The experiment should measure an improvement, not assume one.
+This compares model checkpoints directly, **not the current TabLint UI**. TabLint now retains high-cardinality strings and declared categories as input context through sorted categorical codes. This experiment instead uses historical training references and package text/date preprocessing, so its results do not directly measure that product path. V3 already supports large tables and text-related tasks, so these inputs are not exclusive to 3.5. The experiment should measure an improvement, not assume one.
 
 ## Data and split
 

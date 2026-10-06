@@ -130,7 +130,7 @@ Run **TabLint: Open decision ledger** to view changes, reasons and review notes,
 | --- | --- |
 | **Jupyter + pandas** | Interactive cell review, accept/dismiss/undo, a cleaned DataFrame and a decision snapshot in Python. |
 | **Numerical checks** | Row-specific expectations, 80% plausible ranges, and hints for decimal slips, swapped digits, sign flips and missing-value zeros. |
-| **Categorical checks** | Low-cardinality categories scored against the rest of the row, with likely alternatives and possible typo hints. |
+| **Categorical checks and context** | Review low-cardinality categories; retain high-cardinality strings, SKUs and declared IDs as categorical input features. |
 | **Optional VS Code integration** | CSV squiggles, hover explanations, Quick Fix actions and a Problems list. |
 | **Editor decision ledger** | The VS Code integration stores before/after values, reasons, timestamps and review notes; undo protects newer manual edits. |
 | **More ways to work** | Terminal viewer, browser viewer, CLI, Python API and MCP tools. |
@@ -141,7 +141,7 @@ Run **TabLint: Open decision ledger** to view changes, reasons and review notes,
 For each column, TabLint asks TabPFN to predict a cell from the other columns. It uses **out-of-fold predictions**, so the row being checked is held out of that fold's context.
 
 - **Numbers:** score the recorded value against TabPFN's predictive distribution; show the median and 10th–90th percentiles. Test common slips for a possible explanation.
-- **Categories and labels:** use the classifier's probability for the recorded class, then suggest a more likely class for review.
+- **Categories and labels:** use the classifier's probability for the recorded class, then suggest a more likely class for review. All string/object, boolean and pandas `category` inputs remain row context regardless of cardinality; sorted value codes are explicitly declared categorical to TabPFN.
 - **Decisions:** review in the notebook, then retrieve the cleaned table and current decisions in Python. The optional VS Code integration also offers flag-for-review actions and a persistent ledger.
 
 A flag means **check the source record**, not a confirmed error. Surprise scores rank anomalies; they are not calibrated probabilities that a value is wrong. [Implementation](proofread/core.py) · [Technical and research overview](docs/RESEARCH_OVERVIEW.md)
@@ -152,11 +152,12 @@ TabLint uses the **local Base checkpoint**; your table stays on your machine. Ta
 
 | TabPFN-3.5 capability | How TabLint uses it |
 | --- | --- |
+| **High-cardinality categorical inputs** | Keep SKU/customer identities and string values as context instead of dropping them. Declare numerical IDs with `df["customer_id"] = df["customer_id"].astype("category")`. |
 | **One model for regression and classification** | Numerical values, categories and optional labels use the same foundation checkpoint. |
 | **Full predictive distributions** | Row-specific tail scores and plausible ranges; distribution scoring reached **73.9% precision@k**, versus **55.7%** for the same model’s point residual in our retained benchmark. |
 | **Base and Fast local weights** | Choose `df.tablint.view(fast=True)` or CLI `--fast`. Fast was **2.7× faster** at the median, with a **0.5-point** mean precision@k reduction in our version comparison. |
 
-[TabPFN-3.5 release notes](https://docs.priorlabs.ai/changelog/tabpfn-3.5) · [Our model comparison](docs/VERSION_COMPARISON.md). In this small-table suite, 3.5 improved on v2 but did **not** show a statistically supported advantage over v3. A separate [retail benchmark handoff](docs/RETAIL_BENCHMARK_HANDOFF.md) explores descriptions, high-cardinality IDs and 100k+ contexts; those context features are not yet integrated into TabLint.
+[TabPFN-3.5 release notes](https://docs.priorlabs.ai/changelog/tabpfn-3.5) · [Our model comparison](docs/VERSION_COMPARISON.md). In this small-table suite, 3.5 improved on v2 but did **not** show a statistically supported advantage over v3. A separate [retail benchmark handoff](docs/RETAIL_BENCHMARK_HANDOFF.md) explores descriptions, high-cardinality IDs and 100k+ contexts; TabLint now retains high-cardinality strings and declared categories as context. Its sorted codes represent category identity, not semantic text embeddings; the retail runner uses a separate historical split and text/date preprocessing.
 
 ## Evidence
 
@@ -170,7 +171,7 @@ Precision@k is the share of the top k flagged cells that are injected errors, wi
 
 During baseline benchmarking, we documented a CUDA float32/float64 crash in `tabpfn-extensions`. The [bug report](docs/bugs/TABPFN_EXTENSIONS_CUDA_DTYPE.md) includes reproduction steps, affected versions, the benchmark workaround and a proposed upstream fix. It affects the optional extension baseline; TabLint's normal inference uses a different scoring path.
 
-Independent columns provide little context for this approach; high-cardinality identifiers and free text are not treated as categories. Live inference cost grows with the columns and folds. The extension supports comma-separated CSVs with one record per line. [Limitations and reproducibility](docs/RESEARCH_OVERVIEW.md#limitations).
+Independent columns provide little context for this approach. High-cardinality columns are retained as context, but unique IDs may carry little predictive signal and string codes do not capture semantic similarity. Categorical error targets still need repeated, low-cardinality values. Live inference cost grows with the columns and folds. The extension supports comma-separated CSVs with one record per line. [Limitations and reproducibility](docs/RESEARCH_OVERVIEW.md#limitations).
 
 ## Project guide
 
