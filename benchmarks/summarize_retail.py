@@ -54,7 +54,7 @@ def figure(rows, output, device="cpu"):
     matplotlib.use('Agg')
     import matplotlib.pyplot as plt
     plt.rcParams.update({'font.family': 'DejaVu Sans', 'font.size': 10, 'axes.spines.top': False,
-                         'axes.spines.right': False, 'svg.fonttype': 'none'})
+                         'axes.spines.right': False, 'svg.fonttype': 'none', 'svg.hashsalt': 'tablint-retail'})
     fig, axes = plt.subplots(1, 3, figsize=(13, 4.5))
     fields = [('clean_log_mae', 'Price prediction error', 'Mean absolute log error · lower is better'),
               ('precision_at_k', 'Injected error ranking', 'Precision among top 31 flags · higher is better'),
@@ -85,7 +85,9 @@ def figure(rows, output, device="cpu"):
     fig.tight_layout(rect=(.01, .12, 1, .92))
     output.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(output.with_suffix('.png'), dpi=170, facecolor='white')
-    fig.savefig(output.with_suffix('.svg'), facecolor='white')
+    fig.savefig(output.with_suffix('.svg'), facecolor='white', metadata={'Date': None})
+    svg = output.with_suffix('.svg')
+    svg.write_text('\n'.join(line.rstrip() for line in svg.read_text().splitlines()) + '\n')
     plt.close(fig)
 
 
