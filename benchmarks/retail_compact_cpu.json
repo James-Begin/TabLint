@@ -1,0 +1,5 @@
+{
+  "name": "compact_text8",
+  "preprocessing_overrides": {"TEXT_N_COMPONENTS": 8},
+  "rationale": "Exploratory CPU resource retry defined after the standard 100001-row runs exceeded the 8 GiB RSS budget. Retains all context rows, identifiers and datetime input; reduces description SVD dimensions from 30 to 8 for every checkpoint. Not pooled with standard-profile results."
+}

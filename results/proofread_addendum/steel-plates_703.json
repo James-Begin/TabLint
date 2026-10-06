@@ -1,0 +1,30 @@
+{
+  "dataset": "steel-plates",
+  "seed": 703,
+  "errors": 266,
+  "rows_with_error": 189,
+  "n": 400,
+  "d": 24,
+  "proofread_precision_at_k": 0.868421052631579,
+  "ext_precision_at_k": 0.07142857142857142,
+  "proofread_cell_auroc": 0.9969103979146495,
+  "ext_cell_auroc": 0.6381029174607828,
+  "proofread_row_auroc": 0.989844278943805,
+  "ext_row_auroc": 0.6783770906993655,
+  "ext_seconds": 111.91797828674316,
+  "threshold": {
+    "2.0": {
+      "flagged": 197,
+      "true_flagged": 191,
+      "precision": 0.9695431472081218,
+      "recall": 0.7180451127819549
+    },
+    "3.0": {
+      "flagged": 77,
+      "true_flagged": 77,
+      "precision": 1.0,
+      "recall": 0.2894736842105263
+    }
+  },
+  "seconds": 163.38826322555542
+}

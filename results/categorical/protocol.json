@@ -1,0 +1,9 @@
+{
+  "prereg": "docs/CATEGORICAL_PREREG.md",
+  "source_sha256": {
+    "proofread/core.py": "954efae7e2421fab03543c0ec064f62d8a089a73ea42b7e7a9f4a2584ab6e942",
+    "benchmarks/categorical_confirm.py": "0b85b5c89b3b02c2ed13c727833842bd24564ba0f50808d6cad47fe6b6ddb231",
+    "docs/CATEGORICAL_PREREG.md": "15aa4b235d76fd076d7f5734845369bb1ba31a370a3126c915c6761d74905100"
+  },
+  "provenance_note": "Historical fingerprints recorded at the original launch; not hashes of the current cleaned source. The original protocol draft is not distributed in this consolidated submission snapshot."
+}

@@ -1,0 +1,47 @@
+{
+  "dataset": "mushroom",
+  "seed": 905,
+  "n": 400,
+  "categorical_columns": [
+    "cap-shape",
+    "cap-surface",
+    "cap-color",
+    "bruises%3F",
+    "odor",
+    "gill-attachment",
+    "gill-spacing",
+    "gill-size",
+    "gill-color",
+    "stalk-shape",
+    "stalk-root",
+    "stalk-surface-above-ring",
+    "stalk-surface-below-ring",
+    "stalk-color-above-ring",
+    "stalk-color-below-ring",
+    "veil-color",
+    "ring-number",
+    "ring-type",
+    "spore-print-color",
+    "population",
+    "habitat",
+    "target"
+  ],
+  "errors": 260,
+  "precision_at_k": {
+    "tabpfn": 0.7653846153846153,
+    "frequency": 0.07307692307692308,
+    "logistic": 0.5692307692307692,
+    "rf": 0.6076923076923076,
+    "knn": 0.6153846153846154,
+    "hgb": 0.5153846153846153
+  },
+  "auroc": {
+    "tabpfn": 0.960626914069537,
+    "frequency": 0.6957426589803639,
+    "logistic": 0.9463236353810125,
+    "rf": 0.9487400918753378,
+    "knn": 0.9539058277787786,
+    "hgb": 0.9394775716087191
+  },
+  "seconds": 129.79972052574158
+}

@@ -1,0 +1,30 @@
+{
+  "dataset": "spambase",
+  "seed": 701,
+  "errors": 585,
+  "rows_with_error": 316,
+  "n": 400,
+  "d": 57,
+  "proofread_precision_at_k": 0.6461538461538462,
+  "ext_precision_at_k": 0.02735042735042735,
+  "proofread_cell_auroc": 0.9735809522710265,
+  "ext_cell_auroc": 0.5219323972598787,
+  "proofread_row_auroc": 0.8346142254370102,
+  "ext_row_auroc": 0.5573764315852923,
+  "ext_seconds": 297.47834157943726,
+  "threshold": {
+    "2.0": {
+      "flagged": 315,
+      "true_flagged": 235,
+      "precision": 0.746031746031746,
+      "recall": 0.4017094017094017
+    },
+    "3.0": {
+      "flagged": 73,
+      "true_flagged": 52,
+      "precision": 0.7123287671232876,
+      "recall": 0.08888888888888889
+    }
+  },
+  "seconds": 442.961697101593
+}

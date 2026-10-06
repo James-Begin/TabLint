@@ -1,0 +1,36 @@
+{
+  "source_archive": "tablint_tabpfn35_eval.zip",
+  "source_archive_sha256": "5f93cecee64fe300d482ea1b870b221a8264d27535d4c9cc4f7d47178753b8b3",
+  "source_upload_commit": "9531c62",
+  "protocol_sha256": "e212d2ae762b6deadf65e2ca616d3936b82101829ef5cd741e45b2cbac35f85e",
+  "original_runner_sha256": "706224b681610ef0b260380a4e7f717cd3010cb69c38875672d97b08535c81dc",
+  "requirements_sha256": "5a87410237b206ae93ecdbd0893b5e84718b26ac20ca208d69ddcee6a56304a2",
+  "raw_results_sha256": {
+    "auto_mpg_1001.json": "cc862c019e614e373eb0695d80f1839391daab80b3a719697e6fd1fc5aef34b4",
+    "auto_mpg_1002.json": "8be41f9cbb02adf8a836c4f6035c8df2d1a5f06413804109784fec01f5c7587d",
+    "auto_mpg_1003.json": "4f0d3d20c3f27c580fedac5c125c1107d3956400e81c1c8ea0bd37e88b878b89",
+    "auto_mpg_1004.json": "9bc7d3e13a3f35646606e28f45425a0d19abb9dfc84a4bfd1f6653de9509c0bf",
+    "auto_mpg_1005.json": "af2e0808cc29a9fdfb0d619a7c02cdd1adc85f32a05d3eaa668ef73bd53323c7",
+    "employee_salaries_1001.json": "d9acddfe90500899b6a8789561ebdabb82dcd91c08c3a67762036c4d7e69caea",
+    "employee_salaries_1002.json": "a96105e2c0d71e2195c5172a89905acef3aa24d709a70b96e8695fbfd3830322",
+    "employee_salaries_1003.json": "b6c97f74fbccd253a514f1de2929bbc8b65e0d6db272317ad15e348d58633868",
+    "employee_salaries_1004.json": "1fd069ae6b9c58151e197acbdc2f992e900ff32a78c63148848d24309dc6c102",
+    "employee_salaries_1005.json": "3b8ba14b70bfbed4c9589ccd48d9abd9363d359cca96f7db2fa0dc94f25d7c5b",
+    "medical_charges_1001.json": "5c31e472eb9058a001f435910c2561e2f52caf3e68f4e05437daedea364a3360",
+    "medical_charges_1002.json": "13ed54eeddd8f9e4b4da59c49b0b4a19fedafb12afc7b561da36a40ec5c4eb82",
+    "medical_charges_1003.json": "7d646444bb2fde687fe0c5268d2135de77093f0c22f9942504a61b4b04959b9f",
+    "medical_charges_1004.json": "db9d5a2f05d91f18ce4a3770bb0285b3f6561ae5cb9798b36fb17ff790e3553f",
+    "medical_charges_1005.json": "421caee55ccd860e8769bace865b45ac369db8552d3d294fbc8fbb8b1232881b"
+  },
+  "recorded_environment": {
+    "device": "cpu",
+    "hardware": "Apple M4 Pro (supplied handoff; not independently recorded in run JSON)",
+    "threads": 4,
+    "packages": "requirements.txt"
+  },
+  "original_environment_limitations": [
+    "No original per-sample input hashes, fitted feature schemas, OS details or checkpoint hashes in upload.",
+    "The supplied protocol says written before runs; the recorded hashes are not an independently timestamped preregistration."
+  ],
+  "integration": "Raw run files and protocol copied byte-for-byte. Portable runner preserves sampling, injection, scoring and model defaults. Pilot seed 999 and stale handoff text are excluded from the analysis; original archive is preserved outside the repository."
+}

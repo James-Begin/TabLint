@@ -1,0 +1,62 @@
+{
+ "dataset": "medical_charges",
+ "seed": 1005,
+ "n": 1000,
+ "errors": 113,
+ "high_card_levels_in_sample": {
+  "DRG_Definition": 100,
+  "Provider_State": 50,
+  "Hospital_Referral_Region_(HRR)_Description": 257,
+  "Provider_Id": 831
+ },
+ "runs": {
+  "v3|num": {
+   "precision_at_k": 0.7079646017699115,
+   "auroc": 0.9596089529199896,
+   "seconds": 58.72953391075134,
+   "by_type": {
+    "decimal": 0.9855022019098352,
+    "swap": 0.8785695909441729,
+    "offset": 0.9911403395935169,
+    "zero": 0.9974814834874683,
+    "transposition": 0.8476740650653694
+   }
+  },
+  "v3.5|num": {
+   "precision_at_k": 0.7079646017699115,
+   "auroc": 0.9608907385863019,
+   "seconds": 143.27811574935913,
+   "by_type": {
+    "decimal": 0.9839812951164515,
+    "swap": 0.8860908912059807,
+    "offset": 0.9903202984306664,
+    "zero": 0.9969398670331605,
+    "transposition": 0.8572397502163389
+   }
+  },
+  "v3|hc": {
+   "precision_at_k": 0.7522123893805309,
+   "auroc": 0.9728548303739946,
+   "seconds": 77.98728799819946,
+   "by_type": {
+    "decimal": 0.9861075379470028,
+    "swap": 0.9236519923122324,
+    "offset": 0.9939220478518137,
+    "zero": 0.99758980677833,
+    "transposition": 0.90392216479173
+   }
+  },
+  "v3.5|hc": {
+   "precision_at_k": 0.7522123893805309,
+   "auroc": 0.9743415196104099,
+   "seconds": 151.91393089294434,
+   "by_type": {
+    "decimal": 0.9896260536630397,
+    "swap": 0.9351533770184174,
+    "offset": 0.9943642269102135,
+    "zero": 0.9969669478558758,
+    "transposition": 0.8903337465210375
+   }
+  }
+ }
+}

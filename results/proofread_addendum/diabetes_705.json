@@ -1,0 +1,30 @@
+{
+  "dataset": "diabetes",
+  "seed": 705,
+  "errors": 90,
+  "rows_with_error": 86,
+  "n": 400,
+  "d": 8,
+  "proofread_precision_at_k": 0.5222222222222223,
+  "ext_precision_at_k": 0.05555555555555555,
+  "proofread_cell_auroc": 0.9148553054662381,
+  "ext_cell_auroc": 0.5388710253662021,
+  "proofread_row_auroc": 0.8298400237001925,
+  "ext_row_auroc": 0.5512146348689083,
+  "ext_seconds": 37.40298914909363,
+  "threshold": {
+    "2.0": {
+      "flagged": 38,
+      "true_flagged": 30,
+      "precision": 0.7894736842105263,
+      "recall": 0.3333333333333333
+    },
+    "3.0": {
+      "flagged": 12,
+      "true_flagged": 12,
+      "precision": 1.0,
+      "recall": 0.13333333333333333
+    }
+  },
+  "seconds": 54.246559619903564
+}

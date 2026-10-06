@@ -1,0 +1,303 @@
+{
+  "datasets": 12,
+  "runs": 60,
+  "a1_row": {
+    "wins": 12,
+    "mean_diff": 0.28321563340414035,
+    "wilcoxon_p_one_sided": 0.000244140625
+  },
+  "a1_cell_wins": 12,
+  "determinism_max_abs_diff_vs_confirmation": 0.0,
+  "a2_pooled": {
+    "2.0": {
+      "precision": 0.8731737643767485,
+      "recall": 0.5682208961262264,
+      "flagged": 6434,
+      "errors": 9887
+    },
+    "3.0": {
+      "precision": 0.9441052137153593,
+      "recall": 0.20329725902700516,
+      "flagged": 2129,
+      "errors": 9887
+    }
+  },
+  "per_dataset": [
+    {
+      "dataset": "MagicTelescope",
+      "seeds": 5,
+      "proofread_p_at_k": 0.7315370725861895,
+      "ext_p_at_k": 0.03758705804257951,
+      "proofread_row_auroc": 0.9247534662552237,
+      "ext_row_auroc": 0.5687858634075587,
+      "proofread_cell_auroc": 0.9249149892412127,
+      "ext_cell_auroc": 0.5578104657723815,
+      "ext_seconds": 45.29757175445557,
+      "threshold": {
+        "2.0": {
+          "precision": 0.9301933025462438,
+          "recall": 0.5457970038678452,
+          "flagged_per_table": 65.6
+        },
+        "3.0": {
+          "precision": 1.0,
+          "recall": 0.23769912256476608,
+          "flagged_per_table": 26.6
+        }
+      }
+    },
+    {
+      "dataset": "banknote",
+      "seeds": 5,
+      "proofread_p_at_k": 0.7433809145387572,
+      "ext_p_at_k": 0.253450287136581,
+      "proofread_row_auroc": 0.9660994130897598,
+      "ext_row_auroc": 0.8033637438384285,
+      "proofread_cell_auroc": 0.9617171398745962,
+      "ext_cell_auroc": 0.7811187144005916,
+      "ext_seconds": 17.967831659317017,
+      "threshold": {
+        "2.0": {
+          "precision": 0.8680013368983956,
+          "recall": 0.6330088614997076,
+          "flagged_per_table": 33.0
+        },
+        "3.0": {
+          "precision": 0.9547619047619047,
+          "recall": 0.24726852893107223,
+          "flagged_per_table": 11.8
+        }
+      }
+    },
+    {
+      "dataset": "blood-transfusion",
+      "seeds": 5,
+      "proofread_p_at_k": 0.7821215914744732,
+      "ext_p_at_k": 0.1003158699518659,
+      "proofread_row_auroc": 0.971821370694369,
+      "ext_row_auroc": 0.47316393479203767,
+      "proofread_cell_auroc": 0.9842117396814867,
+      "ext_cell_auroc": 0.4677170232964755,
+      "ext_seconds": 16.32887234687805,
+      "threshold": {
+        "2.0": {
+          "precision": 0.9249078341013824,
+          "recall": 0.5822320708164996,
+          "flagged_per_table": 27.8
+        },
+        "3.0": {
+          "precision": 0.9846153846153847,
+          "recall": 0.2502775406819896,
+          "flagged_per_table": 11.2
+        }
+      }
+    },
+    {
+      "dataset": "breast-cancer",
+      "seeds": 5,
+      "proofread_p_at_k": 0.8467366328339843,
+      "ext_p_at_k": 0.029244028936395487,
+      "proofread_row_auroc": 0.9679442249005955,
+      "ext_row_auroc": 0.3786755073580955,
+      "proofread_cell_auroc": 0.9920312466365596,
+      "ext_cell_auroc": 0.43789966666182867,
+      "ext_seconds": 144.72311062812804,
+      "threshold": {
+        "2.0": {
+          "precision": 0.9377001167626118,
+          "recall": 0.7013273596093789,
+          "flagged_per_table": 250.8
+        },
+        "3.0": {
+          "precision": 0.9957876066954883,
+          "recall": 0.2755973943374456,
+          "flagged_per_table": 92.8
+        }
+      }
+    },
+    {
+      "dataset": "diabetes",
+      "seeds": 5,
+      "proofread_p_at_k": 0.6119279774155993,
+      "ext_p_at_k": 0.06001764968381622,
+      "proofread_row_auroc": 0.8585737051870341,
+      "ext_row_auroc": 0.6087467924344055,
+      "proofread_cell_auroc": 0.9104842478110269,
+      "ext_cell_auroc": 0.5912365630808631,
+      "ext_seconds": 37.567732906341554,
+      "threshold": {
+        "2.0": {
+          "precision": 0.8263175172972417,
+          "recall": 0.3931944711952214,
+          "flagged_per_table": 42.6
+        },
+        "3.0": {
+          "precision": 0.9484848484848485,
+          "recall": 0.12078431446023344,
+          "flagged_per_table": 11.4
+        }
+      }
+    },
+    {
+      "dataset": "electricity",
+      "seeds": 5,
+      "proofread_p_at_k": 0.7138626805293472,
+      "ext_p_at_k": 0.11753678420345086,
+      "proofread_row_auroc": 0.9356611643733235,
+      "ext_row_auroc": 0.6491624502339853,
+      "proofread_cell_auroc": 0.9545005219069544,
+      "ext_cell_auroc": 0.6378214240209426,
+      "ext_seconds": 30.532588005065918,
+      "threshold": {
+        "2.0": {
+          "precision": 0.8987282523403255,
+          "recall": 0.5195064195064194,
+          "flagged_per_table": 45.2
+        },
+        "3.0": {
+          "precision": 0.9789473684210528,
+          "recall": 0.2072384405717739,
+          "flagged_per_table": 16.6
+        }
+      }
+    },
+    {
+      "dataset": "ilpd",
+      "seeds": 5,
+      "proofread_p_at_k": 0.6983014367185787,
+      "ext_p_at_k": 0.05446095635007677,
+      "proofread_row_auroc": 0.9481194136613645,
+      "ext_row_auroc": 0.7238597912873223,
+      "proofread_cell_auroc": 0.9624939190069581,
+      "ext_cell_auroc": 0.68883008604093,
+      "ext_seconds": 43.78403244018555,
+      "threshold": {
+        "2.0": {
+          "precision": 0.7661801641905649,
+          "recall": 0.5851913796885282,
+          "flagged_per_table": 73.2
+        },
+        "3.0": {
+          "precision": 0.9246848739495798,
+          "recall": 0.15272309351465965,
+          "flagged_per_table": 15.8
+        }
+      }
+    },
+    {
+      "dataset": "kc1",
+      "seeds": 5,
+      "proofread_p_at_k": 0.8696442415034638,
+      "ext_p_at_k": 0.031895259904924554,
+      "proofread_row_auroc": 0.9828766988814076,
+      "ext_row_auroc": 0.7271105507979077,
+      "proofread_cell_auroc": 0.9929502591568674,
+      "ext_cell_auroc": 0.6550127454613539,
+      "ext_seconds": 96.13449749946594,
+      "threshold": {
+        "2.0": {
+          "precision": 0.9625025075099846,
+          "recall": 0.6409091940766369,
+          "flagged_per_table": 150.2
+        },
+        "3.0": {
+          "precision": 0.9940178571428572,
+          "recall": 0.29266515662312126,
+          "flagged_per_table": 66.4
+        }
+      }
+    },
+    {
+      "dataset": "phoneme",
+      "seeds": 5,
+      "proofread_p_at_k": 0.5939339580393581,
+      "ext_p_at_k": 0.19901790467177585,
+      "proofread_row_auroc": 0.8736599649927358,
+      "ext_row_auroc": 0.7457126360793589,
+      "proofread_cell_auroc": 0.8774012139872109,
+      "ext_cell_auroc": 0.7302390634897579,
+      "ext_seconds": 22.990005874633788,
+      "threshold": {
+        "2.0": {
+          "precision": 0.8142810457516341,
+          "recall": 0.4786333217855664,
+          "flagged_per_table": 32.8
+        },
+        "3.0": {
+          "precision": 0.9666666666666666,
+          "recall": 0.18799972961326245,
+          "flagged_per_table": 10.8
+        }
+      }
+    },
+    {
+      "dataset": "spambase",
+      "seeds": 5,
+      "proofread_p_at_k": 0.6770446411473288,
+      "ext_p_at_k": 0.026594038577368105,
+      "proofread_row_auroc": 0.8307357262913193,
+      "ext_row_auroc": 0.5465952674594784,
+      "proofread_cell_auroc": 0.9750636333061111,
+      "ext_cell_auroc": 0.5295469528198395,
+      "ext_seconds": 297.46542525291443,
+      "threshold": {
+        "2.0": {
+          "precision": 0.7527100207239636,
+          "recall": 0.43067456440194557,
+          "flagged_per_table": 331.0
+        },
+        "3.0": {
+          "precision": 0.7573978189463683,
+          "recall": 0.09678569834837744,
+          "flagged_per_table": 73.8
+        }
+      }
+    },
+    {
+      "dataset": "steel-plates",
+      "seeds": 5,
+      "proofread_p_at_k": 0.8688265766120782,
+      "ext_p_at_k": 0.055313318709545124,
+      "proofread_row_auroc": 0.9865908032672339,
+      "ext_row_auroc": 0.7106075697282936,
+      "proofread_cell_auroc": 0.9956876979764887,
+      "ext_cell_auroc": 0.6362463116754087,
+      "ext_seconds": 111.52665781974792,
+      "threshold": {
+        "2.0": {
+          "precision": 0.9493206377303093,
+          "recall": 0.7203716072435039,
+          "flagged_per_table": 200.2
+        },
+        "3.0": {
+          "precision": 0.9807408772528102,
+          "recall": 0.30265577820692025,
+          "flagged_per_table": 81.4
+        }
+      }
+    },
+    {
+      "dataset": "wilt",
+      "seeds": 5,
+      "proofread_p_at_k": 0.7365890739753115,
+      "ext_p_at_k": 0.12974347619741627,
+      "proofread_row_auroc": 0.9505481062449721,
+      "ext_row_auroc": 0.8630123495727823,
+      "proofread_cell_auroc": 0.9572743447169618,
+      "ext_cell_auroc": 0.8299366250443825,
+      "ext_seconds": 23.0761869430542,
+      "threshold": {
+        "2.0": {
+          "precision": 0.9014695845578199,
+          "recall": 0.5760567623275725,
+          "flagged_per_table": 34.4
+        },
+        "3.0": {
+          "precision": 0.9833333333333332,
+          "recall": 0.12939347227360548,
+          "flagged_per_table": 7.2
+        }
+      }
+    }
+  ]
+}
