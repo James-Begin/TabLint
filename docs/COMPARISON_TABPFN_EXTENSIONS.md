@@ -19,20 +19,20 @@ Only the unsupervised module overlaps with TabLint.
 | Output | Tensor of log-densities | Ranked issue table, Markdown report, highlighted HTML, JSON, app, MCP tools |
 | GPU in tabpfn 9.1.0 | `outliers` crashes on CUDA (`docs/KNOWN_ISSUES.md`) | Works (CPU and CUDA) |
 
-## Measured head-to-head (pre-registered addendum; 14 datasets × 5 seeds; `docs/PROOFREAD_RESULTS.md`)
+## Measured head-to-head: 12 datasets × 5 seeds
 
-| | TabLint | `outliers` (10 permutations) |
-|---|---|---|
-| Find rows that contain an injected error (row AUROC, its home turf) | **better on 14/14 datasets**, mean +0.26, p = 0.00006 | |
-| Find the erroneous cells (precision@k) | 0.34–0.87 | 0.03–0.25 |
-| Median runtime per 400-row table (GPU) | 20 s | 45 s |
+Two dataset executions were excluded after reported test errors. The original addendum’s scoring rules are retained; [the amendment](BENCHMARK_AMENDMENT.md) describes the revised scope. [All tables and thresholds](PROOFREAD_RESULTS.md).
 
-Caveats: the extension needed a float64 shim to run on GPU, and it was used as documented (in-sample). Its row AUROC
-falls below 0.5 on three tables, consistent with corrupted rows partly explaining themselves. It is a general anomaly
-detector, not built for localising data-entry errors, so this compares fitness for TabLint's task, not overall quality.
+| Metric | TabLint | `outliers` (10 permutations) |
+| --- | --- | --- |
+| Row AUROC gain | Higher on **12/12 datasets**, mean +0.283; one-sided Wilcoxon p = 0.000244 | Comparator |
+| Cell precision@k range across dataset means | 0.59–0.87 | 0.03–0.25 |
+| Cell precision@k comparison | Higher on **12/12 datasets** | Row score broadcast to cells |
+
+The extension required a float64 shim on CUDA and was fitted/scored on the same table as documented. Its row AUROC falls below 0.5 on 2 retained tables. In-sample scoring can let a corrupted row partly explain itself; this is a possible explanation, not a demonstrated cause. It is a general anomaly detector, so the comparison measures the tested configurations on TabLint’s task.
 
 ## Complementary, not competing
 
 - TabLint could be contributed as a cell-level mode of the unsupervised extension, or use its density for row triage.
 - Its `impute` could serve as an alternative correction suggester. We have not evaluated that.
-- Both packages build on the same capability: TabPFN-3.5's calibrated conditional distributions with no training step.
+- Both packages build on the same capability: TabPFN-3.5's conditional predictive distributions without dataset-specific gradient training.

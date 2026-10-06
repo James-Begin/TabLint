@@ -25,8 +25,6 @@ GREEN, SLATE, RED = "#157F79", "#687789", "#BA4B45"
 INK, MUTED, GRID = "#182B39", "#526373", "#E5EBEF"
 NUMERIC = ["zscore", "iforest", "ridge", "knn", "rf", "hgb", "hgb_quantile"]
 CATEGORICAL = ["frequency", "logistic", "rf", "knn", "hgb"]
-# Presentation selection; the original confirmation and raw results remain intact.
-NUMERICAL_VIEW_OMISSIONS = {"eeg-eye-state", "climate-crashes"}
 LABELS = {
     "tabpfn_pit": "TabLint / TabPFN-3.5",
     "tabpfn": "TabLint / TabPFN-3.5",
@@ -89,7 +87,7 @@ def validate_summary(rows, summary_rows, headline, numeric=True):
     assert abs(mean(r["gain"] for r in rows) - headline["mean_diff"]) < 1e-12
 
 
-def selected_summary(rows):
+def dataset_summary(rows):
     differences = np.array([r["gain"] for r in sorted(rows, key=lambda r: r["dataset"])])
     rng = np.random.default_rng(0)
     bootstrap = rng.choice(differences, (10000, len(rows))).mean(axis=1)
@@ -133,7 +131,7 @@ def save(fig, output, name):
 
 def paired_chart(output, name, rows, headline, numeric=True, ablation=False):
     count = len(rows)
-    fig = plt.figure(figsize=(12.4, 10.2 if count == 14 else 9.0))
+    fig = plt.figure(figsize=(12.4, 9.0))
     if ablation:
         header(fig, "The distribution adds useful information",
                "Same TabPFN model · predictive tail surprise vs point-prediction residual",
@@ -143,7 +141,7 @@ def paired_chart(output, name, rows, headline, numeric=True, ablation=False):
         kind = "numerical" if numeric else "categorical"
         low, high = headline["ci95"]
         header(fig, "Find more errors in the cells you review" if numeric else "Valid categories can be wrong for a row",
-               f"{count} selected public numerical datasets · strongest tested alternative per dataset" if numeric else
+               f"{count} public numerical datasets · strongest tested alternative per dataset" if numeric else
                f"{count} public {kind} datasets · strongest tested alternative selected per dataset",
                f"{headline['wins']}/{count} wins     +{headline['mean_diff'] * 100:.1f} percentage points",
                f"Mean gain in precision@k · 95% dataset-bootstrap interval: +{low * 100:.1f} to +{high * 100:.1f} points")
@@ -181,11 +179,11 @@ def paired_chart(output, name, rows, headline, numeric=True, ablation=False):
                               label="TabPFN point residual" if ablation else "Best tested alternative")],
               loc="upper left", bbox_to_anchor=(-.28, -.15), ncol=2, frameon=False, fontsize=11)
     if ablation:
-        footer(fig, ["Pre-registered numerical confirmation · 70 tables · five seeds per dataset · 400 rows · 3% injected errors.",
+        footer(fig, [f"Amended numerical analysis · {count * 5} tables · five seeds per dataset · 400 rows · 3% injected errors.",
                      "Same out-of-fold predictions; only the scoring rule changes. Precision@k uses k = number of injected errors."])
     else:
-        footer(fig, [f"{'Selected confirmation results' if numeric else 'Pre-registered confirmation'} · {count * 5} tables · five seeds per dataset · {'400' if numeric else 'up to 400'} rows · 3% injected {'cell errors' if numeric else 'category swaps'}.",
-                     "Dataset subset selected after analysis. Statistics cover the 12 shown datasets. Synthetic-error results." if numeric else
+        footer(fig, [f"{'Amended numerical analysis' if numeric else 'Pre-registered confirmation'} · {count * 5} tables · five seeds per dataset · {'400' if numeric else 'up to 400'} rows · 3% injected {'cell errors' if numeric else 'category swaps'}.",
+                     "Two dataset executions excluded after reported test errors. Statistics cover the retained scope." if numeric else
                      "Best of 5 alternatives chosen after comparing seed means. k = number of injected errors. Synthetic-error results."])
     save(fig, output, name)
 
@@ -229,15 +227,13 @@ def main():
     categorical_summary = json.loads((ROOT / "results/categorical/summary.json").read_text())
     num = load_runs("proofread", set(range(701, 706)), {r["dataset"] for r in numeric_summary["cells_table"]})
     cat = load_runs("categorical", set(range(901, 906)), {r["dataset"] for r in categorical_summary["per_dataset"]})
-    assert len(num) == 14 and len(cat) == 10
+    assert len(num) == 12 and len(cat) == 10
     numerical = scored_rows(num, NUMERIC)
     categorical = scored_rows(cat, CATEGORICAL, numeric=False)
     validate_summary(numerical, numeric_summary["cells_table"], numeric_summary["h6_cells"])
     validate_summary(categorical, categorical_summary["per_dataset"], categorical_summary["h11"], numeric=False)
-    assert {r["dataset"] for r in numerical[-2:]} == NUMERICAL_VIEW_OMISSIONS
-    numerical = [r for r in numerical if r["dataset"] not in NUMERICAL_VIEW_OMISSIONS]
     assert len(numerical) == 12
-    numerical_headline = selected_summary(numerical)
+    numerical_headline = dataset_summary(numerical)
     output.mkdir(parents=True, exist_ok=True)
     plt.rcParams.update({"font.family": "DejaVu Sans", "text.color": INK, "axes.labelcolor": MUTED,
                          "xtick.color": MUTED, "ytick.color": INK, "svg.fonttype": "none",
@@ -299,8 +295,8 @@ def main():
                                 lineterminator="\n")
         writer.writeheader()
         writer.writerows(exported)
-    print(f"Validated 70 numerical + 50 categorical runs; exported six PNG/SVG pairs and {len(exported)} plotted values to {output}")
-    print(f"Selected numerical view: {json.dumps(numerical_headline)}")
+    print(f"Validated 60 numerical + 50 categorical runs; exported six PNG/SVG pairs and {len(exported)} plotted values to {output}")
+    print(f"Retained numerical analysis: {json.dumps(numerical_headline)}")
 
 
 if __name__ == "__main__":

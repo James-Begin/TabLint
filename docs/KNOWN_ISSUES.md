@@ -45,7 +45,7 @@ boundary scalar to the destination dtype during assignment.
 - It also says "no values are changed". More precisely, the baseline is computed at float64 rather than float32
   precision. The represented logits are preserved, but downstream density arithmetic can change; no universal bound
   on score differences has been established.
-- That file is frozen (hash in `docs/PREREGISTRATIONS.md`), so these corrections are recorded here instead.
+- The original pre-run version is preserved in Git history; its hash and the later dataset-scope correction are recorded in `docs/BENCHMARK_AMENDMENT.md`. The separate dtype-wording corrections remain recorded here.
 
 
 ## Survey: other tabpfn-extensions features on GPU

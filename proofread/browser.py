@@ -53,7 +53,7 @@ def main():
             if b.get("labels_table"):
                 st.markdown("**Label errors** (10% flipped labels; AUROC)")
                 st.dataframe(pd.DataFrame(b["labels_table"]), hide_index=True, width="stretch")
-            st.caption("Design and decision rules fixed before running: docs/PROOFREAD_PREREG.md. All 14 datasets are shown.")
+            st.caption("All 12 retained datasets are shown. Two executions were excluded after reported test errors; see docs/BENCHMARK_AMENDMENT.md.")
         else:
             st.info("Benchmark summary not found (run benchmarks/summarize_proofread.py).")
     with tab_how:

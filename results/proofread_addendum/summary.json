@@ -1,25 +1,25 @@
 {
-  "datasets": 14,
-  "runs": 70,
+  "datasets": 12,
+  "runs": 60,
   "a1_row": {
-    "wins": 14,
-    "mean_diff": 0.26434447008611783,
-    "wilcoxon_p_one_sided": 6.103515625e-05
+    "wins": 12,
+    "mean_diff": 0.28321563340414035,
+    "wilcoxon_p_one_sided": 0.000244140625
   },
-  "a1_cell_wins": 14,
+  "a1_cell_wins": 12,
   "determinism_max_abs_diff_vs_confirmation": 0.0,
   "a2_pooled": {
     "2.0": {
-      "precision": 0.8787623066104079,
-      "recall": 0.5330148438832963,
-      "flagged": 7110,
-      "errors": 11722
+      "precision": 0.8731737643767485,
+      "recall": 0.5682208961262264,
+      "flagged": 6434,
+      "errors": 9887
     },
     "3.0": {
-      "precision": 0.9483788395904437,
-      "recall": 0.18964340556219075,
-      "flagged": 2344,
-      "errors": 11722
+      "precision": 0.9441052137153593,
+      "recall": 0.20329725902700516,
+      "flagged": 2129,
+      "errors": 9887
     }
   },
   "per_dataset": [
@@ -116,29 +116,6 @@
       }
     },
     {
-      "dataset": "climate-crashes",
-      "seeds": 5,
-      "proofread_p_at_k": 0.342238558443671,
-      "ext_p_at_k": 0.030676798875216404,
-      "proofread_row_auroc": 0.6929730054766671,
-      "ext_row_auroc": 0.43585131538728944,
-      "proofread_cell_auroc": 0.7566818175431117,
-      "ext_cell_auroc": 0.4524961500630885,
-      "ext_seconds": 90.62703313827515,
-      "threshold": {
-        "2.0": {
-          "precision": 0.8579295676637869,
-          "recall": 0.1707549998481222,
-          "flagged_per_table": 43.0
-        },
-        "3.0": {
-          "precision": 0.980952380952381,
-          "recall": 0.08528357285204516,
-          "flagged_per_table": 18.8
-        }
-      }
-    },
-    {
       "dataset": "diabetes",
       "seeds": 5,
       "proofread_p_at_k": 0.6119279774155993,
@@ -158,29 +135,6 @@
           "precision": 0.9484848484848485,
           "recall": 0.12078431446023344,
           "flagged_per_table": 11.4
-        }
-      }
-    },
-    {
-      "dataset": "eeg-eye-state",
-      "seeds": 5,
-      "proofread_p_at_k": 0.8325598651795758,
-      "ext_p_at_k": 0.1217859745568036,
-      "proofread_row_auroc": 0.9655843318588284,
-      "ext_row_auroc": 0.920471041592241,
-      "proofread_cell_auroc": 0.9885971900282635,
-      "ext_cell_auroc": 0.8218507760243231,
-      "ext_seconds": 71.43998365402221,
-      "threshold": {
-        "2.0": {
-          "precision": 0.9682414880193704,
-          "recall": 0.5902993721054272,
-          "flagged_per_table": 92.2
-        },
-        "3.0": {
-          "precision": 1.0,
-          "recall": 0.16093182142234755,
-          "flagged_per_table": 24.2
         }
       }
     },

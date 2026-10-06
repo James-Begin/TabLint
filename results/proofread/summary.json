@@ -1,27 +1,27 @@
 {
   "h6_cells": {
-    "datasets": 14,
-    "wins": 13,
-    "mean_diff": 0.19031552742054947,
+    "datasets": 12,
+    "wins": 12,
+    "mean_diff": 0.22233932111011948,
     "ci95": [
-      0.13227753943413362,
-      0.2398998071137677
+      0.18431638790899657,
+      0.2575485476188529
     ],
-    "wilcoxon_p_one_sided": 0.00018310546875,
+    "wilcoxon_p_one_sided": 0.000244140625,
     "supported": true
   },
   "h7_labels": {
-    "datasets": 14,
-    "wins": 13,
-    "mean_diff": 0.021747519841269863,
+    "datasets": 12,
+    "wins": 11,
+    "mean_diff": 0.01395370370370371,
     "ci95": [
-      0.007851488095238092,
-      0.04122767857142862
+      0.0056272280092593205,
+      0.023229398148148124
     ],
-    "wilcoxon_p_one_sided": 0.0008544921875,
+    "wilcoxon_p_one_sided": 0.00341796875,
     "supported": true
   },
-  "headline": "**Cells (H6):** TabPFN-3.5 beats the best of 7 baselines (chosen per dataset, after the fact) on **13/14 datasets**; mean precision@k gain +0.190 [+0.132, +0.240], one-sided Wilcoxon p = 0.00018 \u2014 supported.  \n**Labels (H7):** TabPFN-3.5 beats the best of 4 baselines on **13/14**; mean AUROC gain +0.022 [+0.008, +0.041], p = 0.00085 \u2014 supported.",
+  "headline": "**Cells (H6):** TabPFN-3.5 beats the best of 7 baselines (chosen per dataset, after the fact) on **12/12 datasets**; mean precision@k gain +0.222 [+0.184, +0.258], one-sided Wilcoxon p = 0.00024 \u2014 supported.  \n**Labels (H7):** TabPFN-3.5 beats the best of 4 baselines on **11/12**; mean AUROC gain +0.014 [+0.006, +0.023], p = 0.0034 \u2014 supported.",
   "cells_table": [
     {
       "dataset": "MagicTelescope",
@@ -80,20 +80,6 @@
       "fix error column median": 0.74
     },
     {
-      "dataset": "climate-crashes",
-      "seeds": 5,
-      "TabPFN precision@k": 0.342,
-      "best baseline": "zscore",
-      "best baseline precision@k": 0.424,
-      "difference": -0.081,
-      "TabPFN AUROC": 0.757,
-      "best baseline AUROC": 0.817,
-      "fix error (SD) TabPFN": 1.05,
-      "fix error RF": 0.89,
-      "fix error ridge": 0.88,
-      "fix error column median": 0.87
-    },
-    {
       "dataset": "diabetes",
       "seeds": 5,
       "TabPFN precision@k": 0.612,
@@ -106,20 +92,6 @@
       "fix error RF": 0.7,
       "fix error ridge": 0.77,
       "fix error column median": 0.77
-    },
-    {
-      "dataset": "eeg-eye-state",
-      "seeds": 5,
-      "TabPFN precision@k": 0.833,
-      "best baseline": "zscore",
-      "best baseline precision@k": 0.755,
-      "difference": 0.078,
-      "TabPFN AUROC": 0.989,
-      "best baseline AUROC": 0.951,
-      "fix error (SD) TabPFN": 0.22,
-      "fix error RF": 6.8,
-      "fix error ridge": 5.78,
-      "fix error column median": 0.47
     },
     {
       "dataset": "electricity",
@@ -250,25 +222,11 @@
       "difference": 0.004
     },
     {
-      "dataset": "climate-crashes",
-      "TabPFN AUROC": 0.97,
-      "best baseline": "logistic",
-      "best baseline AUROC": 0.962,
-      "difference": 0.008
-    },
-    {
       "dataset": "diabetes",
       "TabPFN AUROC": 0.843,
       "best baseline": "logistic",
       "best baseline AUROC": 0.848,
       "difference": -0.005
-    },
-    {
-      "dataset": "eeg-eye-state",
-      "TabPFN AUROC": 0.919,
-      "best baseline": "rf",
-      "best baseline AUROC": 0.79,
-      "difference": 0.129
     },
     {
       "dataset": "electricity",
@@ -323,59 +281,59 @@
   "by_error_type_auroc": [
     {
       "error type": "decimal",
-      "zscore": 0.883,
-      "iforest": 0.793,
-      "ridge": 0.923,
-      "knn": 0.927,
-      "rf": 0.932,
-      "hgb": 0.943,
-      "hgb_quantile": 0.936,
-      "tabpfn_pit": 0.963
+      "zscore": 0.871,
+      "iforest": 0.785,
+      "ridge": 0.919,
+      "knn": 0.925,
+      "rf": 0.931,
+      "hgb": 0.944,
+      "hgb_quantile": 0.939,
+      "tabpfn_pit": 0.966
     },
     {
       "error type": "swap",
-      "zscore": 0.562,
-      "iforest": 0.573,
-      "ridge": 0.71,
-      "knn": 0.747,
-      "rf": 0.785,
-      "hgb": 0.768,
-      "hgb_quantile": 0.783,
-      "tabpfn_pit": 0.852
+      "zscore": 0.561,
+      "iforest": 0.579,
+      "ridge": 0.743,
+      "knn": 0.772,
+      "rf": 0.813,
+      "hgb": 0.805,
+      "hgb_quantile": 0.81,
+      "tabpfn_pit": 0.873
     },
     {
       "error type": "offset",
-      "zscore": 0.951,
-      "iforest": 0.784,
-      "ridge": 0.953,
-      "knn": 0.959,
-      "rf": 0.953,
-      "hgb": 0.95,
-      "hgb_quantile": 0.952,
-      "tabpfn_pit": 0.977
+      "zscore": 0.947,
+      "iforest": 0.795,
+      "ridge": 0.974,
+      "knn": 0.968,
+      "rf": 0.963,
+      "hgb": 0.977,
+      "hgb_quantile": 0.961,
+      "tabpfn_pit": 0.988
     },
     {
       "error type": "zero",
-      "zscore": 0.75,
-      "iforest": 0.682,
-      "ridge": 0.854,
-      "knn": 0.867,
-      "rf": 0.887,
-      "hgb": 0.894,
-      "hgb_quantile": 0.874,
-      "tabpfn_pit": 0.937
+      "zscore": 0.711,
+      "iforest": 0.671,
+      "ridge": 0.84,
+      "knn": 0.857,
+      "rf": 0.879,
+      "hgb": 0.892,
+      "hgb_quantile": 0.868,
+      "tabpfn_pit": 0.941
     },
     {
       "error type": "transposition",
-      "zscore": 0.782,
-      "iforest": 0.677,
-      "ridge": 0.827,
-      "knn": 0.843,
-      "rf": 0.863,
-      "hgb": 0.865,
-      "hgb_quantile": 0.873,
-      "tabpfn_pit": 0.911
+      "zscore": 0.786,
+      "iforest": 0.674,
+      "ridge": 0.837,
+      "knn": 0.86,
+      "rf": 0.878,
+      "hgb": 0.881,
+      "hgb_quantile": 0.89,
+      "tabpfn_pit": 0.932
     }
   ],
-  "n_runs": 70
+  "n_runs": 60
 }

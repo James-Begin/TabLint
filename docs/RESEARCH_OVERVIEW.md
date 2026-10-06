@@ -24,7 +24,7 @@ The [notebook widget](../proofread/notebook.py) returns a cleaned copy and curre
 | TabPFN-3.5, Fast, v3 and v2 comparison | [Model comparison](VERSION_COMPARISON.md) |
 | Findings on familiar, unmodified tables, including unverified flags and missed Iris errors | [Exploratory gallery](FAMOUS_DATASETS.md) |
 
-The [benchmark showcase](BENCHMARKS.md) presents the selected 12-dataset numerical view and categorical results.
+The [benchmark showcase](BENCHMARKS.md) presents all 12 retained numerical datasets and categorical results. Two dataset executions were excluded after reported test errors; [the amendment](BENCHMARK_AMENDMENT.md) documents the scope correction. Stored measurements are in [results/](../results/README.md).
 
 ## Reproduce
 

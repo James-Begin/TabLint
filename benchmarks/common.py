@@ -7,9 +7,9 @@ import numpy as np
 
 
 OPENML_IDS = {
-    "eeg-eye-state": 1471, "MagicTelescope": 1120, "phoneme": 1489,
+    "MagicTelescope": 1120, "phoneme": 1489,
     "wilt": 40983, "electricity": 151, "diabetes": 37, "banknote": 1462,
-    "spambase": 44, "climate-crashes": 1467, "kc1": 1067,
+    "spambase": 44, "kc1": 1067,
     "steel-plates": 1504, "ilpd": 1480, "blood-transfusion": 1464,
 }
 

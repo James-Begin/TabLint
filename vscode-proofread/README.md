@@ -21,8 +21,8 @@ a spellchecker.
 
 ## Settings
 - `proofread.command`: how to run the CLI (default `uv run proofread`).
-- `proofread.threshold`: flag cells with surprise ≥ this value. 2 gives about 88% precision and 53% recall; 3 gives
-  about 95% and 19% (benchmark).
+- `proofread.threshold`: flag cells with surprise ≥ this value. 2 gives about 87% precision and 57% recall; 3 gives
+  about 94% and 20% on the retained benchmark scope (see `docs/PROOFREAD_RESULTS.md` in the repository).
 - `proofread.labelColumn`: optional label column to check.
 - `proofread.categorical`: include categorical-cell checks (default `true`). Set `false` to reproduce the numeric-only saved Auto MPG demo report.
 

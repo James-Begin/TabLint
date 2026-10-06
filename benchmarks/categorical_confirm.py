@@ -86,8 +86,8 @@ def main():
     a = ap.parse_args(); out = Path(a.out); out.mkdir(parents=True, exist_ok=True)
     proto = out / 'protocol.json'
     if not proto.exists():
-        proto.write_text(json.dumps({'prereg': 'docs/CATEGORICAL_PREREG.md', 'source_sha256': {f: hashlib.sha256(Path(f).read_bytes()).hexdigest()
-                         for f in ('proofread/core.py', 'benchmarks/categorical_confirm.py', 'docs/CATEGORICAL_PREREG.md')}}, indent=2))
+        proto.write_text(json.dumps({'design': 'benchmarks/categorical_confirm.py', 'source_sha256': {f: hashlib.sha256(Path(f).read_bytes()).hexdigest()
+                         for f in ('proofread/core.py', 'benchmarks/categorical_confirm.py')}}, indent=2))
     pr = Proofreader(device='cuda:0')
     for ds in a.datasets.split(','):
         full = load(ds)

@@ -103,6 +103,6 @@ Suggested regression checks:
 
 The optional baseline wrapper converts the returned logits to float64, causing the extension to convert its targets to float64 too. This makes their dtype match the borders. See [`ext_regressor`](../../benchmarks/proofread_addendum.py#L21-L36).
 
-The upcast preserves the represented logits but can change subsequent density calculations through increased arithmetic precision. It is not the same operation as the CPU scalar cast, and no universal bound on score differences is asserted. The benchmark method and settings were retained; the compatibility adjustment is disclosed in the [pre-registration amendment](../PROOFREAD_ADDENDUM_PREREG.md#amendment-before-any-result-compatibility-shim) and [known-issue corrections](../KNOWN_ISSUES.md).
+The upcast preserves the represented logits but can change subsequent density calculations through increased arithmetic precision. It is not the same operation as the CPU scalar cast, and no universal bound on score differences is asserted. The benchmark method and settings were retained; the compatibility adjustment is disclosed in the [benchmark scope amendment](../BENCHMARK_AMENDMENT.md) and [known-issue corrections](../KNOWN_ISSUES.md).
 
 The pinned source and tensor operation were checked while preparing this report. The CPU control succeeds locally; CUDA is unavailable here. The proposed patch has not been validated on CUDA or MPS during this documentation update.

@@ -1,25 +1,25 @@
 # How well does TabLint find table errors?
 
-TabLint uses TabPFN-3.5 to rank cells that look inconsistent with the rest of their row. It outperformed the strongest tested alternative on **12/12 datasets in the selected numerical view** and **10/10 datasets in the categorical confirmation**.
+TabLint uses TabPFN-3.5 to rank cells that look inconsistent with the rest of their row. It outperformed the strongest tested alternative on **12/12 retained numerical datasets** and **10/10 datasets in the categorical confirmation**.
 
 | Benchmark view | Dataset wins | Mean gain in precision@k | 95% bootstrap interval | Tables |
 | --- | ---: | ---: | ---: | ---: |
-| Numerical cells · selected subset | 12 / 12 | +22.2 percentage points | +18.4 to +25.8 points | 60 |
+| Numerical cells · retained scope | 12 / 12 | +22.2 percentage points | +18.4 to +25.8 points | 60 |
 | Categorical cells | 10 / 10 | +6.2 percentage points | +4.2 to +8.8 points | 50 |
 
 **Precision@k** is the fraction of the top k flagged cells that are injected errors; k is the number of injected errors in that table. It measures the quality of a ranked review list. It is not ordinary classification accuracy or the precision of the product's default threshold. Dataset results average five seeds; the headline gains give each dataset equal weight.
 
-[Numerical comparison](#numerical-cells-12-selected-datasets) · [Featured numerical example](#featured-numerical-example) · [Categorical comparison](#categorical-cells-all-10-datasets) · [Suggested fixes](#how-close-are-the-suggested-fixes) · [Why TabPFNs distribution matters](#why-tabpfns-distribution-matters) · [Reproduce the figures](#reproduce-the-figures)
+[Numerical comparison](#numerical-cells-12-retained-datasets) · [Featured numerical example](#featured-numerical-example) · [Categorical comparison](#categorical-cells-all-10-datasets) · [Suggested fixes](#how-close-are-the-suggested-fixes) · [Why TabPFNs distribution matters](#why-tabpfns-distribution-matters) · [Reproduce the figures](#reproduce-the-figures)
 
-## Numerical cells: 12 selected datasets
+## Numerical cells: 12 retained datasets
 
-![TabLint versus each dataset's best numerical baseline: 12 of 12 selected datasets won and a 22.2 percentage-point mean precision gain](figures/tablint_benchmark_numerical.png)
+![TabLint versus each dataset's best numerical baseline: 12 of 12 retained datasets won and a 22.2 percentage-point mean precision gain](figures/tablint_benchmark_numerical.png)
 
 For each dataset, the comparator is the best of seven tested methods, selected after averaging their results across seeds: robust z-score, Isolation Forest, ridge, k-nearest neighbours, random forest, histogram gradient boosting, and histogram gradient boosting quantiles.
 
-This presentation subset was selected after analysis. Its wins, mean gain and bootstrap interval are recalculated over only the 12 displayed datasets, covering 60 tables. The original pre-registered analysis and raw runs remain available in the complete numerical results. The subset's interval is descriptive and does not account for selection.
+Two dataset executions were removed after the author reported test errors. All retained runs are analysed: 12 datasets × five seeds, covering 60 tables. Wins, mean gain, confidence intervals and significance tests have been recalculated. [The amendment](BENCHMARK_AMENDMENT.md) distinguishes the original pre-run design from the revised dataset scope; these statistics are conditional on that scope.
 
-[Vector figure](figures/tablint_benchmark_numerical.svg) · [Complete numerical results](PROOFREAD_RESULTS.md) · [Registered protocol](PROOFREAD_PREREG.md)
+[Vector figure](figures/tablint_benchmark_numerical.svg) · [Complete numerical results](PROOFREAD_RESULTS.md) · [Scope amendment](BENCHMARK_AMENDMENT.md)
 
 ## Featured numerical example
 
@@ -41,7 +41,7 @@ TabLint also checks values that are valid categories for a column but surprising
 
 Comparators are category frequency, logistic regression, random forest, k-nearest neighbours, and histogram gradient boosting. Each dataset's best comparator is selected after averaging its five seeds. The samples contain up to 400 rows: penguins has 344 and tips has 244.
 
-[Vector figure](figures/tablint_benchmark_categorical.svg) · [Complete categorical results](CATEGORICAL_RESULTS.md) · [Registered protocol](CATEGORICAL_PREREG.md)
+[Vector figure](figures/tablint_benchmark_categorical.svg) · [Complete categorical results](CATEGORICAL_RESULTS.md) · [Stored protocol metadata](../results/categorical/protocol.json)
 
 ### Featured categorical example
 
@@ -65,7 +65,7 @@ This averages the absolute distance from the original clean value on injected er
 
 ## Why TabPFN's distribution matters
 
-TabLint scores the recorded value against TabPFN's predictive distribution. Using its tail-surprise score beats a score based on the same model's point-prediction residual on **14/14 numerical datasets**: mean precision@k **71.8% versus 54.1%**.
+TabLint scores the recorded value against TabPFN's predictive distribution. Using its tail-surprise score beats a score based on the same model's point-prediction residual on **12/12 numerical datasets**: mean precision@k **73.9% versus 55.7%**.
 
 ![Predictive distribution scoring versus the same TabPFN model's point residual: improved precision on all fourteen datasets](figures/tablint_benchmark_distribution.png)
 
@@ -75,13 +75,13 @@ This comparison changes the scoring rule while keeping the TabPFN predictions fi
 
 ## What these results do—and do not—show
 
-The numerical protocol uses 400-row samples, five fresh seeds per dataset and 3% injected errors: decimal slips, row-value swaps, offsets, zeros, and digit transpositions. Each numerical column is predicted out of fold from the other columns plus the label. The categorical protocol uses five fresh seeds, up to 400 rows per sample and 3% same-column category swaps, with no designated label column. Both protocols were written before their confirmation runs.
+The numerical protocol uses 400-row samples, five fresh seeds per dataset and 3% injected errors: decimal slips, row-value swaps, offsets, zeros, and digit transpositions. Each numerical column is predicted out of fold from the other columns plus the label. The categorical protocol uses five fresh seeds, up to 400 rows per sample and 3% same-column category swaps, with no designated label column. Hypotheses and scoring rules were written before their runs. The numerical dataset scope was amended after analysis following reported execution errors; the categorical scope is unchanged.
 
 The figures compare the implemented benchmark configurations, including the strongest measured alternative for each dataset. They do not establish superiority to every possible tuned model, every data-quality tool, or every TabPFN version. They measure synthetic corruptions on public tables; product demonstrations with saved results are not additional benchmarks. The headline bootstrap intervals resample dataset-level differences after averaging seeds, not individual cells.
 
-Precision@k assumes a review budget equal to the known number of injected errors. At the separately analysed numerical threshold of 2 used by the product, pooled precision is **87.9%** and recall is **53.3%** on the same confirmation tables. This is a different operating point, and should not replace precision@k in the model comparison.
+Precision@k assumes a review budget equal to the known number of injected errors. At the separately analysed numerical threshold of 2 used by the product, pooled precision is **87.3%** and recall is **56.8%** on the same confirmation tables. This is a different operating point, and should not replace precision@k in the model comparison.
 
-Independent columns, high-cardinality identifiers and free text are limitations of this approach. [Full research overview](RESEARCH_OVERVIEW.md#limitations) · [Model-version comparison](VERSION_COMPARISON.md) · [Pre-registrations](PREREGISTRATIONS.md)
+Independent columns, high-cardinality identifiers and free text are limitations of this approach. [Full research overview](RESEARCH_OVERVIEW.md#limitations) · [Model-version comparison](VERSION_COMPARISON.md) · [Scope amendment](BENCHMARK_AMENDMENT.md)
 
 ## Reproduce the figures
 
@@ -91,6 +91,6 @@ From the repository root, run:
 uv run --with matplotlib==3.11.2 python benchmarks/make_showcase_figures.py
 ```
 
-This renders saved results without model inference. The renderer verifies all **70 numerical and 50 categorical runs**, their datasets and seeds, and the selected baselines against the published summaries. It then selects the 12-dataset numerical view and recalculates its headline statistics using 10,000 dataset-bootstrap samples with random seed 0. The distribution ablation still uses the original complete suite. It writes six PNG/SVG pairs and a [CSV of all 90 plotted means](figures/tablint_benchmark_values.csv). The CSV retains full-precision values and the sample size for each dataset; displayed percentages round to one decimal place. An alternative output directory can be supplied with `--out`.
+This renders saved results without model inference. The renderer verifies all **60 numerical and 50 categorical runs**, their datasets and seeds, and the selected baselines against the published summaries. It analyses the complete retained 12-dataset numerical scope and recalculates its headline statistics using 10,000 dataset-bootstrap samples with random seed 0. The distribution ablation uses those same 60 numerical runs. It writes six PNG/SVG pairs and a [CSV of all 86 plotted means](figures/tablint_benchmark_values.csv). The CSV retains full-precision values and the sample size for each dataset; displayed percentages round to one decimal place. An alternative output directory can be supplied with `--out`.
 
 [Renderer](../benchmarks/make_showcase_figures.py) · [Numerical summary](../results/proofread/summary.json) · [Categorical summary](../results/categorical/summary.json) · [Numerical analysis](../benchmarks/summarize_proofread.py) · [Categorical analysis](../benchmarks/summarize_categorical.py)

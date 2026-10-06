@@ -137,7 +137,7 @@ class Proofreader:
     def check(self, df: pd.DataFrame, label: str | None = None, columns=None, max_issues: int = 50,
               threshold: float = 2.0, categorical: bool = True) -> Report:
         """Return a Report. ``threshold`` = minimum surprise (−log10 two-sided tail probability) to list a cell.
-        Benchmark (docs/PROOFREAD_RESULTS.md, addendum A2): 2 → 88% precision / 53% recall; 3 → 95% / 19%."""
+        Benchmark (docs/PROOFREAD_RESULTS.md, addendum A2): retained scope: 2 → 87% precision / 57% recall; 3 → 94% / 20%."""
         import torch
         from sklearn.model_selection import KFold, StratifiedKFold
         t0 = time.time()

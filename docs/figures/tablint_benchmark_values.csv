@@ -73,8 +73,6 @@ distribution,breast-cancer,tabpfn_pit,precision_at_k,0.84673663283398426,5,400
 distribution,breast-cancer,tabpfn_resid,precision_at_k,0.63220370694007044,5,400
 distribution,spambase,tabpfn_pit,precision_at_k,0.67704464114732876,5,400
 distribution,spambase,tabpfn_resid,precision_at_k,0.46964810946633928,5,400
-distribution,eeg-eye-state,tabpfn_pit,precision_at_k,0.8325598651795757,5,400
-distribution,eeg-eye-state,tabpfn_resid,precision_at_k,0.62983561994687454,5,400
 distribution,wilt,tabpfn_pit,precision_at_k,0.73658907397531148,5,400
 distribution,wilt,tabpfn_resid,precision_at_k,0.53545848261164575,5,400
 distribution,kc1,tabpfn_pit,precision_at_k,0.86964424150346364,5,400
@@ -83,8 +81,6 @@ distribution,diabetes,tabpfn_pit,precision_at_k,0.61192797741559934,5,400
 distribution,diabetes,tabpfn_resid,precision_at_k,0.42392107434117937,5,400
 distribution,ilpd,tabpfn_pit,precision_at_k,0.69830143671857858,5,400
 distribution,ilpd,tabpfn_resid,precision_at_k,0.52489535351319738,5,400
-distribution,climate-crashes,tabpfn_pit,precision_at_k,0.34223855844367101,5,400
-distribution,climate-crashes,tabpfn_resid,precision_at_k,0.25383857468458809,5,400
 distribution,banknote,tabpfn_pit,precision_at_k,0.74338091453875721,5,400
 distribution,banknote,tabpfn_resid,precision_at_k,0.69124815697799369,5,400
 distribution,phoneme,tabpfn_pit,precision_at_k,0.59393395803935811,5,400

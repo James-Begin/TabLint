@@ -584,7 +584,7 @@ z
    <text style="font-weight: 700; font-size: 24px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #182b39" x="40.176" y="60.912" transform="rotate(-0 40.176 60.912)">Find more errors in the cells you review</text>
   </g>
   <g id="text_61">
-   <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #526373" x="40.176" y="86.832" transform="rotate(-0 40.176 86.832)">12 selected public numerical datasets · strongest tested alternative per dataset</text>
+   <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #526373" x="40.176" y="86.832" transform="rotate(-0 40.176 86.832)">12 public numerical datasets · strongest tested alternative per dataset</text>
   </g>
   <g id="text_62">
    <text style="font-weight: 700; font-size: 24px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #157f79" x="40.176" y="129.6" transform="rotate(-0 40.176 129.6)">12/12 wins     +22.2 percentage points</text>
@@ -593,8 +593,8 @@ z
    <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #526373" x="40.176" y="154.224" transform="rotate(-0 40.176 154.224)">Mean gain in precision@k · 95% dataset-bootstrap interval: +18.4 to +25.8 points</text>
   </g>
   <g id="text_64">
-   <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #526373" transform="translate(40.176 616.639375)">Selected confirmation results · 60 tables · five seeds per dataset · 400 rows · 3% injected cell errors.</text>
-   <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #526373" transform="translate(40.176 632.639375)">Dataset subset selected after analysis. Statistics cover the 12 shown datasets. Synthetic-error results.</text>
+   <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #526373" transform="translate(40.176 616.639375)">Amended numerical analysis · 60 tables · five seeds per dataset · 400 rows · 3% injected cell errors.</text>
+   <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #526373" transform="translate(40.176 632.639375)">Two dataset executions excluded after reported test errors. Statistics cover the retained scope.</text>
   </g>
  </g>
  <defs>

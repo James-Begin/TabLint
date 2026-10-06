@@ -6,7 +6,7 @@ The submission graphs use stored measurements; rebuilding them does not run a mo
 uv run --with matplotlib==3.11.2 python benchmarks/make_showcase_figures.py
 ```
 
-Run commands from the repository root. [Methodology and graphs](../docs/BENCHMARKS.md), [frozen protocols](../docs/PREREGISTRATIONS.md) and [result directory guide](../results/README.md) describe the evidence.
+Run commands from the repository root. [Methodology and graphs](../docs/BENCHMARKS.md), [scope amendment](../docs/BENCHMARK_AMENDMENT.md) and [result directory guide](../results/README.md) describe the evidence.
 
 ## Fresh inference
 

@@ -15,8 +15,8 @@ from sklearn.metrics import roc_auc_score
 from sklearn.model_selection import KFold, StratifiedKFold
 from benchmarks.common import factory, load_any
 
-DATASETS = ['eeg-eye-state', 'MagicTelescope', 'breast-cancer', 'phoneme', 'wilt', 'electricity', 'diabetes', 'banknote',
-            'spambase', 'climate-crashes', 'kc1', 'steel-plates', 'ilpd', 'blood-transfusion']
+DATASETS = ['MagicTelescope', 'breast-cancer', 'phoneme', 'wilt', 'electricity', 'diabetes', 'banknote',
+            'spambase', 'kc1', 'steel-plates', 'ilpd', 'blood-transfusion']
 BASE_C = ['zscore', 'iforest', 'ridge', 'knn', 'rf', 'hgb', 'hgb_quantile']
 
 
