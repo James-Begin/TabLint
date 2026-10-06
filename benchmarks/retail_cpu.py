@@ -23,6 +23,7 @@ from sklearn.metrics import roc_auc_score
 
 CONFIG_PATH = Path(__file__).with_name("retail_config.json")
 CONFIG = json.loads(CONFIG_PATH.read_text())
+COMPACT_PATH = Path(__file__).with_name("retail_compact_cpu.json")
 
 
 def sha256(path):
@@ -145,7 +146,7 @@ def sample_data(cache, n_train, seed, ablation):
         # Learn the categories on training data alone; unseen test categories -> NaN.
         dtype = pd.CategoricalDtype(sorted(X_train[c].dropna().unique()))
         X_train[c] = X_train[c].astype(dtype)
-        X_test[c] = X_test[c].astype(dtype)
+        X_test[c] = X_test[c].where(X_test[c].isin(dtype.categories)).astype(dtype)
     original = test.UnitPrice.to_numpy(float)
     recorded, mask, kinds = inject_prices(original, seed)
     digest = hashlib.sha256()
@@ -202,16 +203,22 @@ def worker(args):
     torch.set_num_threads(CONFIG["cpu_threads"])
     torch.set_num_interop_threads(1)
     data = sample_data(args.cache, args.rows, args.seed, args.ablation)
+    preprocessing = dict(CONFIG["common_preprocessing"])
+    if args.profile == "compact_text8":
+        preprocessing.update(json.loads(COMPACT_PATH.read_text())["preprocessing_overrides"])
     Xtr, Xte, train, test, original, recorded, mask, kinds, meta = data
     rec = {"status": "running", "model": args.version, "seed": args.seed, "ablation": args.ablation,
            "config_sha256": sha256(CONFIG_PATH), "device": "cpu", "n_estimators_requested": CONFIG["n_estimators"],
-           "preprocessing": CONFIG["common_preprocessing"], **meta}
+           "preprocessing": preprocessing, "runtime_profile": args.profile,
+           "runner_sha256": sha256(__file__),
+           "runtime_profile_sha256": sha256(COMPACT_PATH) if args.profile == "compact_text8" else None, **meta}
     write_json(args.record, rec)
     try:
         reg = TabPFNRegressor.create_default_for_version(getattr(ModelVersion, args.version), device="cpu",
-            n_estimators=CONFIG["n_estimators"], auto_scale_n_estimators=False, random_state=args.seed,
-            n_preprocessing_jobs=1, inference_config=CONFIG["common_preprocessing"])
+            n_estimators=CONFIG["n_estimators"], random_state=args.seed,
+            n_preprocessing_jobs=1, inference_config=preprocessing)
         rec["checkpoint"] = Path(reg.model_path).name
+        rec["checkpoint_sha256"] = sha256(reg.model_path)
         print(f"{args.version}: fit {len(train)} rows ({args.ablation})", flush=True)
         t = time.monotonic()
         reg.fit(Xtr, np.log(train.UnitPrice.to_numpy(float)))
@@ -260,6 +267,9 @@ def download(versions):
 
 def run(args):
     import psutil
+    if args.profile == "compact_text8" and args.out == Path("results/retail_cpu"):
+        args.out = args.out / "compact"
+
     if not (args.cache / "transactions.parquet").exists():
         raise ValueError("Prepare the dataset first with --prepare")
     args.out.mkdir(parents=True, exist_ok=True)
@@ -278,7 +288,7 @@ def run(args):
                 t = time.monotonic()
                 m = baseline(train, test, original, recorded, mask, kinds)
                 write_json(bpath, {"model": "sku_median_mad", "seed": seed, "device": "cpu", "status": "ok",
-                                  "config_sha256": sha256(CONFIG_PATH), **meta, "metrics": m, "seconds": time.monotonic() - t})
+                                  "config_sha256": sha256(CONFIG_PATH), "runtime_profile": args.profile, **meta, "metrics": m, "seconds": time.monotonic() - t})
             del data, train, test
             for ablation in args.ablations:
                 for version in args.versions:
@@ -291,7 +301,7 @@ def run(args):
                         env[k] = str(CONFIG["cpu_threads"])
                     cmd = [sys.executable, "-m", "benchmarks.retail_cpu", "--worker", "--version", version,
                            "--rows", str(size), "--seed", str(seed), "--ablation", ablation,
-                           "--record", str(record), "--cache", str(args.cache)]
+                           "--record", str(record), "--cache", str(args.cache), "--profile", args.profile]
                     log = record.with_suffix(".log")
                     start = time.monotonic()
                     peak = 0
@@ -350,6 +360,7 @@ def main():
     ap.add_argument("--versions", type=lambda s: s.split(","), default=CONFIG["versions"])
     ap.add_argument("--ablations", type=lambda s: s.split(","), default=["full"])
     ap.add_argument("--timeout", type=int, default=CONFIG["timeout_seconds"])
+    ap.add_argument("--profile", choices=["standard", "compact_text8"], default="standard")
     ap.add_argument("--worker", action="store_true", help=argparse.SUPPRESS)
     ap.add_argument("--version", choices=CONFIG["versions"])
     ap.add_argument("--rows", type=int)

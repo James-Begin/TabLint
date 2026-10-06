@@ -29,3 +29,7 @@ demo/.notebook/
 demo/notebook-workspace/
 .ipynb_checkpoints/
 *.proofread.ledger.json
+
+# Local CPU benchmark worker diagnostics; structured measurements are retained
+results/retail_cpu/**/*.log
+results/retail_cpu/*.log

@@ -39,3 +39,32 @@ def test_oracle_ranking_and_corrections_have_perfect_metrics():
     assert m['clean_80pct_interval_coverage'] == 1
     assert m['injected_error_log_mae_after'] == 0
     assert all(v == 1 for v in m['recall_at_k_by_error'].values())
+
+
+def test_sample_has_train_only_categories_and_matching_splits(tmp_path, monkeypatch):
+    import benchmarks.retail_cpu as retail
+    dates = ['2011-07-01'] * 120 + ['2011-08-02'] * 120
+    df = pd.DataFrame({
+        'InvoiceNo': pd.Series([f'invoice-{i}' for i in range(240)], dtype='string'),
+        'InvoiceDate': pd.to_datetime(dates),
+        'StockCode': pd.Series(['seen'] * 120 + ['new'] * 120, dtype='string'),
+        'Description': pd.Series([f'item {i}' for i in range(240)], dtype='string'),
+        'Quantity': np.ones(240, dtype=int),
+        'CustomerID': pd.Series(['c1'] * 120 + ['c2'] * 120, dtype='string'),
+        'Country': pd.Series(['UK'] * 240, dtype='string'),
+        'UnitPrice': np.geomspace(.1, 100, 240),
+    })
+    df.to_parquet(tmp_path / 'transactions.parquet', index=False)
+    monkeypatch.setitem(retail.CONFIG, 'test_rows', 100)
+    full = retail.sample_data(tmp_path, 100, 1101, 'full')
+    no_text = retail.sample_data(tmp_path, 100, 1101, 'no_text')
+    Xtr, Xte, *_ = full
+    assert Xtr.StockCode.cat.categories.tolist() == ['seen']
+    assert Xte.StockCode.isna().all()
+    assert Xte.CustomerID.isna().all()
+    assert 'UnitPrice' not in Xtr.columns
+    assert 'InvoiceNo' not in Xtr.columns
+    assert full[-1]['split_sha256'] == no_text[-1]['split_sha256']
+    assert 'Description' not in no_text[0].columns
+    assert full[-1]['invoice_groups_disjoint']
+    assert full[-1]['train_rows'] == full[-1]['test_rows'] == 100
