@@ -1,0 +1,30 @@
+{
+  "dataset": "MagicTelescope",
+  "seed": 705,
+  "errors": 109,
+  "rows_with_error": 102,
+  "n": 400,
+  "d": 10,
+  "proofread_precision_at_k": 0.7247706422018348,
+  "ext_precision_at_k": 0.027522935779816515,
+  "proofread_cell_auroc": 0.9305195004232302,
+  "ext_cell_auroc": 0.5441503445966817,
+  "proofread_row_auroc": 0.9127516778523491,
+  "ext_row_auroc": 0.5580668509014344,
+  "ext_seconds": 43.81257104873657,
+  "threshold": {
+    "2.0": {
+      "flagged": 68,
+      "true_flagged": 63,
+      "precision": 0.9264705882352942,
+      "recall": 0.5779816513761468
+    },
+    "3.0": {
+      "flagged": 24,
+      "true_flagged": 24,
+      "precision": 1.0,
+      "recall": 0.22018348623853212
+    }
+  },
+  "seconds": 63.55659556388855
+}

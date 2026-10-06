@@ -1,0 +1,581 @@
+{
+  "scope": "Local checkpoint capability experiment; not current TabLint integration",
+  "rows": [
+    {
+      "train_rows": 1000,
+      "model": "V2",
+      "ablation": "full",
+      "completed": 1,
+      "attempted": 1,
+      "seeds_completed": [
+        1101
+      ],
+      "statuses": [
+        "ok"
+      ],
+      "precision_at_k": 0.4838709677419355,
+      "precision_at_k_min": 0.4838709677419355,
+      "precision_at_k_max": 0.4838709677419355,
+      "auroc": 0.9392846701101256,
+      "auroc_min": 0.9392846701101256,
+      "auroc_max": 0.9392846701101256,
+      "clean_log_mae": 0.42346009322725725,
+      "clean_log_mae_min": 0.42346009322725725,
+      "clean_log_mae_max": 0.42346009322725725,
+      "clean_price_mae": 2.315285302102494,
+      "clean_price_mae_min": 2.315285302102494,
+      "clean_price_mae_max": 2.315285302102494,
+      "injected_error_log_mae_after": 0.3561594262469464,
+      "injected_error_log_mae_after_min": 0.3561594262469464,
+      "injected_error_log_mae_after_max": 0.3561594262469464,
+      "clean_80pct_interval_coverage": 0.6958710976837865,
+      "clean_80pct_interval_coverage_min": 0.6958710976837865,
+      "clean_80pct_interval_coverage_max": 0.6958710976837865,
+      "fit_seconds": 0.12431804099469446,
+      "predict_seconds": 4.450753375000204,
+      "wall_seconds": 7.138032666000072,
+      "peak_rss_gib": 2.3563232421875
+    },
+    {
+      "train_rows": 1000,
+      "model": "V3",
+      "ablation": "full",
+      "completed": 1,
+      "attempted": 1,
+      "seeds_completed": [
+        1101
+      ],
+      "statuses": [
+        "ok"
+      ],
+      "precision_at_k": 0.6129032258064516,
+      "precision_at_k_min": 0.6129032258064516,
+      "precision_at_k_max": 0.6129032258064516,
+      "auroc": 0.9105025501088263,
+      "auroc_min": 0.9105025501088263,
+      "auroc_max": 0.9105025501088263,
+      "clean_log_mae": 0.39093181714309094,
+      "clean_log_mae_min": 0.39093181714309094,
+      "clean_log_mae_max": 0.39093181714309094,
+      "clean_price_mae": 2.1911595442646408,
+      "clean_price_mae_min": 2.1911595442646408,
+      "clean_price_mae_max": 2.1911595442646408,
+      "injected_error_log_mae_after": 0.3495771017008094,
+      "injected_error_log_mae_after_min": 0.3495771017008094,
+      "injected_error_log_mae_after_max": 0.3495771017008094,
+      "clean_80pct_interval_coverage": 0.701913393756294,
+      "clean_80pct_interval_coverage_min": 0.701913393756294,
+      "clean_80pct_interval_coverage_max": 0.701913393756294,
+      "fit_seconds": 0.14916795800672844,
+      "predict_seconds": 0.9814046660030726,
+      "wall_seconds": 3.5706073329929495,
+      "peak_rss_gib": 2.67144775390625
+    },
+    {
+      "train_rows": 1000,
+      "model": "V3_5",
+      "ablation": "full",
+      "completed": 1,
+      "attempted": 1,
+      "seeds_completed": [
+        1101
+      ],
+      "statuses": [
+        "ok"
+      ],
+      "precision_at_k": 0.4838709677419355,
+      "precision_at_k_min": 0.4838709677419355,
+      "precision_at_k_max": 0.4838709677419355,
+      "auroc": 0.9341194815320144,
+      "auroc_min": 0.9341194815320144,
+      "auroc_max": 0.9341194815320144,
+      "clean_log_mae": 0.36716398315747034,
+      "clean_log_mae_min": 0.36716398315747034,
+      "clean_log_mae_max": 0.36716398315747034,
+      "clean_price_mae": 2.1554822178783923,
+      "clean_price_mae_min": 2.1554822178783923,
+      "clean_price_mae_max": 2.1554822178783923,
+      "injected_error_log_mae_after": 0.28804959351757414,
+      "injected_error_log_mae_after_min": 0.28804959351757414,
+      "injected_error_log_mae_after_max": 0.28804959351757414,
+      "clean_80pct_interval_coverage": 0.7995971802618328,
+      "clean_80pct_interval_coverage_min": 0.7995971802618328,
+      "clean_80pct_interval_coverage_max": 0.7995971802618328,
+      "fit_seconds": 0.5246794160048012,
+      "predict_seconds": 1.6462879169994267,
+      "wall_seconds": 4.575978665990988,
+      "peak_rss_gib": 3.1533203125
+    },
+    {
+      "train_rows": 1000,
+      "model": "V3_5_FAST",
+      "ablation": "full",
+      "completed": 1,
+      "attempted": 1,
+      "seeds_completed": [
+        1101
+      ],
+      "statuses": [
+        "ok"
+      ],
+      "precision_at_k": 0.5161290322580645,
+      "precision_at_k_min": 0.5161290322580645,
+      "precision_at_k_max": 0.5161290322580645,
+      "auroc": 0.9437351785076178,
+      "auroc_min": 0.9437351785076178,
+      "auroc_max": 0.9437351785076178,
+      "clean_log_mae": 0.3699161873773238,
+      "clean_log_mae_min": 0.3699161873773238,
+      "clean_log_mae_max": 0.3699161873773238,
+      "clean_price_mae": 2.182270282775197,
+      "clean_price_mae_min": 2.182270282775197,
+      "clean_price_mae_max": 2.182270282775197,
+      "injected_error_log_mae_after": 0.3085018849714032,
+      "injected_error_log_mae_after_min": 0.3085018849714032,
+      "injected_error_log_mae_after_max": 0.3085018849714032,
+      "clean_80pct_interval_coverage": 0.7784491440080564,
+      "clean_80pct_interval_coverage_min": 0.7784491440080564,
+      "clean_80pct_interval_coverage_max": 0.7784491440080564,
+      "fit_seconds": 0.21615729099721648,
+      "predict_seconds": 0.8823805839929264,
+      "wall_seconds": 3.0554565409984207,
+      "peak_rss_gib": 2.6564483642578125
+    },
+    {
+      "train_rows": 1000,
+      "model": "sku_median_mad",
+      "ablation": "full",
+      "completed": 1,
+      "attempted": 1,
+      "seeds_completed": [
+        1101
+      ],
+      "statuses": [
+        "ok"
+      ],
+      "precision_at_k": 0.3870967741935484,
+      "precision_at_k_min": 0.3870967741935484,
+      "precision_at_k_max": 0.3870967741935484,
+      "auroc": 0.8941298768800962,
+      "auroc_min": 0.8941298768800962,
+      "auroc_max": 0.8941298768800962,
+      "clean_log_mae": 0.5128086446167917,
+      "clean_log_mae_min": 0.5128086446167917,
+      "clean_log_mae_max": 0.5128086446167917,
+      "clean_price_mae": 2.4544212183336205,
+      "clean_price_mae_min": 2.4544212183336205,
+      "clean_price_mae_max": 2.4544212183336205,
+      "injected_error_log_mae_after": 0.4056578407846044,
+      "injected_error_log_mae_after_min": 0.4056578407846044,
+      "injected_error_log_mae_after_max": 0.4056578407846044
+    },
+    {
+      "train_rows": 5000,
+      "model": "V2",
+      "ablation": "full",
+      "completed": 1,
+      "attempted": 1,
+      "seeds_completed": [
+        1101
+      ],
+      "statuses": [
+        "ok"
+      ],
+      "precision_at_k": 0.3548387096774194,
+      "precision_at_k_min": 0.3548387096774194,
+      "precision_at_k_max": 0.3548387096774194,
+      "auroc": 0.9402592339927883,
+      "auroc_min": 0.9402592339927883,
+      "auroc_max": 0.9402592339927883,
+      "clean_log_mae": 0.30962196290698357,
+      "clean_log_mae_min": 0.30962196290698357,
+      "clean_log_mae_max": 0.30962196290698357,
+      "clean_price_mae": 1.9392381633152207,
+      "clean_price_mae_min": 1.9392381633152207,
+      "clean_price_mae_max": 1.9392381633152207,
+      "injected_error_log_mae_after": 0.24463676284050345,
+      "injected_error_log_mae_after_min": 0.24463676284050345,
+      "injected_error_log_mae_after_max": 0.24463676284050345,
+      "clean_80pct_interval_coverage": 0.770392749244713,
+      "clean_80pct_interval_coverage_min": 0.770392749244713,
+      "clean_80pct_interval_coverage_max": 0.770392749244713,
+      "fit_seconds": 0.1873810830002185,
+      "predict_seconds": 33.94027995799843,
+      "wall_seconds": 36.089788958997815,
+      "peak_rss_gib": 2.474761962890625
+    },
+    {
+      "train_rows": 5000,
+      "model": "V3",
+      "ablation": "full",
+      "completed": 1,
+      "attempted": 1,
+      "seeds_completed": [
+        1101
+      ],
+      "statuses": [
+        "ok"
+      ],
+      "precision_at_k": 0.5483870967741935,
+      "precision_at_k_min": 0.5483870967741935,
+      "precision_at_k_max": 0.5483870967741935,
+      "auroc": 0.9634863398629113,
+      "auroc_min": 0.9634863398629113,
+      "auroc_max": 0.9634863398629113,
+      "clean_log_mae": 0.2953219265120798,
+      "clean_log_mae_min": 0.2953219265120798,
+      "clean_log_mae_max": 0.2953219265120798,
+      "clean_price_mae": 1.8985965955457174,
+      "clean_price_mae_min": 1.8985965955457174,
+      "clean_price_mae_max": 1.8985965955457174,
+      "injected_error_log_mae_after": 0.21946902443467078,
+      "injected_error_log_mae_after_min": 0.21946902443467078,
+      "injected_error_log_mae_after_max": 0.21946902443467078,
+      "clean_80pct_interval_coverage": 0.6676737160120846,
+      "clean_80pct_interval_coverage_min": 0.6676737160120846,
+      "clean_80pct_interval_coverage_max": 0.6676737160120846,
+      "fit_seconds": 0.21452679199865088,
+      "predict_seconds": 4.0025491249980405,
+      "wall_seconds": 6.607073166989721,
+      "peak_rss_gib": 2.7376708984375
+    },
+    {
+      "train_rows": 5000,
+      "model": "V3_5",
+      "ablation": "full",
+      "completed": 1,
+      "attempted": 1,
+      "seeds_completed": [
+        1101
+      ],
+      "statuses": [
+        "ok"
+      ],
+      "precision_at_k": 0.5806451612903226,
+      "precision_at_k_min": 0.5806451612903226,
+      "precision_at_k_max": 0.5806451612903226,
+      "auroc": 0.9720949874930969,
+      "auroc_min": 0.9720949874930969,
+      "auroc_max": 0.9720949874930969,
+      "clean_log_mae": 0.23979020370878945,
+      "clean_log_mae_min": 0.23979020370878945,
+      "clean_log_mae_max": 0.23979020370878945,
+      "clean_price_mae": 1.8174810681238207,
+      "clean_price_mae_min": 1.8174810681238207,
+      "clean_price_mae_max": 1.8174810681238207,
+      "injected_error_log_mae_after": 0.17893998266264258,
+      "injected_error_log_mae_after_min": 0.17893998266264258,
+      "injected_error_log_mae_after_max": 0.17893998266264258,
+      "clean_80pct_interval_coverage": 0.7945619335347432,
+      "clean_80pct_interval_coverage_min": 0.7945619335347432,
+      "clean_80pct_interval_coverage_max": 0.7945619335347432,
+      "fit_seconds": 0.5799265419918811,
+      "predict_seconds": 7.000062833001721,
+      "wall_seconds": 9.663190249993932,
+      "peak_rss_gib": 3.856109619140625
+    },
+    {
+      "train_rows": 5000,
+      "model": "V3_5_FAST",
+      "ablation": "full",
+      "completed": 1,
+      "attempted": 1,
+      "seeds_completed": [
+        1101
+      ],
+      "statuses": [
+        "ok"
+      ],
+      "precision_at_k": 0.5161290322580645,
+      "precision_at_k_min": 0.5161290322580645,
+      "precision_at_k_max": 0.5161290322580645,
+      "auroc": 0.9695611213981743,
+      "auroc_min": 0.9695611213981743,
+      "auroc_max": 0.9695611213981743,
+      "clean_log_mae": 0.2386961509883985,
+      "clean_log_mae_min": 0.2386961509883985,
+      "clean_log_mae_max": 0.2386961509883985,
+      "clean_price_mae": 1.817597397002726,
+      "clean_price_mae_min": 1.817597397002726,
+      "clean_price_mae_max": 1.817597397002726,
+      "injected_error_log_mae_after": 0.1636446996606786,
+      "injected_error_log_mae_after_min": 0.1636446996606786,
+      "injected_error_log_mae_after_max": 0.1636446996606786,
+      "clean_80pct_interval_coverage": 0.783484390735146,
+      "clean_80pct_interval_coverage_min": 0.783484390735146,
+      "clean_80pct_interval_coverage_max": 0.783484390735146,
+      "fit_seconds": 0.1535627499979455,
+      "predict_seconds": 3.421938665997004,
+      "wall_seconds": 5.5955401660030475,
+      "peak_rss_gib": 4.037200927734375
+    },
+    {
+      "train_rows": 5000,
+      "model": "sku_median_mad",
+      "ablation": "full",
+      "completed": 1,
+      "attempted": 1,
+      "seeds_completed": [
+        1101
+      ],
+      "statuses": [
+        "ok"
+      ],
+      "precision_at_k": 0.6129032258064516,
+      "precision_at_k_min": 0.6129032258064516,
+      "precision_at_k_max": 0.6129032258064516,
+      "auroc": 0.959490627943995,
+      "auroc_min": 0.959490627943995,
+      "auroc_max": 0.959490627943995,
+      "clean_log_mae": 0.3297378193230532,
+      "clean_log_mae_min": 0.3297378193230532,
+      "clean_log_mae_max": 0.3297378193230532,
+      "clean_price_mae": 1.9766923542599222,
+      "clean_price_mae_min": 1.9766923542599222,
+      "clean_price_mae_max": 1.9766923542599222,
+      "injected_error_log_mae_after": 0.2191988027419859,
+      "injected_error_log_mae_after_min": 0.2191988027419859,
+      "injected_error_log_mae_after_max": 0.2191988027419859
+    },
+    {
+      "train_rows": 10000,
+      "model": "V2",
+      "ablation": "full",
+      "completed": 1,
+      "attempted": 1,
+      "seeds_completed": [
+        1101
+      ],
+      "statuses": [
+        "ok"
+      ],
+      "precision_at_k": 0.41935483870967744,
+      "precision_at_k_min": 0.41935483870967744,
+      "precision_at_k_max": 0.41935483870967744,
+      "auroc": 0.9298638859110548,
+      "auroc_min": 0.9298638859110548,
+      "auroc_max": 0.9298638859110548,
+      "clean_log_mae": 0.27040229221222983,
+      "clean_log_mae_min": 0.27040229221222983,
+      "clean_log_mae_max": 0.27040229221222983,
+      "clean_price_mae": 1.8283763659900447,
+      "clean_price_mae_min": 1.8283763659900447,
+      "clean_price_mae_max": 1.8283763659900447,
+      "injected_error_log_mae_after": 0.23435404285691624,
+      "injected_error_log_mae_after_min": 0.23435404285691624,
+      "injected_error_log_mae_after_max": 0.23435404285691624,
+      "clean_80pct_interval_coverage": 0.7844914400805639,
+      "clean_80pct_interval_coverage_min": 0.7844914400805639,
+      "clean_80pct_interval_coverage_max": 0.7844914400805639,
+      "fit_seconds": 0.32445104100042954,
+      "predict_seconds": 114.37065412499942,
+      "wall_seconds": 117.0335087919957,
+      "peak_rss_gib": 3.6875457763671875
+    },
+    {
+      "train_rows": 10000,
+      "model": "V3",
+      "ablation": "full",
+      "completed": 1,
+      "attempted": 1,
+      "seeds_completed": [
+        1101
+      ],
+      "statuses": [
+        "ok"
+      ],
+      "precision_at_k": 0.5806451612903226,
+      "precision_at_k_min": 0.5806451612903226,
+      "precision_at_k_max": 0.5806451612903226,
+      "auroc": 0.9334048013513953,
+      "auroc_min": 0.9334048013513953,
+      "auroc_max": 0.9334048013513953,
+      "clean_log_mae": 0.2723656639444585,
+      "clean_log_mae_min": 0.2723656639444585,
+      "clean_log_mae_max": 0.2723656639444585,
+      "clean_price_mae": 1.824188471018949,
+      "clean_price_mae_min": 1.824188471018949,
+      "clean_price_mae_max": 1.824188471018949,
+      "injected_error_log_mae_after": 0.21705085780601416,
+      "injected_error_log_mae_after_min": 0.21705085780601416,
+      "injected_error_log_mae_after_max": 0.21705085780601416,
+      "clean_80pct_interval_coverage": 0.6596173212487412,
+      "clean_80pct_interval_coverage_min": 0.6596173212487412,
+      "clean_80pct_interval_coverage_max": 0.6596173212487412,
+      "fit_seconds": 0.29182604199741036,
+      "predict_seconds": 10.599985583001398,
+      "wall_seconds": 13.308593499998096,
+      "peak_rss_gib": 3.8108673095703125
+    },
+    {
+      "train_rows": 10000,
+      "model": "V3_5",
+      "ablation": "full",
+      "completed": 1,
+      "attempted": 1,
+      "seeds_completed": [
+        1101
+      ],
+      "statuses": [
+        "ok"
+      ],
+      "precision_at_k": 0.6129032258064516,
+      "precision_at_k_min": 0.6129032258064516,
+      "precision_at_k_max": 0.6129032258064516,
+      "auroc": 0.9703082870415489,
+      "auroc_min": 0.9703082870415489,
+      "auroc_max": 0.9703082870415489,
+      "clean_log_mae": 0.2046639379544596,
+      "clean_log_mae_min": 0.2046639379544596,
+      "clean_log_mae_max": 0.2046639379544596,
+      "clean_price_mae": 1.725382101745562,
+      "clean_price_mae_min": 1.725382101745562,
+      "clean_price_mae_max": 1.725382101745562,
+      "injected_error_log_mae_after": 0.1689666236737918,
+      "injected_error_log_mae_after_min": 0.1689666236737918,
+      "injected_error_log_mae_after_max": 0.1689666236737918,
+      "clean_80pct_interval_coverage": 0.8207452165156093,
+      "clean_80pct_interval_coverage_min": 0.8207452165156093,
+      "clean_80pct_interval_coverage_max": 0.8207452165156093,
+      "fit_seconds": 0.6560488749964861,
+      "predict_seconds": 17.30464212500374,
+      "wall_seconds": 20.377806290998706,
+      "peak_rss_gib": 4.708770751953125
+    },
+    {
+      "train_rows": 10000,
+      "model": "V3_5_FAST",
+      "ablation": "full",
+      "completed": 1,
+      "attempted": 1,
+      "seeds_completed": [
+        1101
+      ],
+      "statuses": [
+        "ok"
+      ],
+      "precision_at_k": 0.5806451612903226,
+      "precision_at_k_min": 0.5806451612903226,
+      "precision_at_k_max": 0.5806451612903226,
+      "auroc": 0.9653704967027255,
+      "auroc_min": 0.9653704967027255,
+      "auroc_max": 0.9653704967027255,
+      "clean_log_mae": 0.20132340211101718,
+      "clean_log_mae_min": 0.20132340211101718,
+      "clean_log_mae_max": 0.20132340211101718,
+      "clean_price_mae": 1.7187712802587969,
+      "clean_price_mae_min": 1.7187712802587969,
+      "clean_price_mae_max": 1.7187712802587969,
+      "injected_error_log_mae_after": 0.1465256148317136,
+      "injected_error_log_mae_after_min": 0.1465256148317136,
+      "injected_error_log_mae_after_max": 0.1465256148317136,
+      "clean_80pct_interval_coverage": 0.7724068479355488,
+      "clean_80pct_interval_coverage_min": 0.7724068479355488,
+      "clean_80pct_interval_coverage_max": 0.7724068479355488,
+      "fit_seconds": 0.26109612500295043,
+      "predict_seconds": 7.492743916998734,
+      "wall_seconds": 10.170534459000919,
+      "peak_rss_gib": 5.842071533203125
+    },
+    {
+      "train_rows": 10000,
+      "model": "sku_median_mad",
+      "ablation": "full",
+      "completed": 1,
+      "attempted": 1,
+      "seeds_completed": [
+        1101
+      ],
+      "statuses": [
+        "ok"
+      ],
+      "precision_at_k": 0.7096774193548387,
+      "precision_at_k_min": 0.7096774193548387,
+      "precision_at_k_max": 0.7096774193548387,
+      "auroc": 0.9645746028652178,
+      "auroc_min": 0.9645746028652178,
+      "auroc_max": 0.9645746028652178,
+      "clean_log_mae": 0.2678339931844227,
+      "clean_log_mae_min": 0.2678339931844227,
+      "clean_log_mae_max": 0.2678339931844227,
+      "clean_price_mae": 1.8441091865170827,
+      "clean_price_mae_min": 1.8441091865170827,
+      "clean_price_mae_max": 1.8441091865170827,
+      "injected_error_log_mae_after": 0.18174825403829342,
+      "injected_error_log_mae_after_min": 0.18174825403829342,
+      "injected_error_log_mae_after_max": 0.18174825403829342
+    },
+    {
+      "train_rows": 100001,
+      "model": "V2",
+      "ablation": "full",
+      "completed": 0,
+      "attempted": 1,
+      "seeds_completed": [],
+      "statuses": [
+        "error"
+      ]
+    },
+    {
+      "train_rows": 100001,
+      "model": "V3",
+      "ablation": "full",
+      "completed": 0,
+      "attempted": 1,
+      "seeds_completed": [],
+      "statuses": [
+        "memory_limit"
+      ]
+    },
+    {
+      "train_rows": 100001,
+      "model": "V3_5",
+      "ablation": "full",
+      "completed": 0,
+      "attempted": 1,
+      "seeds_completed": [],
+      "statuses": [
+        "memory_limit"
+      ]
+    },
+    {
+      "train_rows": 100001,
+      "model": "V3_5_FAST",
+      "ablation": "full",
+      "completed": 0,
+      "attempted": 1,
+      "seeds_completed": [],
+      "statuses": [
+        "memory_limit"
+      ]
+    },
+    {
+      "train_rows": 100001,
+      "model": "sku_median_mad",
+      "ablation": "full",
+      "completed": 1,
+      "attempted": 1,
+      "seeds_completed": [
+        1101
+      ],
+      "statuses": [
+        "ok"
+      ],
+      "precision_at_k": 0.7419354838709677,
+      "precision_at_k_min": 0.7419354838709677,
+      "precision_at_k_max": 0.7419354838709677,
+      "auroc": 0.9803787804957282,
+      "auroc_min": 0.9803787804957282,
+      "auroc_max": 0.9803787804957282,
+      "clean_log_mae": 0.2083416911323176,
+      "clean_log_mae_min": 0.2083416911323176,
+      "clean_log_mae_max": 0.2083416911323176,
+      "clean_price_mae": 1.7284434551641779,
+      "clean_price_mae_min": 1.7284434551641779,
+      "clean_price_mae_max": 1.7284434551641779,
+      "injected_error_log_mae_after": 0.1353677553593131,
+      "injected_error_log_mae_after_min": 0.1353677553593131,
+      "injected_error_log_mae_after_max": 0.1353677553593131
+    }
+  ]
+}

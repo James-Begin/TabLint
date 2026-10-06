@@ -1,0 +1,77 @@
+{
+  "scope": "Local checkpoint capability experiment; not current TabLint integration",
+  "rows": [
+    {
+      "train_rows": 100001,
+      "model": "V2",
+      "ablation": "full",
+      "completed": 0,
+      "attempted": 1,
+      "seeds_completed": [],
+      "statuses": [
+        "error"
+      ]
+    },
+    {
+      "train_rows": 100001,
+      "model": "V3",
+      "ablation": "full",
+      "completed": 0,
+      "attempted": 1,
+      "seeds_completed": [],
+      "statuses": [
+        "memory_limit"
+      ]
+    },
+    {
+      "train_rows": 100001,
+      "model": "V3_5",
+      "ablation": "full",
+      "completed": 0,
+      "attempted": 1,
+      "seeds_completed": [],
+      "statuses": [
+        "memory_limit"
+      ]
+    },
+    {
+      "train_rows": 100001,
+      "model": "V3_5_FAST",
+      "ablation": "full",
+      "completed": 0,
+      "attempted": 1,
+      "seeds_completed": [],
+      "statuses": [
+        "memory_limit"
+      ]
+    },
+    {
+      "train_rows": 100001,
+      "model": "sku_median_mad",
+      "ablation": "full",
+      "completed": 1,
+      "attempted": 1,
+      "seeds_completed": [
+        1101
+      ],
+      "statuses": [
+        "ok"
+      ],
+      "precision_at_k": 0.7419354838709677,
+      "precision_at_k_min": 0.7419354838709677,
+      "precision_at_k_max": 0.7419354838709677,
+      "auroc": 0.9803787804957282,
+      "auroc_min": 0.9803787804957282,
+      "auroc_max": 0.9803787804957282,
+      "clean_log_mae": 0.2083416911323176,
+      "clean_log_mae_min": 0.2083416911323176,
+      "clean_log_mae_max": 0.2083416911323176,
+      "clean_price_mae": 1.7284434551641779,
+      "clean_price_mae_min": 1.7284434551641779,
+      "clean_price_mae_max": 1.7284434551641779,
+      "injected_error_log_mae_after": 0.1353677553593131,
+      "injected_error_log_mae_after_min": 0.1353677553593131,
+      "injected_error_log_mae_after_max": 0.1353677553593131
+    }
+  ]
+}

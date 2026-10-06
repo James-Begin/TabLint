@@ -1,0 +1,49 @@
+{
+  "model": "sku_median_mad",
+  "seed": 1101,
+  "device": "cpu",
+  "status": "ok",
+  "config_sha256": "e53c67c831dbd35d6b71d3350596c79c81bdcf7e253a7f18dbf79e5e628c43d9",
+  "train_rows": 5000,
+  "test_rows": 1024,
+  "errors": 31,
+  "split_sha256": "65f90cd4cb68efec1c732d45891634ccdffc1146ee601f569b1eab950d702f13",
+  "training_stock_codes": 1855,
+  "training_customers": 2068,
+  "training_descriptions": 1988,
+  "test_seen_sku_fraction": 0.6787109375,
+  "train_last_date": "2011-07-31 12:16:00",
+  "test_first_date": "2011-08-01 10:26:00",
+  "invoice_groups_disjoint": true,
+  "source_sha256": "572e36277c2390fbfde10664750731e0a86f55e33470d91919085f0408e67bfb",
+  "input_features": [
+    "StockCode",
+    "Description",
+    "Quantity",
+    "InvoiceDate",
+    "CustomerID",
+    "Country"
+  ],
+  "input_dtypes": {
+    "StockCode": "category",
+    "Description": "string",
+    "Quantity": "int64",
+    "InvoiceDate": "datetime64[us]",
+    "CustomerID": "category",
+    "Country": "category"
+  },
+  "metrics": {
+    "precision_at_k": 0.6129032258064516,
+    "auroc": 0.959490627943995,
+    "clean_log_mae": 0.3297378193230532,
+    "clean_price_mae": 1.9766923542599222,
+    "injected_error_log_mae_before": 2.0700830331917888,
+    "injected_error_log_mae_after": 0.2191988027419859,
+    "recall_at_k_by_error": {
+      "multiply_10": 0.6363636363636364,
+      "divide_10": 0.8,
+      "price_swap": 0.4
+    }
+  },
+  "seconds": 0.008106957990094088
+}

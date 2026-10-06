@@ -1,0 +1,28 @@
+{
+  "dataset": "penguins",
+  "seed": 901,
+  "n": 344,
+  "categorical_columns": [
+    "species",
+    "island",
+    "sex"
+  ],
+  "errors": 30,
+  "precision_at_k": {
+    "tabpfn": 0.8,
+    "frequency": 0.03333333333333333,
+    "logistic": 0.7333333333333333,
+    "rf": 0.6,
+    "knn": 0.7,
+    "hgb": 0.6333333333333333
+  },
+  "auroc": {
+    "tabpfn": 0.9771124417831005,
+    "frequency": 0.5311709913506321,
+    "logistic": 0.9695941450432468,
+    "rf": 0.9707085828343313,
+    "knn": 0.9688622754491019,
+    "hgb": 0.9613107119095143
+  },
+  "seconds": 12.088409900665283
+}

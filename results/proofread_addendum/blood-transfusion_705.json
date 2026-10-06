@@ -1,0 +1,30 @@
+{
+  "dataset": "blood-transfusion",
+  "seed": 705,
+  "errors": 43,
+  "rows_with_error": 40,
+  "n": 400,
+  "d": 4,
+  "proofread_precision_at_k": 0.7906976744186046,
+  "ext_precision_at_k": 0.06976744186046512,
+  "proofread_cell_auroc": 0.9956834102552613,
+  "ext_cell_auroc": 0.4243924661319472,
+  "proofread_row_auroc": 0.9884722222222222,
+  "ext_row_auroc": 0.44166666666666665,
+  "ext_seconds": 16.425206184387207,
+  "threshold": {
+    "2.0": {
+      "flagged": 26,
+      "true_flagged": 26,
+      "precision": 1.0,
+      "recall": 0.6046511627906976
+    },
+    "3.0": {
+      "flagged": 11,
+      "true_flagged": 11,
+      "precision": 1.0,
+      "recall": 0.2558139534883721
+    }
+  },
+  "seconds": 24.262613773345947
+}

@@ -1,0 +1,30 @@
+{
+  "dataset": "phoneme",
+  "seed": 702,
+  "errors": 56,
+  "rows_with_error": 51,
+  "n": 400,
+  "d": 5,
+  "proofread_precision_at_k": 0.625,
+  "ext_precision_at_k": 0.25,
+  "proofread_cell_auroc": 0.8933439888300998,
+  "ext_cell_auroc": 0.8075856114050558,
+  "proofread_row_auroc": 0.8793190628687005,
+  "ext_row_auroc": 0.8248216191920895,
+  "ext_seconds": 22.210761547088623,
+  "threshold": {
+    "2.0": {
+      "flagged": 36,
+      "true_flagged": 28,
+      "precision": 0.7777777777777778,
+      "recall": 0.5
+    },
+    "3.0": {
+      "flagged": 7,
+      "true_flagged": 7,
+      "precision": 1.0,
+      "recall": 0.125
+    }
+  },
+  "seconds": 32.035786867141724
+}

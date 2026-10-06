@@ -1,0 +1,16 @@
+{
+  "platform": "macOS-26.5.1-arm64-arm-64bit",
+  "architecture": "arm64",
+  "logical_cpu_count": 10,
+  "physical_cpu_count": 10,
+  "ram_gib": 16.0,
+  "cpu_threads": 6,
+  "packages": {
+    "tabpfn": "9.1.0",
+    "torch": "2.14.1",
+    "pandas": "3.0.6",
+    "numpy": "2.5.3",
+    "skrub": "0.10.1",
+    "scikit-learn": "1.9.1"
+  }
+}

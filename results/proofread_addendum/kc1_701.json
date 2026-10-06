@@ -1,0 +1,30 @@
+{
+  "dataset": "kc1",
+  "seed": 701,
+  "errors": 225,
+  "rows_with_error": 180,
+  "n": 400,
+  "d": 21,
+  "proofread_precision_at_k": 0.8711111111111111,
+  "ext_precision_at_k": 0.013333333333333334,
+  "proofread_cell_auroc": 0.9970245327896704,
+  "ext_cell_auroc": 0.6365977573904179,
+  "proofread_row_auroc": 0.983510101010101,
+  "ext_row_auroc": 0.7210101010101011,
+  "ext_seconds": 95.81652665138245,
+  "threshold": {
+    "2.0": {
+      "flagged": 151,
+      "true_flagged": 148,
+      "precision": 0.9801324503311258,
+      "recall": 0.6577777777777778
+    },
+    "3.0": {
+      "flagged": 64,
+      "true_flagged": 63,
+      "precision": 0.984375,
+      "recall": 0.28
+    }
+  },
+  "seconds": 141.36262321472168
+}

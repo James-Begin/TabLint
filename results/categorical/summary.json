@@ -1,0 +1,226 @@
+{
+  "h11": {
+    "wins": 10,
+    "datasets": 10,
+    "mean_diff": 0.06221067210925697,
+    "ci95": [
+      0.041875186085681346,
+      0.08819606563728019
+    ],
+    "wilcoxon_p_one_sided": 0.0009765625,
+    "runs": 50,
+    "supported": true
+  },
+  "per_dataset": [
+    {
+      "dataset": "adult",
+      "seeds": 5,
+      "categorical_columns": 9,
+      "errors_per_table": 106,
+      "tabpfn": 0.35283018867924526,
+      "best_baseline": "hgb",
+      "best_baseline_p_at_k": 0.26037735849056604,
+      "difference": 0.09245283018867922,
+      "tabpfn_auroc": 0.9038167856487132,
+      "best_baseline_auroc": 0.8865478286226522,
+      "all_p_at_k": {
+        "tabpfn": 0.35283018867924526,
+        "frequency": 0.11132075471698114,
+        "logistic": 0.2188679245283019,
+        "rf": 0.21698113207547168,
+        "knn": 0.1169811320754717,
+        "hgb": 0.26037735849056604
+      },
+      "seconds_per_table": 63.67491869926452
+    },
+    {
+      "dataset": "bank-marketing",
+      "seeds": 5,
+      "categorical_columns": 10,
+      "errors_per_table": 120,
+      "tabpfn": 0.27712121212121216,
+      "best_baseline": "hgb",
+      "best_baseline_p_at_k": 0.2140909090909091,
+      "difference": 0.06303030303030305,
+      "tabpfn_auroc": 0.8846435275908096,
+      "best_baseline_auroc": 0.8672643669591888,
+      "all_p_at_k": {
+        "tabpfn": 0.27712121212121216,
+        "frequency": 0.0703030303030303,
+        "logistic": 0.19333333333333333,
+        "rf": 0.19363636363636363,
+        "knn": 0.07545454545454545,
+        "hgb": 0.2140909090909091
+      },
+      "seconds_per_table": 55.98578281402588
+    },
+    {
+      "dataset": "car",
+      "seeds": 5,
+      "categorical_columns": 7,
+      "errors_per_table": 84,
+      "tabpfn": 0.2357142857142857,
+      "best_baseline": "logistic",
+      "best_baseline_p_at_k": 0.16666666666666666,
+      "difference": 0.06904761904761905,
+      "tabpfn_auroc": 0.6872817168104356,
+      "best_baseline_auroc": 0.6460625745143419,
+      "all_p_at_k": {
+        "tabpfn": 0.2357142857142857,
+        "frequency": 0.052380952380952375,
+        "logistic": 0.16666666666666666,
+        "rf": 0.08571428571428572,
+        "knn": 0.07142857142857142,
+        "hgb": 0.1380952380952381
+      },
+      "seconds_per_table": 34.35484237670899
+    },
+    {
+      "dataset": "cmc",
+      "seeds": 5,
+      "categorical_columns": 8,
+      "errors_per_table": 96,
+      "tabpfn": 0.2375,
+      "best_baseline": "logistic",
+      "best_baseline_p_at_k": 0.20625,
+      "difference": 0.03125,
+      "tabpfn_auroc": 0.8017349924828178,
+      "best_baseline_auroc": 0.7931103683419243,
+      "all_p_at_k": {
+        "tabpfn": 0.2375,
+        "frequency": 0.1,
+        "logistic": 0.20625,
+        "rf": 0.16875,
+        "knn": 0.14166666666666666,
+        "hgb": 0.17083333333333334
+      },
+      "seconds_per_table": 40.25795240402222
+    },
+    {
+      "dataset": "credit-g",
+      "seeds": 5,
+      "categorical_columns": 18,
+      "errors_per_table": 216,
+      "tabpfn": 0.16018518518518518,
+      "best_baseline": "hgb",
+      "best_baseline_p_at_k": 0.1425925925925926,
+      "difference": 0.017592592592592576,
+      "tabpfn_auroc": 0.7939272570107336,
+      "best_baseline_auroc": 0.7775503399304229,
+      "all_p_at_k": {
+        "tabpfn": 0.16018518518518518,
+        "frequency": 0.07870370370370372,
+        "logistic": 0.13518518518518519,
+        "rf": 0.13425925925925924,
+        "knn": 0.05740740740740741,
+        "hgb": 0.1425925925925926
+      },
+      "seconds_per_table": 104.49579010009765
+    },
+    {
+      "dataset": "kr-vs-kp",
+      "seeds": 5,
+      "categorical_columns": 36,
+      "errors_per_table": 432,
+      "tabpfn": 0.6033118833118832,
+      "best_baseline": "rf",
+      "best_baseline_p_at_k": 0.559393321893322,
+      "difference": 0.04391856141856121,
+      "tabpfn_auroc": 0.9549513406297816,
+      "best_baseline_auroc": 0.9485409033265041,
+      "all_p_at_k": {
+        "tabpfn": 0.6033118833118832,
+        "frequency": 0.3657632632632633,
+        "logistic": 0.5328539253539254,
+        "rf": 0.559393321893322,
+        "knn": 0.5052338052338052,
+        "hgb": 0.5403678678678678
+      },
+      "seconds_per_table": 181.54362688064575
+    },
+    {
+      "dataset": "mushroom",
+      "seeds": 5,
+      "categorical_columns": 22,
+      "errors_per_table": 260,
+      "tabpfn": 0.7699999999999999,
+      "best_baseline": "knn",
+      "best_baseline_p_at_k": 0.6100000000000001,
+      "difference": 0.1599999999999998,
+      "tabpfn_auroc": 0.9611757341019637,
+      "best_baseline_auroc": 0.9502924247883264,
+      "all_p_at_k": {
+        "tabpfn": 0.7699999999999999,
+        "frequency": 0.07615384615384616,
+        "logistic": 0.5792307692307693,
+        "rf": 0.6007692307692307,
+        "knn": 0.6100000000000001,
+        "hgb": 0.5423076923076924
+      },
+      "seconds_per_table": 131.28395352363586
+    },
+    {
+      "dataset": "nursery",
+      "seeds": 5,
+      "categorical_columns": 9,
+      "errors_per_table": 108,
+      "tabpfn": 0.20370370370370372,
+      "best_baseline": "hgb",
+      "best_baseline_p_at_k": 0.15555555555555553,
+      "difference": 0.04814814814814819,
+      "tabpfn_auroc": 0.6500904183106359,
+      "best_baseline_auroc": 0.6298799372109796,
+      "all_p_at_k": {
+        "tabpfn": 0.20370370370370372,
+        "frequency": 0.037037037037037035,
+        "logistic": 0.1462962962962963,
+        "rf": 0.12962962962962962,
+        "knn": 0.06296296296296296,
+        "hgb": 0.15555555555555553
+      },
+      "seconds_per_table": 46.49843244552612
+    },
+    {
+      "dataset": "penguins",
+      "seeds": 5,
+      "categorical_columns": 3,
+      "errors_per_table": 30,
+      "tabpfn": 0.7733333333333333,
+      "best_baseline": "logistic",
+      "best_baseline_p_at_k": 0.7266666666666667,
+      "difference": 0.046666666666666634,
+      "tabpfn_auroc": 0.9780838323353294,
+      "best_baseline_auroc": 0.9693479707252163,
+      "all_p_at_k": {
+        "tabpfn": 0.7733333333333333,
+        "frequency": 0.04,
+        "logistic": 0.7266666666666667,
+        "rf": 0.5733333333333334,
+        "knn": 0.64,
+        "hgb": 0.62
+      },
+      "seconds_per_table": 12.210355997085571
+    },
+    {
+      "dataset": "tips",
+      "seeds": 5,
+      "categorical_columns": 5,
+      "errors_per_table": 36,
+      "tabpfn": 0.3055555555555555,
+      "best_baseline": "hgb",
+      "best_baseline_p_at_k": 0.25555555555555554,
+      "difference": 0.04999999999999999,
+      "tabpfn_auroc": 0.8283643018018019,
+      "best_baseline_auroc": 0.8287443693693695,
+      "all_p_at_k": {
+        "tabpfn": 0.3055555555555555,
+        "frequency": 0.04444444444444444,
+        "logistic": 0.23888888888888887,
+        "rf": 0.22777777777777777,
+        "knn": 0.19444444444444442,
+        "hgb": 0.25555555555555554
+      },
+      "seconds_per_table": 20.49771375656128
+    }
+  ]
+}

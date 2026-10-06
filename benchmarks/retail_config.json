@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "dataset": "UCI Online Retail II",
+  "source_url": "https://archive.ics.uci.edu/static/public/502/online%2Bretail%2Bii.zip",
+  "source_sha256": "572e36277c2390fbfde10664750731e0a86f55e33470d91919085f0408e67bfb",
+  "cutoff": "2011-08-01",
+  "train_sizes": [1000, 5000, 10000, 100001],
+  "test_rows": 1024,
+  "seeds": [1101, 1102, 1103],
+  "versions": ["V2", "V3", "V3_5", "V3_5_FAST"],
+  "features": ["StockCode", "Description", "Quantity", "InvoiceDate", "CustomerID", "Country"],
+  "ablations": ["full", "no_text", "no_ids"],
+  "target": "log(UnitPrice)",
+  "corruption_rate": 0.03,
+  "corruptions": ["multiply_10", "divide_10", "price_swap"],
+  "n_estimators": 1,
+  "cpu_threads": 6,
+  "timeout_seconds": 240,
+  "rss_limit_gib": 8,
+  "common_preprocessing": {"TRANSFORM_TEXT": true, "TRANSFORM_DATES": true, "SUBSAMPLE_SAMPLES": null},
+  "notes": "CPU feasibility study; one estimator, shared current-package text/date preprocessing; observed prices are references for synthetic errors, not audited ground truth. No prespecified expectation of a version winning."
+}

@@ -1,0 +1,30 @@
+{
+  "dataset": "ilpd",
+  "seed": 703,
+  "errors": 96,
+  "rows_with_error": 90,
+  "n": 400,
+  "d": 9,
+  "proofread_precision_at_k": 0.71875,
+  "ext_precision_at_k": 0.0625,
+  "proofread_cell_auroc": 0.973988061263318,
+  "ext_cell_auroc": 0.6986301369863014,
+  "proofread_row_auroc": 0.9308243727598567,
+  "ext_row_auroc": 0.7363440860215055,
+  "ext_seconds": 48.31976795196533,
+  "threshold": {
+    "2.0": {
+      "flagged": 66,
+      "true_flagged": 54,
+      "precision": 0.8181818181818182,
+      "recall": 0.5625
+    },
+    "3.0": {
+      "flagged": 17,
+      "true_flagged": 17,
+      "precision": 1.0,
+      "recall": 0.17708333333333334
+    }
+  },
+  "seconds": 66.52263760566711
+}

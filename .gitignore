@@ -1,0 +1,34 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+logs/
+results/stale/
+*.ckpt
+*.pth
+*.safetensors
+.env
+.envrc
+vscode-proofread/node_modules/
+vscode-proofread/out/
+vscode-proofread/.vscode-test/
+vscode-proofread/*.vsix
+tests/js/node_modules/
+data_cache/
+handoff/
+
+# Build products and disposable demo copies
+build/
+*.egg-info/
+.DS_Store
+node_modules/
+dist/
+demo/.workspace/
+demo/.notebook/
+demo/notebook-workspace/
+.ipynb_checkpoints/
+*.proofread.ledger.json
+
+# Local CPU benchmark worker diagnostics; structured measurements are retained
+results/retail_cpu/**/*.log
+results/retail_cpu/*.log

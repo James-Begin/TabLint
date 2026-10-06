@@ -1,0 +1,22 @@
+{
+  "source_rows": 1067371,
+  "valid_before_deduplication": 805549,
+  "retained_rows": 779425,
+  "exact_duplicates_removed": 26124,
+  "source_sha256": "572e36277c2390fbfde10664750731e0a86f55e33470d91919085f0408e67bfb",
+  "parquet_sha256": "2c69cc19a45f391559707bd17be1a464971cf5155d14ec0d7ec89529afbc9d38",
+  "source_url": "https://archive.ics.uci.edu/static/public/502/online%2Bretail%2Bii.zip",
+  "license": "CC BY 4.0",
+  "creator": "Daqing Chen",
+  "cutoff": "2011-08-01",
+  "training_pool_rows": 583978,
+  "future_pool_rows": 195447,
+  "unique_stock_codes": 4631,
+  "unique_customers": 5878,
+  "unique_descriptions": 5241,
+  "description_length_median": 27.0,
+  "date_min": "2009-12-01 07:45:00",
+  "date_max": "2011-12-09 12:50:00",
+  "excluded_cross_boundary_invoices": 0,
+  "config_sha256": "e53c67c831dbd35d6b71d3350596c79c81bdcf7e253a7f18dbf79e5e628c43d9"
+}

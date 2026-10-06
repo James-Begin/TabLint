@@ -1,0 +1,30 @@
+{
+  "dataset": "wilt",
+  "seed": 705,
+  "errors": 53,
+  "rows_with_error": 51,
+  "n": 400,
+  "d": 5,
+  "proofread_precision_at_k": 0.7358490566037735,
+  "ext_precision_at_k": 0.1320754716981132,
+  "proofread_cell_auroc": 0.9375914566192788,
+  "ext_cell_auroc": 0.7889544630830209,
+  "proofread_row_auroc": 0.908084723860891,
+  "ext_row_auroc": 0.8144277768413954,
+  "ext_seconds": 23.506412267684937,
+  "threshold": {
+    "2.0": {
+      "flagged": 33,
+      "true_flagged": 31,
+      "precision": 0.9393939393939394,
+      "recall": 0.5849056603773585
+    },
+    "3.0": {
+      "flagged": 8,
+      "true_flagged": 8,
+      "precision": 1.0,
+      "recall": 0.1509433962264151
+    }
+  },
+  "seconds": 33.25273394584656
+}

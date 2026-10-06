@@ -1,0 +1,34 @@
+{
+  "dataset": "adult",
+  "seed": 903,
+  "n": 400,
+  "categorical_columns": [
+    "workclass",
+    "education",
+    "marital-status",
+    "occupation",
+    "relationship",
+    "race",
+    "sex",
+    "native-country",
+    "target"
+  ],
+  "errors": 106,
+  "precision_at_k": {
+    "tabpfn": 0.33962264150943394,
+    "frequency": 0.12264150943396226,
+    "logistic": 0.2358490566037736,
+    "rf": 0.20754716981132076,
+    "knn": 0.12264150943396226,
+    "hgb": 0.27358490566037735
+  },
+  "auroc": {
+    "tabpfn": 0.9020760657083302,
+    "frequency": 0.6759458262682118,
+    "logistic": 0.8642227646315516,
+    "rf": 0.8653405838580424,
+    "knn": 0.8094563726496096,
+    "hgb": 0.885931138015574
+  },
+  "seconds": 62.56459093093872
+}
