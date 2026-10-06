@@ -1,10 +1,10 @@
-from pathlib import Path
+from tabpfn.model_loading import ModelSource, get_cache_dir
 import numpy as np
 import pandas as pd
 import pytest
 from proofread.core import Proofreader
 
-WEIGHTS = list((Path.home() / ".cache" / "tabpfn").glob("tabpfn-v3.5-*.safetensors"))
+WEIGHTS = (get_cache_dir() / ModelSource.get_v3_5().default_filename).is_file()
 
 
 def test_categorical_column_rule():
@@ -26,7 +26,7 @@ def test_typo_and_rare_hints():
 
 
 @pytest.mark.skipif(not WEIGHTS, reason="TabPFN-3.5 weights not downloaded")
-def test_finds_planted_category_cpu():
+def test_finds_planted_category_cpu(cpu_inference_threads):
     rng = np.random.default_rng(1)
     size = rng.uniform(1, 10, 90)
     df = pd.DataFrame({"size": size, "kind": np.where(size > 5.5, "large", "small")})

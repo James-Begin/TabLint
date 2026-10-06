@@ -2,11 +2,12 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-import math
 import time
 
 import numpy as np
 import pandas as pd
+
+ISSUE_COLUMNS = ["kind", "row", "column", "value", "suggested", "low", "high", "surprise", "cause", "evidence"]
 
 SLIPS = {
     "decimal slip (×10)": lambda v: v / 10,
@@ -85,7 +86,7 @@ class Report:
             raise ValueError("not a proofread report")
         data = pd.read_json(io.StringIO(json.dumps(obj["data"])), orient="split")
         surprise = pd.read_json(io.StringIO(json.dumps(obj["cell_surprise"])), orient="split")
-        issues = pd.DataFrame(obj["issues"])
+        issues = pd.DataFrame(obj["issues"]).reindex(columns=ISSUE_COLUMNS)
         return cls(data, issues, surprise, obj["label"], obj["meta"])
 
     def to_markdown(self, top: int = 15) -> str:
@@ -110,7 +111,7 @@ class Proofreader:
 
     def __init__(self, device: str = "auto", folds: int = 5, seed: int = 0, min_distinct: int = 11, fast: bool = False):
         """device: "auto" (CUDA if available, else CPU), "cpu", "cuda:N" or "mps".
-        fast: use the TabPFN-3.5-Fast checkpoint (lower latency; not part of the pre-registered benchmark)."""
+        fast: use the TabPFN-3.5-Fast checkpoint (see the measured trade-off in docs/VERSION_COMPARISON.md)."""
         if device == "auto":
             import torch
             device = "cuda:0" if torch.cuda.is_available() else "cpu"
@@ -223,7 +224,7 @@ class Proofreader:
                                      low=np.nan, high=np.nan, surprise=float(info["surprise"][i]),
                                      cause=self._category_cause(df[c], df.at[i, c], info["p_recorded"][i], info["suggested"][i], info["p_top"][i]),
                                      evidence=""))
-        issues = pd.DataFrame(recs, columns=["kind", "row", "column", "value", "suggested", "low", "high", "surprise", "cause", "evidence"])
+        issues = pd.DataFrame(recs, columns=ISSUE_COLUMNS)
         issues = issues.sort_values("surprise", ascending=False).head(max_issues).reset_index(drop=True)
         meta = {"model": "TabPFN-3.5-Fast" if self.fast else "TabPFN-3.5", "device": self.device,
                 "patterns": patterns, "columns_checked": len(cont), "categorical_columns_checked": len(cat_cols), "folds": self.folds, "seconds": time.time() - t0, "n": n, "threshold": threshold}

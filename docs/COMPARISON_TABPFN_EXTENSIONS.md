@@ -17,7 +17,7 @@ Only the unsupervised module overlaps with TabLint.
 | Likely-cause hints | No | ×10 / ÷10 / ×1000 slips, swapped digits, sign flip, 0-for-missing, placeholder codes |
 | Label errors | No | Yes (out-of-fold probability of the recorded label) |
 | Output | Tensor of log-densities | Ranked issue table, Markdown report, highlighted HTML, JSON, app, MCP tools |
-| GPU in tabpfn 9.1.0 | `outliers` crashes on CUDA (`docs/KNOWN_ISSUES.md`) | Works (CPU and CUDA) |
+| GPU in tabpfn 9.1.0 | `outliers` crashes on CUDA ([bug report](bugs/TABPFN_EXTENSIONS_CUDA_DTYPE.md)) | Works (CPU and CUDA) |
 
 ## Measured head-to-head: 12 datasets × 5 seeds
 

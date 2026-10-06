@@ -8,7 +8,7 @@ import os
 import threading
 from pathlib import Path
 
-REPORTS = Path(os.environ.get("PROOFREAD_REPORT_DIR", "results/proofread_demos")).resolve()
+REPORTS = Path(os.environ.get("PROOFREAD_REPORT_DIR", "demo/video")).resolve()
 BENCH = Path(os.environ.get("PROOFREAD_BENCHMARK", "results/proofread/summary.json")).resolve()
 _LOCK = threading.Lock()
 

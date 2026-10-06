@@ -10,7 +10,7 @@ The hypotheses and scoring rules were specified before running; the retained sco
 
 **Labels (H7):** TabPFN-3.5 beats the best of 4 baselines on **11/12**; mean AUROC gain +0.014 [+0.006, +0.023], p = 0.0034 — supported.
 
-![Numerical benchmark](figures/proofread_hero.png)
+![Numerical benchmark](figures/tablint_benchmark_numerical.png)
 
 ## H6: cell errors (3% of cells corrupted; 5 error types)
 
@@ -32,8 +32,6 @@ Precision@k is the share of the top k flagged cells that are injected errors, wh
 | wilt | 0.74 | hgb_quantile | 0.54 | +0.20 | 0.957 | 0.939 | 0.42 | 0.62 | 0.69 | 0.65 |
 
 **Distribution ablation:** predictive tail surprise beats the same TabPFN model’s point residual on 12/12 datasets; mean precision@k 73.9% vs 55.7%.
-
-![Detection by injected error type](figures/proofread_error_types.png)
 
 | Error type | zscore | iforest | ridge | knn | rf | hgb | hgb_quantile | tabpfn_pit |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -97,8 +95,6 @@ The optional `tabpfn-extensions` detector uses ten feature permutations and fits
 Threshold 2 is the product default. This operating point differs from precision@k and was selected after the original threshold analysis.
 
 ## Real-data context and limitations
-
-The stored [Pima report](../results/proofread_demos/pima_real.json) illustrates known impossible zeros and placeholder patterns. The [familiar-dataset gallery](FAMOUS_DATASETS.md) separates verified, unusual and unverified findings, including missed known errors.
 
 - Corruptions are synthetic; real-world error mixes and relationships differ.
 - These numerical experiments check continuous columns with more than ten distinct values. [Categorical checks](CATEGORICAL_RESULTS.md) are a separate experiment.

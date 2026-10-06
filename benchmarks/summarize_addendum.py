@@ -1,4 +1,4 @@
-"""Analysis fixed in docs/PROOFREAD_ADDENDUM_PREREG.md. Writes results/proofread_addendum/summary.json."""
+"""Retained benchmark implementation; methodology and scope: docs/BENCHMARKS.md and docs/BENCHMARK_AMENDMENT.md."""
 import json, sys
 from collections import defaultdict
 from pathlib import Path

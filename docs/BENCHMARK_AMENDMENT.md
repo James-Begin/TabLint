@@ -8,14 +8,6 @@ Affected raw run files have been removed from the current tree. Every summary, c
 
 The hypotheses, injection procedure and scoring rules were specified before the original runs. The retained dataset scope was amended after analysis, and should not be described as a new, prospectively registered 12-dataset experiment. Bootstrap intervals and p-values are conditional on the retained scope and do not model uncertainty about the execution-error exclusions. Independent replication remains useful.
 
-The historical protocol documents were removed from the current tree during repository cleanup. Their original versions remain identifiable in Git history by these SHA-256 prefixes:
-
-| Original protocol | SHA-256 prefix |
-| --- | --- |
-| Numerical and label confirmation | `68d76e6ab0da2d86` |
-| Baseline and threshold addendum | `60c7ed47a4253c9c` |
-| Model-version comparison | `3f5202dfb4b72004` |
-
-The current scripts and this amendment document the retained scope. The categorical and familiar-dataset experiments are unchanged.
+The current scripts, stored run metadata and methodology describe the retained scope. Historical protocol drafts are not distributed in this submission snapshot. The categorical experiment is unchanged. The repository has been consolidated to one commit for submission; this snapshot does not offer a Git-history record of pre-run registration.
 
 [Current benchmark results](BENCHMARKS.md) · [Numerical and label results](PROOFREAD_RESULTS.md) · [Version comparison](VERSION_COMPARISON.md)

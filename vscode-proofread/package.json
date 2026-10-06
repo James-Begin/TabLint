@@ -50,7 +50,7 @@
         "proofread.threshold": {
           "type": "number",
           "default": 2,
-          "description": "Minimum surprise (\u2212log10 tail probability) to flag a cell. 2 \u2248 88% precision / 53% recall; 3 \u2248 95% / 19% (benchmark)."
+          "description": "Minimum surprise (\u2212log10 tail probability) to flag a cell. 2 \u2248 87% precision / 57% recall; 3 \u2248 94% / 20% (benchmark)."
         },
         "proofread.labelColumn": {
           "type": "string",

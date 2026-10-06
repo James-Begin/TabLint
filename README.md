@@ -13,7 +13,7 @@
 
 TabLint finds values that look ordinary in a column but suspicious **for their row**. It uses TabPFN-3.5 to check numerical cells, categorical values and labels, explains each flag, and helps you review a suggested correction.
 
-Review suspicious values in your own pandas DataFrame, inspect TabPFN’s reasoning, and return a cleaned table without leaving Jupyter.
+Review suspicious values in your own pandas DataFrame, inspect model expectations and possible-cause hints, and return a cleaned table without leaving Jupyter.
 
 ## Demo
 
@@ -146,6 +146,18 @@ For each column, TabLint asks TabPFN to predict a cell from the other columns. I
 
 A flag means **check the source record**, not a confirmed error. Surprise scores rank anomalies; they are not calibrated probabilities that a value is wrong. [Implementation](proofread/core.py) · [Technical and research overview](docs/RESEARCH_OVERVIEW.md)
 
+## Why TabPFN-3.5
+
+TabLint uses the **local Base checkpoint**; your table stays on your machine. TabPFN-3.5 supplies the predictions, while TabLint turns them into reviewable cell checks.
+
+| TabPFN-3.5 capability | How TabLint uses it |
+| --- | --- |
+| **One model for regression and classification** | Numerical values, categories and optional labels use the same foundation checkpoint. |
+| **Full predictive distributions** | Row-specific tail scores and plausible ranges; distribution scoring reached **73.9% precision@k**, versus **55.7%** for the same model’s point residual in our retained benchmark. |
+| **Base and Fast local weights** | Choose `df.tablint.view(fast=True)` or CLI `--fast`. Fast was **2.7× faster** at the median, with a **0.5-point** mean precision@k reduction in our version comparison. |
+
+[TabPFN-3.5 release notes](https://docs.priorlabs.ai/changelog/tabpfn-3.5) · [Our model comparison](docs/VERSION_COMPARISON.md). In this small-table suite, 3.5 improved on v2 but did **not** show a statistically supported advantage over v3. A separate [retail benchmark handoff](docs/RETAIL_BENCHMARK_HANDOFF.md) explores descriptions, high-cardinality IDs and 100k+ contexts; those context features are not yet integrated into TabLint.
+
 ## Evidence
 
 In the retained numerical benchmark, TabLint beat each dataset's strongest tested alternative on **12/12 datasets**, averaging **+22.2 percentage points** in precision@k. In the categorical confirmation experiment, it won on **10/10 datasets**, averaging **+6.2 points**.
@@ -155,8 +167,6 @@ In the retained numerical benchmark, TabLint beat each dataset's strongest teste
 Precision@k is the share of the top k flagged cells that are injected errors, with k equal to the number of injected errors. Two numerical dataset executions were excluded after reported test errors; [the amendment](docs/BENCHMARK_AMENDMENT.md) documents the revised 12-dataset scope. These tests use synthetic corruptions on public tables; they do not guarantee performance on a new dataset.
 
 [Benchmark graphs and methodology](docs/BENCHMARKS.md) · [Numeric results](docs/PROOFREAD_RESULTS.md) · [Categorical results](docs/CATEGORICAL_RESULTS.md) · [Scope amendment](docs/BENCHMARK_AMENDMENT.md) · [Model comparison](docs/VERSION_COMPARISON.md)
-
-A separate [local CPU retail experiment](docs/RETAIL_CPU_BENCHMARK.md) explores product descriptions, stock/customer IDs and larger contexts across TabPFN versions. This is a model capability study; these additional context columns are not yet passed through by TabLint.
 
 During baseline benchmarking, we documented a CUDA float32/float64 crash in `tabpfn-extensions`. The [bug report](docs/bugs/TABPFN_EXTENSIONS_CUDA_DTYPE.md) includes reproduction steps, affected versions, the benchmark workaround and a proposed upstream fix. It affects the optional extension baseline; TabLint's normal inference uses a different scoring path.
 
@@ -173,8 +183,8 @@ Independent columns provide little context for this approach; high-cardinality i
 | [Benchmarks](benchmarks/) / [results](results/) | Reproduction scripts and measured artifacts |
 | [Contributing](CONTRIBUTING.md) | Development and verification commands |
 
-Built for the TabPFN hackathon. The repository contains the product, its tests, reproducible benchmark evidence and the editable showcase source.
+Built for the TabPFN hackathon. The repository contains the product, its tests, reproducible benchmark evidence and the approved showcase video.
 
 ## License
 
-Code: **[Apache-2.0](LICENSE)**. [Auto MPG demo data](demo/video/README.md): UCI, CC BY 4.0. TabPFN weights, dependencies and bundled fonts retain their own licenses; weights are not redistributed. [Notices](NOTICE).
+Code: **[Apache-2.0](LICENSE)**. [Auto MPG demo data](demo/video/README.md): UCI, CC BY 4.0. TabPFN weights, dependencies and video typefaces retain their own licenses; weights are not redistributed. [Notices](NOTICE).

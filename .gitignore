@@ -14,7 +14,6 @@ vscode-proofread/out/
 vscode-proofread/.vscode-test/
 vscode-proofread/*.vsix
 tests/js/node_modules/
-tests/js/package-lock.json
 data_cache/
 handoff/
 

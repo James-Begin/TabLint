@@ -1,4 +1,4 @@
-"""Pre-registered confirmation (docs/PROOFREAD_PREREG.md): experiments C (cells) and L (labels)."""
+"""Retained benchmark implementation; methodology and scope: docs/BENCHMARKS.md and docs/BENCHMARK_AMENDMENT.md."""
 import os
 for v in ('OMP_NUM_THREADS', 'OPENBLAS_NUM_THREADS', 'MKL_NUM_THREADS'):
     os.environ.setdefault(v, '2')

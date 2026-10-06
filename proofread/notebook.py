@@ -85,7 +85,7 @@ def _widget_class():
         @property
         def decisions(self) -> pd.DataFrame:
             """One row per issue with its current decision (open / accepted / dismissed)."""
-            df = pd.DataFrame(self.issues)[["kind", "row", "column", "value", "suggested", "surprise", "cause"]]
+            df = pd.DataFrame(self.issues).reindex(columns=["kind", "row", "column", "value", "suggested", "surprise", "cause"])
             df["decision"] = self.status
             return df
 

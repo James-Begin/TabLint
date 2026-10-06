@@ -19,4 +19,4 @@
 
 Notes: a swap to a category that is ordinary for the column and also compatible with the rest of the row is undetectable by any method, so absolute precision is lower than for numeric cells. Auto MPG was used for a development smoke test and is excluded. The typo hint ("possible typo of …") is a separate string heuristic and is not part of this test.
 
-Provenance: `proofread/core.py` was edited after launch (a guard for tables where a numeric column has no other columns to learn from). The functions this benchmark uses (`categorical_columns`, `categorical_scores`, `_version`) are byte-identical to the launched file, whose SHA-256 is in `results/categorical/protocol.json` (checked by AST comparison).
+Launch-time source fingerprints are stored in `results/categorical/protocol.json`. They identify original run files, not the current cleaned source. The original protocol draft and launch snapshot are not distributed here; fresh reproduction uses the current runner and frozen seeds.

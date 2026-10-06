@@ -82,3 +82,18 @@ def test_notebook_categorical_accept_and_undo():
     w.status = ["open"] * 3
     assert w.cleaned.at[3, "y"] == "x"
     assert report.data.at[3, "y"] == "x"
+
+
+def test_empty_report_roundtrip_and_notebook_export(tmp_path):
+    pytest.importorskip("anywidget")
+    report = make_report()
+    report.issues = report.issues.iloc[:0]
+    saved = report.save(tmp_path / "clean.json")
+    loaded = Report.load(saved)
+    assert "0 suspicious numeric cells" in loaded._repr_html_()
+    view = loaded.widget()
+    pd.testing.assert_frame_equal(view.cleaned, loaded.data)
+    assert view.decisions.empty
+    assert list(view.decisions.columns) == ["kind", "row", "column", "value", "suggested", "surprise", "cause", "decision"]
+    view.decisions.to_csv(tmp_path / "decisions.csv", index=False)
+    assert pd.read_csv(tmp_path / "decisions.csv").empty

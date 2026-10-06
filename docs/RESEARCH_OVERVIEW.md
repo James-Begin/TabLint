@@ -22,7 +22,6 @@ The [notebook widget](../proofread/notebook.py) returns a cleaned copy and curre
 | Comparison with the optional TabPFN unsupervised baseline; threshold analysis | [Baseline comparison](COMPARISON_TABPFN_EXTENSIONS.md) |
 | Detection of plausible categorical swaps | [Categorical results](CATEGORICAL_RESULTS.md) |
 | TabPFN-3.5, Fast, v3 and v2 comparison | [Model comparison](VERSION_COMPARISON.md) |
-| Findings on familiar, unmodified tables, including unverified flags and missed Iris errors | [Exploratory gallery](FAMOUS_DATASETS.md) |
 
 The [benchmark showcase](BENCHMARKS.md) presents all 12 retained numerical datasets and categorical results. Two dataset executions were excluded after reported test errors; [the amendment](BENCHMARK_AMENDMENT.md) documents the scope correction. Stored measurements are in [results/](../results/README.md).
 
@@ -31,7 +30,7 @@ The [benchmark showcase](BENCHMARKS.md) presents all 12 retained numerical datas
 From the repository root:
 
 ```sh
-uv sync --locked --extra notebook --extra demo
+uv sync --locked --extra notebook --extra demo --extra benchmark
 uv run pytest -q tests
 # Rebuild the showcase graphs from stored measurements; no inference.
 uv run --with matplotlib==3.11.2 python benchmarks/make_showcase_figures.py
@@ -53,7 +52,7 @@ Use a separate output directory: runners skip existing run files. See [benchmark
 - Independent columns give little predictive context. Sparse categories and high-cardinality text may have too little support; identifiers and free text are not checked as categories.
 - Runtime grows with columns and folds. CPU inference can take several minutes; the [model comparison](VERSION_COMPARISON.md) documents the tested Fast checkpoint.
 - The editor supports comma-separated CSVs with one record per line. Notebook and terminal review semantics differ from the persistent editor ledger; see [setup and export](GETTING_STARTED.md).
-- The optional `tabpfn-extensions` benchmark baseline required a float64 workaround on CUDA. The [bug report](bugs/TABPFN_EXTENSIONS_CUDA_DTYPE.md) and [known issues](KNOWN_ISSUES.md) document the effect and validation limits. TabLint’s normal scoring uses a different path.
+- The optional `tabpfn-extensions` benchmark baseline required a float64 workaround on CUDA. The [bug report](bugs/TABPFN_EXTENSIONS_CUDA_DTYPE.md) document the effect and validation limits. TabLint’s normal scoring uses a different path.
 
 ## Data and licensing
 

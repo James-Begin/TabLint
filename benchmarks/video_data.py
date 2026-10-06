@@ -1,5 +1,5 @@
 """Auto MPG (UCI, CC BY 4.0, https://archive.ics.uci.edu/dataset/9/auto+mpg) loader for the demo video."""
-import io, shlex, urllib.request, zipfile
+import io, urllib.request, zipfile
 from pathlib import Path
 import pandas as pd
 

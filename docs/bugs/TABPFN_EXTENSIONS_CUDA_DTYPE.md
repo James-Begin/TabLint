@@ -10,7 +10,7 @@ With `tabpfn==9.1.0` and `tabpfn-extensions==0.6.3`, calling `TabPFNUnsupervised
 
 This blocked the optional TabPFN extension baseline during TabLint's benchmark work. TabLint's normal numerical checks use TabPFN directly and call the predictive distribution's `cdf` method; they do not call the extension's failing `outliers()` path. The extension is an optional benchmark dependency, not a requirement for normal TabLint setup.
 
-The same dtype failure was recorded in the extension's conditional randomization test. A separate synthetic-data device mismatch is outside this report; see the [feature survey](../KNOWN_ISSUES.md#survey-other-tabpfn-extensions-features-on-gpu).
+The same dtype failure was recorded in the extension's conditional randomization test. This report focuses on the outlier baseline used in this project.
 
 ## Recorded environment
 
@@ -25,7 +25,7 @@ The same dtype failure was recorded in the extension's conditional randomization
 | CPU control | Masked assignment and extension outlier example succeed |
 | CUDA result | Both tested PyTorch environments reject the masked assignment |
 
-The second environment checks the underlying tensor operation, not a second complete extension installation. Full hardware and OS metadata were not preserved with the original notes. [Original observations](../KNOWN_ISSUES.md).
+The second environment checks the underlying tensor operation, not a second complete extension installation. Full hardware and OS metadata were not preserved with the original notes.
 
 ## Reproduction
 
@@ -103,6 +103,6 @@ Suggested regression checks:
 
 The optional baseline wrapper converts the returned logits to float64, causing the extension to convert its targets to float64 too. This makes their dtype match the borders. See [`ext_regressor`](../../benchmarks/proofread_addendum.py#L21-L36).
 
-The upcast preserves the represented logits but can change subsequent density calculations through increased arithmetic precision. It is not the same operation as the CPU scalar cast, and no universal bound on score differences is asserted. The benchmark method and settings were retained; the compatibility adjustment is disclosed in the [benchmark scope amendment](../BENCHMARK_AMENDMENT.md) and [known-issue corrections](../KNOWN_ISSUES.md).
+The upcast preserves the represented logits but can change subsequent density calculations through increased arithmetic precision. It is not the same operation as the CPU scalar cast, and no universal bound on score differences is asserted. The benchmark method and settings were retained; the compatibility adjustment is disclosed in the [benchmark scope amendment](../BENCHMARK_AMENDMENT.md).
 
 The pinned source and tensor operation were checked while preparing this report. The CPU control succeeds locally; CUDA is unavailable here. The proposed patch has not been validated on CUDA or MPS during this documentation update.

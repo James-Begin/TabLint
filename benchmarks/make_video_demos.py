@@ -8,7 +8,6 @@ Usage: CUDA_VISIBLE_DEVICES=0 PYTHONPATH=. uv run python benchmarks/make_video_d
 """
 import json
 from pathlib import Path
-import numpy as np
 from benchmarks.video_data import load_auto_mpg
 from proofread import Proofreader
 
@@ -62,7 +61,7 @@ rep.meta["ground_truth"] = [{"row": k["row"], "column": k["column"], "kind": k["
                             for k in key if k["planted"] and isinstance(k["true_value"], (int, float))]
 rep.save(OUT / "auto_mpg_dirty.proofread.json")
 (OUT / "answer_key.json").write_text(json.dumps(key, indent=2, default=str))
-print(f"clean table: top issues")
+print("clean table: top issues")
 for r in rep_clean.issues.head(6).itertuples():
     print(f"  {r.surprise:4.1f} row {r.row:3d} {clean.at[r.row, 'car']:30s} {r.column:12s} {r.value!s:>8.6} -> {r.suggested!s:>8.6}")
 print(f"dirty table: {len(rep.issues)} issues listed; planted + real errors:")

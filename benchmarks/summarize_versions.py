@@ -1,4 +1,4 @@
-"""Analysis fixed in docs/VERSION_COMPARISON_PREREG.md -> results/version_compare/summary.json + docs/VERSION_COMPARISON.md"""
+"""Retained benchmark implementation; methodology and scope: docs/BENCHMARKS.md and docs/BENCHMARK_AMENDMENT.md."""
 import json, sys
 from collections import defaultdict
 from pathlib import Path

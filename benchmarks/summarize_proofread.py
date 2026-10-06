@@ -1,4 +1,4 @@
-"""Pre-registered analysis for docs/PROOFREAD_PREREG.md (H6 cells, H7 labels). Writes summary.json + analysis.txt."""
+"""Retained benchmark implementation; methodology and scope: docs/BENCHMARKS.md and docs/BENCHMARK_AMENDMENT.md."""
 import json, sys
 from collections import defaultdict
 from pathlib import Path

@@ -67,7 +67,7 @@ This averages the absolute distance from the original clean value on injected er
 
 TabLint scores the recorded value against TabPFN's predictive distribution. Using its tail-surprise score beats a score based on the same model's point-prediction residual on **12/12 numerical datasets**: mean precision@k **73.9% versus 55.7%**.
 
-![Predictive distribution scoring versus the same TabPFN model's point residual: improved precision on all fourteen datasets](figures/tablint_benchmark_distribution.png)
+![Predictive distribution scoring versus the same TabPFN model's point residual: improved precision on all twelve retained datasets](figures/tablint_benchmark_distribution.png)
 
 This comparison changes the scoring rule while keeping the TabPFN predictions fixed. It isolates the contribution of distribution-based scoring; it is not a comparison with a different model or model version.
 

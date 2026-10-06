@@ -12,7 +12,7 @@ L = ['# TabLint: numerical and label results', '',
      'The hypotheses and scoring rules were specified before running; the retained scope was amended after analysis. '
      'All retained datasets are reported. Statistics are conditional on that scope.', '',
      '## Headline', '', S['headline'].replace('  \n', '\n\n'), '',
-     '![Numerical benchmark](figures/proofread_hero.png)', '',
+     '![Numerical benchmark](figures/tablint_benchmark_numerical.png)', '',
      '## H6: cell errors (3% of cells corrupted; 5 error types)', '',
      'Precision@k is the share of the top k flagged cells that are injected errors, where k is the number injected. '
      'The comparator is the strongest measured method per dataset, chosen after averaging seeds: robust z-score, '
@@ -31,7 +31,6 @@ for row in S['cells_table']:
     residual.append(np.mean([r['cells']['precision_at_k']['tabpfn_resid'] for r in runs]))
 L += ['', f"**Distribution ablation:** predictive tail surprise beats the same TabPFN model’s point residual on "
       f"{sum(a > b for a, b in zip(pit, residual))}/{len(pit)} datasets; mean precision@k {np.mean(pit):.1%} vs {np.mean(residual):.1%}.", '',
-      '![Detection by injected error type](figures/proofread_error_types.png)', '',
       '| Error type | ' + ' | '.join(k for k in S['by_error_type_auroc'][0] if k != 'error type') + ' |',
       '|---|' + '---:|' * (len(S['by_error_type_auroc'][0]) - 1)]
 for row in S['by_error_type_auroc']:
@@ -62,8 +61,6 @@ for t, v in A['a2_pooled'].items():
     L.append(f"| {float(t):g} | {v['precision']:.1%} | {v['recall']:.1%} | {v['flagged']} |")
 L += ['', 'Threshold 2 is the product default. This operating point differs from precision@k and was selected after the original threshold analysis.', '',
       '## Real-data context and limitations', '',
-      'The stored [Pima report](../results/proofread_demos/pima_real.json) illustrates known impossible zeros and placeholder patterns. '
-      'The [familiar-dataset gallery](FAMOUS_DATASETS.md) separates verified, unusual and unverified findings, including missed known errors.', '',
       '- Corruptions are synthetic; real-world error mixes and relationships differ.',
       '- These numerical experiments check continuous columns with more than ten distinct values. [Categorical checks](CATEGORICAL_RESULTS.md) are a separate experiment.',
       '- Each checked column costs five out-of-fold TabPFN fits; inference cost grows with table width.',

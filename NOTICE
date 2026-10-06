@@ -7,15 +7,15 @@ No model weights are redistributed. TabPFN-3.5 weights are downloaded by the
 TabPFN package through Prior Labs' model-license acceptance flow.
 
 Included production data: Auto MPG (R. Quinlan), UCI Machine Learning Repository,
-https://doi.org/10.24432/C5859H, CC BY 4.0. Derived tables in demo/video/ and
-showcase/storyboard/demo-data/ include deliberately planted errors; answer keys
+https://doi.org/10.24432/C5859H, CC BY 4.0. Derived tables in demo/video/ include deliberately planted errors; answer keys
 and attribution are preserved beside them. Other benchmark tables are fetched
 by the reproduction scripts; their source pages specify their licenses.
 
 Original measured benchmark artifacts are preserved for reproducibility.
 Earlier machine-specific paths in stored artifacts were changed to relative
-paths without changing measurements; historical provenance remains in Git.
+paths without changing measurements. The benchmark scope amendment records
+the retained experimental scope and analysis corrections.
 
-Bundled fonts retain their licenses in showcase/public/fonts/ and
-showcase/storyboard/assets/. The product soundtrack is original generated music
+The video uses Inter and IBM Plex Mono; no font binaries are redistributed.
+The product soundtrack is original generated music
 with no sampled recordings. See demo/showcase/README.md for video provenance.

@@ -5,7 +5,8 @@ Start with [Getting started](docs/GETTING_STARTED.md). Keep the product name **T
 ## Python
 
 ```sh
-uv sync --locked --extra notebook
+uv sync --locked --extra notebook --extra demo
+uv run python scripts/verify_submission.py
 uv run pytest -q tests
 uv run --extra notebook python scripts/rehearse_notebook.py --prepare-only
 ```
@@ -27,13 +28,9 @@ The integration test downloads VS Code into its test cache and uses a temporary 
 
 ```sh
 cd tests/js
-npm install
+npm ci
 npm test
 ```
-
-## Showcase
-
-The approved video and editable source live in [showcase/](showcase/). Preserve measured numerical values, categorical provenance, row/cell anchors and consistent reading holds. Render and inspect encoded frames after visual changes.
 
 ## Pull requests and issues
 

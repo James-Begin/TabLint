@@ -3,7 +3,7 @@
 Usage:
     CUDA_VISIBLE_DEVICES=0 uv run --extra baselines python scripts/repro_tabpfn_extensions_cuda_dtype.py   # crashes
     CUDA_VISIBLE_DEVICES=""  uv run --extra baselines python scripts/repro_tabpfn_extensions_cuda_dtype.py  # works
-See docs/KNOWN_ISSUES.md.
+See docs/bugs/TABPFN_EXTENSIONS_CUDA_DTYPE.md.
 """
 import torch
 

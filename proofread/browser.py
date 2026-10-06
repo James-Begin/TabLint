@@ -15,7 +15,7 @@ import streamlit as st
 ROOT = Path(__file__).resolve().parents[1]
 from proofread.core import Report
 
-DEMOS = Path(os.environ.get("PROOFREAD_DEMO_DIR", ROOT / "results" / "proofread_demos"))
+DEMOS = Path(os.environ.get("PROOFREAD_DEMO_DIR", ROOT / "demo" / "video"))
 BENCH = ROOT / "results" / "proofread" / "summary.json"
 
 st.set_page_config(page_title="TabLint · TabPFN-3.5", layout="wide")
@@ -41,8 +41,14 @@ def main():
     st.title("TabLint")
     st.caption("Spellcheck for tables. TabPFN-3.5 predicts every cell from the rest of its row and underlines values that "
                "fall far outside its predictive distribution — then suggests the likely fix.")
-    files = sorted(DEMOS.glob("*.json"))
-    tab_check, tab_bench, tab_how = st.tabs(["Check a table", "Benchmark (pre-registered)", "How it works"])
+    files = []
+    for path in sorted(DEMOS.glob("*.json")):
+        try:
+            load(str(path))
+        except (ValueError, KeyError):
+            continue  # answer keys and unrelated JSON files are not reports
+        files.append(path)
+    tab_check, tab_bench, tab_how = st.tabs(["Check a table", "Benchmark", "How it works"])
     with tab_check:
         _check_table(files)
     with tab_bench:

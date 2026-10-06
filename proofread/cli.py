@@ -21,8 +21,10 @@ def _check(a):
     rep = Proofreader(device=a.device, folds=a.folds, fast=a.fast).check(df, label=a.label, threshold=a.threshold, max_issues=a.max_issues,
                                                                          categorical=not a.no_categorical)
     out = Path(a.out)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    report_path = Path(a.report) if a.report else out.with_suffix(".json")
     rep.meta["source_file"] = Path(a.csv).name
-    rep.save(Path(a.report) if a.report else out.with_suffix(".json"))
+    rep.save(report_path)
     out.with_suffix(".md").write_text(rep.to_markdown(a.show))
     rep.issues.to_csv(out.with_suffix(".issues.csv"), index=False)
     try:
@@ -30,7 +32,7 @@ def _check(a):
     except Exception as e:  # jinja2 missing etc.
         print("html export skipped:", e)
     print(rep.to_markdown(a.show))
-    print(f"\nwrote {out.with_suffix('.json')}, .md, .issues.csv, .html  ({rep.meta['seconds']:.0f}s)")
+    print(f"\nwrote {report_path}, {out.with_suffix('.md')}, {out.with_suffix('.issues.csv')}, {out.with_suffix('.html')}  ({rep.meta['seconds']:.0f}s)")
 
 
 def main(argv=None):
