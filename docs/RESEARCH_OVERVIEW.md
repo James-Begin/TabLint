@@ -24,7 +24,7 @@ The [notebook widget](../proofread/notebook.py) returns a cleaned copy and curre
 | TabPFN-3.5, Fast, v3 and v2 comparison | [Model comparison](VERSION_COMPARISON.md) |
 | Findings on familiar, unmodified tables, including unverified flags and missed Iris errors | [Exploratory gallery](FAMOUS_DATASETS.md) |
 
-The [benchmark showcase](BENCHMARKS.md) presents the selected 12-dataset numerical view and categorical results. Complete numerical evidence retains all 14 datasets, including the loss on climate-crashes. The [pre-registration index](PREREGISTRATIONS.md) records the original protocol hashes and links each protocol to its results. Stored measurements are in [results/](../results/README.md).
+The [benchmark showcase](BENCHMARKS.md) presents the selected 12-dataset numerical view and categorical results.
 
 ## Reproduce
 
