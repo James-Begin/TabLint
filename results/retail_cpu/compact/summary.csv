@@ -1,0 +1,6 @@
+train_rows,model,ablation,completed,attempted,precision_at_k,auroc,clean_log_mae,injected_error_log_mae_after,wall_seconds,peak_rss_gib
+100001,V2,full,0,1,,,,,,
+100001,V3,full,0,1,,,,,,
+100001,V3_5,full,0,1,,,,,,
+100001,V3_5_FAST,full,0,1,,,,,,
+100001,sku_median_mad,full,1,1,0.7419354838709677,0.9803787804957282,0.2083416911323176,0.1353677553593131,,

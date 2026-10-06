@@ -1,0 +1,69 @@
+{
+  "status": "ok",
+  "model": "V3",
+  "seed": 1101,
+  "ablation": "full",
+  "config_sha256": "e53c67c831dbd35d6b71d3350596c79c81bdcf7e253a7f18dbf79e5e628c43d9",
+  "device": "cpu",
+  "n_estimators_requested": 1,
+  "preprocessing": {
+    "TRANSFORM_TEXT": true,
+    "TRANSFORM_DATES": true,
+    "SUBSAMPLE_SAMPLES": null
+  },
+  "train_rows": 10000,
+  "test_rows": 1024,
+  "errors": 31,
+  "split_sha256": "1953e9416697670a7d4d9d1bff09f2d25a849770d4e68d4dcc5faf69a97db64e",
+  "training_stock_codes": 2476,
+  "training_customers": 2897,
+  "training_descriptions": 2653,
+  "test_seen_sku_fraction": 0.7841796875,
+  "train_last_date": "2011-07-31 15:50:00",
+  "test_first_date": "2011-08-01 10:26:00",
+  "invoice_groups_disjoint": true,
+  "source_sha256": "572e36277c2390fbfde10664750731e0a86f55e33470d91919085f0408e67bfb",
+  "input_features": [
+    "StockCode",
+    "Description",
+    "Quantity",
+    "InvoiceDate",
+    "CustomerID",
+    "Country"
+  ],
+  "input_dtypes": {
+    "StockCode": "category",
+    "Description": "string",
+    "Quantity": "int64",
+    "InvoiceDate": "datetime64[us]",
+    "CustomerID": "category",
+    "Country": "category"
+  },
+  "checkpoint": "tabpfn-v3-regressor-v3_default.ckpt",
+  "fit_seconds": 0.29182604199741036,
+  "n_estimators_actual": 1,
+  "model_sample_limit": 1000000,
+  "model_subsample_samples": null,
+  "expanded_feature_count": 47,
+  "predict_seconds": 10.599985583001398,
+  "metrics": {
+    "precision_at_k": 0.5806451612903226,
+    "auroc": 0.9334048013513953,
+    "clean_log_mae": 0.2723656639444585,
+    "clean_price_mae": 1.824188471018949,
+    "injected_error_log_mae_before": 2.0700830331917888,
+    "injected_error_log_mae_after": 0.21705085780601416,
+    "recall_at_k_by_error": {
+      "multiply_10": 0.7272727272727273,
+      "divide_10": 0.7,
+      "price_swap": 0.3
+    },
+    "clean_80pct_interval_coverage": 0.6596173212487412
+  },
+  "wall_seconds": 13.308593499998096,
+  "peak_rss_gib": 3.8108673095703125,
+  "exit_code": 0,
+  "timeout_seconds": 240,
+  "rss_limit_gib": 8,
+  "recorded_at_utc": "2026-10-06T02:45:51.500040+00:00"
+}

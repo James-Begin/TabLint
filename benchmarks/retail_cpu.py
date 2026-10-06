@@ -1,7 +1,8 @@
-"""Resource-bounded CPU capability experiment on text and retail identifiers.
+"""Resource-bounded local capability experiment on text and retail identifiers.
 
 Run ``python -m benchmarks.retail_cpu --help``. This directly tests TabPFN,
-not the current TabLint context selector. No GPU or inference API is used.
+not the current TabLint context selector. CPU is the default; CUDA is optional.
+No inference API is used.
 """
 from __future__ import annotations
 
@@ -208,13 +209,13 @@ def worker(args):
         preprocessing.update(json.loads(COMPACT_PATH.read_text())["preprocessing_overrides"])
     Xtr, Xte, train, test, original, recorded, mask, kinds, meta = data
     rec = {"status": "running", "model": args.version, "seed": args.seed, "ablation": args.ablation,
-           "config_sha256": sha256(CONFIG_PATH), "device": "cpu", "n_estimators_requested": CONFIG["n_estimators"],
+           "config_sha256": sha256(CONFIG_PATH), "device": args.device, "n_estimators_requested": CONFIG["n_estimators"],
            "preprocessing": preprocessing, "runtime_profile": args.profile,
            "runner_sha256": sha256(__file__),
            "runtime_profile_sha256": sha256(COMPACT_PATH) if args.profile == "compact_text8" else None, **meta}
     write_json(args.record, rec)
     try:
-        reg = TabPFNRegressor.create_default_for_version(getattr(ModelVersion, args.version), device="cpu",
+        reg = TabPFNRegressor.create_default_for_version(getattr(ModelVersion, args.version), device=args.device,
             n_estimators=CONFIG["n_estimators"], random_state=args.seed,
             n_preprocessing_jobs=1, inference_config=preprocessing)
         rec["checkpoint"] = Path(reg.model_path).name
@@ -227,6 +228,7 @@ def worker(args):
         rec["model_sample_limit"] = reg.inference_config_.MAX_NUMBER_OF_SAMPLES
         rec["model_subsample_samples"] = reg.inference_config_.SUBSAMPLE_SAMPLES
         rec["expanded_feature_count"] = reg.inferred_feature_schema_.num_columns
+        rec["actual_devices"] = [str(d) for d in reg.devices_]
         write_json(args.record, rec)
         print(f"{args.version}: predict {len(test)} rows; fit {rec['fit_seconds']:.1f}s", flush=True)
         t = time.monotonic()
@@ -248,6 +250,9 @@ def worker(args):
         rec["error_type"] = type(exc).__name__
         rec["error"] = str(exc)
         print(f"{args.version}: {type(exc).__name__}: {exc}", flush=True)
+    if args.device.startswith("cuda") and torch.cuda.is_available():
+        rec["peak_gpu_allocated_gib"] = torch.cuda.max_memory_allocated(args.device) / 1024**3
+        rec["peak_gpu_reserved_gib"] = torch.cuda.max_memory_reserved(args.device) / 1024**3
     write_json(args.record, rec)
 
 
@@ -273,9 +278,18 @@ def run(args):
     if not (args.cache / "transactions.parquet").exists():
         raise ValueError("Prepare the dataset first with --prepare")
     args.out.mkdir(parents=True, exist_ok=True)
+    for existing in args.out.glob("*.json"):
+        prior = json.loads(existing.read_text())
+        if "model" in prior and prior["model"] != "sku_median_mad":
+            if prior.get("device", "cpu") != args.device or prior.get("runtime_profile", "standard") != args.profile:
+                raise ValueError("Use a fresh --out directory for a different device or runtime profile")
     hardware = {"platform": platform.platform(), "architecture": platform.machine(),
                 "logical_cpu_count": psutil.cpu_count(), "physical_cpu_count": psutil.cpu_count(logical=False),
-                "ram_gib": psutil.virtual_memory().total / 1024**3, "cpu_threads": CONFIG["cpu_threads"]}
+                "ram_gib": psutil.virtual_memory().total / 1024**3, "cpu_threads": CONFIG["cpu_threads"], "device": args.device}
+    if args.device.startswith("cuda"):
+        import torch
+        props = torch.cuda.get_device_properties(args.device)
+        hardware.update(gpu_name=props.name, gpu_vram_gib=props.total_memory / 1024**3, cuda_runtime=torch.version.cuda)
     import importlib.metadata as md
     hardware["packages"] = {p: md.version(p) for p in ["tabpfn", "torch", "pandas", "numpy", "skrub", "scikit-learn"]}
     write_json(args.out / "environment.json", hardware)
@@ -301,7 +315,7 @@ def run(args):
                         env[k] = str(CONFIG["cpu_threads"])
                     cmd = [sys.executable, "-m", "benchmarks.retail_cpu", "--worker", "--version", version,
                            "--rows", str(size), "--seed", str(seed), "--ablation", ablation,
-                           "--record", str(record), "--cache", str(args.cache), "--profile", args.profile]
+                           "--record", str(record), "--cache", str(args.cache), "--profile", args.profile, "--device", args.device]
                     log = record.with_suffix(".log")
                     start = time.monotonic()
                     peak = 0
@@ -318,7 +332,7 @@ def run(args):
                                     pass
                                 if time.monotonic() - start > args.timeout:
                                     stop = "timeout"
-                                elif peak > CONFIG["rss_limit_gib"] * 1024**3:
+                                elif peak > args.rss_limit_gib * 1024**3:
                                     stop = "memory_limit"
                                 if stop:
                                     proc.terminate()
@@ -335,14 +349,14 @@ def run(args):
                                 proc.wait()
                     rec = json.loads(record.read_text()) if record.exists() else {
                         "model": version, "train_rows": size, "seed": seed, "ablation": ablation,
-                        "config_sha256": sha256(CONFIG_PATH), "device": "cpu", "status": "process_error"}
+                        "config_sha256": sha256(CONFIG_PATH), "device": args.device, "status": "process_error"}
                     if stop:
                         rec["status"] = stop
                     elif rec.get("status") == "running":
                         rec["status"] = "process_error"
                     rec.update({"wall_seconds": time.monotonic() - start, "peak_rss_gib": peak / 1024**3,
                                 "exit_code": proc.returncode, "timeout_seconds": args.timeout,
-                                "rss_limit_gib": CONFIG["rss_limit_gib"], "recorded_at_utc": pd.Timestamp.now(tz="UTC").isoformat()})
+                                "rss_limit_gib": args.rss_limit_gib, "recorded_at_utc": pd.Timestamp.now(tz="UTC").isoformat()})
                     write_json(record, rec)
                     print(f"{version} {size} {seed} {ablation}: {rec['status']}, {rec['wall_seconds']:.1f}s, {rec['peak_rss_gib']:.2f} GiB", flush=True)
                     if rec.get("metrics"):
@@ -360,6 +374,8 @@ def main():
     ap.add_argument("--versions", type=lambda s: s.split(","), default=CONFIG["versions"])
     ap.add_argument("--ablations", type=lambda s: s.split(","), default=["full"])
     ap.add_argument("--timeout", type=int, default=CONFIG["timeout_seconds"])
+    ap.add_argument("--device", default="cpu", help="Explicit inference device, e.g. cpu or cuda:0")
+    ap.add_argument("--rss-limit-gib", type=float, default=CONFIG["rss_limit_gib"], help="Host worker RSS limit; GPU VRAM is recorded separately")
     ap.add_argument("--profile", choices=["standard", "compact_text8"], default="standard")
     ap.add_argument("--worker", action="store_true", help=argparse.SUPPRESS)
     ap.add_argument("--version", choices=CONFIG["versions"])

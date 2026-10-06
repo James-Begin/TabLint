@@ -9,6 +9,7 @@ These artifacts let reviewers inspect the measurements behind the submission and
 | [proofread_addendum/](proofread_addendum/) | 60 baseline/threshold runs and their analysis |
 | [version_compare/](version_compare/) | 60 model-version comparison runs and summary |
 | [famous/](famous/) | Exploratory real-table reports and source-check notes, including negative and unverified findings |
+| [retail_cpu/](retail_cpu/) | Local CPU capability pilot: descriptions, identifiers, scaling and resource-limit outcomes; distinct from current product integration |
 | [proofread_demos/](proofread_demos/) | Saved reports used by UI tests and production rehearsals; not additional benchmark evidence |
 
 [Graphs and interpretation](../docs/BENCHMARKS.md) · [Scope amendment](../docs/BENCHMARK_AMENDMENT.md) · [Reproduction commands](../benchmarks/README.md)

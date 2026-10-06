@@ -68,3 +68,19 @@ def test_sample_has_train_only_categories_and_matching_splits(tmp_path, monkeypa
     assert 'Description' not in no_text[0].columns
     assert full[-1]['invoice_groups_disjoint']
     assert full[-1]['train_rows'] == full[-1]['test_rows'] == 100
+
+
+def test_output_directory_cannot_mix_devices(tmp_path):
+    import json
+    from types import SimpleNamespace
+    import pytest
+    from benchmarks.retail_cpu import run
+    cache = tmp_path / 'cache'
+    cache.mkdir()
+    (cache / 'transactions.parquet').touch()
+    out = tmp_path / 'results'
+    out.mkdir()
+    (out / 'prior.json').write_text(json.dumps({'model': 'V3', 'device': 'cpu'}))
+    args = SimpleNamespace(cache=cache, out=out, device='cuda:0', profile='standard')
+    with pytest.raises(ValueError, match='fresh --out'):
+        run(args)

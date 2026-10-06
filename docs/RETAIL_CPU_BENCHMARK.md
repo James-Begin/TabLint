@@ -38,6 +38,51 @@ Dataset and model downloads require network access; inference is local CPU work.
 
 The retained [`dataset_profile.json`](../results/retail_cpu/dataset_profile.json) records the source and prepared-table hashes, actual cardinalities and split sizes. Run records include configuration/split hashes, input dtypes, completed training size, expanded feature count, model sample limit, actual estimator count and SKU coverage. This makes it possible to distinguish a 100k source dataset, a small sampled context and a completed 100k model run.
 
+The exploratory [compact text profile](../benchmarks/retail_compact_cpu.json) retained 100,001 context rows while reducing description SVD dimensions from 30 to 8. V3 and both 3.5 variants also exceeded the host-memory budget in that retry. Its [raw records](../results/retail_cpu/compact/) are kept separately and are not pooled into the standard-profile graph.
+
+## Continue on another machine
+
+The [handoff protocol](RETAIL_BENCHMARK_HANDOFF.md) includes CUDA/CPU commands, host-memory budget overrides, paired comparisons and ablations. The CUDA path is prepared but has not been validated locally.
+
 ## Results
 
-Results will be added after the CPU runs complete. No version-quality or 100k feasibility claim is made in advance.
+These are measurements using **cpu** and cached local checkpoints. They are a capability pilot, not evidence that the current TabLint UI accepts these context columns. Synthetic-error metrics concern only the injected errors; naturally unusual prices can also be flagged.
+
+| Context rows | Model | Completed / attempted | Precision@31 | AUROC | Clean log MAE ↓ | Worker seconds | Peak host RSS GiB |
+| ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| 1,000 | V2 | 1/1 | 0.484 | 0.939 | 0.423 | 7.1 | 2.36 |
+| 1,000 | V3 | 1/1 | 0.613 | 0.911 | 0.391 | 3.6 | 2.67 |
+| 1,000 | 3.5 Base | 1/1 | 0.484 | 0.934 | 0.367 | 4.6 | 3.15 |
+| 1,000 | 3.5 Fast | 1/1 | 0.516 | 0.944 | 0.370 | 3.1 | 2.66 |
+| 1,000 | SKU median/MAD | 1/1 | 0.387 | 0.894 | 0.513 | — | — |
+| 5,000 | V2 | 1/1 | 0.355 | 0.940 | 0.310 | 36.1 | 2.47 |
+| 5,000 | V3 | 1/1 | 0.548 | 0.963 | 0.295 | 6.6 | 2.74 |
+| 5,000 | 3.5 Base | 1/1 | 0.581 | 0.972 | 0.240 | 9.7 | 3.86 |
+| 5,000 | 3.5 Fast | 1/1 | 0.516 | 0.970 | 0.239 | 5.6 | 4.04 |
+| 5,000 | SKU median/MAD | 1/1 | 0.613 | 0.959 | 0.330 | — | — |
+| 10,000 | V2 | 1/1 | 0.419 | 0.930 | 0.270 | 117.0 | 3.69 |
+| 10,000 | V3 | 1/1 | 0.581 | 0.933 | 0.272 | 13.3 | 3.81 |
+| 10,000 | 3.5 Base | 1/1 | 0.613 | 0.970 | 0.205 | 20.4 | 4.71 |
+| 10,000 | 3.5 Fast | 1/1 | 0.581 | 0.965 | 0.201 | 10.2 | 5.84 |
+| 10,000 | SKU median/MAD | 1/1 | 0.710 | 0.965 | 0.268 | — | — |
+| 100,001 | V2 | 0/1 | — | — | — | — | — |
+| 100,001 | V3 | 0/1 | — | — | — | — | — |
+| 100,001 | 3.5 Base | 0/1 | — | — | — | — | — |
+| 100,001 | 3.5 Fast | 0/1 | — | — | — | — | — |
+| 100,001 | SKU median/MAD | 1/1 | 0.742 | 0.980 | 0.208 | — | — |
+
+**Incomplete attempts:**
+
+- V2 / 100,001 rows / seed 1101 / full: **error**, 3.6s, peak 0.95 GiB (when recorded). Number of samples `100,001` in the input data is greater than the maximum number of samples `10,000` officially supported by TabPFN. Set `ignore_pretraining_limits=True` to override this error!
+
+- V3 / 100,001 rows / seed 1101 / full: **memory_limit**, 28.0s, peak 8.15 GiB (when recorded).
+
+- 3.5 Base / 100,001 rows / seed 1101 / full: **memory_limit**, 60.2s, peak 8.71 GiB (when recorded).
+
+- 3.5 Fast / 100,001 rows / seed 1101 / full: **memory_limit**, 18.4s, peak 8.57 GiB (when recorded).
+
+![Local retail comparison](figures/retail_cpu.png)
+
+Values average completed seeds; a seed range is descriptive, not a confidence interval. Missing or timed-out models are not assigned scores. Paired quality claims require the same completed seeds at the same context size. Wall time includes worker startup, loading the prepared data and loading cached weights; downloads are excluded. Runtime of the SKU baseline is not directly comparable to the end-to-end model worker because it is measured in the parent process and omitted from that chart.
+
+[Raw measurements](../results/retail_cpu/) · [Machine-readable summary](../results/retail_cpu/summary.csv)

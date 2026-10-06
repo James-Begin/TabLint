@@ -38,3 +38,16 @@ Summary scripts also regenerate their published documents where implemented; rev
 `famous_datasets.py` and `make_famous_gallery.py` produce the exploratory gallery, with source checks that distinguish verified errors from unusual or unverified values. `real_pima.py` checks known impossible-zero patterns.
 
 `make_demos.py`, `video_data.py`, `make_video_demos.py` and `make_tui_screenshot.py` prepare stored report fixtures and production assets. They support development and the video; user setup starts in [Jupyter](../docs/GETTING_STARTED.md).
+
+## CPU retail capability experiment
+
+The [retail experiment](../docs/RETAIL_CPU_BENCHMARK.md) compares local TabPFN checkpoints on short product descriptions, high-cardinality stock/customer identifiers and larger historical contexts. It is separate from the published small-table suite and the current TabLint context selector. No inference API is involved.
+
+```sh
+uv run --with openpyxl python -m benchmarks.retail_cpu --prepare
+uv run python -m benchmarks.retail_cpu --download
+uv run python -m benchmarks.retail_cpu --sizes 1000 --out results/reproduction/retail_cpu
+uv run --with matplotlib==3.11.2 python -m benchmarks.summarize_retail --root results/reproduction/retail_cpu
+```
+
+The summarizer writes the retail report and figure; use `--report` and `--figure` to choose alternative output paths. See the runner's `--help` and the frozen configuration for context sizes, ablations, seeds and per-worker resource limits. Raw input stays in `data_cache/`; structured output distinguishes completed, unsupported and resource-limited attempts.

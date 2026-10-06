@@ -1,0 +1,51 @@
+{
+  "status": "error",
+  "model": "V2",
+  "seed": 1101,
+  "ablation": "full",
+  "config_sha256": "e53c67c831dbd35d6b71d3350596c79c81bdcf7e253a7f18dbf79e5e628c43d9",
+  "device": "cpu",
+  "n_estimators_requested": 1,
+  "preprocessing": {
+    "TRANSFORM_TEXT": true,
+    "TRANSFORM_DATES": true,
+    "SUBSAMPLE_SAMPLES": null
+  },
+  "train_rows": 100001,
+  "test_rows": 1024,
+  "errors": 31,
+  "split_sha256": "185f515678b4d0bf5760017a67dbc36b3468e8fc53b5efb06ea2807417dfce56",
+  "training_stock_codes": 3923,
+  "training_customers": 4806,
+  "training_descriptions": 4302,
+  "test_seen_sku_fraction": 0.8876953125,
+  "train_last_date": "2011-07-31 16:04:00",
+  "test_first_date": "2011-08-01 10:26:00",
+  "invoice_groups_disjoint": true,
+  "source_sha256": "572e36277c2390fbfde10664750731e0a86f55e33470d91919085f0408e67bfb",
+  "input_features": [
+    "StockCode",
+    "Description",
+    "Quantity",
+    "InvoiceDate",
+    "CustomerID",
+    "Country"
+  ],
+  "input_dtypes": {
+    "StockCode": "category",
+    "Description": "string",
+    "Quantity": "int64",
+    "InvoiceDate": "datetime64[us]",
+    "CustomerID": "category",
+    "Country": "category"
+  },
+  "checkpoint": "tabpfn-v2-regressor.ckpt",
+  "error_type": "TabPFNValidationError",
+  "error": "Number of samples `100,001` in the input data is greater than the maximum number of samples `10,000` officially supported by TabPFN. Set `ignore_pretraining_limits=True` to override this error!",
+  "wall_seconds": 3.5595508749975124,
+  "peak_rss_gib": 0.9488525390625,
+  "exit_code": 0,
+  "timeout_seconds": 240,
+  "rss_limit_gib": 8,
+  "recorded_at_utc": "2026-10-06T02:46:26.110821+00:00"
+}
