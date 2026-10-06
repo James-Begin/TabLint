@@ -21,8 +21,6 @@ https://github.com/user-attachments/assets/8a850f7f-b17a-4e3a-82a1-bee73d5cfe09
 
 **[Open or download the full MP4 showcase](https://github.com/James-Begin/TabLint/raw/refs/heads/main/demo/showcase/TabLint-demo.mp4)** · 1:28 · 1080p · 30 fps with audio
 
-The video illustrates the editor integration. Numerical examples use saved inference results; the specific USA → Japan suggestion is illustrative. [Video provenance](demo/showcase/README.md).
-
 ## Set up in Jupyter
 
 ### Already using a notebook?
@@ -172,7 +170,6 @@ Independent columns provide little context for this approach; high-cardinality i
 | [Notebook integration](proofread/notebook.py) | Interactive review and cleaned pandas DataFrames |
 | [VS Code extension](vscode-proofread/) | Optional editor workflow and persistent ledger |
 | [Python engine](proofread/) | Inference, reports, terminal and notebook interfaces |
-| [Showcase](showcase/) | Video production source and attributed example data |
 | [Benchmarks](benchmarks/) / [results](results/) | Reproduction scripts and measured artifacts |
 | [Contributing](CONTRIBUTING.md) | Development and verification commands |
 
