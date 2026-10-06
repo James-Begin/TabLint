@@ -7,6 +7,7 @@ import json
 from pathlib import Path
 import re
 import subprocess
+import sys
 from urllib.parse import unquote, urlsplit
 import xml.etree.ElementTree as ET
 import zipfile
@@ -64,6 +65,20 @@ def main():
         elif suite != "categorical" and set(grouped) != numerical_datasets:
             errors.append(f"{suite}: numerical dataset scope differs")
 
+    sys.path.insert(0, str(ROOT))
+    from benchmarks.summarize_high_cardinality import load_records, summarize
+    try:
+        records = load_records(ROOT / "results/high_cardinality", verify_hashes=True)
+        if summarize(records) != json.loads((ROOT / "results/high_cardinality/summary.json").read_text()):
+            errors.append("High-cardinality summary differs from its 15 original result files")
+        protocol = ROOT / "benchmarks/high_cardinality_protocol"
+        provenance = json.loads((protocol / "provenance.json").read_text())
+        for filename, key in (("PROTOCOL.md", "protocol_sha256"), ("requirements.txt", "requirements_sha256")):
+            if hashlib.sha256((protocol / filename).read_bytes()).hexdigest() != provenance[key]:
+                errors.append(f"Original high-cardinality {filename} checksum differs")
+    except (ValueError, KeyError) as exc:
+        errors.append(f"High-cardinality evidence: {exc}")
+
     export = json.loads((ROOT / "demo/showcase/export.json").read_text())
     video = ROOT / "demo/showcase" / export["file"]
     if hashlib.sha256(video.read_bytes()).hexdigest() != export["sha256"]:
@@ -82,7 +97,8 @@ def main():
 
     if errors:
         raise SystemExit("\n".join(errors))
-    print(f"Checked {len(files)} files, local documentation links, 230 benchmark runs, MP4 checksum and VSIX manifest.")
+    print(f"Checked {len(files)} files, local documentation links, 230 original benchmark runs, "
+          "15 high-cardinality tables (60 arms), MP4 checksum and VSIX manifest.")
 
 
 if __name__ == "__main__":

@@ -37,6 +37,24 @@ Summary scripts also regenerate their published documents where implemented; rev
 
 `video_data.py` and `make_video_demos.py` prepare the canonical Auto MPG data and reports in [demo/video/](../demo/video/README.md). These support production rehearsals and UI checks. User setup starts in [Jupyter](../docs/GETTING_STARTED.md).
 
+## High-cardinality CPU comparison
+
+The [supplied three-dataset study](../docs/HIGH_CARDINALITY_RESULTS.md) compares v3 and 3.5 with and without additional identity context. All 15 tables and 60 model/context records are included. Rebuild its separate graph and summary without inference:
+
+```sh
+uv run --with matplotlib==3.11.2 python -m benchmarks.summarize_high_cardinality
+```
+
+Fresh runs require the archived **TabPFN 9.0.0** environment, separate from the product's 9.1.0 environment. The portable runner checks the supplied dependency pins and retains the original category-cap defaults:
+
+```sh
+OMP_NUM_THREADS=4 uv run --no-project --python 3.12 \
+  --with-requirements benchmarks/high_cardinality_protocol/requirements.txt \
+  python -m benchmarks.high_cardinality --out results/reproduction/high_cardinality
+```
+
+Use `--datasets auto_mpg --seeds 1001 --out results/reproduction/high_cardinality_smoke` for one table. Model access and public-data downloads are required; CPU runs may take hours. [Protocol](high_cardinality_protocol/PROTOCOL.md) · [Original checksums](high_cardinality_protocol/provenance.json) · [Methods and preprocessing caveat](../docs/HIGH_CARDINALITY_RESULTS.md#important-preprocessing-distinction). The original upload lacks fitted feature schemas and sample hashes; new reproductions record sample hashes and refuse mixed configurations.
+
 ## CPU retail capability experiment
 
 The [retail experiment](../docs/RETAIL_CPU_BENCHMARK.md) compares local TabPFN checkpoints on short product descriptions, high-cardinality stock/customer identifiers and larger historical contexts. It uses historical training references and package text/date preprocessing, separate from the small-table suite and TabLint's sorted categorical-context codes. No inference API is involved.

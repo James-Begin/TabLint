@@ -27,3 +27,7 @@ TabLint cell-error benchmark, fresh seeds 801–805, 12 datasets, 60 tables; sam
 | wilt | 0.69 | 0.72 | 0.72 | 0.73 | 14 | 5 |
 
 v2.5 and v2.6 were excluded before running (their weights need an interactive license acceptance). Timings are wall-clock on NVIDIA A10G GPUs, one process per GPU; they include model loading per fit, which affects all versions.
+
+## Separate high-cardinality CPU study
+
+A later [three-dataset study](HIGH_CARDINALITY_RESULTS.md) compares v3 and 3.5 with and without added identity context. With that context, mean precision@k is **81.3% for 3.5 versus 79.1% for v3** (+2.2 points across 15 table pairs). The study uses TabPFN 9.0.0 defaults and repeated seeds within three selected datasets; it tests retained codes, not semantic text, 100k-row quality or the product's updated category-cap override. Its evidence is separate from the unchanged suite above.

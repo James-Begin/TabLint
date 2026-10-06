@@ -1,0 +1,206 @@
+{
+  "tables": 15,
+  "arm_records": 60,
+  "datasets": 3,
+  "seeds": [
+    1001,
+    1002,
+    1003,
+    1004,
+    1005
+  ],
+  "test_unit": "dataset/seed table pairs; repeated seeds within three datasets",
+  "per_dataset": [
+    {
+      "dataset": "auto_mpg",
+      "n": 392,
+      "seeds": 5,
+      "errors_range": [
+        52,
+        56
+      ],
+      "levels_range": {
+        "car": [
+          301,
+          301
+        ]
+      },
+      "means": {
+        "precision_at_k": {
+          "v3|num": 0.8410118183703089,
+          "v3.5|num": 0.8305722579307485,
+          "v3|hc": 0.841488699979266,
+          "v3.5|hc": 0.8455370101596517
+        },
+        "auroc": {
+          "v3|num": 0.9904557498914681,
+          "v3.5|num": 0.9909511471930517,
+          "v3|hc": 0.9911475000890746,
+          "v3.5|hc": 0.9913886754161856
+        },
+        "seconds": {
+          "v3|num": 62.983818435668944,
+          "v3.5|num": 135.10484023094176,
+          "v3|hc": 66.76394910812378,
+          "v3.5|hc": 133.4008852958679
+        }
+      }
+    },
+    {
+      "dataset": "employee_salaries",
+      "n": 1000,
+      "seeds": 5,
+      "errors_range": [
+        108,
+        115
+      ],
+      "levels_range": {
+        "employee_position_title": [
+          155,
+          167
+        ],
+        "division": [
+          272,
+          278
+        ],
+        "department": [
+          23,
+          25
+        ]
+      },
+      "means": {
+        "precision_at_k": {
+          "v3|num": 0.7231956453512822,
+          "v3.5|num": 0.7586832659350936,
+          "v3|hc": 0.7495939995401326,
+          "v3.5|hc": 0.7887140668123738
+        },
+        "auroc": {
+          "v3|num": 0.9762724341266242,
+          "v3.5|num": 0.9805880034664632,
+          "v3|hc": 0.9792730140283744,
+          "v3.5|hc": 0.985566472510851
+        },
+        "seconds": {
+          "v3|num": 78.8203227519989,
+          "v3.5|num": 177.3593309879303,
+          "v3|hc": 88.31893711090088,
+          "v3.5|hc": 163.71666831970214
+        }
+      }
+    },
+    {
+      "dataset": "medical_charges",
+      "n": 1000,
+      "seeds": 5,
+      "errors_range": [
+        105,
+        113
+      ],
+      "levels_range": {
+        "DRG_Definition": [
+          100,
+          100
+        ],
+        "Provider_State": [
+          49,
+          50
+        ],
+        "Hospital_Referral_Region_(HRR)_Description": [
+          247,
+          264
+        ],
+        "Provider_Id": [
+          800,
+          831
+        ]
+      },
+      "means": {
+        "precision_at_k": {
+          "v3|num": 0.7523516213879127,
+          "v3.5|num": 0.7431603199947764,
+          "v3|hc": 0.7813997129617817,
+          "v3.5|hc": 0.8038374587022796
+        },
+        "auroc": {
+          "v3|num": 0.966005580875993,
+          "v3.5|num": 0.9669728778435573,
+          "v3|hc": 0.9750666899478514,
+          "v3.5|hc": 0.9836873245142547
+        },
+        "seconds": {
+          "v3|num": 72.70760917663574,
+          "v3.5|num": 172.32947115898133,
+          "v3|hc": 84.35961184501647,
+          "v3.5|hc": 171.43797860145568
+        }
+      }
+    }
+  ],
+  "metrics": {
+    "precision_at_k": {
+      "means": {
+        "v3|num": 0.772186361703168,
+        "v3.5|num": 0.7774719479535396,
+        "v3|hc": 0.7908274708270603,
+        "v3.5|hc": 0.8126961785581018
+      },
+      "h1_version_with_context": {
+        "mean_difference": 0.021868707731041614,
+        "wins": 9,
+        "losses": 2,
+        "ties": 4,
+        "wilcoxon_p_one_sided": 0.01220703125
+      },
+      "h2_context_interaction": {
+        "mean_difference": 0.01658312148067004,
+        "wins": 10,
+        "losses": 3,
+        "ties": 2,
+        "wilcoxon_p_one_sided": 0.0286865234375
+      },
+      "version_without_high_cardinality": {
+        "mean_difference": 0.005285586250371573,
+        "wins": 7,
+        "losses": 6,
+        "ties": 2,
+        "wilcoxon_p_one_sided": 0.32421875
+      }
+    },
+    "auroc": {
+      "means": {
+        "v3|num": 0.9775779216313618,
+        "v3.5|num": 0.9795040095010241,
+        "v3|hc": 0.9818290680217667,
+        "v3.5|hc": 0.9868808241470972
+      },
+      "h1_version_with_context": {
+        "mean_difference": 0.005051756125330353,
+        "wins": 13,
+        "losses": 2,
+        "ties": 0,
+        "wilcoxon_p_one_sided": 0.000762939453125
+      },
+      "h2_context_interaction": {
+        "mean_difference": 0.0031256682556681276,
+        "wins": 11,
+        "losses": 4,
+        "ties": 0,
+        "wilcoxon_p_one_sided": 0.0206298828125
+      },
+      "version_without_high_cardinality": {
+        "mean_difference": 0.001926087869662226,
+        "wins": 11,
+        "losses": 4,
+        "ties": 0,
+        "wilcoxon_p_one_sided": 0.010772705078125
+      }
+    }
+  },
+  "mean_seconds": {
+    "v3|num": 71.5039167881012,
+    "v3.5|num": 161.5978807926178,
+    "v3|hc": 79.81416602134705,
+    "v3.5|hc": 156.18517740567526
+  }
+}

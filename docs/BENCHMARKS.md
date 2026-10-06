@@ -9,7 +9,7 @@ TabLint uses TabPFN-3.5 to rank cells that look inconsistent with the rest of th
 
 **Precision@k** is the fraction of the top k flagged cells that are injected errors; k is the number of injected errors in that table. It measures the quality of a ranked review list. It is not ordinary classification accuracy or the precision of the product's default threshold. Dataset results average five seeds; the headline gains give each dataset equal weight.
 
-[Numerical comparison](#numerical-cells-12-retained-datasets) · [Featured numerical example](#featured-numerical-example) · [Categorical comparison](#categorical-cells-all-10-datasets) · [Suggested fixes](#how-close-are-the-suggested-fixes) · [Why TabPFNs distribution matters](#why-tabpfns-distribution-matters) · [Reproduce the figures](#reproduce-the-figures)
+[Numerical comparison](#numerical-cells-12-retained-datasets) · [Categorical comparison](#categorical-cells-all-10-datasets) · [TabPFN-3.5 and high-cardinality context](#tabpfn-35-and-high-cardinality-context) · [Suggested fixes](#how-close-are-the-suggested-fixes) · [Reproduce the figures](#reproduce-the-figures)
 
 ## Numerical cells: 12 retained datasets
 
@@ -73,6 +73,16 @@ This comparison changes the scoring rule while keeping the TabPFN predictions fi
 
 [Vector figure](figures/tablint_benchmark_distribution.svg) · [Scoring implementation](../proofread/core.py)
 
+## TabPFN-3.5 and high-cardinality context
+
+The separate supplied CPU study compares **v3 and 3.5 with and without added identity/context columns** on three datasets × five seeds. With added context, mean precision@k is **81.3% for 3.5 versus 79.1% for v3** (+2.2 points; 9 wins, two losses and four ties over 15 pairs; one-sided Wilcoxon p = 0.0122). On medical charges, added context improves 3.5 by **6.1 points**, compared with **2.9 points** for v3.
+
+![All three high-cardinality study datasets: v3 and 3.5 with and without added context](figures/tablint_benchmark_high_cardinality.png)
+
+These are repeated seeds within **three selected source datasets**, not 15 independent datasets. The study uses TabPFN 9.0.0 defaults and sorted string identity codes; large numeric vocabularies can be inferred as numerical despite categorical indices. It therefore evaluates retained coded context, not the product's new categorical-cap override, semantic text embeddings or 100k-row quality. All 15 original files and all 60 model/context records are retained; the earlier benchmark statistics are unchanged.
+
+[Full methods, tables, tests and caveats](HIGH_CARDINALITY_RESULTS.md) · [Computed summary](../results/high_cardinality/summary.json) · [Vector figure](figures/tablint_benchmark_high_cardinality.svg)
+
 ## What these results do—and do not—show
 
 The numerical protocol uses 400-row samples, five fresh seeds per dataset and 3% injected errors: decimal slips, row-value swaps, offsets, zeros, and digit transpositions. Each numerical column is predicted out of fold from the other columns plus the label. The categorical protocol uses five fresh seeds, up to 400 rows per sample and 3% same-column category swaps, with no designated label column. Hypotheses and scoring rules were written before their runs. The numerical dataset scope was amended after analysis following reported execution errors; the categorical scope is unchanged.
@@ -94,3 +104,11 @@ uv run --with matplotlib==3.11.2 python benchmarks/make_showcase_figures.py
 This renders saved results without model inference. The renderer verifies all **60 numerical and 50 categorical runs**, their datasets and seeds, and the selected baselines against the published summaries. It analyses the complete retained 12-dataset numerical scope and recalculates its headline statistics using 10,000 dataset-bootstrap samples with random seed 0. The distribution ablation uses those same 60 numerical runs. It writes six PNG/SVG pairs and a [CSV of all 86 plotted means](figures/tablint_benchmark_values.csv). The CSV retains full-precision values and the sample size for each dataset; displayed percentages round to one decimal place. An alternative output directory can be supplied with `--out`.
 
 [Renderer](../benchmarks/make_showcase_figures.py) · [Numerical summary](../results/proofread/summary.json) · [Categorical summary](../results/categorical/summary.json) · [Numerical analysis](../benchmarks/summarize_proofread.py) · [Categorical analysis](../benchmarks/summarize_categorical.py)
+
+Rebuild the separate high-cardinality figure, full-precision CSV and summary from its 15 original files:
+
+```sh
+uv run --with matplotlib==3.11.2 python -m benchmarks.summarize_high_cardinality
+```
+
+The analyzer checks every dataset, seed, arm, metric and original-result checksum. [CPU inference command and pinned environment](HIGH_CARDINALITY_RESULTS.md#reproduce-and-provenance).

@@ -1,0 +1,8 @@
+tabpfn==9.0.0
+torch==2.14.0
+scikit-learn==1.9.1
+pandas==3.0.6
+numpy==2.5.3
+scipy==1.18.1
+openml==0.15.1
+skrub==0.10.1

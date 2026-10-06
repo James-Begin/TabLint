@@ -157,7 +157,9 @@ TabLint uses the **local Base checkpoint**; your table stays on your machine. Ta
 | **Full predictive distributions** | Row-specific tail scores and plausible ranges; distribution scoring reached **73.9% precision@k**, versus **55.7%** for the same model’s point residual in our retained benchmark. |
 | **Base and Fast local weights** | Choose `df.tablint.view(fast=True)` or CLI `--fast`. Fast was **2.7× faster** at the median, with a **0.5-point** mean precision@k reduction in our version comparison. |
 
-[TabPFN-3.5 release notes](https://docs.priorlabs.ai/changelog/tabpfn-3.5) · [Our model comparison](docs/VERSION_COMPARISON.md). In this small-table suite, 3.5 improved on v2 but did **not** show a statistically supported advantage over v3. A separate [retail benchmark handoff](docs/RETAIL_BENCHMARK_HANDOFF.md) explores descriptions, high-cardinality IDs and 100k+ contexts; TabLint now retains high-cardinality strings and declared categories as context. Its sorted codes represent category identity, not semantic text embeddings; the retail runner uses a separate historical split and text/date preprocessing.
+**Why keep the context?** In a separate CPU study of salaries, medical charges and cars, 3.5 reaches **81.3% precision@k versus 79.1% for v3** with added high-cardinality context (**+2.2 points**, 15 paired tables). On medical charges, adding the context raises 3.5 from **74.3% to 80.4%**. [All three datasets, both context arms and reproduction →](docs/HIGH_CARDINALITY_RESULTS.md)
+
+That study preserves TabPFN 9.0.0 defaults and tests retained identity codes, not semantic text or 100k-row performance; it does not measure the product's new category-cap override. Five seeds share each of only three source datasets. The earlier small-table suite improved on v2 but did **not** establish an advantage over v3. [Release notes](https://docs.priorlabs.ai/changelog/tabpfn-3.5) · [Earlier version comparison](docs/VERSION_COMPARISON.md) · [Separate retail capability pilot](docs/RETAIL_CPU_BENCHMARK.md)
 
 ## Evidence
 
